@@ -1,0 +1,6 @@
+/logs/
+/reports/
+/*.zip
+*.pyc
+__pycache__/
+.env
