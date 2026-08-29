@@ -1,0 +1,7 @@
+{
+  "host": "10.0.0.100",
+  "user": "root@pam",
+  "password": "starcore",
+  "token": "",
+  "verify_ssl": false
+}

@@ -1,0 +1,7 @@
+{
+  "host": "10.0.0.100",
+  "user": "root",
+  "port": 22,
+  "key_path": null,
+  "active": true
+}
