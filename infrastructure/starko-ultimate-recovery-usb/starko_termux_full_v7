@@ -1,0 +1,275 @@
+#!/bin/bash
+# ============================================================
+#  STARKO TERMUX FULL V7
+#  Kompletní modulární toolkit pro Android / Termux
+#  Autor: Starko
+#  Verze: 7.0 (stable)
+# ============================================================
+
+LOGTIME() { echo "[`date "+%F %T"`] $1"; }
+
+# ------------------------------------------------------------
+# 1) Kontrola prostředí
+# ------------------------------------------------------------
+termux-reload-settings >/dev/null 2>&1
+
+if ! command -v pkg >/dev/null 2>&1; then
+    echo "Toto není Termux. Ukončuji."
+    exit 1
+fi
+
+LOGTIME "[INFO] Kontrola balíků..."
+
+pkg update -y
+pkg install -y git curl wget termux-api python openssh \
+               proot tar zip unzip \
+               openssl clang make nano jq
+
+# ------------------------------------------------------------
+# 2) Instalace dependencí
+# ------------------------------------------------------------
+LOGTIME "[INFO] Instalace nástrojů..."
+
+pkg install -y nmap net-tools lsof \
+               binutils file tsu \
+               ffmpeg openssl-tool \
+               proot-distro
+
+pip install flask >/dev/null 2>&1
+
+# ------------------------------------------------------------
+# 3) Struktura
+# ------------------------------------------------------------
+mkdir -p ~/starko/modules
+mkdir -p ~/starko/tmp
+mkdir -p ~/starko/web
+
+# ------------------------------------------------------------
+# 4) Moduly V7
+# ------------------------------------------------------------
+
+# -------------------------
+# System Info
+# -------------------------
+cat > ~/starko/modules/system_info.sh << 'EOF'
+#!/bin/bash
+echo "=== System Info ==="
+echo "--- Základní informace ---"
+getprop ro.product.model
+getprop ro.product.brand
+getprop ro.build.version.release
+df -h
+free -h
+EOF
+
+chmod +x ~/starko/modules/system_info.sh
+
+# -------------------------
+# ADB Tools
+# -------------------------
+cat > ~/starko/modules/adb_tools.sh << 'EOF'
+#!/bin/bash
+echo "=== ADB Tools ==="
+adb devices
+echo "1) Shell"
+echo "2) Install APK"
+echo "3) Uninstall package"
+echo "4) Reboot"
+echo "5) Exit"
+read -p "Volba: " V
+
+case $V in
+    1) adb shell ;;
+    2) read -p "Soubor APK: " F; adb install "$F" ;;
+    3) read -p "Balík: " P; adb uninstall "$P" ;;
+    4) adb reboot ;;
+    5) exit 0 ;;
+esac
+EOF
+
+chmod +x ~/starko/modules/adb_tools.sh
+
+# -------------------------
+# Fastboot Tools
+# -------------------------
+cat > ~/starko/modules/fastboot_tools.sh << 'EOF'
+#!/bin/bash
+echo "=== Fastboot Tools ==="
+fastboot devices
+echo "1) Flash boot"
+echo "2) Flash recovery"
+echo "3) Flash system"
+echo "4) Exit"
+
+read -p "Volba: " V
+
+case $V in
+    1) read -p "boot.img: " F; fastboot flash boot "$F" ;;
+    2) read -p "recovery.img: " F; fastboot flash recovery "$F" ;;
+    3) read -p "system.img: " F; fastboot flash system "$F" ;;
+    4) exit 0 ;;
+esac
+EOF
+
+chmod +x ~/starko/modules/fastboot_tools.sh
+
+# -------------------------
+# APK Manager Pro
+# -------------------------
+cat > ~/starko/modules/apk_manager.sh << 'EOF'
+#!/bin/bash
+echo "=== APK Manager Pro ==="
+echo "1) Install APK"
+echo "2) Extract APK info"
+echo "3) Backup APK"
+echo "4) Exit"
+
+read -p "Volba: " V
+case $V in
+    1) read -p "APK: " A; adb install "$A" ;;
+    2) read -p "APK: " A; aapt dump badging "$A" ;;
+    3) read -p "Balík: " P; adb shell pm path "$P" | sed 's/package://g' | while read L; do adb pull "$L"; done ;;
+    4) exit 0 ;;
+esac
+EOF
+
+chmod +x ~/starko/modules/apk_manager.sh
+
+# -------------------------
+# Backup / Restore
+# -------------------------
+cat > ~/starko/modules/backup_restore.sh << 'EOF'
+#!/bin/bash
+echo "=== Backup & Restore ==="
+echo "1) Full ADB backup"
+echo "2) Restore backup"
+echo "3) Backup internal storage"
+echo "4) Exit"
+
+read -p "Volba: " V
+case $V in
+    1) adb backup -apk -obb -shared -all -f starko_backup.ab ;;
+    2) adb restore starko_backup.ab ;;
+    3) adb pull /sdcard ./sdcard_backup ;;
+    4) exit 0 ;;
+esac
+EOF
+
+chmod +x ~/starko/modules/backup_restore.sh
+
+# -------------------------
+# Disk Tools
+# -------------------------
+cat > ~/starko/modules/disk_tools.sh << 'EOF'
+#!/bin/bash
+echo "=== Disk Tools ==="
+echo "1) Extract ISO"
+echo "2) Extract IMG"
+echo "3) Make SquashFS"
+echo "4) Exit"
+
+read -p "Volba: " V
+case $V in
+    1) read -p "ISO: " I; 7z x "$I" ;;
+    2) read -p "IMG: " I; 7z x "$I" ;;
+    3) read -p "Folder: " D; mksquashfs "$D" out.sfs ;;
+    4) exit 0 ;;
+esac
+EOF
+
+chmod +x ~/starko/modules/disk_tools.sh
+
+# -------------------------
+# Network Tools
+# -------------------------
+cat > ~/starko/modules/network_tools.sh << 'EOF'
+#!/bin/bash
+echo "=== Network Tools ==="
+ip addr
+echo "--- Ping ---"
+ping -c 4 google.com
+EOF
+
+chmod +x ~/starko/modules/network_tools.sh
+
+# -------------------------
+# USB Tools
+# -------------------------
+cat > ~/starko/modules/usb_tools.sh << 'EOF'
+#!/bin/bash
+echo "=== USB Tools ==="
+termux-usb -l
+EOF
+
+chmod +x ~/starko/modules/usb_tools.sh
+
+# -------------------------
+# AI Helper 2.0
+# -------------------------
+cat > ~/starko/modules/ai_helper.sh << 'EOF'
+#!/bin/bash
+echo "=== Starko AI Helper 2.0 ==="
+read -p "Dotaz: " Q
+
+case "$Q" in
+    *adb*) echo "ADB tip: Zkus adb kill-server && adb start-server" ;;
+    *fastboot*) echo "Fastboot tip: Drž Volume-Down + USB." ;;
+    *boot*) echo "Boot oprava: fastboot flash boot boot.img" ;;
+    *) echo "AI: Tento dotaz zatím neznám." ;;
+esac
+EOF
+
+chmod +x ~/starko/modules/ai_helper.sh
+
+# ------------------------------------------------------------
+# 5) WEB INTERFACE
+# ------------------------------------------------------------
+cat > ~/starko/web/server.py << 'EOF'
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "<h1>Starko Web Panel V7</h1><p>Toolkit běží.</p>"
+
+app.run(host="0.0.0.0", port=8080)
+EOF
+
+# ------------------------------------------------------------
+# 6) Menu
+# ------------------------------------------------------------
+while true; do
+clear
+echo "=================================="
+echo "   STARKO TERMUX FULL V7"
+echo "=================================="
+echo "1) System Info"
+echo "2) ADB Tools"
+echo "3) Fastboot Tools"
+echo "4) APK Manager Pro"
+echo "5) Backup / Restore"
+echo "6) Disk Tools"
+echo "7) Network Tools"
+echo "8) USB Tools"
+echo "9) WebGUI (port 8080)"
+echo "10) AI Helper 2.0"
+echo "0) Exit"
+echo "=================================="
+read -p "Volba: " V
+
+case $V in
+    1) bash ~/starko/modules/system_info.sh ;;
+    2) bash ~/starko/modules/adb_tools.sh ;;
+    3) bash ~/starko/modules/fastboot_tools.sh ;;
+    4) bash ~/starko/modules/apk_manager.sh ;;
+    5) bash ~/starko/modules/backup_restore.sh ;;
+    6) bash ~/starko/modules/disk_tools.sh ;;
+    7) bash ~/starko/modules/network_tools.sh ;;
+    8) bash ~/starko/modules/usb_tools.sh ;;
+    9) python ~/starko/web/server.py ;;
+    10) bash ~/starko/modules/ai_helper.sh ;;
+    0) exit 0 ;;
+esac
+
+read -p "Enter pro návrat do menu..."
+done
