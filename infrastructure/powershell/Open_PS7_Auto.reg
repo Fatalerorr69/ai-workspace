@@ -1,0 +1,73 @@
+Windows Registry Editor Version 5.00
+
+; =======================================
+; Kontextové menu: PowerShell 7 + WT (Auto Path)
+; Autor: Starko
+; Upraveno o možnost "Spustit jako správce"
+; =======================================
+
+; === 1) PowerShell 7 (samostatné okno, auto PATH) ===
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Powershell7]
+@="Otevřít v PowerShell 7"
+"Icon"="pwsh.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Powershell7\command]
+@="pwsh.exe -NoExit -Command \"Set-Location -LiteralPath '%V'\""
+
+[HKEY_CLASSES_ROOT\Directory\shell\Powershell7]
+@="Otevřít v PowerShell 7"
+"Icon"="pwsh.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\Powershell7\command]
+@="pwsh.exe -NoExit -Command \"Set-Location -LiteralPath '%1'\""
+
+[HKEY_CLASSES_ROOT\Drive\shell\Powershell7]
+@="Otevřít v PowerShell 7"
+"Icon"="pwsh.exe"
+
+[HKEY_CLASSES_ROOT\Drive\shell\Powershell7\command]
+@="pwsh.exe -NoExit -Command \"Set-Location -LiteralPath '%1'\""
+
+
+; === 2) Windows Terminal (PowerShell 7, auto profil) ===
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\WTPS7]
+@="Otevřít ve Windows Terminal (PowerShell 7)"
+"Icon"="wt.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\WTPS7\command]
+@="wt.exe -p \"PowerShell 7\" -d \"%V\""
+
+[HKEY_CLASSES_ROOT\Directory\shell\WTPS7]
+@="Otevřít ve Windows Terminal (PowerShell 7)"
+"Icon"="wt.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\WTPS7\command]
+@="wt.exe -p \"PowerShell 7\" -d \"%1\""
+
+[HKEY_CLASSES_ROOT\Drive\shell\WTPS7]
+@="Otevřít ve Windows Terminal (PowerShell 7)"
+"Icon"="wt.exe"
+
+[HKEY_CLASSES_ROOT\Drive\shell\WTPS7\command]
+@="wt.exe -p \"PowerShell 7\" -d \"%1\""
+
+
+; === 3) PowerShell 7 (samostatné okno, auto PATH, správce) ===
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Powershell7Admin]
+@="Spustit v PowerShell 7 (Správce)"
+"Icon"="pwsh.exe"
+"HasLUAShield"=""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\Powershell7Admin\command]
+@="pwsh.exe -NoExit -Command \"Start-Process -FilePath pwsh.exe -Verb RunAs -ArgumentList '-NoExit -Command Set-Location -LiteralPath ''%V'''''"
+
+[HKEY_CLASSES_ROOT\Directory\shell\Powershell7Admin]
+@="Spustit v PowerShell 7 (Správce)"
+"Icon"="pwsh.exe"
+"HasLUAShield"=""
+
+[HKEY_CLASSES_ROOT\Directory\shell\Powershell7Admin\command]
+@="pwsh.exe -NoExit -Command \"Start-Process -FilePath pwsh.exe -Verb RunAs -ArgumentList '-NoExit -Command Set-Location -LiteralPath ''%1'''''"

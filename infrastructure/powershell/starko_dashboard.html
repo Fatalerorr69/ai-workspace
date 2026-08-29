@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>Starko PRO MAX EXTREME – Multi Device Dashboard</title>
+<style>
+body { font-family: Arial, sans-serif; background: #121212; color: #e0e0e0; margin: 0; }
+h1 { text-align: center; color: #00ff99; padding: 20px 0; }
+.container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; padding: 20px; }
+.card { background: #1e1e1e; border-radius: 12px; padding: 20px; box-shadow: 0 0 15px rgba(0,255,153,0.3); }
+button { background: #00ff99; color: #121212; border: none; padding: 12px 20px; border-radius: 8px; font-size: 16px; cursor: pointer; margin: 5px; }
+button:hover { background: #00cc77; }
+select { background: #2a2a2a; color: #e0e0e0; border-radius: 6px; border: 1px solid #00ff99; padding: 5px; width: 100%; margin: 5px 0; }
+.log { background: #111; color: #0f0; padding: 10px; height: 150px; overflow-y: scroll; border-radius: 8px; margin-top: 10px; font-family: monospace; font-size: 14px;}
+h2 { margin-top: 0; color: #00ff99; }
+</style>
+</head>
+<body>
+<h1>Starko PRO MAX EXTREME Dashboard</h1>
+<div class="container">
+
+<!-- System Tools -->
+<div class="card">
+<h2>System Tools</h2>
+<button onclick="runCmd('starko update')">Update System</button>
+<button onclick="runCmd('starko report')">Generate SysReport</button>
+<div id="syslog" class="log"></div>
+</div>
+
+<!-- Android Toolkit -->
+<div class="card">
+<h2>Android Toolkit</h2>
+<select id="androidDevices" multiple size="4">
+  <option value="device1">Device 1</option>
+  <option value="device2">Device 2</option>
+  <option value="device3">Device 3</option>
+</select>
+<button onclick="runAndroid('detect')">Detect Devices</button>
+<button onclick="runAndroid('install')">Install APK on Selected</button>
+<button onclick="runAndroid('logcat')">Live Logcat</button>
+<button onclick="runAndroid('root')">Root/Magisk Check</button>
+<div id="androidlog" class="log"></div>
+</div>
+
+<!-- WSL Launcher -->
+<div class="card">
+<h2>WSL / Linux</h2>
+<select id="wslDistros" multiple size="4">
+  <option value="Ubuntu-22.04">Ubuntu 22.04</option>
+  <option value="Kali-Linux">Kali Linux</option>
+  <option value="Debian">Debian</option>
+</select>
+<button onclick="runWSL('update')">Update Selected</button>
+<button onclick="runWSL('open')">Open Selected</button>
+<div id="wsllog" class="log"></div>
+</div>
+
+<!-- RPi / Game Servers -->
+<div class="card">
+<h2>RPi & Game Servers</h2>
+<button onclick="runCmd('starko rpi start')">Start RPi Manager</button>
+<button onclick="runCmd('starko games start')">Start Game Servers</button>
+<div id="rpilog" class="log"></div>
+</div>
+
+</div>
+
+<script>
+// Spuštění běžných PowerShell příkazů
+function runCmd(cmd) {
+  fetch(`http://localhost:8080/run?cmd=${encodeURIComponent(cmd)}`)
+    .then(r => r.text())
+    .then(output => {
+      if(cmd.includes('update') || cmd.includes('report')) document.getElementById('syslog').innerText = output;
+      if(cmd.includes('rpi') || cmd.includes('games')) document.getElementById('rpilog').innerText = output;
+    }).catch(e => alert('Chyba: ' + e));
+}
+
+// Android Toolkit příkazy
+function runAndroid(action) {
+  const select = document.getElementById('androidDevices');
+  const devices = Array.from(select.selectedOptions).map(o=>o.value);
+  if(devices.length === 0) { alert("Vyberte alespoň jedno zařízení"); return; }
+  let cmd = '';
+  switch(action) {
+    case 'detect': cmd = 'starko android detect'; break;
+    case 'install': cmd = 'starko android install "'+devices.join(',')+'"'; break;
+    case 'logcat': cmd = 'starko android logcat "'+devices.join(',')+'"'; break;
+    case 'root': cmd = 'starko android root "'+devices.join(',')+'"'; break;
+  }
+  fetch(`http://localhost:8080/run?cmd=${encodeURIComponent(cmd)}`)
+    .then(r=>r.text())
+    .then(output => { document.getElementById('androidlog').innerText = output; })
+    .catch(e=>alert('Chyba: '+e));
+}
+
+// WSL příkazy
+function runWSL(action) {
+  const select = document.getElementById('wslDistros');
+  const distros = Array.from(select.selectedOptions).map(o=>o.value);
+  if(distros.length === 0) { alert("Vyberte alespoň jednu distribuci"); return; }
+  distros.forEach(d => {
+    let cmd = '';
+    if(action==='update') cmd = `wsl -d ${d} -- sudo apt update && sudo apt upgrade -y`;
+    else cmd = `wsl -d ${d}`;
+    fetch(`http://localhost:8080/run?cmd=${encodeURIComponent(cmd)}`)
+      .then(r=>r.text())
+      .then(output => { 
+        const log = document.getElementById('wsllog'); 
+        log.innerText += `[${d}]:\n` + output + '\n'; 
+        log.scrollTop = log.scrollHeight;
+      })
+      .catch(e=>alert('Chyba: '+e));
+  });
+}
+</script>
+</body>
+</html>
