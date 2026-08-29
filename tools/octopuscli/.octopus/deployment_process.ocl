@@ -1,0 +1,634 @@
+step "Upload OctopusTools to S3 public with hashes" {
+
+    action {
+        properties = {
+            Octopus.Action.Template.Id = "ActionTemplates-864"
+            Octopus.Action.Template.Version = "4"
+            PackageToUpload = "{\"PackageId\":\"OctopusTools.Zips\",\"FeedId\":\"Octopus Server (built-in)\"}"
+            S3BucketPath = "#{AwsBucket}/octopus-tools/#{Octopus.Action.Package[PackageToUpload].PackageVersion}/"
+        }
+        worker_pool = "Hosted Windows 2019"
+
+        packages "PackageToUpload" {
+            acquisition_location = "Server"
+            feed = "Octopus Server (built-in)"
+            package_id = "OctopusTools.Zips"
+            properties = {
+                Extract = "True"
+                PackageParameterName = "PackageToUpload"
+                SelectionMode = "deferred"
+            }
+        }
+    }
+}
+
+step "Push Octopus.Cli to NuGet style feed" {
+    start_trigger = "StartWithPrevious"
+
+    action {
+        action_type = "Octopus.Script"
+        properties = {
+            Octopus.Action.Script.ScriptBody = <<-EOT
+                # Build the path to nuget.exe
+                $nugetPackagePath = $OctopusParameters["Octopus.Action.Package[NuGet.CommandLine].ExtractedPath"]
+                $nugetExe = Join-Path -Path $nugetPackagePath -ChildPath "Tools\nuget.exe"
+                
+                # nuget push
+                . $nugetExe push "$($OctopusParameters["Octopus.Action.Package[Octopus.Cli].PackageFilePath"])"	-source $FeedUrl -apikey $FeedApiKey
+            EOT
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "PowerShell"
+        }
+        worker_pool = "Hosted Windows 2019"
+
+        packages "Octopus.Cli" {
+            acquisition_location = "Server"
+            feed = "Octopus Server (built-in)"
+            package_id = "Octopus.Cli"
+            properties = {
+                Extract = "False"
+            }
+        }
+
+        packages "NuGet.CommandLine" {
+            acquisition_location = "Server"
+            feed = "NuGet"
+            package_id = "NuGet.CommandLine"
+            properties = {
+                Extract = "True"
+                Purpose = ""
+                SelectionMode = "immediate"
+            }
+        }
+    }
+}
+
+step "Push Octopus.DotNet.Cli to NuGet style feed" {
+    start_trigger = "StartWithPrevious"
+
+    action {
+        action_type = "Octopus.Script"
+        properties = {
+            Octopus.Action.Script.ScriptBody = <<-EOT
+                # Build the path to nuget.exe
+                $nugetPackagePath = $OctopusParameters["Octopus.Action.Package[NuGet.CommandLine].ExtractedPath"]
+                $nugetExe = Join-Path -Path $nugetPackagePath -ChildPath "Tools\nuget.exe"
+                
+                # nuget push
+                . $nugetExe push "$($OctopusParameters["Octopus.Action.Package[Octopus.DotNet.Cli].PackageFilePath"])"	-source $FeedUrl -apikey $FeedApiKey
+            EOT
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "PowerShell"
+        }
+        worker_pool = "Hosted Windows 2019"
+
+        packages "NuGet.CommandLine" {
+            acquisition_location = "Server"
+            feed = "NuGet"
+            package_id = "NuGet.CommandLine"
+            properties = {
+                Extract = "True"
+            }
+        }
+
+        packages "Octopus.DotNet.Cli" {
+            acquisition_location = "Server"
+            feed = "Octopus Server (built-in)"
+            package_id = "Octopus.DotNet.Cli"
+            properties = {
+                Extract = "False"
+            }
+        }
+    }
+}
+
+step "Push OctopusTools to NuGet style feed" {
+    start_trigger = "StartWithPrevious"
+
+    action {
+        action_type = "Octopus.Script"
+        properties = {
+            Octopus.Action.Script.ScriptBody = <<-EOT
+                $nugetPackagePath = $OctopusParameters["Octopus.Action.Package[NuGet.CommandLine].ExtractedPath"]
+                $nugetExe = Join-Path -Path $nugetPackagePath -ChildPath "Tools\nuget.exe"
+                
+                $maxAttempts = 5
+                $currentAttempt = 1
+                
+                while ($currentAttempt -le $maxAttempts)
+                {
+                    write-host "Pushing package ($nugetPackagePath) to nuget (attempt $currentAttempt)"
+                    . $nugetExe push "$($OctopusParameters["Octopus.Action.Package[OctopusTools].PackageFilePath"])" -source $FeedUrl -apikey $FeedApiKey
+                    if ($LastExitCode -eq 0) {
+                        exit 0
+                    } else {
+                        write-host "Failed to push package - nuget returned $LastExitCode"
+                        $currentAttempt = $currentAttempt + 1
+                    }
+                }
+                exit 1
+            EOT
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "PowerShell"
+        }
+        worker_pool = "Hosted Windows 2019"
+
+        packages "NuGet.CommandLine" {
+            acquisition_location = "Server"
+            feed = "NuGet"
+            package_id = "NuGet.CommandLine"
+            properties = {
+                Extract = "True"
+            }
+        }
+
+        packages "OctopusTools" {
+            acquisition_location = "Server"
+            feed = "Octopus Server (built-in)"
+            package_id = "OctopusTools"
+            properties = {
+                Extract = "False"
+            }
+        }
+    }
+}
+
+step "Push OctopusTools to Chocolatey" {
+    start_trigger = "StartWithPrevious"
+
+    action {
+        action_type = "Octopus.Script"
+        environments = ["Components - External"]
+        properties = {
+            Octopus.Action.Script.ScriptBody = <<-EOT
+                $nugetPackagePath = $OctopusParameters["Octopus.Action.Package[NuGet.CommandLine].ExtractedPath"]
+                $nugetExe = Join-Path -Path $nugetPackagePath -ChildPath "Tools\nuget.exe"
+                $packagePath = $OctopusParameters["Octopus.Action.Package[OctopusTools].PackageFilePath"]
+                
+                $maxAttempts = 5
+                $currentAttempt = 1
+                
+                while ($currentAttempt -le $maxAttempts)
+                {
+                    write-host "Pushing package ($packagePath) to Chocolatey (attempt $currentAttempt)"
+                    . $nugetExe push "$($packagePath)" -source $ChocolateyFeedUrl -apikey $ChocolateyFeedApiKey -NonInteractive -Verbosity detailed
+                    if ($LastExitCode -eq 0) {
+                        exit 0
+                    } else {
+                        write-host "Failed to push package - nuget returned $LastExitCode"
+                        $currentAttempt = $currentAttempt + 1
+                    }
+                }
+                exit 1
+            EOT
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "PowerShell"
+        }
+        worker_pool = "Hosted Windows 2019"
+
+        packages "OctopusTools" {
+            acquisition_location = "Server"
+            feed = "Octopus Server (built-in)"
+            package_id = "OctopusTools"
+            properties = {
+                Extract = "False"
+            }
+        }
+
+        packages "NuGet.CommandLine" {
+            acquisition_location = "Server"
+            feed = "NuGet"
+            package_id = "NuGet.CommandLine"
+            properties = {
+                Extract = "True"
+            }
+        }
+    }
+}
+
+step "Publish Homebrew" {
+    start_trigger = "StartWithPrevious"
+
+    action {
+        channels = ["Default"]
+        environments = ["Components - External"]
+        properties = {
+            Octopus.Action.Template.Id = "ActionTemplates-882"
+            Octopus.Action.Template.Version = "19"
+            PackageToUpload = "{\"PackageId\":\"OctopusTools.Zips\",\"FeedId\":\"Octopus Server (built-in)\"}"
+            PubHomebrew-Email = "support@octopus.com"
+            PubHomebrew-FileName = "octopuscli.rb"
+            PubHomebrew-PersonalAccessToken = "#{HomeBrewKey}"
+            PubHomebrew-RepoName = "homebrew-taps"
+            PubHomebrew-Username = "OctoBob"
+        }
+        worker_pool = "Hosted Windows 2019"
+
+        packages "PackageToUpload" {
+            acquisition_location = "Server"
+            feed = "Octopus Server (built-in)"
+            package_id = "OctopusTools.Zips"
+            properties = {
+                Extract = "True"
+                PackageParameterName = "PackageToUpload"
+                SelectionMode = "deferred"
+            }
+        }
+    }
+}
+
+step "Publish to APT repo" {
+    start_trigger = "StartWithPrevious"
+
+    action {
+        action_type = "Octopus.Script"
+        properties = {
+            Octopus.Action.Script.ScriptBody = <<-EOT
+                cd OctopusTools.Packages.linux-x64 || exit
+                
+                # Deploy APT repo
+                docker run --rm --volume $(pwd):/working \
+                  --env PUBLISH_LINUX_EXTERNAL="$(get_octopusvariable "Publish.Linux.External")" \
+                  --env PUBLISH_ARTIFACTORY_USERNAME="$(get_octopusvariable "Publish.Artifactory.Username")" \
+                  --env PUBLISH_ARTIFACTORY_PASSWORD="$(get_octopusvariable "Publish.Artifactory.Password")" \
+                  --env AWS_ACCESS_KEY_ID="$(get_octopusvariable "LinuxPackagePublisherAwsAccount.AccessKey")" \
+                  --env AWS_SECRET_ACCESS_KEY="$(get_octopusvariable "LinuxPackagePublisherAwsAccount.SecretKey")" \
+                  octopusdeploy/publish-linux bash -c 'cd /working && bash publish-apt.sh' 2>&1 || exit
+                
+            EOT
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "Bash"
+        }
+        worker_pool = "Hosted Ubuntu"
+
+        packages "OctopusTools.Packages.linux-x64" {
+            acquisition_location = "Server"
+            feed = "Octopus Server (built-in)"
+            package_id = "OctopusTools.Packages.linux-x64"
+            properties = {
+                Extract = "True"
+                SelectionMode = "immediate"
+            }
+        }
+    }
+}
+
+step "Publish to RPM repo" {
+    start_trigger = "StartWithPrevious"
+
+    action {
+        action_type = "Octopus.Script"
+        properties = {
+            Octopus.Action.Script.ScriptBody = <<-EOT
+                cd OctopusTools.Packages.linux-x64 || exit
+                
+                # Deploy RPM repo
+                docker run --rm --volume $(pwd):/working \
+                  --env PUBLISH_LINUX_EXTERNAL="$(get_octopusvariable "Publish.Linux.External")" \
+                  --env PUBLISH_ARTIFACTORY_USERNAME="$(get_octopusvariable "Publish.Artifactory.Username")" \
+                  --env PUBLISH_ARTIFACTORY_PASSWORD="$(get_octopusvariable "Publish.Artifactory.Password")" \
+                  --env AWS_ACCESS_KEY_ID="$(get_octopusvariable "LinuxPackagePublisherAwsAccount.AccessKey")" \
+                  --env AWS_SECRET_ACCESS_KEY="$(get_octopusvariable "LinuxPackagePublisherAwsAccount.SecretKey")" \
+                  octopusdeploy/publish-linux bash -c 'cd /working && bash publish-rpm.sh' 2>&1 || exit
+                
+            EOT
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "Bash"
+        }
+        worker_pool = "Hosted Ubuntu"
+
+        packages "OctopusTools.Packages.linux-x64" {
+            acquisition_location = "Server"
+            feed = "Octopus Server (built-in)"
+            package_id = "OctopusTools.Packages.linux-x64"
+            properties = {
+                Extract = "True"
+                SelectionMode = "immediate"
+            }
+        }
+    }
+}
+
+step "Push Docker Images to Prod" {
+
+    action {
+        action_type = "Octopus.Script"
+        environments = ["Components - External"]
+        properties = {
+            Octopus.Action.Script.ScriptBody = <<-EOT
+                
+                $version=$OctopusParameters["Octopus.Action.Package[Octo.Docker.Image].PackageVersion"]
+                $DockerHubUsername=$OctopusParameters["DockerUsername"]
+                $DockerHubPassword=$OctopusParameters["DockerPassword"]
+                
+                $script:dockerHashes = @{}
+                
+                # we tried to configure a credential helper, oh how we tried.
+                # but if we did, it make "docker manifest push" fail with an authentication error
+                # it appears that docker manifest push doesn't respect the credstore
+                function Suppress-DockerLoginWarning {
+                    [CmdletBinding()]
+                    param(
+                        [Parameter(ValueFromPipeline)]
+                        [pscustomobject]$message
+                    )
+                    process {
+                        if (("$message" -eq "WARNING! Your password will be stored unencrypted in /home/ubuntu/.docker/config.json.") -or
+                            ("$message" -eq "Configure a credential helper to remove this warning. See") -or
+                            ("$message" -eq "https://docs.docker.com/engine/reference/commandline/login/#credentials-store") -or
+                            ("$message" -eq "System.Management.Automation.RemoteException")) {
+                            return
+                        } 
+                        else {
+                            $message
+                        }
+                    }
+                }
+                
+                function Run() {
+                    & docker load -i $OctopusParameters["Octopus.Action.Package[Octo.Docker.Image].PackageFilePath"] 2>&1
+                
+                	#redirecting stderr appears to throw a script terminating error - https://github.com/PowerShell/PowerShell/issues/4002
+                    $oldErrorActionPreference = $ErrorActionPreference
+                    $ErrorActionPreference = 'silentlycontinue'
+                    (echo $DockerHubPassword | & "docker" login -u $DockerHubUsername --password-stdin 2>&1)  | Suppress-DockerLoginWarning
+                    $ErrorActionPreference = $oldErrorActionPreference
+                
+                    & docker image tag octopusdeploy/octo-prerelease:latest-alpine octopusdeploy/octo:latest-alpine 2>&1
+                    & docker push octopusdeploy/octo:latest-alpine 2>&1
+                    
+                    & docker image tag octopusdeploy/octo-prerelease:$version-alpine octopusdeploy/octo:$version-alpine 2>&1
+                	& docker push octopusdeploy/octo:$version-alpine 2>&1
+                
+                    CreateManifest $version
+                    CreateManifest "latest"
+                
+                    docker logout
+                }
+                
+                function EnableExperimentalDockerCliFeatures {
+                    $currentConfig = "{}" | ConvertFrom-Json
+                    if (Test-Path "~/.docker/config.json") {
+                      $currentConfig = (Get-Content "~/.docker/config.json" | ConvertFrom-Json)
+                    }
+                
+                    if (-not ([bool]($currentConfig.PSobject.Properties.name -match "experimental"))) {
+                      $currentConfig | Add-Member -Name "experimental" -value "enabled" -MemberType NoteProperty
+                    } else {
+                      $currentConfig.experimental = "enabled"
+                    }
+                    Set-Content -Path "~/.docker/config.json" -Value ($currentConfig | ConvertTo-Json)
+                }
+                
+                function CreateManifest($tag) {
+                	$release = "octopusdeploy/octo"
+                    
+                    echo "Creating Manifest $($release):$($tag)"
+                    $args = @('manifest', 'create', '--amend', "$($release):$($tag)", "$($release):$($version)-alpine")
+                       
+                    EnableExperimentalDockerCliFeatures
+                        
+                    echo "running docker $args"
+                    & docker $args 2>&1
+                    
+                    echo "Created Manifest $($release):$($tag)"
+                    
+                    echo "Pushing Manifest $($release):$($tag)"
+                    docker manifest push --purge "$($release):$($tag)"
+                    echo "Pushed Manifest $($release):$($tag)"
+                    echo "-----------------------"
+                }
+                
+                Run
+                
+            EOT
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "PowerShell"
+        }
+        worker_pool = "Hosted Ubuntu"
+
+        packages "Octo.Docker.Image" {
+            acquisition_location = "Server"
+            feed = "Octopus Server (built-in)"
+            package_id = "Octo.Docker.Image"
+            properties = {
+                Extract = "False"
+                Purpose = ""
+                SelectionMode = "immediate"
+            }
+        }
+    }
+}
+
+step "Upload OctopusTools Manifest to S3" {
+
+    action {
+        action_type = "Octopus.Script"
+        environments = ["Components - External"]
+        is_disabled = true
+        properties = {
+            Octopus.Action.Script.ScriptBody = <<-EOT
+                Import-Module AWSPowerShell.NetCore
+                $version = $OctopusParameters['Octopus.Action.Package[OctopusTools.Zips].PackageVersion']
+                $zipDirectory = $OctopusParameters['Octopus.Action.Package[OctopusTools.Zips].ExtractedPath']
+                $bucket = "octopus-downloads"
+                
+                Write-Host "Creating latest version manifest"
+                
+                Function Get-DownloadDetails{
+                [CmdletBinding()]
+                Param([string]$Name, [string]$Version, [string]$BaseUrl)
+                    $result = @{}
+                    $result.Add("version", $Version);
+                
+                    $regex = [regex]"OctopusTools.$($Version).(?<platform>[\w\d\-\.]+)(?<extension>.tar.gz|.zip)";
+                    $arch = ([regex]"(?<=\-)x[0-9]+").Match($Name);
+                    $matches = $regex.Match($Name);
+                   
+                    if(!$matches.Success){
+                        $result.Add("extension", [System.IO.Path]::GetExtension($Name));
+                    }else{
+                        if($arch.Success){
+                            $result.Add("architecture", $arch);
+                            $result.Add("platform", $matches.Groups["platform"] -replace "-$($arch.Value)" );
+                        }else{
+                            $result.Add("platform", $matches.Groups["platform"]);
+                        }
+                        $result.add("extension", $matches.Groups["extension"]);
+                    }
+                    
+                    $result.Add("template", (Get-UrlTemplate -Details $result -BaseUrl $BaseUrl));
+                    $result.Add("location", (Get-DownloadUrl -Details $result));
+                
+                    return $result;
+                }
+                
+                Function Get-UrlTemplate{
+                [CmdletBinding()]
+                Param($Details, [string]$BaseUrl)
+                    $result = "$($BaseUrl)/{version}/OctopusTools.{version}";
+                
+                   if($Details["platform"]){
+                       $result += ".{platform}";
+                   }
+                
+                
+                   if($Details["architecture"]){
+                        $result += "-{architecture}";
+                   }
+                
+                   return $result += "{extension}";
+                }
+                
+                Function Get-DownloadUrl{
+                [CmdletBinding()]
+                Param($Details)
+                    $result = $Details.template;
+                    $matches = ([regex]"\{(?<name>[a-zA-Z0-9\-]+)\}").Matches($Details.template);
+                    
+                    ForEach($match in $matches){
+                        $key = $match.Groups["name"].Value.Trim();
+                        $value = $Details[$key];
+                        $result = $result.Replace($match.Value, $value);
+                    }
+                
+                    return $result;
+                }
+                
+                Function Build-ManifestFromDirectory{
+                [CmdletBinding()]
+                Param([string]$Directory, [string]$BaseUrl)
+                    $manifest = @{};
+                    $manifest.Add("latest", $version);
+                    $downloads = @();
+                
+                    Get-ChildItem $Directory | foreach {
+                        $downloads += (Get-DownloadDetails -Name $_.Name -Version $version -BaseUrl $BaseUrl)
+                    }
+                    $manifest.Add("downloads", $downloads);
+                    return $manifest
+                }
+                
+                $manifest = Build-ManifestFromDirectory -Directory $zipDirectory -BaseUrl "https://download.octopusdeploy.com/octopus-tools" | ConvertTo-Json -Compress
+                Write-Host "Generated manifest.";
+                Write-Host $manifest;
+                Write-Host "Uploading manifest to bucket $($bucket)";
+                Write-S3Object -Content $manifest -ContentType "application/json" -BucketName $bucket -AccessKey $OctopusParameters["OctopusToolsAwsAccount.AccessKey"] -SecretKey $OctopusParameters["OctopusToolsAwsAccount.SecretKey"] -Key "/octopus-tools/latest.json" -PublicReadOnly -Verbose -UseAccelerateEndpoint
+            EOT
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "PowerShell"
+        }
+        worker_pool = "Hosted Ubuntu"
+
+        container {
+            feed = "docker.packages.octopushq.com"
+            image = "octopusdeploy/tool-containers/tool-aws-cli"
+        }
+
+        packages "OctopusTools.Zips" {
+            acquisition_location = "Server"
+            feed = "Octopus Server (built-in)"
+            package_id = "OctopusTools.Zips"
+            properties = {
+                Extract = "True"
+            }
+        }
+    }
+}
+
+step "Create release in Slipway" {
+    start_trigger = "StartWithPrevious"
+
+    action {
+        action_type = "Octopus.Script"
+        environments = ["Components - External"]
+        properties = {
+            Octopus.Action.Script.ScriptBody = <<-EOT
+                $slipwayToken = $OctopusParameters["SlipwayToken"]
+                $baseUrl = $OctopusParameters["SlipwayUrl"]
+                $version = $OctopusParameters["Octopus.Release.Number"]
+                $releaseNotes = $OctopusParameters["Octopus.Release.Notes"]
+                
+                $headers = @{ "Authorization" = "Bearer $slipwayToken" }
+                
+                function ReleaseToWeb([string]$productName, $versionToRelease, [string]$releaseNotes)
+                {
+                    write-host "Publishing '$productName' '$versionToRelease' to Slipway at $baseUrl"
+                
+                    $isPreRelease = $versionToRelease -like "*-*"
+                    $release = @{
+                        "Version" = $versionToRelease;
+                        "Product" = $productName;
+                        "Released" = [System.DateTime]::Now.ToString("yyyy-MM-dd");
+                        "IsPrerelease" = $isPreRelease;
+                        "IsPublic" = $true;
+                        "ReleaseNotes" = $releaseNotes;
+                        "ReleaseNotesMethod" = "GitRevisionGraph";
+                    }
+                
+                    write-verbose "POSTing the following JSON to $baseUrl/api/releases/create"
+                    ($release | ConvertTo-Json) | write-verbose
+                
+                    try {
+                        Invoke-RestMethod -Uri "$baseUrl/api/releases/create" `
+                                          -Body ($release | ConvertTo-Json) `
+                                          -Method Post `
+                                          -ContentType "application/json" `
+                                          -Headers $headers
+                    }
+                    catch {
+                        throw "An error occurred while publishing '$productName' release '$versionToRelease' to Slipway: $_"
+                    }
+                
+                    $releaseUrl = "https://octopusdeploy.com/downloads/$productName/$($release.VersionNumber)"
+                    write-highlight "'$productName' '$versionToRelease' was published to '$releaseUrl'"
+                }
+                
+                ReleaseToWeb "OctopusCli" $version $releaseNotes
+                
+                
+            EOT
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "PowerShell"
+        }
+        worker_pool = "Hosted Windows 2019"
+
+        packages "OctopusTools" {
+            acquisition_location = "NotAcquired"
+            feed = "Octopus Server (built-in)"
+            package_id = "OctopusTools"
+            properties = {
+                Extract = "True"
+            }
+        }
+    }
+}
+
+step "Invalidate CloudFront Cache" {
+
+    action {
+        properties = {
+            icfc_awsaccount = "OctopusToolsAwsAccount"
+            icfc_distributionid = "E1ZC8NX4KJYKDL"
+            icfc_invalidationpaths = "/octopus-tools/latest.json"
+            Octopus.Action.Template.Id = "ActionTemplates-962"
+            Octopus.Action.Template.Version = "1"
+        }
+        worker_pool = "Hosted Windows 2019"
+    }
+}
+
+step "Invalidate CloudFlare cache of the OctopusTools Manifest" {
+
+    action {
+        properties = {
+            icfc_email = "devops@octopus.com"
+            icfc_hostname = "download.octopusdeploy.com"
+            icfc_token = "#{CloudFlareKey}"
+            icfc_zone = "ec51e468948315337a746fab4e064456"
+            Octopus.Action.Template.Id = "ActionTemplates-963"
+            Octopus.Action.Template.Version = "6"
+        }
+        worker_pool = "Hosted Windows 2019"
+    }
+}

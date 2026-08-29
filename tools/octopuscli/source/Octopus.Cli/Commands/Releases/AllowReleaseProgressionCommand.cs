@@ -1,0 +1,75 @@
+﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
+using Octopus.Cli.Repositories;
+using Octopus.Cli.Util;
+using Octopus.Client;
+using Octopus.Client.Exceptions;
+using Octopus.Client.Model;
+using Octopus.CommandLine;
+using Octopus.CommandLine.Commands;
+using Octopus.Versioning.Octopus;
+
+namespace Octopus.Cli.Commands.Releases
+{
+    [Command("allow-releaseprogression", Description = "Allows a release to progress to the next phase.")]
+    public class AllowReleaseProgressionCommand : ApiCommand, ISupportFormattedOutput
+    {
+        static readonly OctopusVersionParser OctopusVersionParser = new OctopusVersionParser();
+        ProjectResource project;
+        ReleaseResource release;
+
+        public AllowReleaseProgressionCommand(IOctopusClientFactory clientFactory, IOctopusAsyncRepositoryFactory repositoryFactory, IOctopusFileSystem fileSystem, ICommandOutputProvider commandOutputProvider)
+            : base(clientFactory, repositoryFactory, fileSystem, commandOutputProvider)
+        {
+            var options = Options.For("Allowing release progression");
+            options.Add<string>("project=", "Name or ID of the project.", v => ProjectNameOrId = v);
+            options.Add<string>("version=|releaseNumber=", "Release version/number.", v => ReleaseVersionNumber = v);
+        }
+
+        public string ProjectNameOrId { get; set; }
+
+        public string ReleaseVersionNumber { get; set; }
+
+        protected override async Task ValidateParameters()
+        {
+            if (string.IsNullOrWhiteSpace(ProjectNameOrId)) throw new CommandException("Please specify a project name or ID using the parameter: --project=XYZ");
+            if (string.IsNullOrWhiteSpace(ReleaseVersionNumber)) throw new CommandException("Please specify a release version number using the version parameter: --version=1.0.5");
+            if (!OctopusVersionParser.TryParse(ReleaseVersionNumber, out _)) throw new CommandException("Please provide a valid release version format: --version=1.0.5");
+            await base.ValidateParameters().ConfigureAwait(false);
+        }
+
+        public async Task Request()
+        {
+            project = await Repository.Projects.FindByNameOrIdOrFail(ProjectNameOrId).ConfigureAwait(false);
+
+            release = await Repository.Projects.GetReleaseByVersion(project, ReleaseVersionNumber).ConfigureAwait(false);
+            if (release == null) throw new OctopusResourceNotFoundException($"Unable to locate a release with version/release number '{ReleaseVersionNumber}'.");
+
+            var isReleaseAllowedFromProgressionAlready = (await Repository.Defects.GetDefects(release).ConfigureAwait(false)).Items.All(i => i.Status == DefectStatus.Resolved);
+            if (isReleaseAllowedFromProgressionAlready)
+            {
+                commandOutputProvider.Debug($"Release with version/release number '{ReleaseVersionNumber}' is already allowed to progress to next phase.");
+
+                return;
+            }
+
+            await Repository.Defects.ResolveDefect(release).ConfigureAwait(false);
+        }
+
+        public void PrintDefaultOutput()
+        {
+            commandOutputProvider.Information("Allowed successfully.");
+        }
+
+        public void PrintJsonOutput()
+        {
+            commandOutputProvider.Json(new
+            {
+                project.SpaceId,
+                Project = new { project.Id, project.Name },
+                Release = new { release.Id, release.Version, IsPreventedFromProgressing = false }
+            });
+        }
+    }
+}
