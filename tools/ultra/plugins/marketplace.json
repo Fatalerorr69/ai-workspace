@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    {
+      "id": "android-tools",
+      "desc": "ADB, Fastboot, Android utilities",
+      "install": "plugins/android-tools/install.sh"
+    },
+    {
+      "id": "log-analyzer",
+      "desc": "AI analýza logů",
+      "install": "plugins/log-analyzer/install.sh"
+    }
+  ]
+}

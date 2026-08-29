@@ -1,0 +1,15 @@
+{
+  "name": "ULTRA Platform",
+  "short_name": "ULTRA",
+  "start_url": "/mobile.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#0f0",
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
