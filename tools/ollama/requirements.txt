@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+jinja2
+python-multipart
+requests
+chromadb
+pydantic
+pyyaml
+paramiko

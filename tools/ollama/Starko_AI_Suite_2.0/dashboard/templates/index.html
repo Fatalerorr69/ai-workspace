@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang='cs'>
+<head>
+<meta charset='UTF-8'>
+<title>Starko AI Suite 2.0</title>
+<link rel='stylesheet' href='/static/style.css'>
+</head>
+<body>
+<h1>Starko AI Suite 2.0 – Dashboard</h1>
+<ul>
+{% for plugin in plugins %}
+    <li>{{ plugin }}</li>
+{% endfor %}
+</ul>
+</body>
+</html>

@@ -1,0 +1,1 @@
+﻿SloĹľka pro AI modely
