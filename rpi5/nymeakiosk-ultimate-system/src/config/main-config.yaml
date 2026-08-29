@@ -1,0 +1,106 @@
+# Nymea:Kiosk Ultimate System - Hlavní konfigurační soubor
+# Verze: 3.5.0
+
+system:
+  name: "Raspberry Pi Education System"
+  version: "3.5.0"
+  language: "cs"
+  timezone: "Europe/Prague"
+  environment: "production"  # development, staging, production
+
+network:
+  hostname: "rpi-edu-001"
+  static_ip: "192.168.1.100"
+  gateway: "192.168.1.1"
+  dns_servers:
+    - "8.8.8.8"
+    - "1.1.1.1"
+  dhcp_enabled: false
+
+security:
+  ssh_port: 2222
+  ssh_enabled: true
+  firewall_enabled: true
+  fail2ban_enabled: true
+  automatic_updates: true
+  backup_enabled: true
+  backup_schedule: "0 2 * * *"  # Denně v 2:00
+  backup_retention_days: 30
+
+education:
+  default_projects_path: "/home/education-system/projects"
+  teacher_username: "teacher"
+  student_username_prefix: "student"
+  max_projects_per_student: 5
+  max_team_size: 4
+
+projects:
+  auto_backup: true
+  export_format: "json"
+  categories:
+    - name: "programming"
+      enabled: true
+      tools:
+        - "python"
+        - "java"
+        - "scratch"
+    - name: "robotics"
+      enabled: true
+      tools:
+        - "arduino"
+        - "raspberry-gpio"
+        - "lego-mindstorms"
+    - name: "iot"
+      enabled: true
+      tools:
+        - "node-red"
+        - "mqtt"
+        - "sensors"
+
+nymea:
+  core_port: 4200
+  web_port: 8080
+  enable_mqtt: true
+  mqtt_port: 1883
+  device_discovery: true
+  auto_add_plugins: true
+
+database:
+  type: "postgresql"
+  host: "localhost"
+  port: 5432
+  name: "education_system"
+  user: "education_user"
+  backup_enabled: true
+  backup_location: "/home/nymea/backups/db"
+
+monitoring:
+  enabled: true
+  prometheus_enabled: true
+  prometheus_port: 9090
+  prometheus_retention: "30d"
+  grafana_enabled: true
+  grafana_port: 3000
+  grafana_admin_password: "admin"  # ZMĚŇTE!
+  alerting_enabled: true
+  metrics_collection_interval: 30  # sekundy
+
+kiosk:
+  enabled: true
+  kiosk_url: "http://localhost:8080"
+  orientation: "landscape"  # landscape, portrait
+  autostart: true
+  fullscreen: true
+  disable_screensaver: true
+  user: "nymea-kiosk"
+
+docker:
+  enabled: false  # Volitelně
+  compose_file: "/app/docker-compose.yml"
+  network_subnet: "172.20.0.0/16"
+  
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  log_dir: "/var/log/nymea-kiosk"
+  max_log_size_mb: 100
+  backup_count: 5
