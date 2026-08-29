@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  api:
+    image: tiangolo/uvicorn-gunicorn-fastapi:python3.10
+    container_name: ai_pa_api
+    volumes:
+      - ./src:/app
+      - ./data:/data
+    environment:
+      - BASE_DIR=/app
+    ports:
+      - "8080:80"
+  web:
+    image: python:3.10-slim
+    container_name: ai_pa_streamlit
+    volumes:
+      - ./src:/opt/app
+      - ./data:/opt/data
+    command: bash -c "pip install streamlit && streamlit run /opt/app/webui/app.py --server.port 8501 --server.address 0.0.0.0"
+    ports:
+      - "8501:8501"
