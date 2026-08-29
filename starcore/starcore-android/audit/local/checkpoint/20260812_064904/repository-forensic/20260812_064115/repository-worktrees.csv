@@ -1,0 +1,36 @@
+﻿"Repository","RepositoryPath","Worktrees"
+"AI-PROJECT-ANALYZER","E:\GIT\AI-PROJECT-ANALYZER","worktree E:/GIT/AI-PROJECT-ANALYZER
+HEAD dde1832931a1c670f94c8b2fbcc6ee8de0b54dbc
+branch refs/heads/main"
+"Genesis Aeterna","E:\GIT\Genesis Aeterna","worktree E:/GIT/Genesis Aeterna
+HEAD 52848c2136a4df8a96e90a02b0b103314d06d189
+branch refs/heads/master"
+"MD_installer","E:\GIT\MD_installer","worktree E:/GIT/MD_installer
+HEAD 16b2d73c072c0627d404218795194dc65d15e721
+branch refs/heads/main"
+"rpi5-homeassistant-suite","E:\GIT\rpi5-homeassistant-suite","worktree E:/GIT/rpi5-homeassistant-suite
+HEAD b6e80f02a0350bed469cc38a0af856ac8a31c8a4
+branch refs/heads/main"
+"starcore-platform","E:\GIT\starcore-platform","worktree E:/GIT/starcore-platform
+HEAD 6c70286017211c9cd6bdba34480203ee211ba386
+branch refs/heads/main
+
+worktree E:/GIT/starcore-platform/.claude/worktrees/starcore-autonomous-engineering-249437
+HEAD b544d08d3da425cba637900cfdeac3a7c2a4dc28
+branch refs/heads/claude/starcore-autonomous-engineering-249437"
+"starcore-autonomous-engineering-249437","E:\GIT\starcore-platform\.claude\worktrees\starcore-autonomous-engineering-249437","worktree E:/GIT/starcore-platform
+HEAD 6c70286017211c9cd6bdba34480203ee211ba386
+branch refs/heads/main
+
+worktree E:/GIT/starcore-platform/.claude/worktrees/starcore-autonomous-engineering-249437
+HEAD b544d08d3da425cba637900cfdeac3a7c2a4dc28
+branch refs/heads/claude/starcore-autonomous-engineering-249437"
+"SuperNastroj_v5","E:\GIT\SuperNastroj_v5","worktree E:/GIT/SuperNastroj_v5
+HEAD 049ab782ffb2e01c3c3ab192f755613904e6022f
+branch refs/heads/main"
+"universal-ai-codespace","E:\GIT\universal-ai-codespace","worktree E:/GIT/universal-ai-codespace
+HEAD d9389ce74f7a7d3ef58e13e7a1ecf0873bb04e52
+branch refs/heads/main"
+"twisteros_supermanager","E:\GIT\VScode\RPI5\twisteros_supermanager","worktree E:/GIT/VScode/RPI5/twisteros_supermanager
+HEAD cf6734465f1699fb37edd82f23da5453be99097b
+branch refs/heads/main"

@@ -1,0 +1,20 @@
+﻿
+
+AuditId              : 20260812_061738
+StartTime            : 2026-08-12T06:17:38.3117802+02:00
+EndTime              : 2026-08-12T06:20:21.4613657+02:00
+DurationSeconds      : 163,15
+Workspace            : E:\GIT
+ProjectRoot          : E:\GIT\STARCORE-ANDROID
+GitVersion           : git version 2.55.0.windows.4
+TopLevelItems        : 29
+GitRepositories      : 8
+NonGitCandidates     : 21
+BackupCandidates     : 1
+ProjectFiles         : 10
+ControlFiles         : 1231
+HasProjectDefinition : True
+
+
+
+

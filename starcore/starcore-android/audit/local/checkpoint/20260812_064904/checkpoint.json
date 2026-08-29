@@ -1,0 +1,31 @@
+﻿{
+    "CheckpointId":  "20260812_064904",
+    "Timestamp":  {
+                      "value":  "\/Date(1786510153319)\/",
+                      "DisplayHint":  2,
+                      "DateTime":  "středa 12. srpna 2026 6:49:13"
+                  },
+    "Computer":  "DESKTOP-F0N6MDA",
+    "User":  "Starko",
+    "Workspace":  "E:\\GIT",
+    "Project":  "E:\\GIT\\STARCORE-ANDROID",
+    "GitVersion":  "git version 2.55.0.windows.4",
+    "LatestInventory":  "",
+    "LatestGitAudit":  "E:\\GIT\\STARCORE-ANDROID\\audit\\local\\git\\20260812_062520",
+    "LatestForensicAudit":  "E:\\GIT\\STARCORE-ANDROID\\audit\\local\\forensic\\20260812_064115",
+    "ReadOnly":  true,
+    "Operations":  [
+                       "COPY AUDIT ARTIFACTS",
+                       "NO REPOSITORY MODIFICATION",
+                       "NO GIT FETCH",
+                       "NO GIT PUSH",
+                       "NO GIT PULL",
+                       "NO RESET",
+                       "NO CLEAN",
+                       "NO CHECKOUT",
+                       "NO MERGE",
+                       "NO REBASE",
+                       "NO DELETE",
+                       "NO MOVE"
+                   ]
+}
