@@ -1,0 +1,9 @@
+{
+"component":"STARCORE Security Policy",
+"rules":[
+"backup_before_change",
+"git_commit_after_success",
+"audit_before_upgrade"
+],
+"status":"READY"
+}

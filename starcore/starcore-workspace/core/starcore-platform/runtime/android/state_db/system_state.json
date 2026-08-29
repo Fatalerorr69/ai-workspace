@@ -1,0 +1,12 @@
+{
+    "timestamp": "2026-08-05T20:51:51.612821",
+    "component": "STARCORE System State Database",
+    "version": "6B.X.32",
+    "state": {
+        "core": "online",
+        "agents": "online",
+        "scheduler": "online",
+        "memory": "online"
+    },
+    "status": "healthy"
+}

@@ -1,0 +1,23 @@
+{
+    "timestamp": "2026-08-05T19:34:51.571206",
+    "component": "STARCORE 6B.X.7 Health",
+    "checks": [
+        {
+            "file": "runtime/android/orchestration/orchestrator_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/tasks/task_queue.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/workers/worker_status.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/bridge/ai_bridge.json",
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}

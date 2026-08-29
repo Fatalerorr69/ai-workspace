@@ -1,0 +1,12 @@
+{
+    "timestamp": "2026-08-05T21:01:29.511691",
+    "component": "STARCORE Telemetry Engine",
+    "version": "6B.Y.11",
+    "metrics": {
+        "cpu": "available",
+        "memory": "available",
+        "storage": "available",
+        "modules": "tracked"
+    },
+    "status": "healthy"
+}

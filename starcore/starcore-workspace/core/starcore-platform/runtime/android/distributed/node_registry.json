@@ -1,0 +1,17 @@
+{
+    "timestamp": "2026-08-05T21:00:27.832741",
+    "component": "STARCORE Node Registry",
+    "version": "6B.Y.7",
+    "nodes": [
+        {
+            "name": "android-starcore",
+            "type": "edge",
+            "status": "online"
+        },
+        {
+            "name": "fatalab-ai-core",
+            "type": "compute",
+            "status": "unknown"
+        }
+    ]
+}

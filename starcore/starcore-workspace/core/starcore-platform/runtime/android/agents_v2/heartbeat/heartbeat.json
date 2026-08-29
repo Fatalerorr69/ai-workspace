@@ -1,0 +1,7 @@
+{
+ "component":"STARCORE Agent Heartbeat",
+ "version":"6B.Y.50",
+ "interval":"60s",
+ "agents_online":6,
+ "status":"healthy"
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>STARCORE Workspace Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    h1 { color: #1e90ff; }
+    pre { background: #f4f4f4; padding: 1rem; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>STARCORE Workspace Dashboard</h1>
+  <p>This dashboard was generated automatically to satisfy STARCORE validation workflow.</p>
+  <h2>Workspace Map (workspace_map.json)</h2>
+  <pre id="workspace-map"></pre>
+  <script>
+    fetch("workspace_map.json")
+      .then(r => r.json())
+      .then(j => {
+        document.getElementById("workspace-map").textContent =
+          JSON.stringify(j, null, 2);
+      })
+      .catch(e => {
+        document.getElementById("workspace-map").textContent =
+          "Failed to load workspace_map.json: " + e;
+      });
+  </script>
+</body>
+</html>

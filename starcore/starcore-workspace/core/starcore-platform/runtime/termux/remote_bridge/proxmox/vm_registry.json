@@ -1,0 +1,18 @@
+{
+ "component":"STARCORE VM Registry",
+ "version":"1.0",
+ "virtual_machines":[
+ {
+  "id":100,
+  "name":"FataLab-Core",
+  "role":"AI Core",
+  "services":[
+   "Ollama",
+   "OpenWebUI",
+   "Qdrant",
+   "Docker"
+  ]
+ }
+ ],
+ "status":"READY"
+}

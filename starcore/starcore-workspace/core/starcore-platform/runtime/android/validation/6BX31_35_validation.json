@@ -1,0 +1,28 @@
+{
+    "timestamp": "2026-08-05T20:49:24.006839",
+    "component": "STARCORE 6B.X.31-35 Validator",
+    "checks": [
+        {
+            "file": "runtime/android/api/gateway_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/events/bus_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/security/security_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/knowledge/knowledge_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/fatalab_bridge/bridge_state.json",
+            "exists": true
+        }
+    ],
+    "errors": 0,
+    "status": "healthy"
+}

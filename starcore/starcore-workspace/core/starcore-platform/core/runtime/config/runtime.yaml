@@ -1,0 +1,17 @@
+runtime:
+  version: "2.0.0-dev"
+  platform: android
+  scheduler: true
+  events: true
+  plugins: true
+  logging: true
+  api: false
+
+logging:
+  level: INFO
+
+github:
+  autosync: false
+
+ai:
+  enabled: true

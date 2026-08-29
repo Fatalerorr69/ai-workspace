@@ -1,0 +1,7 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+cd ~/STARCORE || exit 1
+
+python installers/android/starcore_installer.py
+
+cat runtime/android/installer/installer_report.json

@@ -1,0 +1,36 @@
+
+Mode  Name                                               Length LastWriteTime
+----  ----                                               ------ -------------
+d---- _STARCORE_PROJECT_INTELLIGENCE                            12.08.2026 22:53:24
+d---- AI-PROJECT-ANALYZER                                       04.12.2025 16:01:36
+d---- Android_kit_ OS                                           04.12.2025 16:06:08
+d---- CustomUbuntuServer                                        14.04.2026 21:46:25
+d---- Genesis Aeterna                                           18.04.2026 0:58:06
+d---- HerniOS                                                   04.12.2025 16:06:08
+d---- MD_installer                                              07.12.2025 10:17:48
+d---- Powershell                                                05.12.2025 0:41:38
+d---- Raspberry Pi 5 multifunkční systémy a automatizace        04.12.2025 16:01:36
+d---- recalbox diag                                             04.12.2025 16:01:36
+d---- RPI_nymea                                                 04.12.2025 16:01:38
+d---- rpi5-homeassistant-suite                                  04.12.2025 16:01:38
+d---- Run_OS_from_fyzDisk_on_win                                04.12.2025 16:06:08
+d---- Starcore vNEXT                                            26.06.2026 19:39:31
+d---- STARCORE-ANDROID                                          12.08.2026 5:15:12
+d---- starcore-platform                                         11.07.2026 5:25:23
+d---- starcore-platform-backup                                  05.07.2026 14:29:04
+d---- Starko Universal PenTest                                  04.12.2025 16:08:22
+d---- Starko_OS_kali                                            04.12.2025 16:16:38
+d---- StarkoRecovery                                            18.04.2026 1:32:40
+d---- SuperNastroj                                              05.12.2025 18:33:48
+d---- SuperNastroj_v5                                           06.12.2025 10:15:06
+d---- Terminal_Mini_OS                                          23.11.2025 6:05:06
+d---- Ultimate Raspberry Pi 5 All-in-One Installer              04.12.2025 16:01:38
+d---- UltraOS                                                   04.12.2025 16:06:08
+d---- universal-ai-codespace                                    04.12.2025 16:01:38
+d---- VMconsole                                                 04.12.2025 16:06:08
+d---- VScode                                                    04.12.2025 15:58:10
+d---- WINPE RECOVERY — DARK PRO EDITION                         05.12.2025 4:22:04
+d---- Workspace                                                 04.12.2025 15:58:10
+d---- WSL                                                       04.12.2025 18:16:00
+-a--- M                                                  506    11.07.2026 5:09:38
+

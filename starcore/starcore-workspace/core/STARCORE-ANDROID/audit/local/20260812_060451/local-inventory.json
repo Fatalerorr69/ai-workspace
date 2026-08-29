@@ -1,0 +1,640 @@
+﻿{
+    "Summary":  {
+                    "AuditId":  "20260812_060451",
+                    "StartTime":  "\/Date(1786507491739)\/",
+                    "EndTime":  "\/Date(1786507525470)\/",
+                    "DurationSeconds":  33.73,
+                    "Workspace":  "E:\\GIT",
+                    "ProjectRoot":  "E:\\GIT\\STARCORE-ANDROID",
+                    "GitVersion":  "git version 2.55.0.windows.4",
+                    "TopLevelItems":  29,
+                    "GitRepositories":  8,
+                    "NonGitCandidates":  21,
+                    "BackupCandidates":  1,
+                    "ProjectDefinitionPresent":  true
+                },
+    "TopLevel":  [
+                     {
+                         "Name":  "AI-PROJECT-ANALYZER",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\AI-PROJECT-ANALYZER",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764860496000)\/",
+                         "GitRoot":  true
+                     },
+                     {
+                         "Name":  "Android_kit_ OS",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\Android_kit_ OS",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764860768000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "Genesis Aeterna",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\Genesis Aeterna",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1776466686000)\/",
+                         "GitRoot":  true
+                     },
+                     {
+                         "Name":  "HerniOS",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\HerniOS",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764860768000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "M",
+                         "Type":  "File",
+                         "FullName":  "E:\\GIT\\M",
+                         "Length":  506,
+                         "LastWriteTime":  "\/Date(1783739378000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "MD_installer",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\MD_installer",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1765099068000)\/",
+                         "GitRoot":  true
+                     },
+                     {
+                         "Name":  "Powershell",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\Powershell",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764891698000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "Raspberry Pi 5 multifunkční systémy a automatizace",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\Raspberry Pi 5 multifunkční systémy a automatizace",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764860496000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "recalbox diag",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\recalbox diag",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764860496000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "RPI_nymea",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\RPI_nymea",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764860498000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "rpi5-homeassistant-suite",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\rpi5-homeassistant-suite",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764860498000)\/",
+                         "GitRoot":  true
+                     },
+                     {
+                         "Name":  "Run_OS_from_fyzDisk_on_win",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\Run_OS_from_fyzDisk_on_win",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764860768000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "STARCORE-ANDROID",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\STARCORE-ANDROID",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1786504512780)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "starcore-platform",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\starcore-platform",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1783740323050)\/",
+                         "GitRoot":  true
+                     },
+                     {
+                         "Name":  "starcore-platform-backup",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\starcore-platform-backup",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1783254544000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "Starko Universal PenTest",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\Starko Universal PenTest",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764860902000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "Starko_OS_kali",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\Starko_OS_kali",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764861398000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "StarkoRecovery",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\StarkoRecovery",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1776468760000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "SuperNastroj",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\SuperNastroj",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764956028000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "SuperNastroj_v5",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\SuperNastroj_v5",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1765012506000)\/",
+                         "GitRoot":  true
+                     },
+                     {
+                         "Name":  "Terminal_Mini_OS",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\Terminal_Mini_OS",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1763874306000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "Ultimate Raspberry Pi 5 All-in-One Installer",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\Ultimate Raspberry Pi 5 All-in-One Installer",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764860498000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "UltraOS",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\UltraOS",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764860768000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "universal-ai-codespace",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\universal-ai-codespace",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764860498000)\/",
+                         "GitRoot":  true
+                     },
+                     {
+                         "Name":  "VMconsole",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\VMconsole",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764860768000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "VScode",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\VScode",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764860290000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "WINPE RECOVERY — DARK PRO EDITION",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\WINPE RECOVERY — DARK PRO EDITION",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764904924000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "Workspace",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\Workspace",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764860290000)\/",
+                         "GitRoot":  false
+                     },
+                     {
+                         "Name":  "WSL",
+                         "Type":  "Directory",
+                         "FullName":  "E:\\GIT\\WSL",
+                         "Length":  null,
+                         "LastWriteTime":  "\/Date(1764868560000)\/",
+                         "GitRoot":  false
+                     }
+                 ],
+    "Repositories":  [
+                         {
+                             "Name":  "AI-PROJECT-ANALYZER",
+                             "FullPath":  "E:\\GIT\\AI-PROJECT-ANALYZER",
+                             "RelativePath":  "AI-PROJECT-ANALYZER",
+                             "Branch":  "main",
+                             "Origin":  "https://github.com/Fatalerorr69/AI-PROJECT-ANALYZER.git",
+                             "Upstream":  "origin/main",
+                             "AheadBehind":  "0\t0",
+                             "HEAD":  "dde1832931a1c670f94c8b2fbcc6ee8de0b54dbc",
+                             "Clean":  true,
+                             "Status":  "## main...origin/main",
+                             "LastCommitHash":  "dde1832931a1c670f94c8b2fbcc6ee8de0b54dbc",
+                             "LastCommitDate":  "2025-11-10T10:09:09+01:00",
+                             "LastCommitAuthor":  "Jacob Starko",
+                             "LastCommitSubject":  "Update 1.0.0",
+                             "FileCount":  0,
+                             "SizeBytes":  0,
+                             "Indicators":  "README.md; requirements.txt; docker-compose.yml; src/"
+                         },
+                         {
+                             "Name":  "Genesis Aeterna",
+                             "FullPath":  "E:\\GIT\\Genesis Aeterna",
+                             "RelativePath":  "Genesis Aeterna",
+                             "Branch":  "master",
+                             "Origin":  "error: No such remote \u0027origin\u0027",
+                             "Upstream":  "fatal: no upstream configured for branch \u0027master\u0027",
+                             "AheadBehind":  "fatal: no upstream configured for branch \u0027master\u0027",
+                             "HEAD":  "52848c2136a4df8a96e90a02b0b103314d06d189",
+                             "Clean":  true,
+                             "Status":  "## master",
+                             "LastCommitHash":  "52848c2136a4df8a96e90a02b0b103314d06d189",
+                             "LastCommitDate":  "2026-04-18T01:24:34+02:00",
+                             "LastCommitAuthor":  "Fatalerorr69",
+                             "LastCommitSubject":  "Initial commit - Genesis Aeterna v10.0 documentation and scripts",
+                             "FileCount":  0,
+                             "SizeBytes":  0,
+                             "Indicators":  ""
+                         },
+                         {
+                             "Name":  "MD_installer",
+                             "FullPath":  "E:\\GIT\\MD_installer",
+                             "RelativePath":  "MD_installer",
+                             "Branch":  "main",
+                             "Origin":  "https://github.com/Fatalerorr69/MD_installer.git",
+                             "Upstream":  "origin/main",
+                             "AheadBehind":  "0\t0",
+                             "HEAD":  "16b2d73c072c0627d404218795194dc65d15e721",
+                             "Clean":  true,
+                             "Status":  "## main...origin/main",
+                             "LastCommitHash":  "16b2d73c072c0627d404218795194dc65d15e721",
+                             "LastCommitDate":  "2025-12-06T19:30:00+01:00",
+                             "LastCommitAuthor":  "Jacob Starko",
+                             "LastCommitSubject":  "Create integrate_web_gui.sh",
+                             "FileCount":  0,
+                             "SizeBytes":  0,
+                             "Indicators":  "README.md"
+                         },
+                         {
+                             "Name":  "rpi5-homeassistant-suite",
+                             "FullPath":  "E:\\GIT\\rpi5-homeassistant-suite",
+                             "RelativePath":  "rpi5-homeassistant-suite",
+                             "Branch":  "main",
+                             "Origin":  "https://github.com/Fatalerorr69/rpi5-homeassistant-suite.git",
+                             "Upstream":  "origin/main",
+                             "AheadBehind":  "0\t0",
+                             "HEAD":  "b6e80f02a0350bed469cc38a0af856ac8a31c8a4",
+                             "Clean":  false,
+                             "Status":  "## main...origin/main\nA  .github/workflows/ci.yml\n?? INSTALLATION_GUIDE.md",
+                             "LastCommitHash":  "b6e80f02a0350bed469cc38a0af856ac8a31c8a4",
+                             "LastCommitDate":  "2025-11-11T16:12:08+01:00",
+                             "LastCommitAuthor":  "Jacob Starko",
+                             "LastCommitSubject":  "Kompletn├ş oprava instala─Źn├şch skript┼»",
+                             "FileCount":  0,
+                             "SizeBytes":  0,
+                             "Indicators":  "README.md; docker-compose.yml; config/"
+                         },
+                         {
+                             "Name":  "SuperNastroj_v5",
+                             "FullPath":  "E:\\GIT\\SuperNastroj_v5",
+                             "RelativePath":  "SuperNastroj_v5",
+                             "Branch":  "main",
+                             "Origin":  "https://github.com/Fatalerorr69/SuperNastroj.git",
+                             "Upstream":  "origin/main",
+                             "AheadBehind":  "0\t0",
+                             "HEAD":  "049ab782ffb2e01c3c3ab192f755613904e6022f",
+                             "Clean":  false,
+                             "Status":  "## main...origin/main\n?? SuperNastroj_Linux.sh",
+                             "LastCommitHash":  "049ab782ffb2e01c3c3ab192f755613904e6022f",
+                             "LastCommitDate":  "2025-12-06T09:52:19+01:00",
+                             "LastCommitAuthor":  "Jacob Starko",
+                             "LastCommitSubject":  "Popis zm─Ťn",
+                             "FileCount":  0,
+                             "SizeBytes":  0,
+                             "Indicators":  "README.md; docs/"
+                         },
+                         {
+                             "Name":  "universal-ai-codespace",
+                             "FullPath":  "E:\\GIT\\universal-ai-codespace",
+                             "RelativePath":  "universal-ai-codespace",
+                             "Branch":  "main",
+                             "Origin":  "https://github.com/Fatalerorr69/universal-ai-codespace.git",
+                             "Upstream":  "origin/main",
+                             "AheadBehind":  "0\t0",
+                             "HEAD":  "d9389ce74f7a7d3ef58e13e7a1ecf0873bb04e52",
+                             "Clean":  true,
+                             "Status":  "## main...origin/main",
+                             "LastCommitHash":  "d9389ce74f7a7d3ef58e13e7a1ecf0873bb04e52",
+                             "LastCommitDate":  "2025-11-12T16:28:39+01:00",
+                             "LastCommitAuthor":  "Jacob Starko",
+                             "LastCommitSubject":  "Initial commit with devcontainer setup",
+                             "FileCount":  0,
+                             "SizeBytes":  0,
+                             "Indicators":  "README.md; scripts/"
+                         },
+                         {
+                             "Name":  "twisteros_supermanager",
+                             "FullPath":  "E:\\GIT\\VScode\\RPI5\\twisteros_supermanager",
+                             "RelativePath":  "VScode\\RPI5\\twisteros_supermanager",
+                             "Branch":  "main",
+                             "Origin":  "https://github.com/Fatalerorr69/twisteros_supermanager.git",
+                             "Upstream":  "origin/main",
+                             "AheadBehind":  "0\t0",
+                             "HEAD":  "cf6734465f1699fb37edd82f23da5453be99097b",
+                             "Clean":  true,
+                             "Status":  "## main...origin/main",
+                             "LastCommitHash":  "cf6734465f1699fb37edd82f23da5453be99097b",
+                             "LastCommitDate":  "2025-11-21T15:27:51+01:00",
+                             "LastCommitAuthor":  "Jacob Starko",
+                             "LastCommitSubject":  "It looks like you\u0027ve provided an error message (\"Not a git repository\") instead of a git diff. A git diff shows the specific code changes (lines added, removed, or modified) between commits or your working directory.",
+                             "FileCount":  0,
+                             "SizeBytes":  0,
+                             "Indicators":  "README.md; scripts/; config/"
+                         },
+                         {
+                             "Name":  "starcore-platform",
+                             "FullPath":  "E:\\GIT\\starcore-platform",
+                             "RelativePath":  "starcore-platform",
+                             "Branch":  "main",
+                             "Origin":  "git@github.com:Fatalerorr69/starcore-platform.git",
+                             "Upstream":  "origin/main",
+                             "AheadBehind":  "0\t3",
+                             "HEAD":  "6c70286017211c9cd6bdba34480203ee211ba386",
+                             "Clean":  false,
+                             "Status":  "## main...origin/main [behind 3]",
+                             "LastCommitHash":  "6c70286017211c9cd6bdba34480203ee211ba386",
+                             "LastCommitDate":  "2026-07-26T20:21:07+02:00",
+                             "LastCommitAuthor":  "Jacob Starko",
+                             "LastCommitSubject":  "Sprint 024 ÔÇö ADR-010 property-based tests, test catalog update (#106)",
+                             "FileCount":  0,
+                             "SizeBytes":  0,
+                             "Indicators":  "README.md; pyproject.toml; docker-compose.yml; Makefile; Dockerfile; scripts/; docs/; tests/"
+                         }
+                     ],
+    "NonGitCandidates":  [
+                             {
+                                 "Name":  "Android_kit_ OS",
+                                 "FullPath":  "E:\\GIT\\Android_kit_ OS",
+                                 "RelativePath":  "Android_kit_ OS",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "",
+                                 "LastWriteTime":  "\/Date(1764860768000)\/"
+                             },
+                             {
+                                 "Name":  "HerniOS",
+                                 "FullPath":  "E:\\GIT\\HerniOS",
+                                 "RelativePath":  "HerniOS",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "",
+                                 "LastWriteTime":  "\/Date(1764860768000)\/"
+                             },
+                             {
+                                 "Name":  "Powershell",
+                                 "FullPath":  "E:\\GIT\\Powershell",
+                                 "RelativePath":  "Powershell",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "",
+                                 "LastWriteTime":  "\/Date(1764891698000)\/"
+                             },
+                             {
+                                 "Name":  "Raspberry Pi 5 multifunkční systémy a automatizace",
+                                 "FullPath":  "E:\\GIT\\Raspberry Pi 5 multifunkční systémy a automatizace",
+                                 "RelativePath":  "Raspberry Pi 5 multifunkční systémy a automatizace",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "",
+                                 "LastWriteTime":  "\/Date(1764860496000)\/"
+                             },
+                             {
+                                 "Name":  "recalbox diag",
+                                 "FullPath":  "E:\\GIT\\recalbox diag",
+                                 "RelativePath":  "recalbox diag",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "",
+                                 "LastWriteTime":  "\/Date(1764860496000)\/"
+                             },
+                             {
+                                 "Name":  "RPI_nymea",
+                                 "FullPath":  "E:\\GIT\\RPI_nymea",
+                                 "RelativePath":  "RPI_nymea",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "",
+                                 "LastWriteTime":  "\/Date(1764860498000)\/"
+                             },
+                             {
+                                 "Name":  "Run_OS_from_fyzDisk_on_win",
+                                 "FullPath":  "E:\\GIT\\Run_OS_from_fyzDisk_on_win",
+                                 "RelativePath":  "Run_OS_from_fyzDisk_on_win",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "",
+                                 "LastWriteTime":  "\/Date(1764860768000)\/"
+                             },
+                             {
+                                 "Name":  "STARCORE-ANDROID",
+                                 "FullPath":  "E:\\GIT\\STARCORE-ANDROID",
+                                 "RelativePath":  "STARCORE-ANDROID",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "",
+                                 "LastWriteTime":  "\/Date(1786504512780)\/"
+                             },
+                             {
+                                 "Name":  "starcore-platform-backup",
+                                 "FullPath":  "E:\\GIT\\starcore-platform-backup",
+                                 "RelativePath":  "starcore-platform-backup",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "README.md; pyproject.toml; docker-compose.yml; Makefile; docs/; tests/",
+                                 "LastWriteTime":  "\/Date(1783254544000)\/"
+                             },
+                             {
+                                 "Name":  "Starko Universal PenTest",
+                                 "FullPath":  "E:\\GIT\\Starko Universal PenTest",
+                                 "RelativePath":  "Starko Universal PenTest",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "",
+                                 "LastWriteTime":  "\/Date(1764860902000)\/"
+                             },
+                             {
+                                 "Name":  "Starko_OS_kali",
+                                 "FullPath":  "E:\\GIT\\Starko_OS_kali",
+                                 "RelativePath":  "Starko_OS_kali",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "",
+                                 "LastWriteTime":  "\/Date(1764861398000)\/"
+                             },
+                             {
+                                 "Name":  "StarkoRecovery",
+                                 "FullPath":  "E:\\GIT\\StarkoRecovery",
+                                 "RelativePath":  "StarkoRecovery",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "README.md",
+                                 "LastWriteTime":  "\/Date(1776468760000)\/"
+                             },
+                             {
+                                 "Name":  "SuperNastroj",
+                                 "FullPath":  "E:\\GIT\\SuperNastroj",
+                                 "RelativePath":  "SuperNastroj",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "README.md",
+                                 "LastWriteTime":  "\/Date(1764956028000)\/"
+                             },
+                             {
+                                 "Name":  "Terminal_Mini_OS",
+                                 "FullPath":  "E:\\GIT\\Terminal_Mini_OS",
+                                 "RelativePath":  "Terminal_Mini_OS",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "",
+                                 "LastWriteTime":  "\/Date(1763874306000)\/"
+                             },
+                             {
+                                 "Name":  "Ultimate Raspberry Pi 5 All-in-One Installer",
+                                 "FullPath":  "E:\\GIT\\Ultimate Raspberry Pi 5 All-in-One Installer",
+                                 "RelativePath":  "Ultimate Raspberry Pi 5 All-in-One Installer",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "README.md",
+                                 "LastWriteTime":  "\/Date(1764860498000)\/"
+                             },
+                             {
+                                 "Name":  "UltraOS",
+                                 "FullPath":  "E:\\GIT\\UltraOS",
+                                 "RelativePath":  "UltraOS",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "",
+                                 "LastWriteTime":  "\/Date(1764860768000)\/"
+                             },
+                             {
+                                 "Name":  "VMconsole",
+                                 "FullPath":  "E:\\GIT\\VMconsole",
+                                 "RelativePath":  "VMconsole",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "",
+                                 "LastWriteTime":  "\/Date(1764860768000)\/"
+                             },
+                             {
+                                 "Name":  "VScode",
+                                 "FullPath":  "E:\\GIT\\VScode",
+                                 "RelativePath":  "VScode",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "",
+                                 "LastWriteTime":  "\/Date(1764860290000)\/"
+                             },
+                             {
+                                 "Name":  "WINPE RECOVERY — DARK PRO EDITION",
+                                 "FullPath":  "E:\\GIT\\WINPE RECOVERY — DARK PRO EDITION",
+                                 "RelativePath":  "WINPE RECOVERY — DARK PRO EDITION",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "",
+                                 "LastWriteTime":  "\/Date(1764904924000)\/"
+                             },
+                             {
+                                 "Name":  "Workspace",
+                                 "FullPath":  "E:\\GIT\\Workspace",
+                                 "RelativePath":  "Workspace",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "scripts/",
+                                 "LastWriteTime":  "\/Date(1764860290000)\/"
+                             },
+                             {
+                                 "Name":  "WSL",
+                                 "FullPath":  "E:\\GIT\\WSL",
+                                 "RelativePath":  "WSL",
+                                 "FileCount":  0,
+                                 "SizeBytes":  0,
+                                 "Indicators":  "",
+                                 "LastWriteTime":  "\/Date(1764868560000)\/"
+                             }
+                         ],
+    "BackupCandidates":  [
+                             {
+                                 "Name":  "starcore-platform-backup",
+                                 "FullName":  "E:\\GIT\\starcore-platform-backup",
+                                 "Type":  "Directory",
+                                 "LastWriteTime":  "\/Date(1783254544000)\/"
+                             }
+                         ],
+    "ProjectFiles":  [
+                         {
+                             "FullName":  "E:\\GIT\\STARCORE-ANDROID\\STARCORE_ANDROID_PROJECT_DEFINITION.md",
+                             "Length":  23,
+                             "LastWriteTime":  "\/Date(1786503218000)\/"
+                         },
+                         {
+                             "FullName":  "E:\\GIT\\STARCORE-ANDROID\\audit\\STARCORE-ANDROID-LOCAL-AUDIT.ps1",
+                             "Length":  16076,
+                             "LastWriteTime":  "\/Date(1786507404000)\/"
+                         },
+                         {
+                             "FullName":  "E:\\GIT\\STARCORE-ANDROID\\audit\\local\\20260812_055643\\local-inventory.json",
+                             "Length":  150659,
+                             "LastWriteTime":  "\/Date(1786507076000)\/"
+                         },
+                         {
+                             "FullName":  "E:\\GIT\\STARCORE-ANDROID\\audit\\local\\20260812_055643\\repositories.csv",
+                             "Length":  111287,
+                             "LastWriteTime":  "\/Date(1786507078000)\/"
+                         },
+                         {
+                             "FullName":  "E:\\GIT\\STARCORE-ANDROID\\audit\\local\\20260812_055643\\local-audit-summary.txt",
+                             "Length":  516,
+                             "LastWriteTime":  "\/Date(1786507078000)\/"
+                         },
+                         {
+                             "FullName":  "E:\\GIT\\STARCORE-ANDROID\\audit\\local\\20260812_055643\\local-audit-report.md",
+                             "Length":  57863,
+                             "LastWriteTime":  "\/Date(1786507078000)\/"
+                         }
+                     ],
+    "Definition":  {
+                       "FullName":  "E:\\GIT\\STARCORE-ANDROID\\STARCORE_ANDROID_PROJECT_DEFINITION.md",
+                       "Length":  23,
+                       "LastWriteTime":  "\/Date(1786503218000)\/"
+                   }
+}

@@ -1,0 +1,7 @@
+{
+ "component":"Termux Package Health",
+ "timestamp":"2026-08-05T22:07:41Z",
+ "upgrade_check":true,
+ "dpkg_check":true,
+ "status":"complete"
+}

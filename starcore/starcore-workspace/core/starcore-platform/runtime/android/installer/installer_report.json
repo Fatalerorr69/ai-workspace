@@ -1,0 +1,40 @@
+{
+    "timestamp": "2026-08-05T19:40:24.548481",
+    "installer": "STARCORE Android Master Installer",
+    "version": "6B.X.9",
+    "modules": [
+        {
+            "module": "plugins/enabled/android/core",
+            "exists": true
+        },
+        {
+            "module": "plugins/enabled/android/agent",
+            "exists": true
+        },
+        {
+            "module": "plugins/enabled/android/ai_core",
+            "exists": true
+        },
+        {
+            "module": "plugins/enabled/android/cognitive",
+            "exists": true
+        },
+        {
+            "module": "plugins/enabled/android/scheduler",
+            "exists": true
+        },
+        {
+            "module": "plugins/enabled/android/network",
+            "exists": true
+        },
+        {
+            "module": "plugins/enabled/android/security",
+            "exists": true
+        },
+        {
+            "module": "plugins/enabled/android/recovery",
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}

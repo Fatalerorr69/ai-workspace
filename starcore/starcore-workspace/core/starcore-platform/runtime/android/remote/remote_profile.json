@@ -1,0 +1,11 @@
+{
+    "timestamp": "2026-08-05T20:28:25.427070",
+    "component": "STARCORE Remote Profile",
+    "connection": {
+        "protocol": "SSH",
+        "port": 8022,
+        "user": "u0_a344",
+        "command": "ssh -p 8022 u0_a344@TAILSCALE_IP"
+    },
+    "status": "ready"
+}

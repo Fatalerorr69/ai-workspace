@@ -1,0 +1,6 @@
+{
+    "component": "RAG Mesh Bridge",
+    "version": "7.1.06",
+    "vector_store": "qdrant",
+    "status": "ready"
+}

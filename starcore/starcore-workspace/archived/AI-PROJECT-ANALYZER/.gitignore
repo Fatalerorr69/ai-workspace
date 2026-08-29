@@ -1,0 +1,13 @@
+```gitignore
+__pycache__/
+*.pyc
+venv/
+.env
+.env.*
+/opt/ai_project_analyzer/
+/etc/ai_project_analyzer/env
+.DS_Store
+node_modules/
+.idea/
+.vscode/
+*.log

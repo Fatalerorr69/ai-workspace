@@ -1,0 +1,6 @@
+{
+    "component": "Vector Knowledge Synchronization",
+    "version": "7.2.05",
+    "backend": "qdrant",
+    "status": "ready"
+}

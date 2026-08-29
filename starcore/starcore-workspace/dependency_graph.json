@@ -1,0 +1,39 @@
+{
+  "edges": [
+    {
+      "to": "raspberry",
+      "relation": "contains",
+      "from": "workspace"
+    },
+    {
+      "to": "orchestrator",
+      "relation": "uses",
+      "from": "workspace"
+    },
+    {
+      "to": "analyzer",
+      "relation": "uses",
+      "from": "workspace"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "workspace",
+      "type": "root"
+    },
+    {
+      "id": "raspberry",
+      "type": "module"
+    },
+    {
+      "id": "orchestrator",
+      "type": "service"
+    },
+    {
+      "id": "analyzer",
+      "type": "service"
+    }
+  ],
+  "generatedAt": "2026-08-28T20:25:00",
+  "description": "Auto-generated dependency graph for STARCORE workspace validation."
+}

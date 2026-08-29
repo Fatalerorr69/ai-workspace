@@ -1,0 +1,18 @@
+name: demo
+version: "1.0"
+resources:
+  - name: web-vm
+    provider: proxmox
+    kind: vm
+    config:
+      node: fatalab
+      template_vmid: 9000
+      cores: 2
+      memory: 2048
+      full: true
+  - name: postgres
+    provider: docker
+    kind: container
+    config:
+      image: postgres:17
+      volume: postgres-data

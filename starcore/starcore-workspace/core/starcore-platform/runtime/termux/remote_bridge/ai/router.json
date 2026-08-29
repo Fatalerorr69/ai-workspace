@@ -1,0 +1,10 @@
+{
+ "component":"STARCORE AI Router",
+ "version":"1.0",
+ "primary":"FataLab-Core",
+ "fallback":"Termux",
+ "llm":"Ollama",
+ "ui":"OpenWebUI",
+ "memory":"Qdrant",
+ "status":"READY"
+}

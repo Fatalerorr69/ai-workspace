@@ -1,0 +1,80 @@
+name: STARCORE Orchestrator v14 (AI Auto-Fixer)
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["STARCORE Orchestrator v13 (AI-powered)"]
+    types: [completed]
+
+permissions:
+  contents: write
+
+jobs:
+  starcore_v14:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout workspace
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        run: |
+          sudo apt update
+          sudo apt install -y python3 python3-pip jq
+
+      - name: Run STARCORE Auto-Fixer v14
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 - << 'PY'
+import os, json
+root = os.environ.get("GITHUB_WORKSPACE", ".")
+map_file = os.path.join(root, "workspace_map.json")
+fixed_map = os.path.join(root, "workspace_map_fixed.json")
+fixlog = os.path.join(root, "starcore_v14_fixlog.md")
+if not os.path.isfile(map_file):
+    print("workspace_map.json missing, nothing to fix")
+    raise SystemExit(0)
+with open(map_file, "r", encoding="utf-8") as f:
+    projects = json.load(f)
+fixed = []
+log = ["# STARCORE v14 Auto-Fixer", ""]
+for proj in projects:
+    name = proj.get("Project","").strip() or "UNKNOWN_PROJECT"
+    category = proj.get("Category","archived")
+    path = proj.get("Path","archived/"+name)
+    github = proj.get("GitHub","https://github.com/Fatalerorr69/"+name)
+    full = os.path.join(root, path)
+    if not os.path.isdir(full):
+        log.append(f"- FIX: Missing path for {name} → archived/{name}")
+        category = "archived"
+        path = f"archived/{name}"
+    expected_url = f"https://github.com/Fatalerorr69/{name}"
+    if github != expected_url:
+        log.append(f"- FIX: GitHub URL corrected for {name}")
+        github = expected_url
+    fixed.append({"Project": name, "Category": category, "GitHub": github, "Path": path})
+with open(fixed_map, "w", encoding="utf-8") as f:
+    json.dump(fixed, f, indent=2)
+with open(fixlog, "w", encoding="utf-8") as f:
+    f.write("\n".join(log))
+print("Auto-Fix complete")
+PY
+
+      - name: Replace workspace map and commit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd "${{ github.workspace }}"
+          if [ -f workspace_map_fixed.json ]; then
+            mv workspace_map_fixed.json workspace_map.json
+            git config user.name "GitHub Actions"
+            git config user.email "actions@github.com"
+            git add workspace_map.json starcore_v14_fixlog.md || true
+            git commit -m "STARCORE v14 Auto-Fixer update" || echo "No changes"
+            git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main || true
+          else
+            echo "No fixes generated"
+          fi

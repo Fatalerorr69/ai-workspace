@@ -1,0 +1,10 @@
+{
+    "timestamp": "2026-08-05T19:11:30.212804",
+    "runtime": "STARCORE Android Runtime",
+    "status": "healthy",
+    "checks": [
+        {
+            "registry": "available"
+        }
+    ]
+}

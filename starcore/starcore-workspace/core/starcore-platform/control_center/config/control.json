@@ -1,0 +1,17 @@
+{
+ "name":"STARCORE Termux Control Center",
+ "version":"1.0",
+ "device":"Android Termux",
+ "modules":[
+   "system",
+   "storage",
+   "network",
+   "git",
+   "python",
+   "node",
+   "services",
+   "security",
+   "backup"
+ ],
+ "status":"ACTIVE"
+}

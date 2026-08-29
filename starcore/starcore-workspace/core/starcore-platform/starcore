@@ -1,0 +1,64 @@
+#!/data/data/com.termux/files/usr/bin/python
+
+import sys
+import json
+from pathlib import Path
+
+
+ROOT=Path.home()/"STARCORE"
+
+
+cmd=" ".join(sys.argv[1:])
+
+
+if cmd=="status":
+
+    print("STARCORE STATUS ONLINE")
+
+
+elif cmd=="health":
+
+    f=ROOT/"runtime/android/health/global_health.json"
+
+    print(
+        f.read_text()
+        if f.exists()
+        else "HEALTH REPORT NOT FOUND"
+    )
+
+
+elif cmd=="validate":
+
+    f=ROOT/"runtime/android/validator/global_validation.json"
+
+    print(
+        f.read_text()
+        if f.exists()
+        else "VALIDATION NOT FOUND"
+    )
+
+
+elif cmd=="release":
+
+    f=ROOT/"runtime/android/release/STARCORE_6BX30_RELEASE.json"
+
+    print(
+        f.read_text()
+        if f.exists()
+        else "RELEASE NOT READY"
+    )
+
+
+else:
+
+    print(
+"""
+STARCORE CLI
+
+status
+health
+validate
+release
+"""
+)
+

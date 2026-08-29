@@ -1,0 +1,11 @@
+{
+    "component":"STARCORE Module Control",
+    "version":"7.0.10",
+    "controls":[
+        "start",
+        "stop",
+        "health",
+        "update"
+    ],
+    "status":"ready"
+}

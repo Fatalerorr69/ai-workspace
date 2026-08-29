@@ -1,0 +1,28 @@
+termux:
+
+  enabled: true
+
+  api_bridge: true
+
+  package_monitor: true
+
+  runtime_check: true
+
+
+scheduler:
+
+  enabled: true
+
+  boot_support: true
+
+  interval:300
+
+
+modules:
+
+  battery:true
+  wifi:true
+  storage:true
+  packages:true
+
+

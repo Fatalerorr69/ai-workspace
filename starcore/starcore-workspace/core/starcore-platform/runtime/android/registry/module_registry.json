@@ -1,0 +1,77 @@
+{
+    "timestamp": "2026-08-05T19:11:30.122750",
+    "core": "STARCORE Android Intelligence Core",
+    "version": "6B.X.2.1",
+    "modules": [
+        {
+            "module": "bin",
+            "path": "plugins/enabled/android/bin",
+            "enabled": true
+        },
+        {
+            "module": "config",
+            "path": "plugins/enabled/android/config",
+            "enabled": true
+        },
+        {
+            "module": "reports",
+            "path": "plugins/enabled/android/reports",
+            "enabled": true
+        },
+        {
+            "module": "logs",
+            "path": "plugins/enabled/android/logs",
+            "enabled": true
+        },
+        {
+            "module": "ai",
+            "path": "plugins/enabled/android/ai",
+            "enabled": true
+        },
+        {
+            "module": "optimization",
+            "path": "plugins/enabled/android/optimization",
+            "enabled": true
+        },
+        {
+            "module": "agent",
+            "path": "plugins/enabled/android/agent",
+            "enabled": true
+        },
+        {
+            "module": "termux",
+            "path": "plugins/enabled/android/termux",
+            "enabled": true
+        },
+        {
+            "module": "scheduler",
+            "path": "plugins/enabled/android/scheduler",
+            "enabled": true
+        },
+        {
+            "module": "audit",
+            "path": "plugins/enabled/android/audit",
+            "enabled": true
+        },
+        {
+            "module": "network",
+            "path": "plugins/enabled/android/network",
+            "enabled": true
+        },
+        {
+            "module": "integrations",
+            "path": "plugins/enabled/android/integrations",
+            "enabled": true
+        },
+        {
+            "module": "security",
+            "path": "plugins/enabled/android/security",
+            "enabled": true
+        },
+        {
+            "module": "core",
+            "path": "plugins/enabled/android/core",
+            "enabled": true
+        }
+    ]
+}

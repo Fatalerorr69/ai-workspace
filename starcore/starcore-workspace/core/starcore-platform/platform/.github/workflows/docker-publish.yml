@@ -1,0 +1,83 @@
+name: Docker Publish
+
+on:
+  push:
+    branches: [main]
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write      # keyless cosign signing via OIDC
+      attestations: write  # SBOM attestation upload
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Compute lowercase image name
+        id: image
+        run: echo "name=$(echo '${{ github.repository }}' | tr '[:upper:]' '[:lower:]')" >> "$GITHUB_OUTPUT"
+
+      - name: Log in to GHCR
+        uses: docker/login-action@abd2ef45e78c5afb21d64d4ca52ee8550d9572c7 # v4
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Compute image tags
+        id: tags
+        run: |
+          IMAGE="ghcr.io/${{ steps.image.outputs.name }}"
+          if [[ "${{ github.ref_type }}" == "tag" ]]; then
+            # Version tag push: publish as X.Y.Z only.
+            # latest stays tied to the main branch so it always reflects HEAD.
+            VERSION="${{ github.ref_name }}"
+            VERSION="${VERSION#v}"
+            {
+              echo "value<<EOF"
+              echo "${IMAGE}:${VERSION}"
+              echo "EOF"
+            } >> "$GITHUB_OUTPUT"
+          else
+            # Branch push: publish as latest + commit SHA.
+            {
+              echo "value<<EOF"
+              echo "${IMAGE}:latest"
+              echo "${IMAGE}:${{ github.sha }}"
+              echo "EOF"
+            } >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Build and push
+        id: build
+        uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.tags.outputs.value }}
+
+      - name: Install cosign
+        uses: sigstore/cosign-installer@7e8b541eb2e61bf99390e1afd4be13a184e9ebc5 # v3.10.1
+
+      - name: Generate SBOM
+        uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0.24.0
+        with:
+          image: ghcr.io/${{ steps.image.outputs.name }}@${{ steps.build.outputs.digest }}
+          output-file: sbom.spdx.json
+          format: spdx-json
+
+      - name: Sign image
+        run: |
+          cosign sign --yes \
+            "ghcr.io/${{ steps.image.outputs.name }}@${{ steps.build.outputs.digest }}"
+
+      - name: Attest SBOM
+        run: |
+          cosign attest --yes \
+            --predicate sbom.spdx.json \
+            --type spdxjson \
+            "ghcr.io/${{ steps.image.outputs.name }}@${{ steps.build.outputs.digest }}"

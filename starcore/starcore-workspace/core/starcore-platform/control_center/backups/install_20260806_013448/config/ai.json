@@ -1,0 +1,9 @@
+{
+    "component":"STARCORE AI Configuration",
+    "version":"7.0.18",
+    "providers":[
+        "local",
+        "ollama"
+    ],
+    "status":"ready"
+}

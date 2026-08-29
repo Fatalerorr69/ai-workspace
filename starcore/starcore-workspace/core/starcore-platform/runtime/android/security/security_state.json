@@ -1,0 +1,28 @@
+{
+    "timestamp": "2026-08-05T20:49:23.650961",
+    "component": "STARCORE Security Guard",
+    "version": "6B.X.33",
+    "checks": [
+        {
+            "path": "plugins/enabled/android/core",
+            "exists": true
+        },
+        {
+            "path": "plugins/enabled/android/agent",
+            "exists": true
+        },
+        {
+            "path": "plugins/enabled/android/ai_core",
+            "exists": true
+        },
+        {
+            "path": "plugins/enabled/android/cognitive",
+            "exists": true
+        },
+        {
+            "path": "plugins/enabled/android/scheduler",
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}

@@ -1,0 +1,32 @@
+{
+    "timestamp": "2026-08-05T21:20:40.260897",
+    "component": "STARCORE Cognitive Supervisor",
+    "version": "6B.Y.59",
+    "checks": [
+        {
+            "file": "reasoning/reasoning_state.json",
+            "exists": true
+        },
+        {
+            "file": "planning/planning_state.json",
+            "exists": true
+        },
+        {
+            "file": "context/context_state.json",
+            "exists": true
+        },
+        {
+            "file": "inference/inference_state.json",
+            "exists": true
+        },
+        {
+            "file": "decisions/decision_history.json",
+            "exists": true
+        },
+        {
+            "file": "learning/learning_state.json",
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}

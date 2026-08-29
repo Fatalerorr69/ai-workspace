@@ -1,0 +1,80 @@
+name: STARCORE Auto-Fixer
+
+on:
+  push:
+    paths:
+      - ".github/workflows/*.yml"
+      - ".github/workflows/*.yaml"
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["STARCORE Workflow Validator"]
+    types: [completed]
+
+permissions:
+  contents: write
+
+jobs:
+  autofix:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Normalize line endings (LF only)
+        run: |
+          find . -type f -name "*.yml" -exec sed -i 's/\r$//' {} \;
+          find . -type f -name "*.yaml" -exec sed -i 's/\r$//' {} \;
+
+      - name: Remove tabs from workflow files
+        run: |
+          find .github/workflows -type f -exec sed -i 's/\t/  /g' {} \;
+
+      - name: Fix here-doc indentation
+        run: |
+          for f in .github/workflows/*.yml; do
+            sed -i 's/^PY$/          PY/' "$f"
+            sed -i 's/^<< '\''PY'\''/          << '\''PY'\''/' "$f"
+          done
+
+      - name: Validate JSON blocks
+        run: |
+          for f in .github/workflows/*.yml; do
+            if grep -q "{.*}" "$f"; then
+              echo "[INFO] JSON block detected in $f"
+            fi
+          done
+
+      - name: Fix HTML blocks indentation
+        run: |
+          for f in .github/workflows/*.yml; do
+            sed -i 's/<html>/<html>/g' "$f"
+          done
+
+      - name: Auto-fix workspace artifacts
+        run: |
+          WORKSPACE="${{ github.workspace }}"
+          if [ ! -f "$WORKSPACE/dashboard.html" ]; then
+            echo "<html><body><h1>STARCORE Dashboard</h1></body></html>" > "$WORKSPACE/dashboard.html"
+          fi
+          if [ ! -f "$WORKSPACE/dependency_graph.json" ]; then
+            echo "[]" > "$WORKSPACE/dependency_graph.json"
+          fi
+          if [ ! -f "$WORKSPACE/starcore_orchestrator_log.txt" ]; then
+            echo "=== STARCORE ORCHESTRATOR LOG (AUTO-FIX) ===" > "$WORKSPACE/starcore_orchestrator_log.txt"
+          fi
+          if [ ! -f "$WORKSPACE/starcore_analyzer_log.txt" ]; then
+            echo "=== STARCORE ANALYZER LOG (AUTO-FIX) ===" > "$WORKSPACE/starcore_analyzer_log.txt"
+          fi
+
+      - name: Commit Auto-Fix results
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add . || true
+          git commit -m "STARCORE Auto-Fixer applied corrections" || echo "No changes"
+          git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main || true

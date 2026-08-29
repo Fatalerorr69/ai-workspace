@@ -1,0 +1,17 @@
+[
+ {
+  "id":"health_scan",
+  "enabled":true,
+  "interval":"manual"
+ },
+ {
+  "id":"module_validation",
+  "enabled":true,
+  "interval":"manual"
+ },
+ {
+  "id":"snapshot",
+  "enabled":true,
+  "interval":"manual"
+ }
+]

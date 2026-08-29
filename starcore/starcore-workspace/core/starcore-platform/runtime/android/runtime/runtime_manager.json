@@ -1,0 +1,91 @@
+{
+    "timestamp": "2026-08-05T19:12:48.048026",
+    "component": "STARCORE Android Runtime Manager",
+    "modules": [
+        {
+            "module": "bin",
+            "enabled": true,
+            "exists": true,
+            "path": "/data/data/com.termux/files/home/STARCORE/plugins/enabled/android/bin"
+        },
+        {
+            "module": "config",
+            "enabled": true,
+            "exists": true,
+            "path": "/data/data/com.termux/files/home/STARCORE/plugins/enabled/android/config"
+        },
+        {
+            "module": "reports",
+            "enabled": true,
+            "exists": true,
+            "path": "/data/data/com.termux/files/home/STARCORE/plugins/enabled/android/reports"
+        },
+        {
+            "module": "logs",
+            "enabled": true,
+            "exists": true,
+            "path": "/data/data/com.termux/files/home/STARCORE/plugins/enabled/android/logs"
+        },
+        {
+            "module": "ai",
+            "enabled": true,
+            "exists": true,
+            "path": "/data/data/com.termux/files/home/STARCORE/plugins/enabled/android/ai"
+        },
+        {
+            "module": "optimization",
+            "enabled": true,
+            "exists": true,
+            "path": "/data/data/com.termux/files/home/STARCORE/plugins/enabled/android/optimization"
+        },
+        {
+            "module": "agent",
+            "enabled": true,
+            "exists": true,
+            "path": "/data/data/com.termux/files/home/STARCORE/plugins/enabled/android/agent"
+        },
+        {
+            "module": "termux",
+            "enabled": true,
+            "exists": true,
+            "path": "/data/data/com.termux/files/home/STARCORE/plugins/enabled/android/termux"
+        },
+        {
+            "module": "scheduler",
+            "enabled": true,
+            "exists": true,
+            "path": "/data/data/com.termux/files/home/STARCORE/plugins/enabled/android/scheduler"
+        },
+        {
+            "module": "audit",
+            "enabled": true,
+            "exists": true,
+            "path": "/data/data/com.termux/files/home/STARCORE/plugins/enabled/android/audit"
+        },
+        {
+            "module": "network",
+            "enabled": true,
+            "exists": true,
+            "path": "/data/data/com.termux/files/home/STARCORE/plugins/enabled/android/network"
+        },
+        {
+            "module": "integrations",
+            "enabled": true,
+            "exists": true,
+            "path": "/data/data/com.termux/files/home/STARCORE/plugins/enabled/android/integrations"
+        },
+        {
+            "module": "security",
+            "enabled": true,
+            "exists": true,
+            "path": "/data/data/com.termux/files/home/STARCORE/plugins/enabled/android/security"
+        },
+        {
+            "module": "core",
+            "enabled": true,
+            "exists": true,
+            "path": "/data/data/com.termux/files/home/STARCORE/plugins/enabled/android/core"
+        }
+    ],
+    "healthy": true
+}

@@ -1,0 +1,13 @@
+{
+    "timestamp": "2026-08-05T19:21:03.591538",
+    "component": "STARCORE Android Core Controller",
+    "version": "6B.X.3.E",
+    "components": {
+        "state": true,
+        "runtime": true,
+        "health": true,
+        "events": true,
+        "recovery": true
+    },
+    "status": "operational"
+}

@@ -1,0 +1,37 @@
+{
+ "component":"STARCORE Agent Framework v2",
+ "version":"6B.Y.50",
+ "agents":[
+  {
+   "name":"core-agent",
+   "type":"controller",
+   "status":"online"
+  },
+  {
+   "name":"health-agent",
+   "type":"monitor",
+   "status":"online"
+  },
+  {
+   "name":"scheduler-agent",
+   "type":"executor",
+   "status":"online"
+  },
+  {
+   "name":"ai-agent",
+   "type":"decision",
+   "status":"online"
+  },
+  {
+   "name":"memory-agent",
+   "type":"knowledge",
+   "status":"online"
+  },
+  {
+   "name":"security-agent",
+   "type":"guardian",
+   "status":"online"
+  }
+ ],
+ "status":"operational"
+}

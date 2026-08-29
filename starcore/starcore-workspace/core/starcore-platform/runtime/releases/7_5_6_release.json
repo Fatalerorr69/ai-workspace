@@ -1,0 +1,45 @@
+{
+    "timestamp": "2026-08-05T00:00:00Z",
+    "component": "STARCORE Studio + DevOps",
+    "version": "7.6.05",
+    "status": "PRODUCTION",
+    "checks": [
+        {
+            "file": "runtime/studio/dashboard_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/studio/system_view.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/studio/module_control.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/studio/studio_health.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/devops/cluster_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/devops/node_registry.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/devops/ssh_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/devops/tailscale_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/devops/devops_health.json",
+            "exists": true
+        }
+    ],
+    "errors": 0
+}

@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+import json
+from pathlib import Path
+from datetime import datetime
+
+out=Path.home()/ "STARCORE/runtime/android/memory_fabric/long_term"
+
+out.mkdir(parents=True,exist_ok=True)
+
+json.dump(
+{
+"timestamp":datetime.now().isoformat(),
+"component":"Long Term Memory",
+"records":0,
+"status":"online"
+},
+open(out/"long_memory.json","w"),
+indent=4
+)
+
+print("LONG MEMORY ONLINE")

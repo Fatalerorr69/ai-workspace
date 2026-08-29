@@ -1,0 +1,15 @@
+{
+    "timestamp": "2026-08-05T20:30:55.015824",
+    "component": "STARCORE Knowledge Graph",
+    "nodes": [
+        "android",
+        "starcore",
+        "fatalab",
+        "ai"
+    ],
+    "relations": [
+        "android->starcore",
+        "starcore->fatalab",
+        "starcore->ai"
+    ]
+}

@@ -1,0 +1,1 @@
+# STARCORE scripts test package

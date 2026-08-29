@@ -1,0 +1,27 @@
+{
+    "timestamp": "2026-08-05T19:29:44.088504",
+    "component": "STARCORE Cognitive Health",
+    "checks": [
+        {
+            "file": "/data/data/com.termux/files/home/STARCORE/runtime/android/cognitive/context/context.json",
+            "exists": true
+        },
+        {
+            "file": "/data/data/com.termux/files/home/STARCORE/runtime/android/cognitive/memory/memory_graph.json",
+            "exists": true
+        },
+        {
+            "file": "/data/data/com.termux/files/home/STARCORE/runtime/android/cognitive/vector/vector_state.json",
+            "exists": true
+        },
+        {
+            "file": "/data/data/com.termux/files/home/STARCORE/runtime/android/cognitive/router/router.json",
+            "exists": true
+        },
+        {
+            "file": "/data/data/com.termux/files/home/STARCORE/runtime/android/cognitive/bridge/fatalab_bridge.json",
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}

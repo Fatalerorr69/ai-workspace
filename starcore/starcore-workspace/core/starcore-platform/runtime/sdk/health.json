@@ -1,0 +1,20 @@
+{
+    "component":"STARCORE SDK Validator",
+    "version":"7.0.03",
+    "checks":[
+        {
+            "file":"sdk_state.json",
+            "exists":true
+        },
+        {
+            "file":"modules_runtime.json",
+            "exists":true
+        },
+        {
+            "file":"../registry/sdk_registry.json",
+            "exists":true
+        }
+    ],
+    "errors":0,
+    "status":"healthy"
+}

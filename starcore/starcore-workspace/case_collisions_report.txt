@@ -1,0 +1,29 @@
+=== STARCORE Case Collisions Report ===
+
+The following paths collided on a case-insensitive filesystem:
+
+raspberry/rpi5-homeassistant-suite/CONFIG/automations.yaml
+raspberry/rpi5-homeassistant-suite/config/automations.yaml
+
+raspberry/rpi5-homeassistant-suite/CONFIG/configuration.yaml
+raspberry/rpi5-homeassistant-suite/config/configuration.yaml
+
+raspberry/rpi5-homeassistant-suite/CONFIG/docker-compose-homeassistant.yml
+raspberry/rpi5-homeassistant-suite/config/docker-compose-homeassistant.yml
+
+raspberry/rpi5-homeassistant-suite/CONFIG/packages/hacs_repositories.yaml
+raspberry/rpi5-homeassistant-suite/config/packages/hacs_repositories.yaml
+
+raspberry/rpi5-homeassistant-suite/CONFIG/scripts.yaml
+raspberry/rpi5-homeassistant-suite/config/scripts.yaml
+
+raspberry/rpi5-homeassistant-suite/CONFIG/secrets.yaml
+raspberry/rpi5-homeassistant-suite/config/secrets.yaml
+
+raspberry/rpi5-homeassistant-suite/CONFIG/templates.yaml
+raspberry/rpi5-homeassistant-suite/config/templates.yaml
+
+raspberry/rpi5-homeassistant-suite/CONFIG/ui-lovelace.yaml
+raspberry/rpi5-homeassistant-suite/config/ui-lovelace.yaml
+
+Recommendation: normalize directory names (e.g. use 'config' only) to avoid collisions on Windows.

@@ -1,0 +1,12 @@
+{
+    "timestamp": "2026-08-05T20:39:36.282534",
+    "component": "STARCORE Security Scanner",
+    "checks": {
+        "root_environment": true,
+        "termux": true,
+        "filesystem": true,
+        "plugins": true
+    },
+    "errors": 0,
+    "status": "healthy"
+}

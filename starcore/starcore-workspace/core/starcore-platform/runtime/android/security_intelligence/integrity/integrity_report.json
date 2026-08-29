@@ -1,0 +1,15 @@
+{
+    "timestamp": "2026-08-05T21:24:27.190734",
+    "component": "Integrity Monitor",
+    "checks": [
+        {
+            "path": "plugins/enabled/android",
+            "exists": true
+        },
+        {
+            "path": "runtime/android",
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}

@@ -1,0 +1,15 @@
+{
+    "timestamp": "2026-08-05T20:18:58.437786",
+    "component": "STARCORE Scheduler Health",
+    "checks": [
+        {
+            "file": "runtime/android/scheduler/scheduler_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/scheduler/execution_history.json",
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}

@@ -1,0 +1,171 @@
+schema_version: '1.0'
+prompts:
+- id: PROM-001
+  name: STARCORE MASTER AUTONOMOUS ENGINEERING SESSION
+  version: '1.0'
+  type: MASTER
+  purpose: Hlavní provozní prompt — phase-gated protokol, session startup checklist,
+    autonomous decision rule, bezpečnostní omezení
+  phase: null
+  status: ACTIVE
+  created_at: '2026-07-26'
+  updated_at: '2026-07-27T03:16:22Z'
+  source: USER
+  supersedes: null
+  superseded_by: PROM-007
+  dependencies: []
+  session_id: starcore-autonomous-engineering-4p3tlj
+  tags:
+  - master
+  - phase-gated
+  - safety
+  - czech
+  description: Definuje OBSERVE→VERIFY→PLAN→IMPLEMENT→TEST→REVIEW→PUBLISH→MONITOR→RE-VERIFY
+    cyklus. 9-krokový session startup checklist. Absolute safety constraints (nikdy
+    secrets, nikdy force-push bez schválení). Czech-language interaction.
+- id: PROM-002
+  name: STARCORE WORKSPACE ENHANCEMENT BOOTSTRAP v1.0
+  version: '1.0'
+  type: AUDIT
+  purpose: Audit existujících mechanismů a návrh .starcore/ memory architektury
+  phase: null
+  status: ACTIVE
+  created_at: '2026-07-27'
+  updated_at: '2026-07-27'
+  source: USER
+  supersedes: null
+  superseded_by: null
+  dependencies:
+  - PROM-001
+  session_id: starcore-autonomous-engineering-4p3tlj
+  tags:
+  - audit
+  - read-only
+  - architecture
+  - bootstrap
+  description: 'Read-only audit. 20 požadovaných capabilities pro STARCORE OS. Výstup:
+    19-sekční Czech report + ANALYSIS_COMPLETE. Nesmí vytvářet soubory ani commitovat.'
+- id: PROM-003
+  name: STARCORE WORKSPACE MEMORY IMPLEMENTATION v1.0
+  version: '1.0'
+  type: IMPLEMENTATION
+  purpose: Vytvoření .starcore/ persistent memory layer se všemi soubory a validací
+  phase: null
+  status: ACTIVE
+  created_at: '2026-07-27'
+  updated_at: '2026-07-27'
+  source: USER
+  supersedes: null
+  superseded_by: null
+  dependencies:
+  - PROM-002
+  session_id: starcore-autonomous-engineering-4p3tlj
+  tags:
+  - implementation
+  - memory
+  - persistence
+  - state
+  description: 'Vytvoří .starcore/ directory strukturu, populuje memory soubory, validuje
+    state lifecycle, spustí testy. Necommituje ani nepushuje. Výstup: Czech report
+    + ACTION_REQUIRED menu [1]-[4].'
+- id: PROM-004
+  name: STARCORE FINAL OPERATING MODE
+  version: '1.0'
+  type: MASTER
+  purpose: Continuous operating mode po dokončení fází — ongoing OBSERVE→VERIFY cyklus
+  phase: null
+  status: ACTIVE
+  created_at: '2026-07-27'
+  updated_at: '2026-07-27'
+  source: USER
+  supersedes: null
+  superseded_by: null
+  dependencies:
+  - PROM-001
+  session_id: starcore-autonomous-engineering-4p3tlj
+  tags:
+  - master
+  - continuous
+  - operating-mode
+  description: 'Continuous OBSERVE→VERIFY→PLAN→IMPLEMENT→TEST→REVIEW→PUBLISH→MONITOR→RE-VERIFY.
+    Czech-language session startup checklist (9 kroků). Autonomní decision rule: SAFE+REVERSIBLE+WITHIN_SCOPE→act;
+    DESTRUCTIVE→request approval.'
+- id: PROM-005
+  name: STARCORE PHASE 8 — CONTROLLED IMPLEMENTATION
+  version: '1.0'
+  type: IMPLEMENTATION
+  purpose: Fázový implementační prompt pro Phase 8 (6 batchů R-005, R-006, R-009 a
+    docs)
+  phase: '8'
+  status: ARCHIVED
+  created_at: '2026-07-27'
+  updated_at: '2026-07-27T03:16:04Z'
+  source: USER
+  supersedes: null
+  superseded_by: null
+  dependencies:
+  - PROM-001
+  session_id: starcore-autonomous-engineering-4p3tlj
+  tags:
+  - phase
+  - implementation
+  - phase-8
+  - timeout
+  - archived
+  description: '9-krokový process per change unit. Každá změna: test first → implement
+    → verify. Zakončeno PHASE_COMPLETE/CURRENT_PHASE=8/NEXT_PHASE=9.'
+- id: PROM-006
+  name: STARCORE PROMPT REGISTRY AND SESSION LEDGER v1.0
+  version: '1.0'
+  type: IMPLEMENTATION
+  purpose: Implementace prompt registry s metadaty a session ledger s automatizací
+  phase: null
+  status: ACTIVE
+  created_at: '2026-07-27'
+  updated_at: '2026-07-27T03:18:55Z'
+  source: USER
+  supersedes: PROM-008
+  superseded_by: null
+  dependencies:
+  - PROM-003
+  session_id: starcore-autonomous-engineering-4p3tlj
+  tags:
+  - implementation
+  - registry
+  - ledger
+  - automation
+  description: Vytvoří rozšířený prompt registry (ID/NAME/VERSION/TYPE/PURPOSE/PHASE/STATUS/CREATED_AT/UPDATED_AT/SOURCE/SUPERSEDES/DEPENDENCIES/SESSION_ID),
+    session ledger (SESSION_ID/START_TIME/END_TIME/BRANCH/HEAD/USER_REQUESTS/PROMPTS_USED/FILES_READ/FILES_CREATED/FILES_MODIFIED/COMMANDS_EXECUTED/TESTS_EXECUTED/DECISIONS/RISKS/APPROVALS/BLOCKERS/NEXT_ACTION),
+    automation scripts (registry.py, ledger.py, models.py), validaci a dokumentaci.
+- id: PROM-007
+  name: STARCORE MASTER AUTONOMOUS ENGINEERING SESSION v2.0
+  version: '1.0'
+  type: MASTER
+  purpose: Aktualizovaná verze PROM-001 s .starcore/ cold-start protokolem
+  phase: null
+  status: REJECTED
+  created_at: '2026-07-27T03:16:17Z'
+  updated_at: '2026-07-27T03:16:22Z'
+  source: USER
+  supersedes: PROM-001
+  superseded_by: null
+  dependencies: []
+  session_id: starcore-autonomous-engineering-4p3tlj
+  tags: []
+  description: Doplňuje cold-start protokol o ledger.py a registry.py příkazy
+- id: PROM-008
+  name: Test Prompt pro Validaci
+  version: '1.0'
+  type: UTILITY
+  purpose: Dočasný test pro validaci registrace
+  phase: null
+  status: REJECTED
+  created_at: '2026-07-27T03:18:54Z'
+  updated_at: '2026-07-27T03:19:01Z'
+  source: AGENT
+  supersedes: null
+  superseded_by: PROM-006
+  dependencies: []
+  session_id: null
+  tags: []
+  description: ''

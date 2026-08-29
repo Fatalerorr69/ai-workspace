@@ -1,0 +1,7 @@
+{
+    "component":"Token Controller",
+    "limits":{
+        "enabled":true
+    },
+    "status":"ready"
+}

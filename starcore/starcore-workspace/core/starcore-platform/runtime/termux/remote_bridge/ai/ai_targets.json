@@ -1,0 +1,27 @@
+{
+ "component":"STARCORE AI Runtime Targets",
+ "version":"1.0",
+ "services":[
+ {
+  "name":"Ollama",
+  "host":"FataLab-Core",
+  "port":11434,
+  "protocol":"http",
+  "status":"pending"
+ },
+ {
+  "name":"OpenWebUI",
+  "host":"FataLab-Core",
+  "port":3000,
+  "protocol":"http",
+  "status":"pending"
+ },
+ {
+  "name":"Qdrant",
+  "host":"FataLab-Core",
+  "port":6333,
+  "protocol":"http",
+  "status":"pending"
+ }
+ ]
+}

@@ -1,0 +1,12 @@
+{
+    "timestamp": "2026-08-05T19:15:25.413396",
+    "controller": "STARCORE Android Core Controller",
+    "version": "6B.X.3.A",
+    "actions": [
+        {
+            "state": "loaded"
+        }
+    ],
+    "status": "healthy",
+    "core_status": "online"
+}

@@ -1,0 +1,27 @@
+android:
+  enabled: true
+  mode: intelligence
+
+telemetry:
+  enabled: true
+  interval: 300
+
+security:
+  enabled: true
+  deep_scan: true
+
+snapshot:
+  enabled: true
+  retention_days: 30
+
+ai:
+  enabled: true
+  local_analysis: true
+  remote_ai_core: false
+
+sync:
+  github: true
+  proxmox_bridge: false
+
+logging:
+  level: info

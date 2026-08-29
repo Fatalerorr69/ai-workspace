@@ -1,0 +1,29 @@
+{
+ "timestamp":"2026-08-05T18:41:44+02:00",
+
+ "device":{
+   "model":"SM-A536B",
+   "android":"15",
+   "kernel":"5.10.223-android12-9-31153516-abA536BXXSHFYH1",
+   "arch":"aarch64"
+ },
+
+ "resources":{
+   "memory":"               total        used        free      shared  buff/cache   available Mem:           5.3Gi       3.7Gi       154Mi        21Mi       1.4Gi       1.3Gi Swap:          6.0Gi       1.9Gi       4.1Gi ",
+   "storage":"/dev/block/dm-46 106G  62G   43G  60% /storage/emulated/0/Android/obb",
+   "battery":{"status":"unavailable"}
+ },
+
+ "security":{
+   "verified_boot":"green",
+   "security_patch":"2026-03-01",
+   "selinux":"unknown",
+   "magisk":false
+ },
+
+ "ai":{
+   "status":"pending",
+   "recommendations":[]
+ }
+
+}

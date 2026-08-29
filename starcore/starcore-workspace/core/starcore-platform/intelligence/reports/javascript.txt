@@ -1,0 +1,2 @@
+/data/data/com.termux/files/home/STARCORE/platform/.venv/lib/python3.14/site-packages/pip/_vendor/urllib3/contrib/emscripten/emscripten_fetch_worker.js
+/data/data/com.termux/files/home/STARCORE/.venv/lib/python3.14/site-packages/pip/_vendor/urllib3/contrib/emscripten/emscripten_fetch_worker.js

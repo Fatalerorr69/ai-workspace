@@ -1,0 +1,23 @@
+{
+    "timestamp": "2026-08-05T20:17:03.228060",
+    "component": "STARCORE Health",
+    "checks": [
+        {
+            "path": "runtime/android/state",
+            "exists": true
+        },
+        {
+            "path": "runtime/android/events",
+            "exists": true
+        },
+        {
+            "path": "runtime/android/health",
+            "exists": true
+        },
+        {
+            "path": "runtime/android/control",
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}

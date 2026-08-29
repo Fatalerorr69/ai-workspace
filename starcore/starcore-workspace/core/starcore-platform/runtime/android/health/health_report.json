@@ -1,0 +1,20 @@
+{
+    "timestamp": "2026-08-05T19:11:30.432804",
+    "component": "STARCORE Android Core",
+    "version": "6B.X.2.1",
+    "checks": [
+        {
+            "file": "runtime/android/registry/module_registry.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/health/runtime_status.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/health/config_validation.json",
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}

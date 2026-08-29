@@ -1,0 +1,33 @@
+{
+    "timestamp": "2026-08-05T20:52:58.646993",
+    "component": "STARCORE Autonomous Core Release",
+    "version": "6B.X.40",
+    "checks": [
+        {
+            "file": "runtime/android/unified/installer_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/state_db/system_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/event_bus/event_bus.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/job_queue/job_queue.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/agents_supervisor/supervisor_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/recovery_v2/recovery_state.json",
+            "exists": true
+        }
+    ],
+    "errors": 0,
+    "status": "production"
+}

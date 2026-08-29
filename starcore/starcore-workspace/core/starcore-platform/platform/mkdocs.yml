@@ -1,0 +1,65 @@
+site_name: STARCORE Platform
+
+theme:
+  name: material
+
+docs_dir: docs
+
+nav:
+  - Home: index.md
+  - Architecture: architecture.md
+  - Current State: architecture/current-state.md
+  - Installation: installation.md
+  - Development: development.md
+  - CLI Reference: cli.md
+  - API Reference: api.md
+  - Security: security.md
+  - Plugins: plugins.md
+  - Test Matrix: test-matrix.md
+  - Test Strategy: testing/test-strategy.md
+  - Operations Runbook: operations/repository-stabilization.md
+  - Changelog:
+      - Sprint 001: changelog/sprint-001.md
+      - Sprint 002: changelog/sprint-002.md
+      - Sprint 003: changelog/sprint-003.md
+      - Sprint 004: changelog/sprint-004.md
+      - Sprint 005: changelog/sprint-005.md
+      - Sprint 006: changelog/sprint-006.md
+      - Sprint 007: changelog/sprint-007.md
+      - Sprint 008: changelog/sprint-008.md
+      - Sprint 009: changelog/sprint-009.md
+      - Sprint 010: changelog/sprint-010.md
+      - Sprint 011: changelog/sprint-011.md
+      - Sprint 012: changelog/sprint-012.md
+      - Sprint 013: changelog/sprint-013.md
+      - Sprint 014: changelog/sprint-014.md
+      - Sprint 015: changelog/sprint-015.md
+      - Sprint 016: changelog/sprint-016.md
+      - Sprint 017: changelog/sprint-017.md
+      - Sprint 018: changelog/sprint-018.md
+      - Sprint 019: changelog/sprint-019.md
+      - Sprint 020: changelog/sprint-020.md
+      - Sprint 021: changelog/sprint-021.md
+      - Sprint 022: changelog/sprint-022.md
+      - Sprint 023: changelog/sprint-023.md
+      - Sprint 024: changelog/sprint-024.md
+  - ADRs:
+      - ADR-001 Blueprint Dependency Execution: adr/ADR-001-blueprint-dependency-execution.md
+      - ADR-002 Provider Lifecycle: adr/ADR-002-provider-lifecycle.md
+      - ADR-003 Rate Limiting: adr/ADR-003-rate-limiting.md
+      - ADR-004 Dependency Vulnerability Scanning: adr/ADR-004-dependency-vulnerability-scanning.md
+      - ADR-005 Unified Schema Management: adr/ADR-005-unified-schema-management.md
+      - ADR-006 Observability: adr/ADR-006-observability.md
+      - ADR-007 AI Provider Abstraction: adr/ADR-007-ai-provider-abstraction.md
+      - ADR-008 CI Security Gates: adr/ADR-008-ci-security-gates.md
+      - ADR-009 Environment Detection: adr/ADR-009-environment-detection.md
+      - ADR-010 Dependency Failure Semantics: adr/ADR-010-dependency-failure-semantics.md
+      - ADR-011 Plugin Trust Boundary: adr/ADR-011-plugin-trust-boundary.md
+      - ADR-012 API Authentication Model: adr/ADR-012-api-authentication-model.md
+      - ADR-013 Provider Concurrency Policy: adr/ADR-013-provider-concurrency-policy.md
+      - ADR-014 Task Timeout Support: adr/ADR-014-task-timeout.md
+      - ADR-015 Request Correlation: adr/ADR-015-request-correlation.md
+      - ADR-016 Task Timeout Integration (Deferral): adr/ADR-016-task-timeout-integration.md
+  - Enhancements: ENHANCEMENTS.md
+  - Testing with Copilot: testing-with-copilot.md
+  - Vision (SES): ses/SES-0000-MASTER-INDEX.md

@@ -1,0 +1,60 @@
+name: STARCORE Master Orchestrator
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  starcore_master:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout workspace
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install jq
+        run: |
+          sudo apt update
+          sudo apt install -y jq
+
+      - name: Regenerate workspace_map.json and READMEs
+        run: |
+          ROOT="${{ github.workspace }}"
+          MAP="$ROOT/workspace_map.json"
+          echo "[]" > "$MAP"
+          # regenerate minimal map from existing top-level categories
+          echo "[" > "$MAP"
+          FIRST=true
+          for d in core infra mobile raspberry tools archived; do
+            if [ -d "$ROOT/$d" ]; then
+              for proj in $(ls "$ROOT/$d" 2>/dev/null); do
+                if [ "$FIRST" = true ]; then FIRST=false; else echo "," >> "$MAP"; fi
+                echo "{\"Project\":\"$proj\",\"Category\":\"$d\",\"GitHub\":\"https://github.com/Fatalerorr69/$proj\",\"Path\":\"$d/$proj\"}" >> "$MAP"
+                # generate README if missing
+                if [ -d "$ROOT/$d/$proj" ]; then
+                  readme="$ROOT/$d/$proj/README.md"
+                  if [ ! -f "$readme" ]; then
+                    echo "# $proj" > "$readme"
+                    echo "Kategorie: $d" >> "$readme"
+                    echo "Path: $d/$proj" >> "$readme"
+                  fi
+                fi
+              done
+            fi
+          done
+          echo "]" >> "$MAP"
+
+      - name: Commit master results
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd "${{ github.workspace }}"
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add workspace_map.json
+          git commit -m "STARCORE Master Orchestrator update" || echo "No changes"
+          git push "https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" HEAD:main || true

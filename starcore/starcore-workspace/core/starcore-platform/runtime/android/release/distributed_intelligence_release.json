@@ -1,0 +1,29 @@
+{
+    "timestamp": "2026-08-05T21:01:30.119857",
+    "component": "STARCORE Distributed Intelligence Validator",
+    "version": "6B.Y.20",
+    "checks": [
+        {
+            "file": "runtime/android/telemetry/telemetry.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/policy/policy.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/api/api_gateway.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/lifecycle/lifecycle.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/security/security_center.json",
+            "exists": true
+        }
+    ],
+    "errors": 0,
+    "status": "healthy"
+}

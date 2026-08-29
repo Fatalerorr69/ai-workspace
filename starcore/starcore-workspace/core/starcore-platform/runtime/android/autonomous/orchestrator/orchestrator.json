@@ -1,0 +1,11 @@
+{
+    "timestamp": "2026-08-05T19:28:21.316861",
+    "agents": [
+        "scheduler",
+        "worker",
+        "event",
+        "memory",
+        "bridge"
+    ],
+    "status": "online"
+}

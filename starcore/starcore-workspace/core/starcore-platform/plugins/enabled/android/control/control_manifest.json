@@ -1,0 +1,10 @@
+{
+    "name": "STARCORE Android Control Plane",
+    "version": "6B.X.3.A",
+    "components": [
+        "state_manager",
+        "core_controller"
+    ],
+    "mode": "read_only",
+    "status": "active"
+}

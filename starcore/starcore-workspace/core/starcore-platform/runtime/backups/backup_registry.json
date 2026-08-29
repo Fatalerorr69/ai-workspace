@@ -1,0 +1,13 @@
+{
+    "component": "STARCORE Backup Engine",
+    "version": "7.0.14",
+    "timestamp": "2026-08-05T20:48:01.938474",
+    "backup_root": "runtime/backups",
+    "targets": [
+        "runtime",
+        "registry",
+        "plugins",
+        "config"
+    ],
+    "status": "ready"
+}

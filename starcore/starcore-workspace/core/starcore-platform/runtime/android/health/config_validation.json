@@ -1,0 +1,22 @@
+{
+    "timestamp": "2026-08-05T19:11:30.326231",
+    "configs": [
+        {
+            "file": "android.yaml",
+            "exists": true
+        },
+        {
+            "file": "optimization.yaml",
+            "exists": true
+        },
+        {
+            "file": "agent.yaml",
+            "exists": true
+        },
+        {
+            "file": "termux.yaml",
+            "exists": true
+        }
+    ],
+    "valid": true
+}

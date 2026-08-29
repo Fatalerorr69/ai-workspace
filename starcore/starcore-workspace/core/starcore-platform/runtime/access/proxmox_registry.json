@@ -1,0 +1,15 @@
+{
+ "component":"STARCORE Proxmox Connector",
+ "targets":[
+  {
+   "name":"fatalab",
+   "type":"proxmox"
+  },
+  {
+   "name":"VM100",
+   "type":"FataLab-Core"
+  }
+ ],
+ "protocol":"SSH",
+ "status":"READY"
+}

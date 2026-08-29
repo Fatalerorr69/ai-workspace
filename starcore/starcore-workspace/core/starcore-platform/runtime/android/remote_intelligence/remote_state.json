@@ -1,0 +1,8 @@
+{
+    "timestamp": "2026-08-05T21:05:43.007327",
+    "component": "STARCORE Remote Manager",
+    "version": "6B.Y.22",
+    "protocol": "tailscale",
+    "ssh_port": 8022,
+    "status": "ready"
+}

@@ -1,0 +1,52 @@
+{
+  "_comment": "Sentinel baseline — aktualizovat MANUÁLNĚ po ověřeném průchodu CI gates. Nikdy automaticky.",
+  "captured_at": "2026-08-01",
+  "session": "starcore-autonomous-engineering-4p3tlj",
+  "branch": "main",
+  "commit": "c5044ff",
+  "tests": {
+    "total": 601,
+    "passed": 601,
+    "failed": 0,
+    "skipped": 0
+  },
+  "coverage": {
+    "percent": 100.0,
+    "required": 100.0,
+    "status": "PASS"
+  },
+  "vulnerabilities": {
+    "count": 0,
+    "tool": "pip-audit",
+    "status": "PASS"
+  },
+  "lint": {
+    "ruff_check": "PASS",
+    "ruff_format": "PASS",
+    "pyright": "PASS",
+    "bandit": "PASS"
+  },
+  "build": {
+    "alembic_check": "PASS",
+    "mkdocs_strict": "PASS"
+  },
+  "thresholds": {
+    "min_tests": 601,
+    "max_tests_delta": 5,
+    "max_vulnerabilities": 0,
+    "min_coverage": 100.0
+  },
+  "regression_check": {
+    "description": "Pokud testy < min_tests nebo coverage < min_coverage nebo vulnerabilities > max_vulnerabilities → REGRESE DETEKOVÁNA",
+    "action": "Nespouštět žádné destructive akce. Diagnostikovat příčinu. Nahlásit uživateli."
+  },
+  "sentinel": {
+    "test_count": 801,
+    "api_routes": 21,
+    "cli_commands": 4,
+    "config_fields": 32,
+    "adr_count": 17,
+    "workflow_count": 7,
+    "lock_sync": true
+  }
+}

@@ -1,0 +1,33 @@
+agent:
+
+  enabled: true
+
+  name: starcore-android-agent
+
+
+scheduler:
+
+  enabled: true
+
+  interval: 300
+
+
+modules:
+
+  snapshot: true
+  telemetry: true
+  security: true
+  optimization: true
+
+
+ai:
+
+  context_memory: true
+
+  recommendations: true
+
+
+logging:
+
+  level: info
+

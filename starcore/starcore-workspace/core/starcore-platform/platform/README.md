@@ -1,0 +1,172 @@
+# STARCORE Platform
+
+**AI-Powered Infrastructure Operating Platform**
+
+![Version](https://img.shields.io/badge/version-0.1.0-blue)
+![License](https://img.shields.io/badge/license-Apache--2.0-green)
+![Status](https://img.shields.io/badge/status-active--development-orange)
+
+---
+
+## Overview
+
+STARCORE Platform is an infrastructure orchestration platform for homelabs and self-hosted environments, currently focused on **Proxmox VE** and **Docker**.
+
+It lets you describe infrastructure declaratively in YAML "blueprints" and have STARCORE plan and execute the required provider actions, sequentially or, when resources declare dependencies, in parallel.
+
+This README reflects the **actual current state of the codebase**, not the long-term vision. The long-term vision is documented separately in `docs/ses/`.
+
+---
+
+## What Works Today
+
+| Component | Status | Description |
+|---|---|---|
+| Provider SDK | Done | BaseProvider interface, registry, exceptions |
+| API Authentication | Done | X-API-Key header required on all endpoints except / and /health; returns 503 if server has no key configured |
+| Docker Provider | Done | Real implementation via docker-py: connect, health, list, create/start/stop/remove containers |
+| Proxmox Provider | Done | Real implementation via proxmoxer: connect, health, list, start/stop/shutdown VMs and LXC containers, clone VM or LXC from template |
+| Blueprint Engine | Done | Load YAML, plan, execute. Sequential (BlueprintExecutor) or parallel graph execution (Scheduler + TaskGraph) via depends_on |
+| CLI | Done | starcore blueprint plan/run [--parallel], starcore health, starcore doctor [--fast], starcore audit |
+| Core API | Done | FastAPI: providers, blueprint plan/run, run history |
+| Persistence | Done | SQLite (via SQLAlchemy) stores blueprint run history and task results |
+| Config | Done | .env-based settings via pydantic-settings; STARCORE_LOG_JSON for structured JSON logging |
+| Observability | Done | GET /metrics — Prometheus text format, authenticated; structured loguru logging (STARCORE_LOG_JSON) |
+| Environment Detection | Done | starcore audit/doctor/diagnose and GET /diagnostics report runtime_environment (proxmox-host / container / local), OS platform (incl. WSL), cloud provider (AWS/GCP/Azure, diagnose only), and calling-client platform (browser/mobile/CLI, GET /diagnostics only) |
+| Security | Done | Bandit SAST + gitleaks secret scanning on every PR and nightly; pip-audit dependency vulnerability scan |
+| Alembic Migrations | Done | migrations/ tracks schema via `alembic upgrade head`; create_all() runs only once, on a genuinely fresh/untracked database, and is stamped at head immediately after -- an existing database whose recorded revision doesn't match head fails startup instead |
+| Plugin System | Done | Plugins in plugins/<name>/ expose register(context) to add custom providers (context.registry) and subscribe to blueprint execution events (context.events); discoverable via 'starcore plugins' and GET /plugins. **Not sandboxed** -- see `docs/plugins.md` |
+| Diagnostics | Done | `starcore diagnose` CLI and `GET /diagnostics` API report config, database, migrations, and Docker/Proxmox provider health including node CPU/RAM/disk, storage, and orphaned resource detection |
+| Web Dashboard | Done (read-only) | Static HTML/JS at GET /ui, calls the existing API (providers, runs, diagnostics) via fetch() with an X-API-Key stored in localStorage. No build step |
+| Proxmox Snapshots | Done | 'starcore snapshot create/list/delete/rollback' and POST /resources/action manage VM/LXC snapshots directly; delete and rollback show a dry-run diff of what will change and prompt for confirmation unless --yes is passed |
+| Proxmox Template Aliases | Done | Blueprints can use 'config: {template: "ubuntu-24.04"}' instead of a raw template_vmid; resolved automatically before plan/run via Proxmox's template list, with a clear error if the name is missing or ambiguous |
+| Resource Lifecycle Actions | Done | 'starcore resource action <provider> <action> <resource>' and POST /resources/action run a single action (start/stop/shutdown/destroy for Proxmox, start/stop/remove for Docker) against one resource, independent of any blueprint |
+| Proxmox Environment Discovery | Done | 'starcore proxmox discover' and GET /proxmox/discover catalog node capacity, storage, available VM/LXC templates, and network bridges, used to tailor deployments before they run |
+| AI Blueprint Generation | Done (requires API key/endpoint) | 'starcore ai generate "<description>"' and POST /ai/generate-blueprint translate natural language into a validated blueprint YAML via a pluggable provider: Anthropic (STARCORE_ANTHROPIC_API_KEY) or any OpenAI-compatible /v1/chat/completions server — Ollama, LM Studio, vLLM, LocalAI, OpenAI itself (STARCORE_AI_PROVIDER=openai-compatible, STARCORE_AI_BASE_URL, STARCORE_AI_MODEL) |
+| Request Correlation | Done | Every HTTP response carries X-Request-ID (caller-supplied or generated); bound to every log line emitted while handling that request |
+| Tests | 601 passing | ruff, pyright, pytest (100% coverage floor, incl. Hypothesis property tests), pre-commit, CI on every PR |
+
+## Production Limitations
+
+Not exhaustive — see `SECURITY.md` and `docs/security.md` for the full
+security-relevant list. The headline ones: no per-user identity or RBAC
+(single shared API key, by design, for single-operator/small-team homelab
+deployments — see ADR-012), plugins are not sandboxed (ADR-011), and
+provider API calls within a `--parallel` wave are not rate-limited
+(ADR-013 — no concurrency limit has been needed yet at homelab scale, but
+it's a documented, deliberately revisitable decision, not an oversight).
+
+## Roadmap / Vision (Not Started)
+
+Longer-term direction, described in more detail in `docs/ses/`. Nothing
+in this section exists yet.
+
+| Component | Notes |
+|---|---|
+| Installer Studio | Not started |
+| Dashboard (Web UI) | Not started — distinct from the read-only dashboard above |
+| AI Brain | Not started |
+| Marketplace | Not started |
+
+---
+
+## Quick Start
+
+```bash
+uv sync --extra dev
+cp .env.example .env
+uv run starcore blueprint plan packages/blueprints/examples/basic.yaml
+uv run starcore blueprint run packages/blueprints/examples/basic.yaml
+```
+
+Run the API:
+
+```bash
+uv run uvicorn core.main:app --reload
+```
+
+## Example Blueprint
+
+```yaml
+name: demo
+resources:
+  - name: db
+    provider: docker
+    kind: container
+    config:
+      image: postgres:17
+  - name: web-vm
+    provider: proxmox
+    kind: vm
+    config:
+      node: fatalab
+      template_vmid: 9000
+    depends_on:
+      - db
+```
+
+Run it in parallel-aware mode: `starcore blueprint run <path> --parallel`
+
+---
+
+## Repository Structure
+
+```
+apps/cli/              CLI entry point (Typer)
+packages/core/          FastAPI app, config, database, persistence models
+packages/blueprints/    Blueprint models, loader, planner, executor
+packages/orchestrator/  Task, TaskGraph, Scheduler
+packages/provider_sdk/  BaseProvider, registry, exceptions
+packages/providers/     Docker and Proxmox implementations
+packages/ai/            Pluggable AI blueprint generation (Anthropic, OpenAI-compatible)
+scripts/                Standalone doctor/health scripts (no CLI dependency)
+tests/                  pytest test suite
+docs/ses/               Long-term engineering specification and vision docs
+```
+
+---
+
+## Docker Deployment
+
+```bash
+cp .env.example .env
+docker compose up -d --build api
+```
+
+The `api` service builds this repo, runs Alembic migrations, and starts the FastAPI server on port 8000. SQLite data persists in the `starcore-data` volume. Postgres, Redis, and NATS services are also defined in `docker-compose.yml` for future use but are not yet wired into the application.
+
+---
+
+## Development
+
+```bash
+uv sync --extra dev
+uv run ruff check .
+uv run pyright
+uv run pytest -q
+uv run pre-commit run --all-files
+```
+
+CI runs the same checks on every pull request.
+
+**Database schema:** a brand-new database is created and tracked
+automatically on first run (nothing to do). If you already have a
+database from a previous version and a new migration has been added since
+(`migrations/versions/`), run `uv run alembic upgrade head` before
+starting the app — STARCORE Platform will refuse to start against a
+database whose schema is out of date rather than run with a silently
+incomplete schema.
+
+---
+
+## Documentation
+
+Long-term vision and engineering specifications live in `docs/ses/`. They describe where the project is headed, not its current state. See the tables above for that.
+
+## License
+
+Apache License 2.0
+
+## Project Owner
+
+GitHub: Fatalerorr69

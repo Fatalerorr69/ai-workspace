@@ -1,0 +1,27 @@
+{
+    "timestamp": "2026-08-05T20:29:43.325205",
+    "component": "STARCORE Agent Registry",
+    "version": "6B.X.15",
+    "agents": [
+        {
+            "name": "core-agent",
+            "type": "controller",
+            "status": "online"
+        },
+        {
+            "name": "health-agent",
+            "type": "monitor",
+            "status": "online"
+        },
+        {
+            "name": "scheduler-agent",
+            "type": "executor",
+            "status": "online"
+        },
+        {
+            "name": "ai-agent",
+            "type": "decision",
+            "status": "online"
+        }
+    ]
+}

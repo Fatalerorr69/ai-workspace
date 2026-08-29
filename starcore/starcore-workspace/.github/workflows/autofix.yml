@@ -1,0 +1,17 @@
+name: AutoFix CI
+on: [push]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Detect case collisions
+        run: |
+          find . -type f -printf "%P\n" | awk '{print tolower($0)}' | sort | uniq -d > case_collisions.txt || true
+          if [ -s case_collisions.txt ]; then
+            echo "Case collisions detected:"
+            cat case_collisions.txt
+          else
+            echo "No collisions detected"
+          fi

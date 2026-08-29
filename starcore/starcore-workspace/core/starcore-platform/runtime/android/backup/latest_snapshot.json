@@ -1,0 +1,11 @@
+{
+    "timestamp": "2026-08-05T20:43:04.714184",
+    "component": "STARCORE Snapshot Engine",
+    "version": "6B.X.24",
+    "scope": [
+        "plugins/enabled/android",
+        "runtime/android"
+    ],
+    "type": "logical_snapshot",
+    "status": "created"
+}
