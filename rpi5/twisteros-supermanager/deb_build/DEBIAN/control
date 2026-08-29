@@ -1,0 +1,10 @@
+Package: twisteros-supermanager
+Version: 1.0
+Section: utils
+Priority: optional
+Architecture: all
+Depends: bash, dialog, conky, nodejs, npm, docker, docker-compose, jq, python3, python3-flask, rsync, retroarch, python3-pip, git, systemd, libfreetype6, libpng16-16
+Maintainer: Starko <starko@example.com>
+Description: TwisterOS SuperManager – modulární toolkit pro správu systému a pluginů
+ TwisterOS SuperManager poskytuje kompletní správu pluginů, systémových modulů,
+ webový dashboard a automatické nástroje pro kontrolu FS, MBR/GPT a síťové diagnostiky.

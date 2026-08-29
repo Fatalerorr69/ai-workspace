@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<title>Twister Smart Dashboard</title>
+<style>
+body{background:#111;color:#eee;font-family:Arial;text-align:center;padding:40px;}
+a{color:#55aaff;font-size:20px;text-decoration:none;}
+a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+<h1>🌀 Twister Smart Suite Dashboard</h1>
+<hr>
+<p>🏠 <a href="http://rpi5.local:8123">Home Assistant</a></p>
+<p>🔌 <a href="http://rpi5.local:1880">Node-RED</a></p>
+<p>📡 <a href="vnc://rpi5.local:5900">VNC Server</a></p>
+<p>📁 ROMs & BIOS: /home/pi/Games</p>
+<p>🖥 Dashboard běží na portu 8080</p>
+<h3>MHS Display</h3>
+<button id="btnMHSDetect">Detekovat MHS displej</button>
+<button id="btnMHSSetup">Nastavit MHS displej</button>
+<button id="btnMHSTest">Otestovat displej</button>
+<script src="js/display_manager.js"></script>
+</html>

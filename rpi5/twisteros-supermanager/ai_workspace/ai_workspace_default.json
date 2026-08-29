@@ -1,0 +1,4 @@
+{
+  "diagnostics": {"CPU":"OK","Memory":"OK","Disk":"OK","Network":"OK"},
+  "recommendations": ["Všechny pluginy běží správně.","Žádné chyby systému detekovány.","Pro další diagnostiku spusťte jednotlivé pluginy přes dashboard."]
+}
