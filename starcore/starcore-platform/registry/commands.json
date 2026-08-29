@@ -1,0 +1,21 @@
+{
+    "component":"STARCORE Command Registry",
+    "version":"7.0.02",
+    "commands":[
+        {
+            "name":"status",
+            "module":"core",
+            "enabled":true
+        },
+        {
+            "name":"health",
+            "module":"core",
+            "enabled":true
+        },
+        {
+            "name":"logs",
+            "module":"core",
+            "enabled":true
+        }
+    ]
+}

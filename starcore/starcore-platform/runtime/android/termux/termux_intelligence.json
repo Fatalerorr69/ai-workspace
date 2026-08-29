@@ -1,0 +1,16 @@
+{
+    "timestamp": "2026-08-05T18:52:16.273340",
+    "termux": {
+        "prefix": "/data/data/com.termux/files/usr\n",
+        "home": "/data/data/com.termux/files/home\n"
+    },
+    "runtime": {
+        "python": "Python 3.14.6\n",
+        "node": "v26.4.0\n",
+        "disk": "usage(total=113294426112, used=67044155392, free=46116052992)"
+    },
+    "recommendations": [
+        "Enable Termux:Boot integration"
+    ],
+    "packages": "\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\n\nListing...\napt/stable,now 2.8.1-2 aarch64 [installed]\nattr/stable,now 2.6.0 aarch64 [installed,automatic]\nbash/stable,now 5.3.15 aarch64 [installed]\nbrotli/stable,now 1.2.0 aarch64 [installed,automatic]\nbzip2/stable,now 1.0.8-8 aarch64 [installed]\nc-ares/stable,now 1.34.8 aarch64 [installed,automatic]\nca-certificates/stable,now 1:2026.07.16 all [installed]\nclang/stable,now 21.1.8-3 aarch64 [installed,automatic]\ncmocka/stable,now 2.0.2 aarch64 [installed,automatic]\ncommand-not-found/stable,now 3.5.0-5 aarch64 [installed]\ncoreutils/stable,now 9.11-1 aarch64 [installed]\ncurl/stable,now 8.21.0 aarch64 [installed]\ndash/stable,now 0.5.12-2 aarch64 [installed]\ndebianutils/stable,now 5.23.2-1 aarch64 [installed]\ndialog/stable,now 1.3-20260107-1 aarch64 [installed]\ndiffutils/stable,now 3.12-2 aarch64 [installed]\ndirenv/stable,now 2.37.1-1 aarch64 [installed]\ndnsutils/stable,now 9.20.26 aarch64 [installed]\ndos2unix/stable,now 7.5.6 aarch64 [installed]\ndpkg/stable,now 1.22.6-5 aarch64 [installed]\ned/stable,now 1.22.5 aarch64 [installed]\nfd/stable,now 10.4.2 aarch64 [installed]\nfile/stable,now 5.48-1 aarch64 [installed]\nfindutils/stable,now 4.10.0-1 aarch64 [installed]\ngawk/stable,now 5.3.2 aarch64 [installed]\ngdbm/stable,now 1.26-1 aarch64 [installed,automatic]\ngh/stable,now 2.97.0 aarch64 [installed]\ngit/stable,now 2.55.0 aarch64 [installed]\nglib/stable,now 2.88.3 aarch64 [installed,automatic]\ngpgv/stable,now 2.5.17 aarch64 [installed]\ngrep/stable,now 3.12-3 aarch64 [installed]\ngzip/stable,now 1.14-1 aarch64 [installed]\nhtop/stable,now 3.5.2 aarch64 [installed]\ninetutils/stable,now 2.7 aarch64 [installed]\niproute2/stable,now 7.1.0 aarch64 [installed]\njq/stable,now 1.8.2 aarch64 [installed]\njson-c/stable,now 0.19 aarch64 [installed,automatic]\nkrb5/stable,now 1.22.2 aarch64 [installed,automatic]\nldns/stable,now 1.8.4-1 aarch64 [installed,automatic]\nless/stable,now 704 aarch64 [installed]\nlibacl/stable,now 2.4.0 aarch64 [installed,automatic]\nlibandroid-execinfo/stable,now 0.1-3 aarch64 [installed,automatic]\nlibandroid-glob/stable,now 0.6-3 aarch64 [installed]\nlibandroid-posix-semaphore/stable,now 0.1-4 aarch64 [installed,automatic]\nlibandroid-selinux/stable,now 14.0.0.11-1 aarch64 [installed]\nlibandroid-shmem/stable,now 0.7 aarch64 [installed,automatic]\nlibandroid-support/stable,now 29-1 aarch64 [installed]\nlibassuan/stable,now 3.0.2-1 aarch64 [installed]\nlibbz2/stable,now 1.0.8-8 aarch64 [installed]\n"
+}

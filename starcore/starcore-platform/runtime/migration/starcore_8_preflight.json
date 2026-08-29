@@ -1,0 +1,31 @@
+{
+    "component":"STARCORE 8 Migration Preflight Audit",
+    "timestamp":"2026-08-05T21:12:18Z",
+    "device":{
+        "model":"SM-A536B",
+        "android":"15",
+        "termux":"0.118.3"
+    },
+    "runtime":{
+        "python":"Python 3.14.6",
+        "node":"v26.4.0",
+        "npm":"11.19.0"
+    },
+    "resources":{
+        "storage_available":"40G",
+        "ram":"5.3Gi"
+    },
+    "git":{
+        "branch":"main",
+        "commit":"bc14d446a59594dfe1837b9acdba6475ac6fbd90",
+        "clean":false
+    },
+    "starcore_7_release":{
+        "exists":true
+    },
+    "runtime_structure":{
+        "exists":true
+    },
+    "errors":0,
+    "status":"READY_FOR_REVIEW"
+}

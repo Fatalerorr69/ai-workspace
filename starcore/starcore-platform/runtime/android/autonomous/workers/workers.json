@@ -1,0 +1,9 @@
+{
+    "timestamp": "2026-08-05T19:28:20.873200",
+    "workers": [
+        "health_worker",
+        "snapshot_worker",
+        "ai_worker"
+    ],
+    "status": "ready"
+}

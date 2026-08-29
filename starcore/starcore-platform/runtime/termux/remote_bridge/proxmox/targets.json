@@ -1,0 +1,16 @@
+{
+ "component":"STARCORE Proxmox Remote Targets",
+ "version":"1.0",
+ "targets":[
+ {
+  "name":"fatalab",
+  "type":"proxmox_host",
+  "status":"pending"
+ },
+ {
+  "name":"VM100 FataLab-Core",
+  "type":"ai_core_vm",
+  "status":"pending"
+ }
+ ]
+}

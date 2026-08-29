@@ -1,0 +1,23 @@
+{
+    "timestamp": "2026-08-05T20:18:58.212341",
+    "component": "STARCORE Scheduler",
+    "version": "6B.X.12",
+    "jobs": [
+        {
+            "id": "health_scan",
+            "enabled": true,
+            "interval": "manual"
+        },
+        {
+            "id": "module_validation",
+            "enabled": true,
+            "interval": "manual"
+        },
+        {
+            "id": "snapshot",
+            "enabled": true,
+            "interval": "manual"
+        }
+    ],
+    "status": "running"
+}

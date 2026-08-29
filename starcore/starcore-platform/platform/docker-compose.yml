@@ -1,0 +1,69 @@
+services:
+  api:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      STARCORE_DATABASE_URL: sqlite:////data/starcore.db
+    volumes:
+      - starcore-data:/data
+      # Required for the Docker provider (packages/providers/docker) to
+      # manage containers on the host. This grants the api container
+      # effectively root-equivalent control of the host: anyone with
+      # STARCORE_API_KEY can, via the Docker provider, create a
+      # privileged container that mounts the host filesystem. Treat the
+      # API key with the same care as host root credentials in any
+      # deployment where this service is enabled.
+      - /var/run/docker.sock:/var/run/docker.sock
+    group_add:
+      - "${DOCKER_GID}"
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  # Scaffolding for future use (Postgres/Redis/NATS-backed features are
+  # not yet wired into the application -- see README). Not started by
+  # `docker compose up` on its own; opt in explicitly with
+  # `docker compose --profile scaffold up` to reduce the default exposed
+  # surface (TD-15).
+  postgres:
+    image: postgres:17
+    restart: unless-stopped
+    profiles: ["scaffold"]
+    environment:
+      POSTGRES_USER: starcore
+      # `:-` (default to empty), not `:?`: Compose interpolates every
+      # service's environment block even for an inactive profile, so
+      # `:?required` broke commands that never touch this service. The
+      # postgres image itself rejects an empty POSTGRES_PASSWORD at
+      # startup, so that stays the real safety net.
+      POSTGRES_PASSWORD: ${STARCORE_POSTGRES_PASSWORD:-}
+      POSTGRES_DB: starcore
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:8
+    restart: unless-stopped
+    profiles: ["scaffold"]
+    ports:
+      - "6379:6379"
+
+  nats:
+    image: nats:2.10
+    restart: unless-stopped
+    profiles: ["scaffold"]
+    ports:
+      - "4222:4222"
+
+volumes:
+  postgres-data:
+  starcore-data:

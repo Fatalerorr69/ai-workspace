@@ -1,0 +1,6 @@
+{
+    "component":"Multi Agent Coordinator",
+    "agents":0,
+    "communication":"enabled",
+    "status":"ready"
+}

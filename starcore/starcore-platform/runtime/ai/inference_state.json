@@ -1,0 +1,10 @@
+{
+    "component": "STARCORE Inference Engine",
+    "version": "7.0.08",
+    "backend": "ready",
+    "providers": [
+        "ollama",
+        "local"
+    ],
+    "status": "online"
+}

@@ -1,0 +1,12 @@
+{
+ "component":"STARCORE AI Runtime Bridge",
+ "timestamp":"2026-08-05T22:22:50Z",
+ "services":[
+ "Ollama",
+ "OpenWebUI",
+ "Qdrant"
+ ],
+ "local":"Termux",
+ "remote":"FataLab-Core",
+ "status":"READY"
+}

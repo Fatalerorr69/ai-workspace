@@ -1,0 +1,17 @@
+{
+ "component":"STARCORE AI Workspace",
+ "local":{
+  "path":"~/STARCORE"
+ },
+ "remote":{
+  "github":"Fatalerorr69/starcore-platform",
+  "proxmox":"fatalab"
+ },
+ "agent_permissions":[
+  "read",
+  "analyze",
+  "modify",
+  "commit"
+ ],
+ "status":"READY"
+}

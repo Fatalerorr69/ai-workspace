@@ -1,0 +1,12 @@
+{
+    "timestamp": "2026-08-05T21:01:29.991638",
+    "component": "STARCORE Security Center",
+    "checks": [
+        "integrity",
+        "permissions",
+        "remote",
+        "modules"
+    ],
+    "errors": 0,
+    "status": "healthy"
+}

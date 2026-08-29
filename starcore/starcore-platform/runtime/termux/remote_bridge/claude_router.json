@@ -1,0 +1,13 @@
+{
+ "component":"STARCORE Claude Remote Router",
+ "version":"1.0",
+ "local_runtime":"disabled",
+ "remote_runtime":"enabled",
+ "targets":[
+ "Windows",
+ "Linux",
+ "Proxmox"
+ ],
+ "reason":"Android native binary unavailable",
+ "status":"READY"
+}

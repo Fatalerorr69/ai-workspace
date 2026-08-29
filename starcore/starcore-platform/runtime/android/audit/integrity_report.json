@@ -1,0 +1,12 @@
+{
+    "timestamp": "2026-08-05T18:54:54.104511",
+    "checks": {
+        "magisk": false,
+        "zygisk": false,
+        "bootloader": "unknown"
+    },
+    "notes": [
+        "Read only audit",
+        "No automatic modification"
+    ]
+}

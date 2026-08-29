@@ -1,0 +1,11 @@
+{
+    "timestamp": "2026-08-05T20:52:58.153548",
+    "component": "STARCORE Auto Recovery V2",
+    "version": "6B.X.36",
+    "modes": [
+        "health_check",
+        "module_restore",
+        "state_rebuild"
+    ],
+    "status": "ready"
+}

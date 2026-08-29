@@ -1,0 +1,54 @@
+
+project:
+  name: STARCORE
+  version: 1.0
+
+
+workspace:
+  local: ~/STARCORE
+
+
+github:
+  repository: Fatalerorr69/starcore-platform
+  branch: main
+
+
+infrastructure:
+
+  proxmox:
+    host: fatalab
+
+
+  vm:
+    id: 100
+    name: FataLab-Core
+
+
+services:
+
+  ollama:
+    port:11434
+
+  openwebui:
+    port:3000
+
+  qdrant:
+    port:6333
+
+
+agents:
+
+ permissions:
+  - read
+  - analyze
+  - modify
+  - commit
+
+
+rules:
+
+ - backup_before_change
+ - document_changes
+ - commit_after_success
+
+

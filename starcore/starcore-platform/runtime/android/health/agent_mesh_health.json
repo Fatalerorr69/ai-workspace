@@ -1,0 +1,20 @@
+{
+    "timestamp": "2026-08-05T20:29:43.549774",
+    "component": "STARCORE Agent Mesh Health",
+    "version": "6B.X.15",
+    "checks": [
+        {
+            "file": "runtime/android/agents/agent_registry.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/mesh/heartbeat.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/mesh/task_routes.json",
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}

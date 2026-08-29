@@ -1,0 +1,11 @@
+{
+    "timestamp": "2026-08-05T21:01:29.862238",
+    "component": "STARCORE Lifecycle Manager",
+    "states": [
+        "installed",
+        "validated",
+        "running",
+        "recoverable"
+    ],
+    "status": "ready"
+}

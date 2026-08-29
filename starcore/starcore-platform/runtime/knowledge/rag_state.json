@@ -1,0 +1,6 @@
+{
+    "component": "RAG Bridge",
+    "version": "7.4.02",
+    "backend": "qdrant",
+    "status": "online"
+}

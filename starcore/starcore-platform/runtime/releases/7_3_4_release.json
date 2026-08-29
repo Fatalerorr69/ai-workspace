@@ -1,0 +1,65 @@
+{
+    "timestamp": "2026-08-05T00:00:00Z",
+    "component": "STARCORE AI Infrastructure + Knowledge",
+    "version": "7.4.05",
+    "status": "PRODUCTION",
+    "checks": [
+        {
+            "file": "runtime/infra/proxmox_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/infra/docker_bridge.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/infra/ollama_cluster.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/infra/openwebui_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/infra/qdrant_federation.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/infra/fastapi_gateway.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/infra/gpu_bridge.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/infra/model_deployment.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/infra/infra_health.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/knowledge/knowledge_index.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/knowledge/rag_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/knowledge/embedding_pipeline.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/knowledge/knowledge_graph.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/knowledge/knowledge_health.json",
+            "exists": true
+        }
+    ],
+    "errors": 0
+}

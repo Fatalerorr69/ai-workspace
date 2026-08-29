@@ -1,0 +1,8 @@
+{
+    "name":"template_module",
+    "version":"1.0",
+    "type":"STARCORE_MODULE",
+    "dependencies":[],
+    "permissions":[],
+    "healthcheck":"enabled"
+}

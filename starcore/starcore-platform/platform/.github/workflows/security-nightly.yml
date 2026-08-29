@@ -1,0 +1,41 @@
+name: Security Nightly
+
+on:
+  schedule:
+    # Run daily at 02:00 UTC
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+    # Allow manual trigger for ad-hoc runs
+
+jobs:
+  security-audit:
+    name: Nightly Security Audit
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+        with:
+          version: "latest"
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install dependencies (dev)
+        run: uv sync --extra dev
+
+      - name: Lockfile consistency check
+        run: uv lock --check
+
+      - name: Dependency vulnerability scan (pip-audit)
+        run: uv run pip-audit
+
+      - name: SAST — Bandit (medium+ severity)
+        run: uv run bandit -r packages/ apps/ scripts/ -ll -q
+
+      - name: Secret scanning (gitleaks)
+        uses: gitleaks/gitleaks-action@ff98106e4c7b2bc287b24eaf42907196329070c7 # v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

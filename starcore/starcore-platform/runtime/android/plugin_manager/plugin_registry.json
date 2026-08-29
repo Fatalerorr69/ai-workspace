@@ -1,0 +1,303 @@
+{
+    "timestamp": "2026-08-05T20:45:56.438138",
+    "component": "STARCORE Plugin Manager",
+    "version": "6B.X.26",
+    "plugins": [
+        {
+            "plugin": "bin",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "config",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "reports",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "logs",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "ai",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "optimization",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "agent",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "termux",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "scheduler",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "audit",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "network",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "integrations",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "security",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "core",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "runtime",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "control",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "events",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "health",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "recovery",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "controller",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "monitor",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "snapshot",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "diagnostics",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "ai_core",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "autonomous",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "cognitive",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "orchestrator",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "tasks",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "workers",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "bridge",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "watchdog",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "deployment",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "lifecycle",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "backup",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "selftest",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "telemetry",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "control_plane",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "remote",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "control_fabric",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "monitoring",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "tailscale",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "ssh",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "mesh",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "agents",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "router",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "memory",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "context",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "vector",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "knowledge",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "repair",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "integrity",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "master",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "update",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "bootstrap",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "validator",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "plugin_manager",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "dashboard",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "automation",
+            "enabled": true,
+            "exists": true
+        },
+        {
+            "plugin": "release",
+            "enabled": true,
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}

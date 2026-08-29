@@ -1,0 +1,21 @@
+{
+ "component":"STARCORE Remote AI Targets",
+ "version":"1.0",
+ "targets":[
+ {
+  "name":"Windows Claude Host",
+  "type":"desktop",
+  "status":"pending"
+ },
+ {
+  "name":"FataLab AI Core",
+  "type":"linux_vm",
+  "status":"pending"
+ },
+ {
+  "name":"Proxmox Host",
+  "type":"hypervisor",
+  "status":"pending"
+ }
+ ]
+}

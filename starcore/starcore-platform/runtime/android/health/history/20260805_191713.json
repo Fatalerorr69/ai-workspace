@@ -1,0 +1,16 @@
+{
+    "timestamp": "2026-08-05T19:17:13.916719",
+    "component": "STARCORE Health Daemon",
+    "version": "6B.X.3.C",
+    "checks": {
+        "runtime": true,
+        "events": true,
+        "registry": true
+    },
+    "storage": {
+        "total": 113294426112,
+        "used": 67047284736,
+        "free": 46112923648
+    },
+    "status": "healthy"
+}

@@ -1,0 +1,25 @@
+{
+ "timestamp":"2026-08-05T21:17:39+02:00",
+ "component":"STARCORE Autonomous Agent Framework",
+ "version":"6B.Y.50",
+ "checks":[
+  {
+   "file":"runtime/android/agents_v2/registry/agent_registry.json",
+   "exists":true
+  },
+  {
+   "file":"runtime/android/agents_v2/heartbeat/heartbeat.json",
+   "exists":true
+  },
+  {
+   "file":"runtime/android/agents_v2/tasks/task_routes.json",
+   "exists":true
+  },
+  {
+   "file":"runtime/android/agents_v2/supervisor/supervisor_state.json",
+   "exists":true
+  }
+ ],
+ "errors":0,
+ "status":"healthy"
+}

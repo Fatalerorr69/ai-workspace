@@ -1,0 +1,13 @@
+{
+    "component":"Agent Health Monitor",
+    "checks":[
+        "kernel",
+        "registry",
+        "planner",
+        "decision",
+        "memory",
+        "executor"
+    ],
+    "errors":0,
+    "status":"healthy"
+}

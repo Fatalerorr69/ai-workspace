@@ -1,0 +1,7 @@
+{
+    "timestamp": "2026-08-05T20:39:36.543024",
+    "component": "STARCORE Remote Operations",
+    "protocol": "SSH",
+    "port": 8022,
+    "status": "ready"
+}

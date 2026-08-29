@@ -1,0 +1,50 @@
+{
+    "timestamp": "2026-08-05T19:01:59.372760",
+    "files": 11,
+    "checks": [
+        {
+            "file": "plugins/enabled/android/ai/device_analyzer.py",
+            "sha256": "d1f7bef0604d7d91d04f7833c91202d4207f8adee1e08fe3350e39dbe09b645f"
+        },
+        {
+            "file": "plugins/enabled/android/optimization/optimizer.py",
+            "sha256": "2a98ac682eab0ee554511b824a8325eaa541c26b50ffdc6ecc83f4ea6385586c"
+        },
+        {
+            "file": "plugins/enabled/android/agent/android_agent.py",
+            "sha256": "855b5b323ed5fd5cafc02ef5fc1bc9aa74afaab4a97f8882c1c5a2e16776e8b2"
+        },
+        {
+            "file": "plugins/enabled/android/agent/android_agent_v2.py",
+            "sha256": "df70a4fbbe42c49a88f9803bbe89a3766c9dc97094fb6a948960b8910ea8fffc"
+        },
+        {
+            "file": "plugins/enabled/android/termux/termux_intelligence.py",
+            "sha256": "0e7d830c9ed0ee1a3bef1418de0338a3caee819c6548f51f65ee56226a939668"
+        },
+        {
+            "file": "plugins/enabled/android/security/security_intelligence.py",
+            "sha256": "eaeb16d07a028725360b24a75a78b9296f36bef9162cc7dedb189a7a59208068"
+        },
+        {
+            "file": "plugins/enabled/android/network/network_intelligence.py",
+            "sha256": "1805f607170a1b17bc03765e7ceadff4147313aa361734ea564ff4fc24e9d5e4"
+        },
+        {
+            "file": "plugins/enabled/android/network/network_intelligence_v2.py",
+            "sha256": "79797235a4e4eddac9393e6ef50473e565eb7d8a566472c30ba8caba14fb79c8"
+        },
+        {
+            "file": "plugins/enabled/android/audit/integrity_audit.py",
+            "sha256": "fd320dd1cc78f568532788f0e4d43bfb11ebbf34b3b309e8c7f73d5c3c0aafa2"
+        },
+        {
+            "file": "plugins/enabled/android/core/master_report.py",
+            "sha256": "00b3e2b1f3caf742db9b473dd47d11aef2d0368597066b5de6cf3e2ff8dbf630"
+        },
+        {
+            "file": "plugins/enabled/android/core/integrity_check.py",
+            "sha256": "c3e6bd64071330560b6af14c2edb3c70ff4a3ed2d9052d063aa7667f53fbe9c4"
+        }
+    ]
+}

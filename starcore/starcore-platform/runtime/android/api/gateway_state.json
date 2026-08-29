@@ -1,0 +1,11 @@
+{
+    "timestamp": "2026-08-05T20:49:23.475348",
+    "component": "STARCORE API Gateway",
+    "version": "6B.X.31",
+    "protocols": [
+        "local",
+        "ssh",
+        "tailscale"
+    ],
+    "status": "online"
+}

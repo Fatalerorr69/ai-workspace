@@ -1,0 +1,11 @@
+{
+ "component":"STARCORE Remote AI Bridge",
+ "version":"1.0",
+ "purpose":"Claude Remote Execution Layer",
+ "targets":[
+  "Windows",
+  "Linux VM",
+  "Proxmox AI Core"
+ ],
+ "status":"READY"
+}

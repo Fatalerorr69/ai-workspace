@@ -1,0 +1,16 @@
+{
+    "component":"STARCORE CLI Command Bus",
+    "version":"7.0.02",
+    "checks":[
+        {
+            "file":"registry/commands.json",
+            "exists":true
+        },
+        {
+            "file":"runtime/command_bus/command_bus_state.json",
+            "exists":true
+        }
+    ],
+    "errors":0,
+    "status":"healthy"
+}

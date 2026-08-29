@@ -1,0 +1,1 @@
+96f53383ffef0a2734ff9cc51c679a205917eed2bc129fe47abcc2e26e8ec61a  /data/data/com.termux/files/home/STARCORE/runtime/autonomous/release/STARCORE_8_MASTER_RELEASE.json

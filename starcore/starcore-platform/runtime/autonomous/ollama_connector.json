@@ -1,0 +1,6 @@
+{
+    "component": "Ollama Connector",
+    "version": "7.1.05",
+    "endpoint": "localhost:11434",
+    "status": "ready"
+}

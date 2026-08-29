@@ -1,0 +1,179 @@
+{
+  "schema_version": "1.5",
+  "timestamp": "2026-07-25",
+  "repository": "Fatalerorr69/starcore-platform",
+  "branch": "claude/new-session-zkezqt",
+  "head_sha": "3de655e55badc7e671ed56df15cb1a4a7cba0e46",
+  "mode": "MODE_5_CONTROLLED_AUTONOMY",
+  "session_commits": [
+    {
+      "sha": "df0d491",
+      "message": "feat(cli): add --json, --quiet, --non-interactive to doctor/audit/diagnose (CI-001)",
+      "bundle": "CI-001"
+    },
+    {
+      "sha": "40204c9",
+      "message": "security(sast): integrate Bandit SAST as a local and CI quality gate (CI-002)",
+      "bundle": "CI-002"
+    },
+    {
+      "sha": "3de655e",
+      "message": "ci(auto): add nightly scheduled security audit workflow (AUTO-001)",
+      "bundle": "AUTO-001"
+    }
+  ],
+  "health": {
+    "static": {
+      "score": 96,
+      "max": 100,
+      "breakdown": {
+        "ruff_lint_format": {"score": 10, "max": 10, "status": "PASS"},
+        "pyright_type_check": {"score": 10, "max": 10, "status": "PASS", "errors": 0, "warnings": 0},
+        "test_pass_rate": {"score": 20, "max": 20, "status": "PASS", "passed": 384, "total": 384},
+        "coverage_threshold": {"score": 10, "max": 10, "status": "PASS", "threshold": 80},
+        "pip_audit": {"score": 10, "max": 10, "status": "PASS", "cves_found": 0},
+        "bandit_sast": {"score": 8, "max": 10, "status": "PASS", "suppressions": 2},
+        "cicd_gate_presence": {"score": 10, "max": 10, "status": "PASS"},
+        "nightly_security_scan": {"score": 8, "max": 10, "status": "ADDED_NOT_YET_RUN"},
+        "alembic_consistency": {"score": 10, "max": 10, "status": "PASS"}
+      }
+    },
+    "runtime": {
+      "score": null,
+      "reason": "NOT_ACCESSIBLE — no live instance in CI environment",
+      "endpoints_checked": []
+    }
+  },
+  "bundles": {
+    "PRE_BUNDLE": {
+      "status": "SKIPPED",
+      "classification": "VERIFIED_NOT_NEEDED",
+      "reason": "enumerate() fix on s52x55 branch was a no-op; unique=True already present in Hypothesis strategy",
+      "commits": 0
+    },
+    "CI_001": {
+      "status": "COMPLETE",
+      "classification": "VERIFIED",
+      "files_changed": [
+        "apps/cli/main.py",
+        "tests/test_cli.py"
+      ],
+      "tests_added": 15,
+      "description": "Added --json, --quiet, --non-interactive flags to doctor/audit/diagnose CLI commands"
+    },
+    "CI_002": {
+      "status": "COMPLETE",
+      "classification": "VERIFIED",
+      "files_changed": [
+        "apps/cli/main.py",
+        "packages/core/config.py",
+        "scripts/health.py",
+        ".github/workflows/ci.yml",
+        "pyproject.toml",
+        "uv.lock"
+      ],
+      "tests_added": 3,
+      "nosec_suppressions": [
+        {"rule": "B104", "location": "packages/core/config.py", "rationale": "Intentional 0.0.0.0 bind in container"},
+        {"rule": "B310", "location": "scripts/health.py", "rationale": "Health-check URL defaults to localhost; file:// not reachable"}
+      ],
+      "description": "Integrated Bandit SAST as CI quality gate and local doctor check"
+    },
+    "AUTO_001": {
+      "status": "COMPLETE",
+      "classification": "VERIFIED",
+      "files_changed": [
+        ".github/workflows/security-nightly.yml"
+      ],
+      "tests_added": 0,
+      "schedule": "0 2 * * *",
+      "description": "Added nightly security audit workflow (pip-audit + bandit, daily 02:00 UTC)"
+    }
+  },
+  "quality_gates": {
+    "ruff_check": {"status": "PASS", "violations": 0},
+    "ruff_format": {"status": "PASS", "reformats_needed": 0},
+    "pyright": {"status": "PASS", "errors": 0, "warnings": 0, "informations": 0},
+    "pip_audit": {"status": "PASS", "cves": 0, "notes": "starcore-platform itself not on PyPI — expected skip"},
+    "bandit": {"status": "PASS", "severity_threshold": "MEDIUM", "flag": "-ll", "suppressions": 2},
+    "pytest": {"status": "PASS", "passed": 384, "failed": 0, "total": 384},
+    "coverage": {"status": "PASS", "threshold": 80},
+    "alembic_check": {"status": "PASS"},
+    "uv_lock_check": {"status": "PASS"}
+  },
+  "tests": {
+    "baseline": 366,
+    "final": 384,
+    "delta": 18,
+    "ci_001_new": 15,
+    "ci_002_new": 3
+  },
+  "git_state": {
+    "branch": "claude/new-session-zkezqt",
+    "head_sha": "3de655e55badc7e671ed56df15cb1a4a7cba0e46",
+    "working_tree": "CLEAN",
+    "pushed": true,
+    "commits_ahead_of_main": 3
+  },
+  "security": {
+    "bandit_gate": "ACTIVE",
+    "severity_threshold": "MEDIUM_AND_ABOVE",
+    "nosec_suppressions": 2,
+    "nightly_workflow": "CREATED",
+    "pip_audit_cves": 0,
+    "secrets_in_commits": false
+  },
+  "blocked": [
+    {
+      "id": "BLOCKED-001",
+      "title": "PR creation requires explicit user approval",
+      "action": "Approve PR: claude/new-session-zkezqt → main",
+      "impact": "CI verification blocked until PR is opened"
+    },
+    {
+      "id": "BLOCKED-002",
+      "title": "GitHub Actions CI not yet triggered on this branch",
+      "action": "Depends on BLOCKED-001",
+      "impact": "All gate results are local-only; not GitHub Actions verified"
+    }
+  ],
+  "technical_debt": [
+    {"id": "TD-001", "area": "CI", "description": "No PR opened — CI cannot verify until PR created", "priority": "HIGH"},
+    {"id": "TD-002", "area": "Runtime", "description": "No live instance for provider integration testing", "priority": "MEDIUM"},
+    {"id": "TD-003", "area": "Security", "description": "security-nightly.yml has not yet executed", "priority": "LOW"},
+    {"id": "TD-004", "area": "AI", "description": "STARCORE_ANTHROPIC_API_KEY required for ai generate; not tested in CI", "priority": "MEDIUM"},
+    {"id": "TD-005", "area": "Coverage", "description": "Exact coverage % not captured; at 80% threshold", "priority": "LOW"}
+  ],
+  "recommended_next_bundles": [
+    {
+      "id": "PR-001",
+      "title": "Open Pull Request",
+      "priority": "HIGH",
+      "description": "Create PR from claude/new-session-zkezqt to main to trigger GitHub Actions CI"
+    },
+    {
+      "id": "CLI-003",
+      "title": "Structured Logging for Blueprint Run",
+      "priority": "MEDIUM",
+      "description": "Extend starcore blueprint run with --json for structured event stream output"
+    },
+    {
+      "id": "SEC-001",
+      "title": "Secrets Scanning in CI",
+      "priority": "MEDIUM",
+      "description": "Add gitleaks or truffleHog as CI step to catch accidental secret commits"
+    },
+    {
+      "id": "COV-001",
+      "title": "Coverage Ratchet",
+      "priority": "LOW",
+      "description": "Enforce specific coverage floor (e.g. 85%) and add coverage badge to README"
+    }
+  ],
+  "contradictions_vs_prior_reports": [
+    {
+      "prior_report": "reports/starcore-code-report.json (branch claude/new-session-s52x55, SHA 09dcf22)",
+      "contradiction": "Stale — different branch and SHA. Superseded by this report."
+    }
+  ]
+}

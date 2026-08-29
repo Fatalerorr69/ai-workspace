@@ -1,0 +1,11 @@
+{
+    "timestamp": "2026-08-05T20:49:23.875465",
+    "component": "STARCORE FataLab Bridge",
+    "version": "6B.X.35",
+    "transport": [
+        "tailscale",
+        "ssh"
+    ],
+    "target": "FataLab AI Core",
+    "status": "ready"
+}

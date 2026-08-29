@@ -1,0 +1,14 @@
+{
+"name":"android",
+"version":"1.0.0",
+"type":"system",
+"description":"Android device integration plugin",
+"features":[
+"device audit",
+"battery",
+"storage",
+"network",
+"termux api",
+"security audit"
+]
+}

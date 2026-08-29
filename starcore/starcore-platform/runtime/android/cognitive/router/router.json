@@ -1,0 +1,10 @@
+{
+    "timestamp": "2026-08-05T19:29:43.869605",
+    "component": "STARCORE AI Router",
+    "routes": {
+        "local": "android_agent",
+        "remote": "FataLab AI Core",
+        "fallback": "offline"
+    },
+    "status": "ready"
+}

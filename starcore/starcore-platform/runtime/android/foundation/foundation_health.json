@@ -1,0 +1,36 @@
+{
+    "timestamp": "2026-08-05T20:39:36.857778",
+    "component": "STARCORE Foundation Health",
+    "version": "6B.X.21",
+    "checks": [
+        {
+            "file": "runtime/android/update/version_registry.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/update/backup_history.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/update/update_report.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/security/security_report.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/security/baseline.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/remote/remote_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/remote/tailscale_profile.json",
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}

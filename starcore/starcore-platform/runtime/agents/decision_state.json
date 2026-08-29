@@ -1,0 +1,6 @@
+{
+    "component":"Decision Engine",
+    "mode":"autonomous",
+    "rules":[],
+    "status":"ready"
+}

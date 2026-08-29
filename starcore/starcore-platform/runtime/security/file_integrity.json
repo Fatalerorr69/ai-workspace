@@ -1,0 +1,20 @@
+{
+    "component": "STARCORE Security Hardening",
+    "version": "7.0.16",
+    "timestamp": "2026-08-05T20:48:02.263884",
+    "integrity": [
+        {
+            "file": "runtime/platform/STARCORE_7_MASTER_RELEASE.json",
+            "hash": "fe72e65f90a27fa5f403ae5c2fad0c8a5f0e3fedb215ebc4498833da26417baf"
+        },
+        {
+            "file": "runtime/health/global_health.json",
+            "hash": "2865178f90466a3d0e863d99bdfb93d1ec2d85bffe64048e7e277b7a4889081f"
+        },
+        {
+            "file": "registry/modules.json",
+            "hash": "ff9b9868a40b7038ae31ab2d83b6010460b087cf7f11f920e22d113adf16fbcd"
+        }
+    ],
+    "status": "validated"
+}

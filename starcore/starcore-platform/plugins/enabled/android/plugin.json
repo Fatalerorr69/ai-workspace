@@ -1,0 +1,15 @@
+{
+"name":"android",
+"version":"6B.X.1",
+"type":"intelligence-node",
+"status":"stable",
+"modules":[
+"telemetry",
+"snapshot",
+"security",
+"network",
+"audit",
+"optimization",
+"agent"
+]
+}

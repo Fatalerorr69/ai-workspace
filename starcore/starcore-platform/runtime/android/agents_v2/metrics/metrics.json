@@ -1,0 +1,10 @@
+{
+ "component":"STARCORE Agent Metrics",
+ "version":"6B.Y.50",
+ "metrics":{
+  "agents":6,
+  "tasks":0,
+  "failures":0
+ },
+ "status":"healthy"
+}

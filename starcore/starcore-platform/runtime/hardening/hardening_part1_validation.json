@@ -1,0 +1,20 @@
+{
+    "component":"STARCORE Hardening Validator",
+    "version":"7.0.11-13",
+    "checks":[
+        {
+            "file":"runtime/hardening/environment_report.json",
+            "exists":true
+        },
+        {
+            "file":"runtime/hardening/dependency_health.json",
+            "exists":true
+        },
+        {
+            "file":"runtime/health/global_health.json",
+            "exists":true
+        }
+    ],
+    "errors":0,
+    "status":"healthy"
+}

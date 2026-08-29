@@ -1,0 +1,13 @@
+{
+    "timestamp": "2026-08-05T18:50:29.775423",
+    "storage": {
+        "total": 113294426112,
+        "used": 67043790848,
+        "free": 46116417536
+    },
+    "recommendations": [
+        "Review Termux package updates",
+        "Maintain periodic STARCORE snapshots"
+    ],
+    "optimization_score": 100
+}

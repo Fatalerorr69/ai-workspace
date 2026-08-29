@@ -1,0 +1,13 @@
+{
+ "component":"STARCORE AI Decision Layer",
+ "version":"6B.X.4",
+ "status":"operational",
+ "modules":[
+ "decision",
+ "policy",
+ "recommendation",
+ "memory",
+ "bridge",
+ "agent"
+ ]
+}

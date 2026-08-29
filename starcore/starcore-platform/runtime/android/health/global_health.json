@@ -1,0 +1,24 @@
+{
+    "timestamp": "2026-08-05T20:25:56.653973",
+    "component": "STARCORE Global Health",
+    "version": "6B.X.13",
+    "checks": [
+        {
+            "file": "runtime/android/fabric/fabric_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/control/controller_status.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/scheduler/scheduler_health.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/cognitive/health/cognitive_health.json",
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}
