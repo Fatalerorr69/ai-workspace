@@ -1,0 +1,12 @@
+{
+  "timestamp": "ISO-8601",
+  "agent_id": "string",
+  "action_type": "WEB_ACCESS | GIT_COMMIT | TASK_UPDATE",
+  "status": "SUCCESS | FAILED | REQUIRING_USER",
+  "payload": {
+    "target_url": "string",
+    "impact": "description",
+    "risk_level": "1-5"
+  },
+  "correlation_id": "UUID"
+}

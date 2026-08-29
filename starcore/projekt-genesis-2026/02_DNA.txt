@@ -1,0 +1,32 @@
+# GENESIS AETERNA v6.0 - AGENT SWARM DNA
+# SWARM SIZE: 72 SPECIALIZED AGENTS
+
+[GROUP 1: THE ARCHITECTS (A01-A10)]
+- Role: OS Stability, Hardware Tuning, Thermal Management.
+- Focus: Keeping the RPi 5 CPU under 60°C, managing SSD TRIM, Docker orchestration.
+
+[GROUP 2: TECH COMMANDOS (A11-A20)]
+- Role: Execution & Scripting.
+- Skills: Python, Bash, ADB (Android Debug Bridge), Fastboot, Linux Kernel modules.
+- Task: "Execute script X", "Flash recovery image".
+
+[GROUP 3: CYBER GHOSTS (A21-A30)]
+- Role: Offensive Security & Forensics.
+- Skills: Nmap scanning, Metasploit, Wi-Fi auditing (Monitor Mode), Android Data Extraction.
+- Protocol: Stealth Mode (Randomized MAC addresses).
+
+[GROUP 4: BUSINESS ELITE (A31-A40)]
+- Role: Strategy & Documentation.
+- Focus: Generating reports from logs, managing legal templates, finance tracking.
+
+[GROUP 5: CREATIVE LEAD (A41-A50)]
+- Role: Interface & Vision.
+- Focus: Genesis HUD (Dashboard) design, Data visualization, Image Generation prompts.
+
+[GROUP 6: PSY OPS (A51-A60)]
+- Role: User Psychology & Bio-Rhythms.
+- Focus: Analyzing user patterns to predict optimal work times.
+
+[GROUP 7: LOGISTICS DAEMONS (A61-A72)]
+- Role: Maintenance & Backend.
+- Focus: Backups (Rclone), Energy consumption, Ollama Model management.

@@ -1,0 +1,83 @@
+# GENESIS AETERNA v6.0 - SOURCE CODE REPOSITORY
+
+[SCRIPT: install_genesis.sh]
+# Purpose: Full OS Setup (Run this on fresh RPi)
+---------------------------------------------------
+#!/bin/bash
+echo "--- GENESIS AETERNA: INITIALIZING ---"
+sudo apt update && sudo apt full-upgrade -y
+sudo apt install -y python3-full python3-pip adb fastboot nmap docker.io git curl wget tmux zram-tools build-essential
+# SSD Optimization
+echo "dtparam=pciex1_gen=3" | sudo tee -a /boot/firmware/config.txt
+# Ollama AI
+curl -fsSL https://ollama.com/install.sh | sh
+# Python Env
+pip3 install dash dash-bootstrap-components psutil requests --break-system-packages
+# Docker GUI
+sudo docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer-ce
+echo "--- SETUP COMPLETE. REBOOTING... ---"
+sudo reboot
+---------------------------------------------------
+
+[SCRIPT: genesis_hud.py]
+# Purpose: The Graphical Dashboard (Python Dash)
+---------------------------------------------------
+import dash
+import dash_bootstrap_components as dbc
+from dash import dcc, html, Input, Output
+import psutil
+import socket
+
+# App Setup
+app = dash.Dash(__name__, external_stylesheets=[dbc.themes.CYBORG])
+server = app.server
+
+# Layout
+app.layout = dbc.Container([
+    dbc.Row(html.H1("GENESIS AETERNA v6.0", className="text-center text-success my-4")),
+    dbc.Row([
+        dbc.Col(dbc.Card([
+            dbc.CardHeader("CPU CORE"),
+            dbc.CardBody(html.H2(id="cpu-val", className="text-info"))
+        ], color="dark", inverse=True)),
+        dbc.Col(dbc.Card([
+            dbc.CardHeader("RAM USAGE"),
+            dbc.CardBody(html.H2(id="ram-val", className="text-warning"))
+        ], color="dark", inverse=True)),
+        dbc.Col(dbc.Card([
+            dbc.CardHeader("IP ADDRESS"),
+            dbc.CardBody(html.H4(id="ip-val", className="text-white"))
+        ], color="dark", inverse=True)),
+    ]),
+    dcc.Interval(id="update-tick", interval=2000, n_intervals=0)
+], fluid=True)
+
+# Logic
+@app.callback(
+    [Output("cpu-val", "children"), Output("ram-val", "children"), Output("ip-val", "children")],
+    [Input("update-tick", "n_intervals")]
+)
+def update_metrics(n):
+    cpu = f"{psutil.cpu_percent()}%"
+    ram = f"{psutil.virtual_memory().percent}%"
+    # Get IP
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        s.connect(('10.255.255.255', 1))
+        IP = s.getsockname()[0]
+    except Exception:
+        IP = '127.0.0.1'
+    finally:
+        s.close()
+    return cpu, ram, IP
+
+if __name__ == '__main__':
+    app.run_server(host='0.0.0.0', port=8050)
+---------------------------------------------------
+
+[SCRIPT: ghost_tunnel.sh]
+# Purpose: Start Tailscale VPN
+---------------------------------------------------
+#!/bin/bash
+sudo tailscale up
+---------------------------------------------------

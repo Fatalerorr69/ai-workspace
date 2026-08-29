@@ -1,0 +1,6 @@
+ID;Jméno;Hlavní_Nástroj;Oprávnění_Zápis;Kritická_Vazba
+02;System Master;Deep Research;Projektová Struktura;Všichni
+06;Integrátor;Python/Rust;Zdrojový Kód;14, 61
+15;SecOps;Encryption;Bezpečnostní Klíče;01, 14
+17;Error Hunter;Debugger;Logy/Fixy;06
+08;Cross-Platform;Docker;Deployment;02

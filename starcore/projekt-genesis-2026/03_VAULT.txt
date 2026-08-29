@@ -1,0 +1,24 @@
+# GENESIS AETERNA v6.0 - KNOWLEDGE VAULT
+# TECHNICAL REFERENCE MANUAL
+
+[SECTOR: ANDROID FORENSICS]
+#CMD-ADB-01 (List Devices): adb devices -l
+#CMD-ADB-02 (Reboot Bootloader): adb reboot bootloader
+#CMD-ADB-03 (Wireless Connect): adb connect [IP]:5555
+#CMD-FST-01 (Unlock Bootloader): fastboot oem unlock OR fastboot flashing unlock
+#CMD-BYPASS (Remove Lock): adb shell rm /data/system/gesture.key && adb reboot
+
+[SECTOR: NETWORK SECURITY]
+#CMD-MAP-01 (Stealth Scan): nmap -sS -T4 -p- [TARGET_IP]
+#CMD-MAP-02 (Vuln Scan): nmap --script vuln [TARGET_IP]
+#CMD-WIFI (Monitor Mode): sudo airmon-ng start wlan0
+
+[SECTOR: RASPBERRY PI HARDWARE]
+#CONFIG-SSD: dtparam=pciex1_gen=3 (in /boot/config.txt)
+#CONFIG-SWAP: zram-size=4096 (in /etc/default/zramswap)
+#CONFIG-TFT: cd LCD-show && sudo ./LCD35-show
+
+[SECTOR: LOCAL AI (OLLAMA)]
+#MODEL-MAIN: llama3:8b-instruct-q4_K_M
+#MODEL-CODE: codestral
+#API-PORT: 11434 (Localhost)
