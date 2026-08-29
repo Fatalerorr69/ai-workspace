@@ -1,3 +1,3 @@
 # Planner
-param([string]$ConfigPath = '../config.json')
-Write-Host 'Planner agent'
+param([string]$ConfigPath = "../config.json")
+Write-Host "Planner agent"

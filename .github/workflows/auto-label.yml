@@ -1,6 +1,7 @@
 name: Auto Label
 on:
-  issues: {types: [opened]}
+  issues:
+    types: [opened]
 jobs:
   label:
     runs-on: ubuntu-latest

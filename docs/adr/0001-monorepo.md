@@ -1,2 +1,3 @@
-# ADR 001
-Monorepo přijato.
+# ADR 001: Monorepo struktura
+
+Přijato.

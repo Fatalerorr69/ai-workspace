@@ -1,0 +1,668 @@
+<<<<<<< HEAD
+#!/usr/bin/env bash
+#
+# install_starkos_lab.sh — upravený instalační soubor
+#
+# Vylepšená verze s obsluhou chyb, volitelnou instalací, vlastní ikonou,
+# logováním a dynamickou konfigurací sítě pro bezobslužnou instalaci.
+
+set -euo pipefail
+
+# ==============================================================================
+# KONFIGURACE - Můžete upravit tyto proměnné
+# ==============================================================================
+MACHINE="starkos_kali"
+BRIDGE="ve-$MACHINE"
+
+# URL ke stažení hlavního souborového systému Kali Linux (rootfs) pro arm64.
+# DŮLEŽITÉ: Tuto URL a kontrolní součet nahraďte platnými hodnotami
+# z oficiálních stránek Kali Linuxu.
+TARBALL_URL="http://downloads.kali.org/kali-images/kali-2024.1/kali-linux-2024.1-live-arm64.tar.xz"
+TARBALL_SHA256="zde_bude_aktualni_sha256_z_oficialniho_webu"
+
+# Lokální cesta k souboru MAKEJ Toolkit.
+TOOLKIT_PATH="/home/starko/starkos-deb/Toolkit.tar.xz"
+TOOLKIT_SHA256="zde_bude_sha256_toolkit_tarballu"
+
+# URL ke stažení ikony pro spouštěcí skript na ploše.
+ICON_URL="https://drive.google.com/file/d/18l2RCjDZpCUh2G3YRqkzJnTIUBcmre8-/view?usp=sharing"
+ICON_SHA256="zde_bude_sha256_ikony"
+
+# Cesty na hostitelském systému
+INSTALL_DIR="/srv"
+ROOTFS_DIR="${INSTALL_DIR}/${MACHINE}"
+NSPNAP_CONF="/etc/systemd/nspawn/${MACHINE}.nspawn"
+START_SCRIPT="/usr/local/bin/start_${MACHINE}.sh"
+STOP_SCRIPT="/usr/local/bin/stop_${MACHINE}.sh"
+DESKTOP_ICON_DIR="/home/$SUDO_USER/Desktop"
+ICON_PATH="/usr/share/icons/hicolor/128x128/apps/starkos.png"
+DESKTOP_FILE="${DESKTOP_ICON_DIR}/start_${MACHINE}.desktop"
+
+# Logovací soubor a dočasný adresář
+LOG_FILE="/var/log/starkos_install.log"
+TEMP_DIR=""
+TARBALL_NAME=$(basename "$TARBALL_URL")
+TOOLKIT_NAME=$(basename "$TOOLKIT_PATH")
+
+# ==============================================================================
+# FUNKCE
+# ==============================================================================
+
+# Funkce pro úklid dočasných souborů a adresářů a závěrečné hlášení
+cleanup() {
+  local exit_code=$?
+  if [ -n "$TEMP_DIR" ] && [ -d "$TEMP_DIR" ]; then
+    log "⚠️  Došlo k chybě. Provádím úklid dočasného adresáře: $TEMP_DIR"
+    rm -rf "$TEMP_DIR"
+  fi
+  if [ "$exit_code" -eq 0 ]; then
+    [ "$USE_DIALOG" = true ] && zenity --info --title="Instalace StarkOS" --text="✅ Instalace dokončena!\n\nPrůběh instalace naleznete v log souboru:\n<b>${LOG_FILE}</b>\n\nNa ploše byla vytvořena ikona 'Spustit StarkOS'."
+  else
+    [ "$USE_DIALOG" = true ] && zenity --error --title="Chyba instalace" --text="❌ Instalace StarkOS selhala! Bližší detaily naleznete v log souboru:\n<b>${LOG_FILE}</b>"
+  fi
+  exit "$exit_code"
+}
+
+# Funkce pro logování na konzoli i do souboru
+log() {
+  echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" | tee -a "$LOG_FILE"
+}
+
+# Funkce pro zobrazení nápovědy
+show_help() {
+  cat << EOF
+Použití: sudo ./install_starkos_lab.sh [možnosti]
+
+Instalační skript pro StarkOS Lab na Raspberry Pi 5.
+
+Možnosti:
+  --help, -h          Zobrazí tuto nápovědu.
+  --no-dialog         Spustí instalaci bez grafických Zenity dialogů.
+  --skip-tools        Přeskočí instalaci užitečných nástrojů (tmux, zsh atd.).
+  --skip-toolkit      Přeskočí instalaci sady nástrojů MAKEJ Toolkit.
+
+EOF
+  exit 0
+}
+
+# Funkce pro stažení/použití souboru s ověřením integrity (s progress barem)
+download_or_copy_and_verify() {
+  local source="$1"
+  local dest_path="$2"
+  local expected_sha256="$3"
+  local description="$4"
+
+  log "⬇️  Zpracovávám ${description}..."
+
+  if [[ "$source" =~ ^https?:// ]]; then
+    # Jedná se o URL, stahuji soubor
+    if [ -f "$dest_path" ]; then
+      [ "$USE_DIALOG" = true ] && zenity --info --title="Stahování" --text="Soubor pro ${description} již existuje, stahování se přeskočí." || echo "Soubor již existuje, přeskočeno."
+    else
+      if [ "$USE_DIALOG" = true ]; then
+        wget --progress=bar:force:noscroll -O "$dest_path" "$source" 2>&1 | \
+        zenity --progress --title="Stahování ${description}" --text="Probíhá stahování z:\n${source}" --pulsate --no-cancel --auto-close
+      else
+        wget -O "$dest_path" "$source"
+      fi
+    fi
+  elif [ -f "$source" ]; then
+    # Jedná se o lokální soubor, kopíruji ho
+    log "   Používám lokální soubor: $source"
+    cp "$source" "$dest_path"
+  else
+    log "❌  Chyba: Neplatný zdroj pro ${description}."
+    exit 1
+  fi
+
+  log "🔍  Ověřuji integritu souboru ${description}..."
+  actual_sha256=$(sha256sum "$dest_path" | awk '{print $1}')
+
+  if [ "$actual_sha256" != "$expected_sha256" ]; then
+    log "❌  Chyba: Kontrolní součet SHA256 se neshoduje!"
+    log "    Očekáváno:   $expected_sha256"
+    log "    Nalezeno:    $actual_sha256"
+    exit 1
+  fi
+  log "✅  Integrita ověřena."
+}
+
+# Funkce pro rozbalení tarballu
+extract_tarball() {
+  local tarball="$1"
+  local dest_dir="$2"
+  local description="$3"
+
+  if [ -d "$dest_dir" ] && [ "$(ls -A "$dest_dir")" ]; then
+    log "   (adresář $dest_dir existuje a není prázdný, přeskočeno rozbalení)"
+  else
+    log "📂 Rozbaluji ${description} do $dest_dir..."
+    mkdir -p "$dest_dir"
+    tar -xJf "$tarball" -C "$dest_dir"
+  fi
+}
+
+# Funkce pro pre-flight kontroly
+pre_flight_checks() {
+  log "🔍 Provádím úvodní kontroly..."
+  
+  # Kontrola oprávnění root
+  if [ "$EUID" -ne 0 ]; then
+    [ "$USE_DIALOG" = true ] && zenity --error --title="Chyba oprávnění" --text="❌ Tento skript musí být spuštěn s oprávněním root (např. přes sudo)."
+    exit 1
+  fi
+  if [ -z "${SUDO_USER}" ]; then
+    [ "$USE_DIALOG" = true ] && zenity --error --title="Chyba oprávnění" --text="❌ Spusťte skript přes 'sudo'!"
+    exit 1
+  fi
+
+  # Kontrola dostupnosti příkazů
+  local needed_commands="wget tar systemd-nspawn sha256sum"
+  for cmd in $needed_commands; do
+    if ! command -v "$cmd" &>/dev/null; then
+      log "⚠️  Příkaz '$cmd' nebyl nalezen. Pokouším se nainstalovat..."
+      apt-get update
+      apt-get install -y "$cmd" || { log "❌  Nepodařilo se nainstalovat '$cmd'. Ukončuji."; exit 1; }
+      log "✅  Příkaz '$cmd' úspěšně nainstalován."
+    fi
+  done
+  
+  # Kontrola zástupných SHA256
+  if [[ "$TARBALL_SHA256" == "zde_bude_aktualni_sha256_z_oficialniho_webu" ]]; then
+    log "❌  Chyba: Kontrolní součet TARBALL_SHA256 není definován. Změňte zástupnou hodnotu v CONFIGURATION."
+    exit 1
+  fi
+  if [ "$INSTALL_TOOLKIT" = true ] && [[ "$TOOLKIT_SHA256" == "zde_bude_sha256_toolkit_tarballu" ]]; then
+    log "❌  Chyba: Kontrolní součet TOOLKIT_SHA256 není definován. Změňte zástupnou hodnotu v CONFIGURATION."
+    exit 1
+  fi
+  if [[ "$ICON_SHA256" == "zde_bude_sha256_ikony" ]]; then
+    log "❌  Chyba: Kontrolní součet ICON_SHA256 není definován. Změňte zástupnou hodnotu v CONFIGURATION."
+    exit 1
+  fi
+  
+  log "✅ Úvodní kontroly dokončeny."
+}
+
+# ==============================================================================
+# HLAVNÍ ČÁST SKRIPTU
+# ==============================================================================
+
+# Zpracování argumentů příkazové řádky
+USE_DIALOG=true
+INSTALL_TOOLS=true
+INSTALL_TOOLKIT=true
+for arg in "$@"; do
+  case $arg in
+    -h|--help)
+      show_help
+      ;;
+    --no-dialog)
+      USE_DIALOG=false
+      ;;
+    --skip-tools)
+      INSTALL_TOOLS=false
+      ;;
+    --skip-toolkit)
+      INSTALL_TOOLKIT=false
+      ;;
+  esac
+done
+
+# Nastavení pasti na signál EXIT a ERR pro spuštění úklidové funkce
+trap cleanup EXIT ERR
+
+# Vytvoření dočasného adresáře a log souboru
+TEMP_DIR=$(mktemp -d)
+echo "--------------------------------------------------------" | tee "$LOG_FILE"
+log "Spuštěna instalace StarkOS..."
+
+# Volání pre-flight kontrol
+pre_flight_checks
+
+# Uvítání uživatele
+[ "$USE_DIALOG" = true ] && zenity --info --title="Instalace StarkOS" --text="Vítejte v instalačním skriptu StarkOS!\n\nSkript provede následující kroky:\n- Kontrola a instalace závislostí\n- Stažení a rozbalení Kali rootfs\n- Vytvoření spouštěcích a vypínacích skriptů\n- Vytvoření ikony na plochu"
+
+# Instalace závislostí, které Zenity potřebuje a jsou důležité pro kontejner
+log "🔧 Instalace závislostí..."
+apt-get update
+apt-get install -y wget tar systemd-container coreutils zenity
+
+# Dynamická detekce DNS
+log "🔍 Zjišťuji dynamicky DNS server a výchozí bránu..."
+PRIMARY_DNS=$(grep -m1 '^nameserver' /etc/resolv.conf | awk '{print $2}' || echo "8.8.8.8")
+log "   Detekovaný DNS server: $PRIMARY_DNS"
+
+# Stažení a ověření Kali rootfs
+download_or_copy_and_verify "$TARBALL_URL" "${TEMP_DIR}/${TARBALL_NAME}" "$TARBALL_SHA256" "Kali rootfs"
+
+# Rozbalení Kali rootfs
+extract_tarball "${TEMP_DIR}/${TARBALL_NAME}" "$ROOTFS_DIR" "Kali rootfs"
+
+# Stažení a instalace ikony
+log "🖼️  Stahuji a instaluji ikonu..."
+mkdir -p "$(dirname "$ICON_PATH")"
+download_or_copy_and_verify "$ICON_URL" "$ICON_PATH" "$ICON_SHA256" "ikonu pro StarkOS"
+chmod 644 "$ICON_PATH"
+
+# Instalace dalších užitečných nástrojů
+if [ "$INSTALL_TOOLS" = true ]; then
+  log "🛠️  Instaluji další užitečné nástroje do kontejneru..."
+  systemd-nspawn -qD "$ROOTFS_DIR" /bin/bash << 'EOC'
+    apt-get update
+    apt-get install -y tmux zsh neovim git powerline
+    echo "source /usr/share/powerline/bindings/zsh/powerline.sh" >> /etc/zsh/zshrc
+    chsh -s /usr/bin/zsh kali
+EOC
+  log "✅ Instalace nástrojů do kontejneru dokončena."
+fi
+
+# Volitelná instalace MAKEJ Toolkit Ultra
+if [ "$INSTALL_TOOLKIT" = true ]; then
+  # Pokud je aktivní dialog, zeptá se uživatele
+  if [ "$USE_DIALOG" = true ]; then
+    if ! zenity --question --title="Volitelná instalace" --text="Chcete nainstalovat sadu nástrojů MAKEJ Toolkit Ultra? Lokální soubor bude použit z: ${TOOLKIT_PATH}"; then
+      log "ℹ️  Instalace MAKEJ Toolkitu přeskočena na žádost uživatele."
+      INSTALL_TOOLKIT=false
+    fi
+  fi
+  # Pokud je instalace povolena (buď defaultně, nebo uživatelem)
+  if [ "$INSTALL_TOOLKIT" = true ]; then
+    log "🔧 Instaluji MAKEJ Toolkit Ultra z lokální cesty: ${TOOLKIT_PATH}"
+    download_or_copy_and_verify "$TOOLKIT_PATH" "${TEMP_DIR}/${TOOLKIT_NAME}" "$TOOLKIT_SHA256" "MAKEJ Toolkit Ultra"
+    extract_tarball "${TEMP_DIR}/${TOOLKIT_NAME}" "$ROOTFS_DIR/makej_toolkit" "MAKEJ Toolkit Ultra"
+  fi
+fi
+
+# Vygenerování .nspawn konfigurace s dynamickým DNS
+log "⚙️  Vytvářím $NSPNAP_CONF s dynamickým nastavením sítě..."
+mkdir -p "$(dirname "$NSPNAP_CONF")"
+cat > "$NSPNAP_CONF" <<-EOF
+[Exec]
+Boot=yes
+
+[Network]
+VirtualEthernet=yes
+Bridge=$BRIDGE
+DNS=$PRIMARY_DNS
+
+[Files]
+Bind=/tmp/.X11-unix:/tmp/.X11-unix
+EOF
+
+# Generování spouštěcího skriptu
+log "🚀 Vytvářím startovací skript $START_SCRIPT..."
+cat > "$START_SCRIPT" <<-EOF
+#!/usr/bin/env bash
+xhost +local:
+exec systemd-nspawn -qD "$ROOTFS_DIR" \
+  --hostname=$MACHINE \
+  --network-bridge=$BRIDGE \
+  --setenv=DISPLAY="\$DISPLAY" \
+  --bind=/tmp/.X11-unix:/tmp/.X11-unix \
+  --boot
+EOF
+chmod +x "$START_SCRIPT"
+
+# Generování vypínacího skriptu
+log "🛑 Vytvářím vypínací skript $STOP_SCRIPT..."
+cat > "$STOP_SCRIPT" <<-EOF
+#!/usr/bin/env bash
+machinectl terminate $MACHINE || log "⚠️  Nepodařilo se ukončit $MACHINE."
+EOF
+chmod +x "$STOP_SCRIPT"
+
+# Vytvoření ikony na plochu
+log "🖼️  Vytvářím ikonu na plochu pro uživatele ${SUDO_USER}..."
+mkdir -p "$DESKTOP_ICON_DIR"
+cat > "$DESKTOP_FILE" <<-EOF
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Spustit StarkOS
+Comment=Spustí izolované kontejnerové prostředí StarkOS
+Exec=pkexec $START_SCRIPT
+Terminal=false
+Icon=starkos
+Path=
+Categories=System;
+EOF
+chown "$SUDO_USER":"$SUDO_USER" "$DESKTOP_FILE"
+chmod +x "$DESKTOP_FILE"
+
+# Hotovo - úklid a závěrečná zpráva jsou zajištěny pomocí trap
+=======
+#!/usr/bin/env bash
+#
+# install_starkos_lab.sh — upravený instalační soubor
+#
+# Vylepšená verze s obsluhou chyb, volitelnou instalací, vlastní ikonou,
+# logováním a dynamickou konfigurací sítě pro bezobslužnou instalaci.
+
+set -euo pipefail
+
+# ==============================================================================
+# KONFIGURACE - Můžete upravit tyto proměnné
+# ==============================================================================
+MACHINE="starkos_kali"
+BRIDGE="ve-$MACHINE"
+
+# URL ke stažení hlavního souborového systému Kali Linux (rootfs) pro arm64.
+# DŮLEŽITÉ: Tuto URL a kontrolní součet nahraďte platnými hodnotami
+# z oficiálních stránek Kali Linuxu.
+TARBALL_URL="http://downloads.kali.org/kali-images/kali-2024.1/kali-linux-2024.1-live-arm64.tar.xz"
+TARBALL_SHA256="zde_bude_aktualni_sha256_z_oficialniho_webu"
+
+# Lokální cesta k souboru MAKEJ Toolkit.
+TOOLKIT_PATH="/home/starko/starkos-deb/Toolkit.tar.xz"
+TOOLKIT_SHA256="zde_bude_sha256_toolkit_tarballu"
+
+# URL ke stažení ikony pro spouštěcí skript na ploše.
+ICON_URL="https://drive.google.com/file/d/18l2RCjDZpCUh2G3YRqkzJnTIUBcmre8-/view?usp=sharing"
+ICON_SHA256="zde_bude_sha256_ikony"
+
+# Cesty na hostitelském systému
+INSTALL_DIR="/srv"
+ROOTFS_DIR="${INSTALL_DIR}/${MACHINE}"
+NSPNAP_CONF="/etc/systemd/nspawn/${MACHINE}.nspawn"
+START_SCRIPT="/usr/local/bin/start_${MACHINE}.sh"
+STOP_SCRIPT="/usr/local/bin/stop_${MACHINE}.sh"
+DESKTOP_ICON_DIR="/home/$SUDO_USER/Desktop"
+ICON_PATH="/usr/share/icons/hicolor/128x128/apps/starkos.png"
+DESKTOP_FILE="${DESKTOP_ICON_DIR}/start_${MACHINE}.desktop"
+
+# Logovací soubor a dočasný adresář
+LOG_FILE="/var/log/starkos_install.log"
+TEMP_DIR=""
+TARBALL_NAME=$(basename "$TARBALL_URL")
+TOOLKIT_NAME=$(basename "$TOOLKIT_PATH")
+
+# ==============================================================================
+# FUNKCE
+# ==============================================================================
+
+# Funkce pro úklid dočasných souborů a adresářů a závěrečné hlášení
+cleanup() {
+  local exit_code=$?
+  if [ -n "$TEMP_DIR" ] && [ -d "$TEMP_DIR" ]; then
+    log "⚠️  Došlo k chybě. Provádím úklid dočasného adresáře: $TEMP_DIR"
+    rm -rf "$TEMP_DIR"
+  fi
+  if [ "$exit_code" -eq 0 ]; then
+    [ "$USE_DIALOG" = true ] && zenity --info --title="Instalace StarkOS" --text="✅ Instalace dokončena!\n\nPrůběh instalace naleznete v log souboru:\n<b>${LOG_FILE}</b>\n\nNa ploše byla vytvořena ikona 'Spustit StarkOS'."
+  else
+    [ "$USE_DIALOG" = true ] && zenity --error --title="Chyba instalace" --text="❌ Instalace StarkOS selhala! Bližší detaily naleznete v log souboru:\n<b>${LOG_FILE}</b>"
+  fi
+  exit "$exit_code"
+}
+
+# Funkce pro logování na konzoli i do souboru
+log() {
+  echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" | tee -a "$LOG_FILE"
+}
+
+# Funkce pro zobrazení nápovědy
+show_help() {
+  cat << EOF
+Použití: sudo ./install_starkos_lab.sh [možnosti]
+
+Instalační skript pro StarkOS Lab na Raspberry Pi 5.
+
+Možnosti:
+  --help, -h          Zobrazí tuto nápovědu.
+  --no-dialog         Spustí instalaci bez grafických Zenity dialogů.
+  --skip-tools        Přeskočí instalaci užitečných nástrojů (tmux, zsh atd.).
+  --skip-toolkit      Přeskočí instalaci sady nástrojů MAKEJ Toolkit.
+
+EOF
+  exit 0
+}
+
+# Funkce pro stažení/použití souboru s ověřením integrity (s progress barem)
+download_or_copy_and_verify() {
+  local source="$1"
+  local dest_path="$2"
+  local expected_sha256="$3"
+  local description="$4"
+
+  log "⬇️  Zpracovávám ${description}..."
+
+  if [[ "$source" =~ ^https?:// ]]; then
+    # Jedná se o URL, stahuji soubor
+    if [ -f "$dest_path" ]; then
+      [ "$USE_DIALOG" = true ] && zenity --info --title="Stahování" --text="Soubor pro ${description} již existuje, stahování se přeskočí." || echo "Soubor již existuje, přeskočeno."
+    else
+      if [ "$USE_DIALOG" = true ]; then
+        wget --progress=bar:force:noscroll -O "$dest_path" "$source" 2>&1 | \
+        zenity --progress --title="Stahování ${description}" --text="Probíhá stahování z:\n${source}" --pulsate --no-cancel --auto-close
+      else
+        wget -O "$dest_path" "$source"
+      fi
+    fi
+  elif [ -f "$source" ]; then
+    # Jedná se o lokální soubor, kopíruji ho
+    log "   Používám lokální soubor: $source"
+    cp "$source" "$dest_path"
+  else
+    log "❌  Chyba: Neplatný zdroj pro ${description}."
+    exit 1
+  fi
+
+  log "🔍  Ověřuji integritu souboru ${description}..."
+  actual_sha256=$(sha256sum "$dest_path" | awk '{print $1}')
+
+  if [ "$actual_sha256" != "$expected_sha256" ]; then
+    log "❌  Chyba: Kontrolní součet SHA256 se neshoduje!"
+    log "    Očekáváno:   $expected_sha256"
+    log "    Nalezeno:    $actual_sha256"
+    exit 1
+  fi
+  log "✅  Integrita ověřena."
+}
+
+# Funkce pro rozbalení tarballu
+extract_tarball() {
+  local tarball="$1"
+  local dest_dir="$2"
+  local description="$3"
+
+  if [ -d "$dest_dir" ] && [ "$(ls -A "$dest_dir")" ]; then
+    log "   (adresář $dest_dir existuje a není prázdný, přeskočeno rozbalení)"
+  else
+    log "📂 Rozbaluji ${description} do $dest_dir..."
+    mkdir -p "$dest_dir"
+    tar -xJf "$tarball" -C "$dest_dir"
+  fi
+}
+
+# Funkce pro pre-flight kontroly
+pre_flight_checks() {
+  log "🔍 Provádím úvodní kontroly..."
+  
+  # Kontrola oprávnění root
+  if [ "$EUID" -ne 0 ]; then
+    [ "$USE_DIALOG" = true ] && zenity --error --title="Chyba oprávnění" --text="❌ Tento skript musí být spuštěn s oprávněním root (např. přes sudo)."
+    exit 1
+  fi
+  if [ -z "${SUDO_USER}" ]; then
+    [ "$USE_DIALOG" = true ] && zenity --error --title="Chyba oprávnění" --text="❌ Spusťte skript přes 'sudo'!"
+    exit 1
+  fi
+
+  # Kontrola dostupnosti příkazů
+  local needed_commands="wget tar systemd-nspawn sha256sum"
+  for cmd in $needed_commands; do
+    if ! command -v "$cmd" &>/dev/null; then
+      log "⚠️  Příkaz '$cmd' nebyl nalezen. Pokouším se nainstalovat..."
+      apt-get update
+      apt-get install -y "$cmd" || { log "❌  Nepodařilo se nainstalovat '$cmd'. Ukončuji."; exit 1; }
+      log "✅  Příkaz '$cmd' úspěšně nainstalován."
+    fi
+  done
+  
+  # Kontrola zástupných SHA256
+  if [[ "$TARBALL_SHA256" == "zde_bude_aktualni_sha256_z_oficialniho_webu" ]]; then
+    log "❌  Chyba: Kontrolní součet TARBALL_SHA256 není definován. Změňte zástupnou hodnotu v CONFIGURATION."
+    exit 1
+  fi
+  if [ "$INSTALL_TOOLKIT" = true ] && [[ "$TOOLKIT_SHA256" == "zde_bude_sha256_toolkit_tarballu" ]]; then
+    log "❌  Chyba: Kontrolní součet TOOLKIT_SHA256 není definován. Změňte zástupnou hodnotu v CONFIGURATION."
+    exit 1
+  fi
+  if [[ "$ICON_SHA256" == "zde_bude_sha256_ikony" ]]; then
+    log "❌  Chyba: Kontrolní součet ICON_SHA256 není definován. Změňte zástupnou hodnotu v CONFIGURATION."
+    exit 1
+  fi
+  
+  log "✅ Úvodní kontroly dokončeny."
+}
+
+# ==============================================================================
+# HLAVNÍ ČÁST SKRIPTU
+# ==============================================================================
+
+# Zpracování argumentů příkazové řádky
+USE_DIALOG=true
+INSTALL_TOOLS=true
+INSTALL_TOOLKIT=true
+for arg in "$@"; do
+  case $arg in
+    -h|--help)
+      show_help
+      ;;
+    --no-dialog)
+      USE_DIALOG=false
+      ;;
+    --skip-tools)
+      INSTALL_TOOLS=false
+      ;;
+    --skip-toolkit)
+      INSTALL_TOOLKIT=false
+      ;;
+  esac
+done
+
+# Nastavení pasti na signál EXIT a ERR pro spuštění úklidové funkce
+trap cleanup EXIT ERR
+
+# Vytvoření dočasného adresáře a log souboru
+TEMP_DIR=$(mktemp -d)
+echo "--------------------------------------------------------" | tee "$LOG_FILE"
+log "Spuštěna instalace StarkOS..."
+
+# Volání pre-flight kontrol
+pre_flight_checks
+
+# Uvítání uživatele
+[ "$USE_DIALOG" = true ] && zenity --info --title="Instalace StarkOS" --text="Vítejte v instalačním skriptu StarkOS!\n\nSkript provede následující kroky:\n- Kontrola a instalace závislostí\n- Stažení a rozbalení Kali rootfs\n- Vytvoření spouštěcích a vypínacích skriptů\n- Vytvoření ikony na plochu"
+
+# Instalace závislostí, které Zenity potřebuje a jsou důležité pro kontejner
+log "🔧 Instalace závislostí..."
+apt-get update
+apt-get install -y wget tar systemd-container coreutils zenity
+
+# Dynamická detekce DNS
+log "🔍 Zjišťuji dynamicky DNS server a výchozí bránu..."
+PRIMARY_DNS=$(grep -m1 '^nameserver' /etc/resolv.conf | awk '{print $2}' || echo "8.8.8.8")
+log "   Detekovaný DNS server: $PRIMARY_DNS"
+
+# Stažení a ověření Kali rootfs
+download_or_copy_and_verify "$TARBALL_URL" "${TEMP_DIR}/${TARBALL_NAME}" "$TARBALL_SHA256" "Kali rootfs"
+
+# Rozbalení Kali rootfs
+extract_tarball "${TEMP_DIR}/${TARBALL_NAME}" "$ROOTFS_DIR" "Kali rootfs"
+
+# Stažení a instalace ikony
+log "🖼️  Stahuji a instaluji ikonu..."
+mkdir -p "$(dirname "$ICON_PATH")"
+download_or_copy_and_verify "$ICON_URL" "$ICON_PATH" "$ICON_SHA256" "ikonu pro StarkOS"
+chmod 644 "$ICON_PATH"
+
+# Instalace dalších užitečných nástrojů
+if [ "$INSTALL_TOOLS" = true ]; then
+  log "🛠️  Instaluji další užitečné nástroje do kontejneru..."
+  systemd-nspawn -qD "$ROOTFS_DIR" /bin/bash << 'EOC'
+    apt-get update
+    apt-get install -y tmux zsh neovim git powerline
+    echo "source /usr/share/powerline/bindings/zsh/powerline.sh" >> /etc/zsh/zshrc
+    chsh -s /usr/bin/zsh kali
+EOC
+  log "✅ Instalace nástrojů do kontejneru dokončena."
+fi
+
+# Volitelná instalace MAKEJ Toolkit Ultra
+if [ "$INSTALL_TOOLKIT" = true ]; then
+  # Pokud je aktivní dialog, zeptá se uživatele
+  if [ "$USE_DIALOG" = true ]; then
+    if ! zenity --question --title="Volitelná instalace" --text="Chcete nainstalovat sadu nástrojů MAKEJ Toolkit Ultra? Lokální soubor bude použit z: ${TOOLKIT_PATH}"; then
+      log "ℹ️  Instalace MAKEJ Toolkitu přeskočena na žádost uživatele."
+      INSTALL_TOOLKIT=false
+    fi
+  fi
+  # Pokud je instalace povolena (buď defaultně, nebo uživatelem)
+  if [ "$INSTALL_TOOLKIT" = true ]; then
+    log "🔧 Instaluji MAKEJ Toolkit Ultra z lokální cesty: ${TOOLKIT_PATH}"
+    download_or_copy_and_verify "$TOOLKIT_PATH" "${TEMP_DIR}/${TOOLKIT_NAME}" "$TOOLKIT_SHA256" "MAKEJ Toolkit Ultra"
+    extract_tarball "${TEMP_DIR}/${TOOLKIT_NAME}" "$ROOTFS_DIR/makej_toolkit" "MAKEJ Toolkit Ultra"
+  fi
+fi
+
+# Vygenerování .nspawn konfigurace s dynamickým DNS
+log "⚙️  Vytvářím $NSPNAP_CONF s dynamickým nastavením sítě..."
+mkdir -p "$(dirname "$NSPNAP_CONF")"
+cat > "$NSPNAP_CONF" <<-EOF
+[Exec]
+Boot=yes
+
+[Network]
+VirtualEthernet=yes
+Bridge=$BRIDGE
+DNS=$PRIMARY_DNS
+
+[Files]
+Bind=/tmp/.X11-unix:/tmp/.X11-unix
+EOF
+
+# Generování spouštěcího skriptu
+log "🚀 Vytvářím startovací skript $START_SCRIPT..."
+cat > "$START_SCRIPT" <<-EOF
+#!/usr/bin/env bash
+xhost +local:
+exec systemd-nspawn -qD "$ROOTFS_DIR" \
+  --hostname=$MACHINE \
+  --network-bridge=$BRIDGE \
+  --setenv=DISPLAY="\$DISPLAY" \
+  --bind=/tmp/.X11-unix:/tmp/.X11-unix \
+  --boot
+EOF
+chmod +x "$START_SCRIPT"
+
+# Generování vypínacího skriptu
+log "🛑 Vytvářím vypínací skript $STOP_SCRIPT..."
+cat > "$STOP_SCRIPT" <<-EOF
+#!/usr/bin/env bash
+machinectl terminate $MACHINE || log "⚠️  Nepodařilo se ukončit $MACHINE."
+EOF
+chmod +x "$STOP_SCRIPT"
+
+# Vytvoření ikony na plochu
+log "🖼️  Vytvářím ikonu na plochu pro uživatele ${SUDO_USER}..."
+mkdir -p "$DESKTOP_ICON_DIR"
+cat > "$DESKTOP_FILE" <<-EOF
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Spustit StarkOS
+Comment=Spustí izolované kontejnerové prostředí StarkOS
+Exec=pkexec $START_SCRIPT
+Terminal=false
+Icon=starkos
+Path=
+Categories=System;
+EOF
+chown "$SUDO_USER":"$SUDO_USER" "$DESKTOP_FILE"
+chmod +x "$DESKTOP_FILE"
+
+# Hotovo - úklid a závěrečná zpráva jsou zajištěny pomocí trap
+>>>>>>> 2d437cc2ae07a396d41a3b74e61ac94634aea845
+log "✅ Instalace dokončena! Provádím finální úklid a ukončuji skript."
