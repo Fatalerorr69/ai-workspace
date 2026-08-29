@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kubernetes Pods</title>
+</head>
+<body>
+<h2>Kubernetes Pods</h2>
+
+<pre>
+{{ pods }}
+</pre>
+
+<h3>Scale Deployment</h3>
+<form method="post" action="/scale">
+    Deployment: <input type="text" name="appname" required><br>
+    Replicas: <input type="number" name="replicas" required><br>
+    <button type="submit">Scale</button>
+</form>
+
+<nav>
+<a href="/nodes">Nodes</a> |
+<a href="/services">Services</a> |
+<a href="/logs">Logs</a>
+</nav>
+
+</body>
+</html>

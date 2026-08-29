@@ -1,0 +1,25 @@
+{
+  "hostname": "rpi-platform",
+  "timezone": "Europe/Prague",
+  "user": "admin",
+
+  "modules": {
+    "docker": true,
+    "pentest": true,
+    "monitoring": true,
+    "nas": true,
+    "backup": true,
+    "security": true,
+    "k3s": false,
+    "android": false
+  },
+
+  "webui": {
+    "port": 8080,
+    "user": "admin",
+    "password": "admin123"
+  },
+
+  "backup_path": "/srv/backups",
+  "version": "7.0-STABLE"
+}
