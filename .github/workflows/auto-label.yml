@@ -1,0 +1,14 @@
+name: Auto Label
+on:
+  issues: {types: [opened]}
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const labels = [];
+            if (context.payload.issue.body?.includes('bug')) labels.push('bug');
+            if (context.payload.issue.body?.includes('feature')) labels.push('enhancement');
+            if (labels.length) github.rest.issues.addLabels({owner: context.repo.owner, repo: context.repo.repo, issue_number: context.payload.issue.number, labels});
