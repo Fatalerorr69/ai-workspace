@@ -1,0 +1,15 @@
+body { margin:0; font-family:Arial; background:#0b0e11; color:#e0e0e0 }
+#sidebar {
+  width:220px; position:fixed; height:100%;
+  background:#111; padding:10px;
+}
+#sidebar a {
+  display:block; padding:10px;
+  color:#9cf; text-decoration:none;
+}
+#sidebar a:hover { background:#1a1f26 }
+#content { margin-left:240px; padding:20px }
+.card {
+  border:1px solid #333; padding:15px;
+  margin-bottom:15px; border-radius:6px;
+}
