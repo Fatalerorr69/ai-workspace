@@ -1,0 +1,56 @@
+apply plugin: 'idea'
+
+idea.module {
+    excludeDirs += file('out')
+    resourceDirs += file('template')
+    resourceDirs += file('scripts')
+}
+
+buildscript {
+    apply from: 'api/manifest.gradle'
+
+    ext.kotlinVersion = '1.7.20'
+    repositories {
+        mavenCentral()
+        google()
+
+        // In case newly published library not yet synced with maven central
+        maven {
+            url("https://s01.oss.sonatype.org/content/repositories/releases/")
+            content {
+                includeGroup("dev.rikka.tools.refine")
+            }
+        }
+        mavenLocal()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath 'dev.rikka.tools.refine:gradle-plugin:3.1.1'
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+
+        // In case newly published library not yet synced with maven central
+        maven {
+            url("https://s01.oss.sonatype.org/content/repositories/releases/")
+            content {
+                includeGroupByRegex("dev.rikka.*")
+            }
+        }
+        mavenLocal()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    minSdkVersion = 23
+    targetSdkVersion = 33
+}
