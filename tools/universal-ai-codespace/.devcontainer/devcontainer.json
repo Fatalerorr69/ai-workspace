@@ -1,0 +1,69 @@
+{
+    "name": "Universal AI Development",
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "features": {
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.11"
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "18"
+        },
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers/features/azure-cli:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-vscode.vscode-typescript-next",
+                "redhat.vscode-yaml",
+                "ms-azuretools.vscode-docker",
+                "ms-vscode.cpptools",
+                "github.copilot",
+                "github.copilot-chat",
+                "tabnine.tabnine-vscode",
+                "codegpt.codegpt",
+                "continue.continue",
+                "ms-vscode.makefile-tools",
+                "ms-vscode.hexeditor",
+                "gitHub.vscode-pull-request-github",
+                "eamodio.gitlens"
+            ],
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash",
+                "editor.fontSize": 14,
+                "editor.lineHeight": 1.5,
+                "editor.minimap.enabled": true,
+                "workbench.startupEditor": "none",
+                "python.defaultInterpreterPath": "/usr/local/bin/python"
+            }
+        }
+    },
+    "postCreateCommand": "bash .devcontainer/setup.sh",
+    "postStartCommand": "bash .codespaces/start.sh",
+    "forwardPorts": [3000, 8000, 8080, 11434],
+    "portsAttributes": {
+        "3000": {
+            "label": "Web App",
+            "onAutoForward": "notify"
+        },
+        "8000": {
+            "label": "API Server",
+            "onAutoForward": "notify"
+        },
+        "8080": {
+            "label": "Development Server",
+            "onAutoForward": "notify"
+        },
+        "11434": {
+            "label": "Ollama API",
+            "onAutoForward": "notify"
+        }
+    },
+    "hostRequirements": {
+        "cpus": 4,
+        "memory": "8gb",
+        "storage": "32gb"
+    }
+}
