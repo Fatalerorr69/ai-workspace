@@ -6,6 +6,6 @@ if (-not (Test-Path $workspacePath)) {
 }
 Write-Host "Spouštím HTTP server na portu 8000..." -ForegroundColor Cyan
 $ip = tailscale ip -4
-Write-Host "Přístup z Androidu: http://$ip`:8000" -ForegroundColor Green
+Write-Host "Přístup z Androidu: http://${ip}:8000" -ForegroundColor Green
 Set-Location $workspacePath
 python -m http.server 8000 --bind 0.0.0.0
