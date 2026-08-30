@@ -1,6 +1,0 @@
-{
-  "name": "STARCORE-ANDROID DevContainer",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "features": {},
-  "postCreateCommand": "bash ./setup.sh || true"
-}

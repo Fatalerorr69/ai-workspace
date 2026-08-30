@@ -1,3 +1,0 @@
-# HerniOS
-
-Krátký popis projektu.

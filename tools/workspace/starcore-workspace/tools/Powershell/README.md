@@ -1,3 +1,0 @@
-# Powershell
-
-Krátký popis projektu.
