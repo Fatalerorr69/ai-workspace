@@ -1,0 +1,81 @@
+repo_name,risk_score,priority,notes
+acode-dev-master,75,3,Duplicitní s Acode_Dev_Master, velikost 22 KB, neaktivní
+acode-dev-tools,70,3,Duplicitní, velikost 36 KB
+Acode_Dev_Master,60,2,Hlavní acode repo, velikost 142 KB
+ai-project-analyzer,65,2,Python, má Actions
+android-kit-os,50,2,Prázdné (0 KB), má Actions
+backup-before-autofix-20260821-185234,85,1,Záloha před autofixem, velikost 234 KB, nepotřebné
+backup-before-rename-20260821-090650,85,1,Záloha před přejmenováním, prázdné
+backups,90,1,Veliké (3 MB), čisté zálohy, k archivaci
+containers-pokus,60,2,TypeScript, duplicitní s containers-template
+containers-template,50,2,TypeScript, šablona
+containers-templatemhv,65,2,TypeScript, duplicitní
+customubuntuserver,50,3,Prázdné
+d1-rest,45,2,TypeScript, MIT, má Actions
+digital-clock-timezones,55,3,Prázdné
+Dokumenty,90,1,Privátní, archivované
+genesis-aetema,55,3,Duplicitní s genesis-aeterna
+genesis-aeterna,50,2,PowerShell, má Actions
+genesiscraft,60,3,Python
+GITHUB-AUDIT-REPORT,90,1,Privátní, archivované
+hernios,60,3,Shell, má Actions
+md-installer,60,3,Shell, má Actions
+minimal-nas-web-edition,55,3,Python
+modules,60,3,PowerShell, má Actions
+name,80,3,Prázdné, nesmyslný název
+nymeakiosk-ultimate-system,40,2,Shell, MIT, aktivní (2025-11)
+octopuscli,30,2,Veliké (20 MB), NOASSERTION, aktivní
+ollama,40,2,PowerShell, aktivní (2025-06)
+OpenMediaVault,90,1,Privátní, archivované
+platform,60,3,Shell, velikost 184 KB
+powershell,55,3,PowerShell, má Actions
+prepare-proxmox-usb,35,2,Shell, aktivní (2026-04)
+projekt-genesis-2026,30,1,Shell, aktivní (2026-06)
+raspberry-pi-5-multifunk-n-syst-my-a-automatizace,60,3,Prázdné, dlouhý název
+recalbox-diag,60,3,Shell, má Actions
+repo,80,3,Prázdné, nesmyslný název
+ripe-atlas-cousteau,70,2,GPL-3.0, 323 KB
+rpi-nymea,55,3,Shell, má Actions
+rpi5-github-catalog,25,1,Python, velikost 6.8 MB, aktivní (2026-01)
+rpi5-homeassistant-suite,35,2,Shell, aktivní (2025-12)
+rpi5-starkhost,55,3,Shell
+run-os-from-fyzdisk-on-win,60,3,PowerShell, má Actions
+skripty,25,1,Veliké (8.7 MB), Shell, aktivní
+starcore,45,2,Python, má Actions
+starcore-android,50,2,PowerShell, má Actions
+starcore-auto-builder-v3-0-live-dashboard,60,3,Shell
+starcore-hive,40,2,Aktivní (2026-03), riziko z července
+starcore-installer,60,3,Shell, má Actions
+starcore-platform,20,1,Python, velikost 18 MB, má Actions, 2 issues
+starcore-platform-backup,75,1,Záloha platformy, 12 KB, archivovat
+starcore-project-intelligence,50,2,Python, má Actions
+starcore-v12-ai-package,60,3,Prázdné
+starcore-vnext,60,3,Prázdné
+starcore-workspace,30,1,Veliké (22 MB), Shell, má Actions
+starko-os-kali,60,3,Prázdné
+starko-rpi5-ai-workspace,45,2,Shell, 1 issue, má Actions
+starko-ultimate-recovery-usb,40,2,PowerShell, aktivní (2025-05)
+starko-universal-pentest,60,3,Prázdné
+starkorecovery,60,3,Prázdné
+sui,55,2,GPL-3.0, 763 KB
+supernastroj,55,3,MIT, Shell
+supernastroj-v5,60,3,Prázdné
+telemetry,60,3,Prázdné
+terminal-mini-os,60,3,Prázdné
+termux-install,60,3,Prázdné
+tsx,30,2,MIT, 2.3 MB
+twisteros-supermanager,40,2,Shell, 2 issues, má Actions
+ubuntu-gameserver,55,3,Shell
+ubuntu-server1,55,3,Shell
+ultimate-raspberry-pi-5-all-in-one-installer,50,2,Shell, 520 KB
+ultra,55,3,Shell
+ultraos,60,3,Prázdné
+universal-ai-codespace,45,2,Shell, aktivní (2025-12)
+uwp,55,3,Shell
+vbbuildmanager,55,3,MIT, staré (2016)
+vmconsole,60,3,Prázdné
+VS-code,90,1,Privátní, archivované
+vscode,60,3,Prázdné
+winpe-recovery-dark-pro-edition,60,3,Prázdné
+workspace,60,3,Prázdné
+wsl,60,3,Prázdné

@@ -1,0 +1,12 @@
+{
+    "nameservers": ["1.1.1.1", "8.8.8.8"],
+    "searchDomains": ["~tailnet"],
+    "magicDns": true,
+    "extraRecords": [
+        {
+            "name": "workspace",
+            "type": "A",
+            "value": "100.115.149.27"
+        }
+    ]
+}
