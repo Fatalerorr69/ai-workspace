@@ -1,7 +1,0 @@
-{
- "event":"string",
- "source":"string",
- "severity":"info|warning|critical",
- "timestamp":"ISO-8601",
- "payload":"object"
-}

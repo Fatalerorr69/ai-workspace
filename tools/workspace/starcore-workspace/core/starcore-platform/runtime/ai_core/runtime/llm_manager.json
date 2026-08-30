@@ -1,8 +1,0 @@
-{
-    "component":"Local LLM Manager",
-    "providers":[
-        "ollama",
-        "local_models"
-    ],
-    "status":"ready"
-}

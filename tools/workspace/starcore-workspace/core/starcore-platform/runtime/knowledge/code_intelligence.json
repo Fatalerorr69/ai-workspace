@@ -1,9 +1,0 @@
-{
- "component":"Code Intelligence",
- "languages":[
- "python",
- "javascript",
- "bash"
- ],
- "status":"ready"
-}
