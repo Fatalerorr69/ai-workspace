@@ -29,8 +29,8 @@
   "config": {
     "tailscale": {
       "api_endpoint": "https://api.tailscale.com/api/v2",
-      "auth_method": "OIDC + API key",
-      "secrets_required": ["TAILSCALE_API_KEY", "TAILSCALE_CLIENT_SECRET"],
+      "auth_method": "API key (OIDC flow planned)",
+      "secrets_required": ["TAILSCALE_API_KEY"],
       "acl_policy": "tailscale_acl_policy.hujson (soubor v templates/)",
       "dns_config": "tailscale_dns_config.json (soubor v templates/)"
     },
