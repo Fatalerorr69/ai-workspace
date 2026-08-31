@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ULTRA Dashboard</title>
+<style>
+body { background:#111; color:#0f0; font-family:monospace }
+#logs { height:400px; overflow:auto; border:1px solid #333; padding:5px }
+</style>
+</head>
+<body>
+
+<h1>ULTRA OS Dashboard</h1>
+
+<h3>Systém</h3>
+<pre id="sys"></pre>
+
+<h3>Live logy</h3>
+<div id="logs"></div>
+
+<script>
+fetch('/api/system')
+.then(r=>r.json())
+.then(d=>sys.innerText = JSON.stringify(d,null,2));
+
+const evt = new EventSource("/api/logs");
+evt.onmessage = e => {
+  logs.innerText += e.data;
+  logs.scrollTop = logs.scrollHeight;
+};
+</script>
+
+<h3>AI doporučení</h3>
+<pre id="ai_out"></pre>
+<script>
+const aiEvt = new EventSource("/api/ai");
+aiEvt.onmessage = e => {
+    ai_out.innerText += e.data + "\n";
+};
+</script>
+
+<style>
+.log-error { color:#ff5555 }
+.log-warn  { color:#ffaa00 }
+.log-info  { color:#00ff99 }
+</style>
+
+<script>
+evt.onmessage = e => {
+  let cls = "log-info";
+  if (e.data.includes("ERROR")) cls="log-error";
+  if (e.data.includes("WARNING")) cls="log-warn";
+  logs.innerHTML += `<div class="${cls}">${e.data}</div>`;
+};
+</script>
+
+  
+</body>
+</html>

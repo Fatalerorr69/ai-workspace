@@ -1,3 +1,0 @@
-# backups
-
-AutoFix: README created.

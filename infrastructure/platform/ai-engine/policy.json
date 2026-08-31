@@ -1,0 +1,11 @@
+{
+  "mode": "observe",
+  "allowed_actions": [
+    "restart_service",
+    "run_backup",
+    "cleanup_disk",
+    "scale_container"
+  ],
+  "max_actions_per_hour": 5,
+  "log_actions": true
+}

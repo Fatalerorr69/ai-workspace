@@ -1,0 +1,13 @@
+#!/bin/bash
+PLUGIN_NAME="plugin_conky.sh"
+STATUS_FILE="$HOME/twisteros_supermanager/twister-dashboard/data/plugin_status.json"
+LOG_FILE="$HOME/twisteros_supermanager/twister-dashboard/data/plugin.log"
+
+echo "$(date '+%Y-%m-%d %H:%M:%S') Spuštěn $PLUGIN_NAME" >> "$LOG_FILE"
+
+# Aktualizace statusu
+if [[ -x "$HOME/twisteros_supermanager/plugins/$PLUGIN_NAME" ]]; then
+    jq --arg p "$PLUGIN_NAME" --arg s "✅ aktivní" '.[$p]=$s' "$STATUS_FILE" > "${STATUS_FILE}.tmp" && mv "${STATUS_FILE}.tmp" "$STATUS_FILE"
+else
+    jq --arg p "$PLUGIN_NAME" --arg s "❌ neaktivní" '.[$p]=$s' "$STATUS_FILE" > "${STATUS_FILE}.tmp" && mv "${STATUS_FILE}.tmp" "$STATUS_FILE"
+fi

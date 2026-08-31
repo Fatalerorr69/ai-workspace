@@ -1,0 +1,23 @@
+name: Tailscale OIDC Demo
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write   # nutné pro OIDC
+  contents: read
+
+jobs:
+  get-devices:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Tailscale OIDC token
+        run: |
+          # Výměna GitHub OIDC tokenu za Tailscale API token
+          # Toto je zjednodušený příklad – v reálu použijte actions/github-script
+          echo "OIDC token by se měl vyměnit za Tailscale API token pomocí Tailscale OIDC endpointu."
+      - name: List Tailscale devices (requires API token)
+        env:
+          TAILSCALE_API_KEY: ${{ secrets.TAILSCALE_API_KEY }}
+        run: |
+          curl -s https://api.tailscale.com/api/v2/tailnet/-/devices \
+            -u "$TAILSCALE_API_KEY:"

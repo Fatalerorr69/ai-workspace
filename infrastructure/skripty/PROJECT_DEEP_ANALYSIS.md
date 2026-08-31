@@ -1,0 +1,254 @@
+# Hluboká analýza: skripty
+
+## Základní informace
+- **Cílová cesta:** $targetPath
+- **Detekované technologie:** PowerShell, Shell
+- **Počet skriptů:** 238
+
+## Popis z README
+
+
+## Seznam skriptů
+- `infrastructure\skripty\AI\deploy_chatbot_wifi.sh` – !/bin/bash
+- `infrastructure\skripty\android_tools\android_gui.py` – !/usr/bin/env python3
+- `infrastructure\skripty\lcd-switch-raspi5\Displej rozliseni\rozliseni\install_vnc.sh` – !/bin/bash
+- `infrastructure\skripty\lcd-switch-raspi5\Displej rozliseni\rozliseni\vnc-auto-resize-ultimate-v3.sh` – !/bin/bash
+- `infrastructure\skripty\lcd-switch-raspi5\Displej rozliseni\install gui vnc server.sh` – Skript install gui vnc server.sh
+- `infrastructure\skripty\lcd-switch-raspi5\lcd-switch\backup-config.sh` – !/bin/bash
+- `infrastructure\skripty\lcd-switch-raspi5\lcd-switch\lcd-off.sh` – !/bin/bash
+- `infrastructure\skripty\lcd-switch-raspi5\lcd-switch\lcd-on.sh` – !/bin/bash
+- `infrastructure\skripty\lcd-switch-raspi5\TFT_hdmi_hotplug\hdmi_hotplug_switch.sh` – !/bin/bash
+- `infrastructure\skripty\lcd-switch-raspi5\setup_mhs35_auto_dpi.sh` – !/bin/bash
+- `infrastructure\skripty\lcd-switch-raspi5\setup_mhs35.sh` – !/bin/bash
+- `infrastructure\skripty\OS\Android_kit_ OS\format_ssd.sh` – Skript format_ssd.sh
+- `infrastructure\skripty\OS\Android_kit_ OS\setup_devlab.sh` – Skript setup_devlab.sh
+- `infrastructure\skripty\OS\Android_kit_ OS\setup_stardroid.sh` – Skript setup_stardroid.sh
+- `infrastructure\skripty\OS\HerniOS\skripty\create-launcher.sh` – !/bin/bash
+- `infrastructure\skripty\OS\HerniOS\skripty\check-bios.sh` – !/bin/bash
+- `infrastructure\skripty\OS\HerniOS\skripty\rom-import.sh` – !/bin/bash
+- `infrastructure\skripty\OS\HerniOS\Starkos full install.sh` – !/bin/bash
+- `infrastructure\skripty\OS\Run_OS_from_fyzDisk_on_win\Installer.ps1` – =========================================================================
+- `infrastructure\skripty\OS\Run_OS_from_fyzDisk_on_win\SpustitVM-v6.ps1` – =========================================================================
+- `infrastructure\skripty\OS\UltraOS\UltraOS-Project\ai_advisor.sh` – !/bin/bash
+- `infrastructure\skripty\OS\UltraOS\UltraOS-Project\backup-config.sh` – !/bin/bash
+- `infrastructure\skripty\OS\UltraOS\UltraOS-Project\build.sh` – !/bin/bash
+- `infrastructure\skripty\OS\UltraOS\UltraOS-Project\detect_device.sh` – !/bin/bash
+- `infrastructure\skripty\OS\UltraOS\UltraOS-Project\frp_samsung.sh` – !/bin/bash
+- `infrastructure\skripty\OS\UltraOS\UltraOS-Project\gui.sh` – !/bin/bash
+- `infrastructure\skripty\OS\UltraOS\UltraOS-Project\install_starkos_lab.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\OS\UltraOS\UltraOS-Project\lcd-off.sh` – !/bin/bash
+- `infrastructure\skripty\OS\UltraOS\UltraOS-Project\lcd-on.sh` – !/bin/bash
+- `infrastructure\skripty\OS\UltraOS\UltraOS-Project\udrzba.sh` – Udržba systému s grafickým menu pro Raspberry Pi
+- `infrastructure\skripty\OS\UltraOS\UltraOS-Toolkit\scripts\ai_advisor.sh` – !/bin/bash
+- `infrastructure\skripty\OS\UltraOS\UltraOS-Toolkit\scripts\detect_device.sh` – !/bin/bash
+- `infrastructure\skripty\OS\UltraOS\UltraOS-Toolkit\scripts\frp_samsung.sh` – !/bin/bash
+- `infrastructure\skripty\OS\UltraOS\UltraOS-Toolkit\webui\assets\ajax.js` – --- JavaScript pro AJAX komunikaci webového GUI ---
+- `infrastructure\skripty\OS\UltraOS\UltraOS-Toolkit\gui.sh` – !/bin/bash
+- `infrastructure\skripty\OS\UltraOS\customize_ultraos_desktop.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\OS\mini_OS_term.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\OS\starko_final_srtup.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\Pegi ovladac\profily\pg9157_android.sh` – !/bin/bash
+- `infrastructure\skripty\Pegi ovladac\profily\pg9157_game.sh` – !/bin/bash
+- `infrastructure\skripty\Pegi ovladac\profily\pg9157_keyboard.sh` – !/bin/bash
+- `infrastructure\skripty\Pegi ovladac\profily\pg9157_mouse.sh` – !/bin/bash
+- `infrastructure\skripty\Pegi ovladac\instal_run_mapp_autorun_ovladac.sh` – !/bin/bash
+- `infrastructure\skripty\Pegi ovladac\pg9157_abo.sh` – !/bin/bash
+- `infrastructure\skripty\Pegi ovladac\pg9157_auto_connect.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\_wd.sh` – compdef wd
+- `infrastructure\skripty\TermuxFilesSh\00-base.sh` – Skript 00-base.sh
+- `infrastructure\skripty\TermuxFilesSh\01-dev.sh` – Skript 01-dev.sh
+- `infrastructure\skripty\TermuxFilesSh\02-ai.sh` – Skript 02-ai.sh
+- `infrastructure\skripty\TermuxFilesSh\03-re.sh` – Skript 03-re.sh
+- `infrastructure\skripty\TermuxFilesSh\04-gui.sh` – Skript 04-gui.sh
+- `infrastructure\skripty\TermuxFilesSh\05-cleaner.sh` – Skript 05-cleaner.sh
+- `infrastructure\skripty\TermuxFilesSh\06-diagnostics.sh` – Skript 06-diagnostics.sh
+- `infrastructure\skripty\TermuxFilesSh\50-systemd-user.sh` – !/usr/bin/sh
+- `infrastructure\skripty\TermuxFilesSh\adb_tools.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\add_macos_jna.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\add_system_icons.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\ai_cli.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\ai_dev_autonomous_push.sh` – !/data/data/com.termux/files/usr/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\ai_dev_codechat.sh` – !/data/data/com.termux/files/usr/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\ai_dev_codespace_full.sh` – !/data/data/com.termux/files/usr/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\ai_dev_interactive.sh` – !/data/data/com.termux/files/usr/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\ai_dev_setup.sh` – !/data/data/com.termux/files/usr/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\ai_engine.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\ai_helper.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\ai_plugin_workspace.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\ai.sh` – Skript ai.sh
+- `infrastructure\skripty\TermuxFilesSh\android.sh` – Skript android.sh
+- `infrastructure\skripty\TermuxFilesSh\apk_manager.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\apk_to_waydroid.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\askpass-empty.sh` – !/bin/sh
+- `infrastructure\skripty\TermuxFilesSh\askpass.sh` – !/bin/sh
+- `infrastructure\skripty\TermuxFilesSh\authselect-completion.sh` – Authors:
+- `infrastructure\skripty\TermuxFilesSh\auto-ai-github.sh` – !/data/data/com.termux/files/usr/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\auto-updater.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\autogen.sh` – !/bin/sh
+- `infrastructure\skripty\TermuxFilesSh\autoinstall.sh` – !/usr/bin/env sh
+- `infrastructure\skripty\TermuxFilesSh\autopsy-solr.in.sh` – Licensed to the Apache Software Foundation (ASF) under one or more
+- `infrastructure\skripty\TermuxFilesSh\B2N-0-347C-e2p.sh` – Skript B2N-0-347C-e2p.sh
+- `infrastructure\skripty\TermuxFilesSh\backup_restore.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\backup_sh_file.sh` – !/data/data/com.termux/files/usr/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\backup-data.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\backup-manager.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\browser-darwin.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\TermuxFilesSh\browser-linux.sh` – !/usr/bin/env sh
+- `infrastructure\skripty\TermuxFilesSh\build_deb.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\build.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\build32.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\build64.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\catimg.sh` – catimg script by Eduardo San Martin Morote aka Posva                         #
+- `infrastructure\skripty\TermuxFilesSh\ci_setup_clang.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\code-darwin.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\TermuxFilesSh\code-linux.sh` – !/usr/bin/env sh
+- `infrastructure\skripty\TermuxFilesSh\color-test.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\colorgrep.sh` – color-grep initialization
+- `infrastructure\skripty\TermuxFilesSh\colorls.sh` – color-ls initialization
+- `infrastructure\skripty\TermuxFilesSh\colorxzgrep.sh` – Skript colorxzgrep.sh
+- `infrastructure\skripty\TermuxFilesSh\colorzgrep.sh` – Skript colorzgrep.sh
+- `infrastructure\skripty\TermuxFilesSh\completion.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\TermuxFilesSh\config_reset.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\configure-backup.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\cpuUsage.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\de-yum-kde.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\deploy_chatbot_wifi.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\detect_mhs.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\disk_tools.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\dpl4hydra.sh` – !/bin/sh
+- `infrastructure\skripty\TermuxFilesSh\drush.complete.sh` – BASH completion script for Drush.
+- `infrastructure\skripty\TermuxFilesSh\emacsclient.sh` – !/bin/sh
+- `infrastructure\skripty\TermuxFilesSh\emulator_manager.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\export-rules.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\fastboot_tools.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\fix_scripts.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\flash_debian.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\flash_fixed.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\format.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\fsck_module.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\full-auto-github-upload.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\full-install-skript.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\gawk.sh` – Skript gawk.sh
+- `infrastructure\skripty\TermuxFilesSh\generate_recovery.sh` – Skript generate_recovery.sh
+- `infrastructure\skripty\TermuxFilesSh\git-editor-empty.sh` – !/bin/sh
+- `infrastructure\skripty\TermuxFilesSh\git-editor.sh` – !/bin/sh
+- `infrastructure\skripty\TermuxFilesSh\git-prompt.sh` – bash/zsh git prompt support
+- `infrastructure\skripty\TermuxFilesSh\gnupg2.sh` – Skript gnupg2.sh
+- `infrastructure\skripty\TermuxFilesSh\grepconf.sh` – !/usr/bin/sh
+- `infrastructure\skripty\TermuxFilesSh\headless_full_deploy_rpi5.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\hydra-wizard.sh` – !/bin/sh
+- `infrastructure\skripty\TermuxFilesSh\changelog.sh` – !/usr/bin/env zsh
+- `infrastructure\skripty\TermuxFilesSh\check_for_upgrade.sh` – Migrate .zsh-update file to $ZSH_CACHE_DIR
+- `infrastructure\skripty\TermuxFilesSh\check_project.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\check-requirements.sh` – !/usr/bin/env sh
+- `infrastructure\skripty\TermuxFilesSh\chroot.sh` – Skript chroot.sh
+- `infrastructure\skripty\TermuxFilesSh\import_roms.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\import-rules.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\install_ai_dev_env.sh` – !/data/data/com.termux/files/usr/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\install_ai_station.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\install_all.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\install_application.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\install_codegpt.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\install_from_github.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\install_gui.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\install_prereqs_macos.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\install_prereqs_ubuntu.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\install_smarthome_allinone.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\install_solr_service.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\TermuxFilesSh\Install_starkos_lab.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\TermuxFilesSh\install_universal_ai_analyzer.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\TermuxFilesSh\install_v7_termux.sh` – !/data/data/com.termux/files/usr/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\install-all.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\install-temurin17.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\kernel_selfheal.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\Kompletní konfigurační skript.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\lang.sh` – /etc/profile.d/lang.sh - exports environment variables, and provides fallback
+- `infrastructure\skripty\TermuxFilesSh\make_xhydra.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\menu.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\mhs_detect.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\nas_manager.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\plugin_ai_assistant.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\plugin_disk_health.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\plugin_iot_sensors.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\plugin_loader.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\plugin_log_monitoring.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\plugin_system_stats.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\plugin-dashboard.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\plugin-fix_scripts.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\plugin-fsck_module.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\plugin-mbr-gpt_module.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\plugin-network_check.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\plugin-retro_games.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\postflash_nymea_kiosk.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\TermuxFilesSh\postinstall.sh` – !/usr/bin/env sh
+- `infrastructure\skripty\TermuxFilesSh\ps.sh` – !/bin/sh
+- `infrastructure\skripty\TermuxFilesSh\recovery.sh` – Skript recovery.sh
+- `infrastructure\skripty\TermuxFilesSh\repair_boot.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\repair_fs.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\require_tool.sh` – Locally ignore failures, otherwise we'll exit whenever $1 and $2
+- `infrastructure\skripty\TermuxFilesSh\run-workflow.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\service-monitor.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\setup_emulators.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\setup_services.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\setup-universal.sh` – !/data/data/com.termux/files/usr/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\setup.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\shellIntegration-bash.sh` – ---------------------------------------------------------------------------------------------
+- `infrastructure\skripty\TermuxFilesSh\smart_menu.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\smarthome_installer.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\solr.in.sh` – Licensed to the Apache Software Foundation (ASF) under one or more
+- `infrastructure\skripty\TermuxFilesSh\starko_linux.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\starko_termux_full_v11.sh` – !/data/data/com.termux/files/usr/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\starko_termux_full_v12.3-ultra.sh` – !/data/data/com.termux/files/usr/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\starko_termux_full.sh` – !/data/data/com.termux/files/usr/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\start_twister_suite.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\stav_SSH_sluzby.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\supertermux_setup.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\sync_bios.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\sync_roms.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\sysusers.sh` – !/usr/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\termux_complete_installer.sh` – !/data/data/com.termux/files/usr/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\termux_master_system_v5.sh` – !/data/data/com.termux/files/usr/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\test_run.sh` – !/usr/bin/env zunit
+- `infrastructure\skripty\TermuxFilesSh\theme_chooser.sh` – !/usr/bin/env zsh
+- `infrastructure\skripty\TermuxFilesSh\theme_installer.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\twisteros_supermanager_full_installer.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\uninstall.sh` – Skript uninstall.sh
+- `infrastructure\skripty\TermuxFilesSh\universal-root.sh` – !/data/data/com.termux/files/usr/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\unix_setup.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\upgrade.sh` – !/usr/bin/env zsh
+- `infrastructure\skripty\TermuxFilesSh\usb.sh` – Skript usb.sh
+- `infrastructure\skripty\TermuxFilesSh\watchdog_services.sh` – !/bin/bash
+- `infrastructure\skripty\TermuxFilesSh\wd.sh` – !/usr/bin/env zsh
+- `infrastructure\skripty\TermuxFilesSh\web_api.sh` – Skript web_api.sh
+- `infrastructure\skripty\udrzba\diagnostika_udrzba.sh` – !/bin/bash
+- `infrastructure\skripty\udrzba\disk_tool.py` – Skript disk_tool.py
+- `infrastructure\skripty\udrzba\problem s prihlasenim.sh` – Skript problem s prihlasenim.sh
+- `infrastructure\skripty\udrzba\setup_and_test.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\udrzba\udrzba.sh` – !/bin/bash
+- `infrastructure\skripty\VMconsole\Start-VMConsole.ps1` – Cesta k XAML
+- `infrastructure\skripty\VMconsole\TestGUI.ps1` – Skript TestGUI.ps1
+- `infrastructure\skripty\VMconsole\VMConsoleAllinOne.ps1` – --- XAML definice GUI ---
+- `infrastructure\skripty\VMconsole\VytvorVMConsole.ps1` – === VMConsole – all‑in‑one se správou profilů a rotací záloh ===
+- `infrastructure\skripty\WSL\backup_move.ps1` – 1️⃣ Načtení všech dostupných distribucí WSL
+- `infrastructure\skripty\WSL\master_loader.py` – !/usr/bin/env python3
+- `infrastructure\skripty\WSL\pro-max-installer.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\WSL\setup_wsl_interactive.sh` – !/bin/bash
+- `infrastructure\skripty\WSL\ubuntu2204_full_setup.sh` – !/bin/bash
+- `infrastructure\skripty\WSL\WSL_FAZE1_FULL.ps1` – --------------------------------------------
+- `infrastructure\skripty\WSL\wsl_ultimate_enhanced.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\WSL\wsl_ultimate_v2.ps1` – ==========================================================
+- `infrastructure\skripty\WSL\wsl_ultimate.ps1` – ==========================================================
+- `infrastructure\skripty\WSL\wsl-autofix-pro.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\WSL\wsl-final-pro-max-gui.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\WSL\wsl-pro-max.ps1` – =============================================
+- `infrastructure\skripty\WSL\wsl-pro-max.sh` – !/bin/bash
+- `infrastructure\skripty\WSL\wsl-pro.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\Install_starkos_lab.sh` – !/usr/bin/env bash
+- `infrastructure\skripty\install-kali-nethunter.sh` – !/bin/bash
+- `infrastructure\skripty\install-temurin17.sh` – !/bin/bash
+- `infrastructure\skripty\ubuntu_server_setup.sh` – !/bin/bash
+
+
+## Hodnocení a doporučení
+<!-- Doplňte na základě výše uvedených informací -->
+- 

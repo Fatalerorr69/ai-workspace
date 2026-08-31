@@ -1,0 +1,8 @@
+{
+  "name": "android-tools",
+  "description": "Rozšířené Android nástroje (frida, objection)",
+  "repo": "https://github.com/example/ultra-android-tools",
+  "version": "1.2",
+  "requires": ["android"],
+  "verified": true
+}

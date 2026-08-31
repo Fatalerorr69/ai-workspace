@@ -1,0 +1,22 @@
+#!/bin/bash
+# Restart služeb TwisterOS SuperManager
+
+function restart_service() {
+    echo "Zadej název služby:"
+    read service
+    sudo systemctl restart $service
+    echo "Služba $service restartována."
+}
+
+while true; do
+    echo "=== Restart služeb ==="
+    echo "1) Restartovat službu"
+    echo "2) Návrat"
+    read -p "Volba: " choice
+    case $choice in
+        1) restart_service ;;
+        2) break ;;
+        *) echo "Neplatná volba." ;;
+    esac
+    read -p "Stiskni Enter pro pokračování..."
+done

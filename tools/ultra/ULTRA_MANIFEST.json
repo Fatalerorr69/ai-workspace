@@ -1,0 +1,57 @@
+{
+  "ultra": {
+    "version": "16.0",
+    "channel": "stable",
+    "profiles": ["core", "full", "pentest"]
+  },
+
+  "system_requirements": {
+    "min_ram_gb": 4,
+    "min_disk_gb": 10,
+    "recommended_ram_gb": 8
+  },
+
+  "modules": {
+    "system": {
+      "description": "Základ systému",
+      "required": true
+    },
+    "ai": {
+      "description": "AI engine (offline/online)",
+      "requires": ["python3"],
+      "tags": ["ai", "analysis", "automation"]
+    },
+    "android": {
+      "description": "Android toolkit",
+      "tags": ["android", "adb", "reverse"]
+    },
+    "pentest": {
+      "description": "Kali / pentest prostředí",
+      "tags": ["security", "kali", "audit"],
+      "heavy": true
+    },
+    "web": {
+      "description": "Web dashboard + API",
+      "tags": ["web", "gui"]
+    },
+    "docker": {
+      "description": "Docker runtime",
+      "tags": ["container"]
+    },
+    "marketplace": {
+      "description": "Plugin marketplace",
+      "tags": ["plugins", "store"]
+    }
+  },
+
+  "ai_rules": {
+    "low_ram": {
+      "condition": "ram < 6",
+      "disable": ["pentest", "docker"]
+    },
+    "security_profile": {
+      "profile": "pentest",
+      "recommend": ["ai", "web"]
+    }
+  }
+}

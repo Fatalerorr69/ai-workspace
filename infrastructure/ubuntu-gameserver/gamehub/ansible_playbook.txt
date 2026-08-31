@@ -1,0 +1,565 @@
+---
+# ======================================================
+# GameHub Gaming Server - Ansible Playbook
+# Version: 3.0.0
+# Usage: ansible-playbook gamehub-playbook.yml
+# ======================================================
+
+- name: Configure GameHub Gaming Server
+  hosts: localhost
+  become: yes
+  vars:
+    gamehub_version: "3.0.0"
+    install_dir: "/opt/gamehub"
+    web_dir: "/var/www/gamehub"
+    log_dir: "/var/log/gamehub"
+    config_dir: "/etc/gamehub"
+    gamehub_user: "gamehub"
+    
+    # Module flags
+    install_core: true
+    install_emulators: true
+    install_steam: true
+    install_dev: true
+    install_remote: true
+    install_monitoring: true
+    install_backup: true
+    install_dashboard: true
+    
+    # Ports
+    api_port: 3001
+    web_port: 80
+    ws_port: 8081
+    cockpit_port: 9090
+    netdata_port: 19999
+
+  tasks:
+    # ======================================================
+    # ENVIRONMENT SETUP
+    # ======================================================
+    - name: Create directory structure
+      file:
+        path: "{{ item }}"
+        state: directory
+        owner: "{{ gamehub_user }}"
+        group: "{{ gamehub_user }}"
+        mode: '0755'
+      loop:
+        - "{{ install_dir }}"
+        - "{{ install_dir }}/servers"
+        - "{{ install_dir }}/games"
+        - "{{ install_dir }}/emulators"
+        - "{{ install_dir }}/roms"
+        - "{{ install_dir }}/saves"
+        - "{{ install_dir }}/mods"
+        - "{{ install_dir }}/scripts"
+        - "{{ install_dir }}/modules"
+        - "{{ web_dir }}"
+        - "{{ log_dir }}"
+        - "{{ config_dir }}"
+
+    - name: Create gamehub user
+      user:
+        name: "{{ gamehub_user }}"
+        shell: /bin/bash
+        create_home: yes
+        groups: sudo,docker
+        append: yes
+      register: user_created
+
+    - name: Configure sudoers for gamehub
+      lineinfile:
+        path: /etc/sudoers.d/gamehub
+        line: "{{ gamehub_user }} ALL=(ALL) NOPASSWD:ALL"
+        create: yes
+        mode: '0440'
+        validate: 'visudo -cf %s'
+
+    # ======================================================
+    # SYSTEM PACKAGES
+    # ======================================================
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Install essential packages
+      apt:
+        name:
+          - software-properties-common
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - wget
+          - git
+          - build-essential
+          - python3
+          - python3-pip
+          - python3-venv
+          - docker.io
+          - docker-compose
+          - nginx
+          - mariadb-server
+          - redis-server
+          - ufw
+          - fail2ban
+          - htop
+          - ncdu
+          - jq
+        state: present
+        install_recommends: no
+
+    # ======================================================
+    # NODE.JS SETUP
+    # ======================================================
+    - name: Add NodeSource repository
+      shell: curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+      args:
+        creates: /etc/apt/sources.list.d/nodesource.list
+
+    - name: Install Node.js
+      apt:
+        name: nodejs
+        state: present
+        update_cache: yes
+
+    - name: Install PM2 globally
+      npm:
+        name: pm2
+        global: yes
+        state: present
+
+    # ======================================================
+    # CORE MODULE
+    # ======================================================
+    - name: Deploy GameHub core application
+      when: install_core
+      block:
+        - name: Copy package.json
+          copy:
+            dest: "{{ install_dir }}/package.json"
+            content: |
+              {
+                "name": "gamehub-core",
+                "version": "{{ gamehub_version }}",
+                "description": "GameHub Gaming Server",
+                "main": "index.js",
+                "dependencies": {
+                  "express": "^4.18.2",
+                  "ws": "^8.14.2",
+                  "mysql2": "^3.6.1",
+                  "redis": "^4.6.8",
+                  "systeminformation": "^5.21.0",
+                  "uuid": "^9.0.1",
+                  "dotenv": "^16.3.1"
+                }
+              }
+            owner: "{{ gamehub_user }}"
+            group: "{{ gamehub_user }}"
+
+        - name: Install npm dependencies
+          npm:
+            path: "{{ install_dir }}"
+            state: present
+          become_user: "{{ gamehub_user }}"
+
+    # ======================================================
+    # EMULATORS MODULE
+    # ======================================================
+    - name: Install emulators
+      when: install_emulators
+      block:
+        - name: Install Flatpak
+          apt:
+            name: flatpak
+            state: present
+
+        - name: Add Flathub repository
+          flatpak_remote:
+            name: flathub
+            flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+            state: present
+
+        - name: Install RetroArch
+          flatpak:
+            name: org.libretro.RetroArch
+            state: present
+            method: system
+
+        - name: Install PPSSPP
+          flatpak:
+            name: org.ppsspp.PPSSPP
+            state: present
+            method: system
+
+        - name: Install Dolphin Emulator
+          flatpak:
+            name: org.DolphinEmu.dolphin-emu
+            state: present
+            method: system
+
+        - name: Install DOSBox
+          apt:
+            name:
+              - dosbox
+              - scummvm
+            state: present
+
+    # ======================================================
+    # STEAM MODULE
+    # ======================================================
+    - name: Install Steam and Wine
+      when: install_steam
+      block:
+        - name: Enable i386 architecture
+          command: dpkg --add-architecture i386
+          args:
+            creates: /var/lib/dpkg/arch
+
+        - name: Update apt cache after adding i386
+          apt:
+            update_cache: yes
+
+        - name: Install Steam and Wine
+          apt:
+            name:
+              - steam-installer
+              - wine-stable
+              - winetricks
+            state: present
+
+    # ======================================================
+    # DEVELOPMENT TOOLS
+    # ======================================================
+    - name: Install development tools
+      when: install_dev
+      block:
+        - name: Add GitHub CLI repository
+          shell: |
+            curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+            echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | tee /etc/apt/sources.list.d/github-cli.list
+          args:
+            creates: /etc/apt/sources.list.d/github-cli.list
+
+        - name: Install development packages
+          apt:
+            name:
+              - gh
+              - golang-go
+              - rustc
+              - cargo
+              - default-jdk
+              - cmake
+              - ansible
+            state: present
+            update_cache: yes
+
+    # ======================================================
+    # REMOTE ACCESS
+    # ======================================================
+    - name: Install remote access tools
+      when: install_remote
+      block:
+        - name: Install Cockpit
+          apt:
+            name:
+              - cockpit
+              - cockpit-machines
+              - cockpit-podman
+            state: present
+
+        - name: Enable Cockpit service
+          systemd:
+            name: cockpit.socket
+            enabled: yes
+            state: started
+
+        - name: Add X2Go PPA
+          apt_repository:
+            repo: ppa:x2go/stable
+            state: present
+
+        - name: Install X2Go Server
+          apt:
+            name:
+              - x2goserver
+              - x2goserver-xsession
+            state: present
+            update_cache: yes
+
+        - name: Install TigerVNC
+          apt:
+            name:
+              - tigervnc-standalone-server
+              - tigervnc-common
+            state: present
+
+    # ======================================================
+    # MONITORING MODULE
+    # ======================================================
+    - name: Install monitoring tools
+      when: install_monitoring
+      block:
+        - name: Install Netdata
+          shell: bash <(curl -Ss https://my-netdata.io/kickstart.sh) --dont-wait --stable-channel
+          args:
+            creates: /usr/sbin/netdata
+
+        - name: Install monitoring utilities
+          apt:
+            name:
+              - htop
+              - btop
+              - iotop
+              - nethogs
+              - nvtop
+            state: present
+
+    # ======================================================
+    # BACKUP MODULE
+    # ======================================================
+    - name: Install backup tools
+      when: install_backup
+      block:
+        - name: Install backup packages
+          apt:
+            name:
+              - timeshift
+              - duplicity
+              - rclone
+              - restic
+              - borgbackup
+            state: present
+
+        - name: Create initial Timeshift snapshot
+          command: timeshift --create --comments "Ansible initial configuration" --yes
+          args:
+            creates: /timeshift/snapshots
+
+    # ======================================================
+    # DATABASE CONFIGURATION
+    # ======================================================
+    - name: Configure MariaDB
+      block:
+        - name: Start MariaDB service
+          systemd:
+            name: mariadb
+            state: started
+            enabled: yes
+
+        - name: Create GameHub database
+          mysql_db:
+            name: gamehub_db
+            state: present
+            encoding: utf8mb4
+            collation: utf8mb4_unicode_ci
+
+        - name: Create GameHub database user
+          mysql_user:
+            name: gamehub_admin
+            password: "{{ lookup('password', '/tmp/gamehub_db_password length=32 chars=ascii_letters,digits') }}"
+            priv: 'gamehub_db.*:ALL'
+            state: present
+
+        - name: Save database credentials
+          copy:
+            dest: "{{ config_dir }}/database.conf"
+            content: |
+              DB_HOST=localhost
+              DB_PORT=3306
+              DB_NAME=gamehub_db
+              DB_USER=gamehub_admin
+              DB_PASS={{ lookup('password', '/tmp/gamehub_db_password') }}
+            mode: '0600'
+            owner: "{{ gamehub_user }}"
+            group: "{{ gamehub_user }}"
+
+    # ======================================================
+    # REDIS CONFIGURATION
+    # ======================================================
+    - name: Configure Redis
+      block:
+        - name: Start Redis service
+          systemd:
+            name: redis-server
+            state: started
+            enabled: yes
+
+        - name: Configure Redis for GameHub
+          lineinfile:
+            path: /etc/redis/redis.conf
+            regexp: "{{ item.regexp }}"
+            line: "{{ item.line }}"
+            backup: yes
+          loop:
+            - { regexp: '^# maxmemory', line: 'maxmemory 256mb' }
+            - { regexp: '^# maxmemory-policy', line: 'maxmemory-policy allkeys-lru' }
+          notify: Restart Redis
+
+    # ======================================================
+    # FIREWALL CONFIGURATION
+    # ======================================================
+    - name: Configure UFW firewall
+      block:
+        - name: Reset UFW to default
+          ufw:
+            state: reset
+
+        - name: Set UFW defaults
+          ufw:
+            direction: "{{ item.direction }}"
+            policy: "{{ item.policy }}"
+          loop:
+            - { direction: incoming, policy: deny }
+            - { direction: outgoing, policy: allow }
+
+        - name: Allow essential ports
+          ufw:
+            rule: allow
+            port: "{{ item.port }}"
+            proto: "{{ item.proto }}"
+            comment: "{{ item.comment }}"
+          loop:
+            - { port: '22', proto: 'tcp', comment: 'SSH' }
+            - { port: '80', proto: 'tcp', comment: 'HTTP' }
+            - { port: '443', proto: 'tcp', comment: 'HTTPS' }
+            - { port: "{{ api_port }}", proto: 'tcp', comment: 'GameHub API' }
+            - { port: "{{ ws_port }}", proto: 'tcp', comment: 'WebSocket' }
+            - { port: "{{ cockpit_port }}", proto: 'tcp', comment: 'Cockpit' }
+            - { port: "{{ netdata_port }}", proto: 'tcp', comment: 'Netdata' }
+
+        - name: Allow gaming ports
+          ufw:
+            rule: allow
+            port: "{{ item.port }}"
+            proto: tcp
+            comment: "{{ item.comment }}"
+          loop:
+            - { port: '25565', comment: 'Minecraft' }
+            - { port: '27015', comment: 'Steam' }
+            - { port: '7777', comment: 'ARK/Terraria' }
+
+        - name: Enable UFW
+          ufw:
+            state: enabled
+
+    # ======================================================
+    # SYSTEMD SERVICE
+    # ======================================================
+    - name: Create GameHub systemd service
+      copy:
+        dest: /etc/systemd/system/gamehub.service
+        content: |
+          [Unit]
+          Description=GameHub Gaming Server
+          After=network.target mariadb.service redis.service
+
+          [Service]
+          Type=simple
+          User={{ gamehub_user }}
+          WorkingDirectory={{ install_dir }}
+          ExecStart=/usr/bin/node {{ install_dir }}/index.js
+          Restart=always
+          RestartSec=10
+          StandardOutput=append:{{ log_dir }}/gamehub.log
+          StandardError=append:{{ log_dir }}/gamehub-error.log
+
+          [Install]
+          WantedBy=multi-user.target
+        mode: '0644'
+      notify: Reload systemd
+
+    - name: Enable GameHub service
+      systemd:
+        name: gamehub
+        enabled: yes
+        daemon_reload: yes
+
+    # ======================================================
+    # MODULE CONFIGURATION
+    # ======================================================
+    - name: Save module configuration
+      copy:
+        dest: "{{ config_dir }}/modules.json"
+        content: |
+          {
+            "version": "{{ gamehub_version }}",
+            "modules": {
+              "core": {{ install_core | lower }},
+              "emulators": {{ install_emulators | lower }},
+              "steam": {{ install_steam | lower }},
+              "dev": {{ install_dev | lower }},
+              "remote": {{ install_remote | lower }},
+              "monitoring": {{ install_monitoring | lower }},
+              "backup": {{ install_backup | lower }},
+              "dashboard": {{ install_dashboard | lower }}
+            }
+          }
+        owner: "{{ gamehub_user }}"
+        group: "{{ gamehub_user }}"
+        mode: '0644'
+
+    # ======================================================
+    # FINAL TASKS
+    # ======================================================
+    - name: Create access information file
+      template:
+        dest: "{{ install_dir }}/ACCESS_INFO.txt"
+        content: |
+          ╔══════════════════════════════════════════════════════════════╗
+          ║           GameHub Gaming Server - Access Information         ║
+          ╚══════════════════════════════════════════════════════════════╝
+
+          Server IP: {{ ansible_default_ipv4.address }}
+
+          Web Interfaces:
+            • Cockpit:    https://{{ ansible_default_ipv4.address }}:{{ cockpit_port }}
+            • Netdata:    http://{{ ansible_default_ipv4.address }}:{{ netdata_port }}
+            • Dashboard:  http://{{ ansible_default_ipv4.address }}:{{ web_port }}
+
+          API:
+            • REST API:   http://{{ ansible_default_ipv4.address }}:{{ api_port }}
+            • WebSocket:  ws://{{ ansible_default_ipv4.address }}:{{ ws_port }}
+
+          SSH Access:
+            ssh {{ gamehub_user }}@{{ ansible_default_ipv4.address }}
+
+          Database:
+            Database: gamehub_db
+            User: gamehub_admin
+            Password: (stored in {{ config_dir }}/database.conf)
+
+          Logs:
+            {{ log_dir }}/
+
+          Commands:
+            systemctl status gamehub
+            systemctl start gamehub
+            systemctl stop gamehub
+            systemctl restart gamehub
+
+          ╔══════════════════════════════════════════════════════════════╗
+        owner: "{{ gamehub_user }}"
+        group: "{{ gamehub_user }}"
+        mode: '0644'
+
+    - name: Display completion message
+      debug:
+        msg: |
+          ╔══════════════════════════════════════════════════════════════╗
+          ║  GameHub Gaming Server configuration complete!               ║
+          ║  Access info: {{ install_dir }}/ACCESS_INFO.txt              ║
+          ╚══════════════════════════════════════════════════════════════╝
+
+  # ======================================================
+  # HANDLERS
+  # ======================================================
+  handlers:
+    - name: Restart Redis
+      systemd:
+        name: redis-server
+        state: restarted
+
+    - name: Reload systemd
+      systemd:
+        daemon_reload: yes

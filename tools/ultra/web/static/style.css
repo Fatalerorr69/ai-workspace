@@ -1,0 +1,7 @@
+body { font-family: Arial; margin: 20px; background:#111; color:#eee;}
+h1 { color:#0f0; }
+.module { margin: 10px 0; }
+.name { font-weight:bold; }
+.status { margin-left: 10px; }
+button { margin-left: 20px; }
+pre { background:#222; padding:10px; border-radius:5px; max-height:300px; overflow:auto;}

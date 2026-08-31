@@ -1,3 +1,0 @@
-"""
-STARCORE CLI Applications
-"""

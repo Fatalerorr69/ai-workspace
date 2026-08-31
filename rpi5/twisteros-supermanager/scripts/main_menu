@@ -1,0 +1,3 @@
+echo "6) Instalace a konfigurace emulátorů + NAS"
+...
+6) bash /opt/twisteros_supermanager/scripts/setup_emulators.sh ;;

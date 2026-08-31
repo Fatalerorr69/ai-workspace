@@ -1,3 +1,0 @@
-"""
-STARCORE Typer CLI
-"""

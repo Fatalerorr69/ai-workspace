@@ -1,0 +1,22 @@
+# configs/uwp_config.json
+{
+  "version": "5.0.0",
+  "docker": {
+    "enabled": true,
+    "compose_version": "3.8",
+    "network": "uwp-network",
+    "services": ["core", "ai", "db", "redis", "nginx"]
+  },
+  "security": {
+    "encryption": true,
+    "backup_encryption": true,
+    "ssl_enabled": true,
+    "firewall_enabled": true
+  },
+  "monitoring": {
+    "enabled": true,
+    "metrics_port": 9090,
+    "grafana_port": 3001,
+    "alerting": true
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "dashboard": {
+    "port": 8080,
+    "refresh_status_interval": 3,
+    "refresh_log_interval": 5,
+    "theme": "dark",
+    "title": "TwisterOS Dashboard",
+    "enable_plugins_list": true,
+    "enable_logs_view": true
+  }
+}

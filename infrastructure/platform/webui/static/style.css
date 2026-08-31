@@ -1,0 +1,41 @@
+body {
+    background-color: #111;
+    color: #00ff99;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+.card {
+    border: 1px solid #00ff99;
+    padding: 10px;
+    margin: 10px auto;
+    width: 300px;
+    font-size: 18px;
+}
+
+.menu {
+    margin-top: 20px;
+}
+
+a {
+    color: #00ff99;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+input, button {
+    padding: 8px;
+    margin: 5px;
+}
+
+.error {
+    color: red;
+}

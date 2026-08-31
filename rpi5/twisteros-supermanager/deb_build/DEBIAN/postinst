@@ -1,0 +1,26 @@
+#!/bin/bash
+set -e
+
+echo "[SuperManager] Instalace adresářů…"
+mkdir -p /opt/twisteros_supermanager
+mkdir -p /home/starko/Games/ROMs
+mkdir -p /home/starko/Games/BIOS
+mkdir -p /home/starko/Games/NAS/ROMs
+mkdir -p /home/starko/Games/NAS/BIOS
+mkdir -p /home/starko/Games/RetroArch/roms
+
+echo "[SuperManager] Nastavuji vlastníka…"
+chown -R starko:starko /home/starko/Games
+
+echo "[SuperManager] Instalace Python knihoven…"
+pip3 install flask flask-cors
+
+echo "[SuperManager] Instalace MHS35 detekce…"
+/opt/twisteros_supermanager/scripts/mhs_detect.sh --auto
+
+echo "[SuperManager] Aktivace systemd služby…"
+systemctl daemon-reload
+systemctl enable supermanager.service
+systemctl restart supermanager.service
+
+echo "[SuperManager] Instalace dokončena."

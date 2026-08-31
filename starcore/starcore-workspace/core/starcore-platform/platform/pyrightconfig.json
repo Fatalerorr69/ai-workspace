@@ -1,5 +1,0 @@
-{
-  "include": ["packages", "apps", "tests"],
-  "pythonVersion": "3.12",
-  "typeCheckingMode": "basic"
-}

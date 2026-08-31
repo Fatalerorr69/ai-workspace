@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="manifest" href="/manifest.json">
+<link rel="stylesheet" href="/css/ultra.css">
+<title>ULTRA Mobile</title>
+</head>
+<body>
+
+<h2>ULTRA Mobile Console</h2>
+
+<button onclick="loadSystem()">System</button>
+<button onclick="loadLogs()">Logs</button>
+<button onclick="loadAI()">AI</button>
+<button onclick="loadPlugins()">Plugins</button>
+
+<pre id="out"></pre>
+
+<script src="/js/api.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js');
+}
+</script>
+</body>
+</html>
