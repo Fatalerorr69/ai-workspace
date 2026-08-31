@@ -5,13 +5,12 @@
 STARKO RPI5 AI WORKSPACE - ROZŠÍŘENÉ WEB GUI
 """
 
-from flask import Flask
+from flask import Flask, render_template, jsonify, request, send_file
 import traceback
 
 @app.errorhandler(Exception)
 def handle_exception(e):
     return {'error': 'Interní chyba serveru'}, 500
-, render_template, jsonify, request, send_file
 from flask_cors import CORS
 import traceback
 
