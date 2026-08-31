@@ -1,11 +1,53 @@
 # web_gui/production_server.py
-from flask import Flask, render_template, jsonify, request
+from flask import Flask
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+, render_template, jsonify, request
 import json
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 import os
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 import psutil
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 import cpuinfo
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 import GPUtil
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 from datetime import datetime
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 
 def create_app():
     app = Flask(__name__)
@@ -168,4 +210,10 @@ if __name__ == '__main__':
     print("🌐 Server running on http://127.0.0.1:8080")
     
     from waitress import serve
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
     serve(app, host='0.0.0.0', port=8080, threads=6)

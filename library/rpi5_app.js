@@ -1,13 +1,25 @@
 const rateLimit = require('express-rate-limit');
+const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100, message: 'Příliš mnoho požadavků, zkuste to později.' });
+
 // app.js - Twister Dashboard backend (Express)
 // Umístění: ~/twisteros_supermanager/twister-dashboard/app.js
 
 const express = require('express');
+const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100, message: 'Příliš mnoho požadavků, zkuste to později.' });
+
 const fs = require('fs');
+const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100, message: 'Příliš mnoho požadavků, zkuste to později.' });
+
 const path = require('path');
+const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100, message: 'Příliš mnoho požadavků, zkuste to později.' });
+
 const multer = require('multer');
+const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100, message: 'Příliš mnoho požadavků, zkuste to později.' });
+
 const { exec, spawn } = require('child_process');
 const fetch = require('node-fetch');
+const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100, message: 'Příliš mnoho požadavků, zkuste to později.' });
+
 
 const app = express();
 const PORT = 8080;
@@ -19,8 +31,11 @@ const LOG_FILE = path.join(ROOT, 'logs', 'plugin.log');
 const STATUS_FILE = path.join(__dirname, 'data', 'plugin_status.json');
 
 app.use(express.json());
+app.use(limiter);
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname)); // servíruje index.html, style.css, ai.js ...
+app.use(limiter);
+app.use(express.static(__dirname));
+app.use(limiter); // servíruje index.html, style.css, ai.js ...
 
 // ---------- helpery ----------
 function safeJsonRead(filePath, defaultObj = {}) {
@@ -46,6 +61,8 @@ app.get('/log', (req, res) => {
 app.get('/metrics', async (req, res) => {
   // CPU load (%), memory usage (free/total), uptime, temp (pokud dostupné)
   const os = require('os');
+const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100, message: 'Příliš mnoho požadavků, zkuste to později.' });
+
   const totalMem = os.totalmem();
   const freeMem = os.freemem();
   const usedMem = totalMem - freeMem;
