@@ -5,17 +5,83 @@
 STARKO RPI5 AI WORKSPACE - ROZŠÍŘENÉ WEB GUI
 """
 
-from flask import Flask, render_template, jsonify, request, send_file
+from flask import Flask
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+, render_template, jsonify, request, send_file
 from flask_cors import CORS
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 import os
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 import json
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 import subprocess
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 import psutil
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 import platform
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 from pathlib import Path
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 import logging
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 from datetime import datetime
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 import sqlite3
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 
 app = Flask(__name__, template_folder="templates", static_folder="static")
 CORS(app)
@@ -187,7 +253,19 @@ STARKO WORKSPACE - {datetime.now().year}
 """
 
 import os
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 from pathlib import Path
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
 
 def main():
     """Hlavní funkce projektu"""
@@ -320,6 +398,12 @@ def delete_project(project_name):
         project_path = WORKSPACE_DIR / "projects" / project_name
         if project_path.exists():
             import shutil
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
             shutil.rmtree(project_path)
             
             # Odstranění z databáze
@@ -353,6 +437,12 @@ def create_backup():
         backup_path = backup_dir / backup_name
         
         import shutil
+import traceback
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {'error': 'Interní chyba serveru'}, 500
+
         shutil.make_archive(str(backup_path), 'zip', str(WORKSPACE_DIR))
         
         return jsonify({
