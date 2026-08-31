@@ -1,3 +1,4 @@
+const rateLimit = require('express-rate-limit');
 // app.js - Twister Dashboard backend (Express)
 // Umístění: ~/twisteros_supermanager/twister-dashboard/app.js
 
