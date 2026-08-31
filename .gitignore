@@ -10,3 +10,5 @@ venv/
 *.zip
 .DS_Store
 Thumbs.db
+.github/workflows/security.yml.backup
+codeql_alerts.csv
