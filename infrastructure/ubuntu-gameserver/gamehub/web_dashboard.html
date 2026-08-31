@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="cs" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎮 GameHub - Ultimate Gaming Dashboard</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
+    
+    <!-- ApexCharts for advanced visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.45.0/dist/apexcharts.min.js"></script>
+    
+    <style>
+        :root {
+            --gamehub-primary: #6f42c1;
+            --gamehub-secondary: #0dcaf0;
+            --gamehub-success: #198754;
+            --gamehub-danger: #dc3545;
+            --gamehub-warning: #ffc107;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        .dashboard-header {
+            background: linear-gradient(135deg, var(--gamehub-primary) 0%, var(--gamehub-secondary) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 40px rgba(111, 66, 193, 0.3);
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border-color: var(--gamehub-primary);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gamehub-primary), var(--gamehub-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .module-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid transparent;
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .module-card.active {
+            border-color: var(--gamehub-success);
+            background: rgba(25, 135, 84, 0.1);
+        }
+        
+        .module-card:hover {
+            border-color: var(--gamehub-primary);
+            transform: scale(1.02);
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+        
+        .status-online { background: var(--gamehub-success); }
+        .status-offline { background: var(--gamehub-danger); animation: none; }
+        .status-warning { background: var(--gamehub-warning); }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 currentColor; }
+            50% { opacity: 0.7; box-shadow: 0 0 0 10px transparent; }
+        }
+        
+        .chart-container {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .server-list-item {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid var(--gamehub-primary);
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .server-list-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateX(5px);
+        }
+        
+        .progress-custom {
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .progress-custom .progress-bar {
+            background: linear-gradient(90deg, var(--gamehub-primary), var(--gamehub-secondary));
+        }
+        
+        .action-btn {
+            background: rgba(111, 66, 193, 0.2);
+            border: 1px solid var(--gamehub-primary);
+            color: var(--gamehub-primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .action-btn:hover {
+            background: var(--gamehub-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(111, 66, 193, 0.4);
+        }
+        
+        .console-output {
+            background: #1a1a1a;
+            color: #00ff00;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 13px;
+            height: 400px;
+            overflow-y: auto;
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 0, 0.3);
+        }
+        
+        .nav-pills .nav-link {
+            border-radius: 10px;
+            padding: 0.75rem 1.5rem;
+            margin: 0.25rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-pills .nav-link.active {
+            background: linear-gradient(135deg, var(--gamehub-primary), var(--gamehub-secondary));
+        }
+        
+        .modal-content {
+            background: #1e1e1e;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--gamehub-primary);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-dark bg-dark sticky-top shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-controller me-2"></i>
+                GameHub
+                <small class="text-muted ms-2">v3.0</small>
+            </a>
+            
+            <div class="d-flex align-items-center">
+                <span class="badge bg-info me-3">
+                    <i class="bi bi-cpu me-1"></i>
+                    CPU: <span id="cpu-usage">0%</span>
+                </span>
+                <span class="badge bg-warning me-3">
+                    <i class="bi bi-memory me-1"></i>
+                    RAM: <span id="ram-usage">0%</span>
+                </span>
+                <span class="badge bg-success me-3">
+                    <i class="bi bi-hdd me-1"></i>
+                    Disk: <span id="disk-usage">0%</span>
+                </span>
+                <div class="dropdown">
+                    <button class="btn btn-outline-light btn-sm dropdown-toggle" data-bs-toggle="dropdown">
+                        <i class="bi bi-person-circle me-1"></i> Admin
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i> Settings</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-shield-check me-2"></i> Security</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid mt-4">
+        <!-- Dashboard Header -->
+        <div class="dashboard-header">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="text-white mb-0">
+                        <i class="bi bi-speedometer2 me-2"></i>
+                        Gaming Server Dashboard
+                    </h1>
+                    <p class="text-white-50 mb-0">Real-time monitoring and management</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <button class="btn btn-light me-2" onclick="runHealthCheck()">
+                        <i class="bi bi-heart-pulse me-1"></i> Health Check
+                    </button>
+                    <button class="btn btn-warning" onclick="autoHeal()">
+                        <i class="bi bi-tools me-1"></i> Auto-Heal
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="row mb-4">
+            <div class="col-md-3 mb-3">
+                <div class="stat-card">
+                    <div class="d-flex align-items-center mb-2">
+                        <div class="status-indicator status-online me-2"></div>
+                        <h6 class="mb-0 text-muted">Active Servers</h6>
+                    </div>
+                    <div class="stat-number" id="active-servers">0</div>
+                    <small class="text-muted">Running game servers</small>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="stat-card">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-people text-info me-2"></i>
+                        <h6 class="mb-0 text-muted">Players Online</h6>
+                    </div>
+                    <div class="stat-number" id="players-online">0</div>
+                    <small class="text-muted">Connected players</small>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="stat-card">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-graph-up text-success me-2"></i>
+                        <h6 class="mb-0 text-muted">System Uptime</h6>
+                    </div>
+                    <div class="stat-number" id="system-uptime">0d</div>
+                    <small class="text-muted">Days online</small>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="stat-card">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-shield-check text-warning me-2"></i>
+                        <h6 class="mb-0 text-muted">Health Status</h6>
+                    </div>
+                    <div class="stat-number text-success" id="health-status">Good</div>
+                    <small class="text-muted">Overall system health</small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Tabs -->
+        <ul class="nav nav-pills mb-4" id="mainTabs" role="tablist">
+            <li class="nav-item">
+                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#overview">
+                    <i class="bi bi-speedometer2 me-1"></i> Overview
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#servers">
+                    <i class="bi bi-server me-1"></i> Servers
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#modules">
+                    <i class="bi bi-grid me-1"></i> Modules
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#monitoring">
+                    <i class="bi bi-activity me-1"></i> Monitoring
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#streaming">
+                    <i class="bi bi-broadcast me-1"></i> Streaming
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Overview Tab -->
+            <div class="tab-pane fade show active" id="overview">
+                <div class="row">
+                    <div class="col-lg-8 mb-4">
+                        <div class="chart-container">
+                            <h5 class="text-white mb-3">
+                                <i class="bi bi-graph-up me-2"></i>
+                                System Performance
+                            </h5>
+                            <canvas id="performanceChart" height="80"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mb-4">
+                        <div class="chart-container">
+                            <h5 class="text-white mb-3">
+                                <i class="bi bi-pie-chart me-2"></i>
+                                Resource Distribution
+                            </h5>
+                            <canvas id="resourceChart" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="chart-container">
+                            <h5 class="text-white mb-3">
+                                <i class="bi bi-server me-2"></i>
+                                Active Servers
+                            </h5>
+                            <div id="server-list"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="chart-container">
+                            <h5 class="text-white mb-3">
+                                <i class="bi bi-clock-history me-2"></i>
+                                Recent Activity
+                            </h5>
+                            <div id="activity-log" class="console-output" style="height: 250px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servers Tab -->
+            <div class="tab-pane fade" id="servers">
+                <div class="d-flex justify-content-between mb-3">
+                    <h4 class="text-white">
+                        <i class="bi bi-server me-2"></i>
+                        Game Servers
+                    </h4>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newServerModal">
+                        <i class="bi bi-plus-circle me-1"></i> New Server
+                    </button>
+                </div>
+                
+                <div class="row" id="servers-grid"></div>
+            </div>
+
+            <!-- Modules Tab -->
+            <div class="tab-pane fade" id="modules">
+                <h4 class="text-white mb-4">
+                    <i class="bi bi-grid me-2"></i>
+                    Installed Modules
+                </h4>
+                
+                <div class="row" id="modules-grid">
+                    <!-- Modules will be populated here -->
+                </div>
+            </div>
+
+            <!-- Monitoring Tab -->
+            <div class="tab-pane fade" id="monitoring">
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="chart-container">
+                            <h5 class="text-white mb-3">CPU Usage</h5>
+                            <div id="cpu-chart"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="chart-container">
+                            <h5 class="text-white mb-3">Memory Usage</h5>
+                            <div id="memory-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h5 class="text-white mb-3">Network Traffic</h5>
+                    <div id="network-chart"></div>
+                </div>
+            </div>
+
+            <!-- Streaming Tab -->
+            <div class="tab-pane fade" id="streaming">
+                <div class="row">
+                    <div class="col-md-8 mb-4">
+                        <div class="chart-container">
+                            <h5 class="text-white mb-3">
+                                <i class="bi bi-broadcast me-2"></i>
+                                Game Streaming Configuration
+                            </h5>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Streaming Platform</label>
+                                <select class="form-select" id="streaming-platform">
+                                    <option value="moonlight">Moonlight (NVIDIA GameStream)</option>
+                                    <option value="sunshine">Sunshine (Open Source)</option>
+                                    <option value="parsec">Parsec</option>
+                                    <option value="steam-link">Steam Link</option>
+                                </select>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Resolution</label>
+                                    <select class="form-select">
+                                        <option>1920x1080</option>
+                                        <option>2560x1440</option>
+                                        <option>3840x2160 (4K)</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Bitrate</label>
+                                    <select class="form-select">
+                                        <option>10 Mbps</option>
+                                        <option>20 Mbps</option>
+                                        <option>50 Mbps</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-primary">
+                                <i class="bi bi-broadcast me-1"></i>
+                                Start Streaming
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="chart-container">
+                            <h5 class="text-white mb-3">Connected Clients</h5>
+                            <div id="streaming-clients"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // WebSocket Connection
+        const ws = new WebSocket('ws://localhost:8081');
+        
+        ws.onopen = () => {
+            console.log('Connected to GameHub server');
+            logActivity('✓ Connected to server');
+        };
+        
+        ws.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            handleWebSocketMessage(data);
+        };
+        
+        // Handle incoming messages
+        function handleWebSocketMessage(data) {
+            switch(data.type) {
+                case 'system_stats':
+                    updateSystemStats(data.stats);
+                    break;
+                case 'server_update':
+                    updateServerList(data.servers);
+                    break;
+                case 'activity':
+                    logActivity(data.message);
+                    break;
+            }
+        }
+        
+        // Update system stats
+        function updateSystemStats(stats) {
+            document.getElementById('cpu-usage').textContent = stats.cpu + '%';
+            document.getElementById('ram-usage').textContent = stats.memory + '%';
+            document.getElementById('disk-usage').textContent = stats.disk + '%';
+            
+            // Update charts
+            updatePerformanceChart(stats);
+        }
+        
+        // Initialize Performance Chart
+        const performanceCtx = document.getElementById('performanceChart').getContext('2d');
+        const performanceChart = new Chart(performanceCtx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'CPU %',
+                    data: [],
+                    borderColor: '#6f42c1',
+                    tension: 0.4
+                }, {
+                    label: 'Memory %',
+                    data: [],
+                    borderColor: '#0dcaf0',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true, max: 100 }
+                },
+                plugins: {
+                    legend: { labels: { color: '#fff' } }
+                }
+            }
+        });
+        
+        // Update performance chart
+        function updatePerformanceChart(stats) {
+            const now = new Date().toLocaleTimeString();
+            
+            performanceChart.data.labels.push(now);
+            performanceChart.data.datasets[0].data.push(stats.cpu);
+            performanceChart.data.datasets[1].data.push(stats.memory);
+            
+            if (performanceChart.data.labels.length > 20) {
+                performanceChart.data.labels.shift();
+                performanceChart.data.datasets.forEach(d => d.data.shift());
+            }
+            
+            performanceChart.update('none');
+        }
+        
+        // Log activity
+        function logActivity(message) {
+            const log = document.getElementById('activity-log');
+            const timestamp = new Date().toLocaleTimeString();
+            log.innerHTML += `[${timestamp}] ${message}\n`;
+            log.scrollTop = log.scrollHeight;
+        }
+        
+        // Health check
+        async function runHealthCheck() {
+            logActivity('🔍 Running health check...');
+            
+            try {
+                const response = await fetch('/api/health');
+                const data = await response.json();
+                
+                if (data.status === 'healthy') {
+                    logActivity('✓ Health check passed');
+                    document.getElementById('health-status').textContent = 'Good';
+                } else {
+                    logActivity('✗ Health check failed');
+                    document.getElementById('health-status').textContent = 'Issues';
+                }
+            } catch (error) {
+                logActivity('✗ Health check error: ' + error.message);
+            }
+        }
+        
+        // Auto-heal
+        async function autoHeal() {
+            logActivity('🔧 Running auto-heal...');
+            
+            try {
+                const response = await fetch('/api/heal', { method: 'POST' });
+                const data = await response.json();
+                logActivity('✓ Auto-heal completed');
+            } catch (error) {
+                logActivity('✗ Auto-heal error: ' + error.message);
+            }
+        }
+        
+        // Load modules
+        async function loadModules() {
+            try {
+                const response = await fetch('/api/modules');
+                const modules = await response.json();
+                
+                const grid = document.getElementById('modules-grid');
+                grid.innerHTML = '';
+                
+                modules.forEach(module => {
+                    grid.innerHTML += `
+                        <div class="col-md-4 mb-3">
+                            <div class="module-card ${module.enabled ? 'active' : ''}">
+                                <h5>${module.name}</h5>
+                                <p class="text-muted">${module.description}</p>
+                                <button class="btn btn-sm ${module.enabled ? 'btn-success' : 'btn-secondary'}" 
+                                        onclick="toggleModule('${module.id}')">
+                                    ${module.enabled ? 'Enabled' : 'Disabled'}
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                });
+            } catch (error) {
+                console.error('Error loading modules:', error);
+            }
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            loadModules();
+            runHealthCheck();
+            
+            // Refresh stats every 5 seconds
+            setInterval(() => {
+                ws.send(JSON.stringify({ type: 'request_stats' }));
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

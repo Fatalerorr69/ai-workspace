@@ -1,0 +1,29 @@
+{
+    "timestamp": "2026-08-05T20:43:04.581506",
+    "component": "STARCORE Global Validator",
+    "version": "6B.X.23",
+    "checks": [
+        {
+            "file": "runtime/android/foundation/foundation_health.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/master/master_status.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/control/controller_status.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/scheduler/scheduler_health.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/cognitive/health/cognitive_health.json",
+            "exists": true
+        }
+    ],
+    "errors": 0,
+    "status": "healthy"
+}

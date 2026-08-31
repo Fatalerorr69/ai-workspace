@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>AI Workspace</title></head>
+<body>
+<h1>AI Workspace</h1>
+<textarea id="ai-output" style="width:100%;height:300px" readonly></textarea><br/>
+<input id="ai-input" style="width:80%"/><button onclick="send()">Send</button>
+<script>
+async function send() {
+  const p = document.getElementById('ai-input').value;
+  if (!p) return;
+  const res = await fetch('/api/ai',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({prompt:p})});
+  const j = await res.json();
+  const out = document.getElementById('ai-output');
+  out.value += `Ty: ${p}\nAI: ${j.response}\n\n`;
+  out.scrollTop = out.scrollHeight;
+}
+</script>
+</body>
+</html>

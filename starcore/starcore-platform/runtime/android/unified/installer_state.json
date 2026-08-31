@@ -1,0 +1,18 @@
+{
+    "timestamp": "2026-08-05T20:51:51.485554",
+    "component": "STARCORE Unified Installer Core",
+    "version": "6B.X.31",
+    "modules": [
+        "core",
+        "agent",
+        "ai_core",
+        "cognitive",
+        "scheduler",
+        "security",
+        "network",
+        "repair",
+        "integrity",
+        "control_plane"
+    ],
+    "status": "ready"
+}

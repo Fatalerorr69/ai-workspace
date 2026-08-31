@@ -1,0 +1,3191 @@
+{
+  "ultimate-raspberry-pi-5-all-in-one-installer": {
+    "name": "ultimate-raspberry-pi-5-all-in-one-installer",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 520,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T03:27:49Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/ultimate-raspberry-pi-5-all-in-one-installer",
+      "pushed_at": "2025-09-23T07:55:58Z",
+      "created_at": "2025-09-22T16:25:55Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Add files via upload",
+        "Add files via upload",
+        "Add files via upload",
+        "Delete README.md",
+        "Delete installer.sh"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "d1-rest": {
+    "name": "d1-rest",
+    "dependencies": [
+      "hono",
+      "typescript",
+      "wrangler"
+    ],
+    "metadata": {
+      "topics": "",
+      "size_kb": 100,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "TypeScript",
+      "updated_at": "2026-01-21T12:24:05Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/d1-rest",
+      "pushed_at": "2026-01-21T23:07:54Z",
+      "created_at": "2026-01-21T12:23:36Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": "MIT",
+      "open_issues": 1
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 1,
+      "open_issues_count": 1,
+      "recent_commits": "source repo import"
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 1
+    },
+    "technologies": [
+      "Node.js",
+      "TypeScript"
+    ]
+  },
+  "starkorecovery": {
+    "name": "starkorecovery",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:31Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/starkorecovery",
+      "pushed_at": "2026-08-28T04:06:52Z",
+      "created_at": "2026-08-28T04:06:51Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "starcore": {
+    "name": "starcore",
+    "dependencies": [
+      "rich",
+      "sqlite-utils",
+      "typer"
+    ],
+    "metadata": {
+      "topics": "",
+      "size_kb": 132,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": "STARCORE Mobile – komplexní terminálový systém pro Termux",
+      "forks": 0,
+      "language": "Python",
+      "updated_at": "2026-08-29T03:27:39Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/starcore",
+      "pushed_at": "2026-08-28T16:30:51Z",
+      "created_at": "2026-07-03T04:21:35Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "docs: Complete Reference Manual - All guides, tools, features and configuration",
+        "docs: Memory & Status File - Tracking all decisions and progress",
+        "docs: Comprehensive Interactive Setup Guide - PHASE 0-1",
+        "docs: Interactive Decision Matrix - Čekám na tvé odpovědi",
+        "docs: Technical Architecture Document - STARCORE 2.0"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": [
+      "Python",
+      "Python (scripts)",
+      "Shell"
+    ]
+  },
+  "nymeakiosk-ultimate-system": {
+    "name": "nymeakiosk-ultimate-system",
+    "dependencies": [
+      "pytest",
+      "pytest-cov",
+      "pyyaml",
+      "requests"
+    ],
+    "metadata": {
+      "topics": "",
+      "size_kb": 158,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": "„All-in-one nymea:kiosk system installer",
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2025-11-11T23:03:00Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/nymeakiosk-ultimate-system",
+      "pushed_at": "2025-11-11T23:03:52Z",
+      "created_at": "2025-09-14T15:32:17Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": "MIT",
+      "open_issues": 1
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 1,
+      "open_issues_count": 1,
+      "recent_commits": [
+        "feat: comprehensive modernization and production readiness\n\n- Modernized project structure with src/, tests/, docs/ organization\n- Added 3 Python modules (project_manager, config_manager, utils) with full type hints\n- Implemented 3 production-grade shell scripts with error handling and logging\n- Created comprehensive test suite with 28+ unit tests and 85%+ coverage\n- Added 6 documentation files (DOCUMENTATION, INSTALLATION, QUICKSTART, etc.)\n- Configured CI/CD pipeline with GitHub Actions (tests and linting)\n- Implemented security best practices and input validation\n- Added AI agent guidance documentation\n- All code follows PEP 8 and professional enterprise standards",
+        "Add files via upload",
+        "Delete README.md",
+        "Delete install-all.sh",
+        "Delete .github/workflows directory"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": [
+      "Python",
+      "Shell"
+    ]
+  },
+  "run-os-from-fyzdisk-on-win": {
+    "name": "run-os-from-fyzdisk-on-win",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 22,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "PowerShell",
+      "updated_at": "2026-08-29T03:27:38Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/run-os-from-fyzdisk-on-win",
+      "pushed_at": "2026-08-28T04:14:02Z",
+      "created_at": "2026-08-28T04:06:30Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Initial commit for Run_OS_from_fyzDisk_on_win",
+        "Initial commit - automated"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": "PowerShell"
+  },
+  "starcore-platform-backup": {
+    "name": "starcore-platform-backup",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 12,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Python",
+      "updated_at": "2026-08-29T10:58:11Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/starcore-platform-backup",
+      "pushed_at": "2026-08-28T04:14:47Z",
+      "created_at": "2026-08-28T04:06:38Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": "NOASSERTION",
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": "Initial commit for starcore-platform-backup"
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": "Python"
+  },
+  "starcore-platform": {
+    "name": "starcore-platform",
+    "dependencies": [
+      "packaging",
+      "setuptools",
+      "wheel"
+    ],
+    "metadata": {
+      "topics": "",
+      "size_kb": 18469,
+      "default_branch": "main",
+      "has_pages": true,
+      "description": null,
+      "forks": 0,
+      "language": "Python",
+      "updated_at": "2026-08-29T00:23:55Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/starcore-platform",
+      "pushed_at": "2026-08-29T00:23:28Z",
+      "created_at": "2026-07-04T07:59:51Z",
+      "stars": 1,
+      "has_wiki": false,
+      "license": null,
+      "open_issues": 2
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 2,
+      "open_issues_count": 2,
+      "recent_commits": [
+        "governance: add repository map and architecture governance\n\n* docs(adr): add ADR-018 through ADR-024 (STARCORE architecture governance)\n\nFormalizes GADR-001 through GADR-007 from the STARCORE Architecture\nGovernance Report as accepted ADRs: repository root vs. platform/\nboundary, platform/ extension policy, legacy root layer freeze, AI layer\nconsolidation, documentation boundary, SAEF as a workflow protocol, and\nthe Android/Termux Edge Node architecture.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01H1QJaVRMEZCucDKUnUt8pN\n\n* docs(adr): add ADR-025 change governance lifecycle\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01H1QJaVRMEZCucDKUnUt8pN\n\n* docs: update ADR index and documentation navigation\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01H1QJaVRMEZCucDKUnUt8pN\n\n* feat(starcore-scripts): add repository map discovery tool\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01H1QJaVRMEZCucDKUnUt8pN\n\n* docs(memory): record CHECKPOINT B completion\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01H1QJaVRMEZCucDKUnUt8pN\n\n* docs: add roadmap, edge node architecture and prompt registry entries\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01H1QJaVRMEZCucDKUnUt8pN\n\n* docs: add roadmap and edge node navigation\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01H1QJaVRMEZCucDKUnUt8pN\n\n* docs: fix mkdocs strict build error in ROADMAP.md\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01H1QJaVRMEZCucDKUnUt8pN\n\n* chore(sentinel): update regression baseline for adr_count and test_count\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01H1QJaVRMEZCucDKUnUt8pN\n\n* docs: sync known issues and test count docs with current state\n\nClose stale KI-003/KI-004 (already resolved per risks.md and ADR-016\ncode verification), and replace the outdated \"601 passing\" test count\nin README and ROADMAP with the stable \"805 collected (current\nregression baseline)\" metric.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01H1QJaVRMEZCucDKUnUt8pN\n\n* docs(governance): add repository history record\n\nDocuments the repository-root-to-platform/ rename (0af3560), the\nversion progression v0.4.0 -> v0.6.0, and the pre-existing\nregression_baseline.json test-count inconsistency (601 vs 801)\ndiscovered while investigating this session's baseline update.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01H1QJaVRMEZCucDKUnUt8pN\n\n* chore(starcore): close stale session, start claude/session-76mlz8 in ledger\n\nCloses the never-formally-ended starcore-autonomous-engineering-4p3tlj\nsession (auto-archived by ledger.py end), and registers the current\nsession with retroactively backfilled requests, prompts, decisions,\nfiles, commands, test results, and approvals from this iteration.\n\nCo-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01H1QJaVRMEZCucDKUnUt8pN\n\n* Update platform/.starcore/scripts/tests/test_repository_map.py\n\nCo-authored-by: sourcery-ai[bot] <58596630+sourcery-ai[bot]@users.noreply.github.com>\n\n* chore(memory): sync governance docs to current session state\n\nCONSISTENCY RECOVERY WAVE 01 — resync stale .starcore/ documents\nafter ledger cleanup and architecture governance iteration.\n\n- project_snapshot.md: version 0.4.0→0.6.0, dev branch, ADR 17→25,\n  test count 801→805, timeout.py description corrected\n- user_preferences.md: dev branch claude/starcore-autonomous-engineering-4p3tlj\n  → claude/session-76mlz8\n- sessions/current.md: replace stale 2026-07-27 ledger with current\n  session reference (claude/session-76mlz8, 2026-08-06)\n- docs/ROADMAP.md: version 0.4.0→0.6.0 in metrics table\n\n---------\n\nCo-authored-by: Claude <noreply@anthropic.com>\nCo-authored-by: sourcery-ai[bot] <58596630+sourcery-ai[bot]@users.noreply.github.com>",
+        "Sync mobile STARCORE",
+        "Repair STARCORE Engineering Layer",
+        "Finalize STARCORE Engineering Control Layer",
+        "Repair STARCORE Autonomous Engineering Layer v3.1"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 4
+    },
+    "technologies": [
+      "Python",
+      "Shell"
+    ]
+  },
+  "starcore-project-intelligence": {
+    "name": "starcore-project-intelligence",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 103,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T03:27:55Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/starcore-project-intelligence",
+      "pushed_at": "2026-08-28T04:08:28Z",
+      "created_at": "2026-08-28T04:05:44Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Initial commit for _STARCORE_PROJECT_INTELLIGENCE",
+        "Auto commit: sync local changes",
+        "Add/Update README from template"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "starcore-hive": {
+    "name": "starcore-hive",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 56,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T03:27:41Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/starcore-hive",
+      "pushed_at": "2026-07-03T03:01:43Z",
+      "created_at": "2026-07-03T02:56:58Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": "Add files via upload"
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "supernastroj-v5": {
+    "name": "supernastroj-v5",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:32Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/supernastroj-v5",
+      "pushed_at": "2026-08-28T04:07:06Z",
+      "created_at": "2026-08-28T04:07:05Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "containers-template": {
+    "name": "containers-template",
+    "dependencies": [
+      "@cloudflare/containers",
+      "hono",
+      "typescript",
+      "wrangler"
+    ],
+    "metadata": {
+      "topics": "",
+      "size_kb": 97,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "TypeScript",
+      "updated_at": "2026-01-21T10:42:59Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/containers-template",
+      "pushed_at": "2026-01-21T23:32:48Z",
+      "created_at": "2026-01-21T10:42:34Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 1
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 1,
+      "open_issues_count": 1,
+      "recent_commits": "source repo import"
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 1
+    },
+    "technologies": [
+      "Docker",
+      "Node.js",
+      "TypeScript"
+    ]
+  },
+  "genesis-aeterna": {
+    "name": "genesis-aeterna",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 49,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "PowerShell",
+      "updated_at": "2026-08-28T04:13:48Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/genesis-aeterna",
+      "pushed_at": "2026-08-28T04:13:23Z",
+      "created_at": "2026-08-28T04:06:05Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Initial commit for genesis-aeterna",
+        "Auto commit: sync local changes",
+        "Initial commit - Genesis Aeterna v10.0 documentation and scripts"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": [
+      "PowerShell",
+      "Python (scripts)",
+      "Shell"
+    ]
+  },
+  "prepare-proxmox-usb": {
+    "name": "prepare-proxmox-usb",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 57,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2026-07-04T11:43:15Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/prepare-proxmox-usb",
+      "pushed_at": "2026-07-04T11:43:11Z",
+      "created_at": "2026-07-04T02:35:30Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Fix answer.toml syntax and parameter order\n\nUpdated the script to fix the answer.toml syntax and ensure correct order of parameters. Added checks for zfs.raid and filter configurations.",
+        "Rename script and add filter to disk setup",
+        "Rename script and update comments for clarity",
+        "Refactor prepare-proxmox-usb.sh for better usability\n\nRefactor and improve the Proxmox USB preparation script with better error handling, validation, and configuration management.",
+        "Update proxmox-post-install.sh"
+      ]
+    },
+    "security": {
+      "secrets": [
+        "prepare-proxmox-usb.sh",
+        "proxmox-post-install.sh"
+      ],
+      "todo_count": 0
+    },
+    "technologies": "Shell"
+  },
+  "workspace": {
+    "name": "workspace",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:38Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/workspace",
+      "pushed_at": "2026-08-28T04:08:01Z",
+      "created_at": "2026-08-28T04:07:59Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "telemetry": {
+    "name": "telemetry",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:33Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/telemetry",
+      "pushed_at": "2026-08-28T04:07:12Z",
+      "created_at": "2026-08-28T04:07:11Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "starko-os-kali": {
+    "name": "starko-os-kali",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:30Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/starko-os-kali",
+      "pushed_at": "2026-08-28T04:06:46Z",
+      "created_at": "2026-08-28T04:06:45Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "vmconsole": {
+    "name": "vmconsole",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:36Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/vmconsole",
+      "pushed_at": "2026-08-28T04:07:47Z",
+      "created_at": "2026-08-28T04:07:47Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "hernios": {
+    "name": "hernios",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 4,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2026-08-29T03:27:31Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/hernios",
+      "pushed_at": "2026-08-28T04:13:28Z",
+      "created_at": "2026-08-28T04:06:07Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Initial commit for HerniOS",
+        "Initial commit - automated"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": "Shell"
+  },
+  "vscode": {
+    "name": "vscode",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:37Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/vscode",
+      "pushed_at": "2026-08-28T04:07:51Z",
+      "created_at": "2026-08-28T04:07:50Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "sui": {
+    "name": "sui",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 763,
+      "default_branch": "master",
+      "has_pages": false,
+      "description": "Modern super user interface implementation on Android.",
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T03:27:44Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/sui",
+      "pushed_at": "2022-11-20T14:06:00Z",
+      "created_at": "2023-01-05T13:35:53Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": "GPL-3.0",
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Update submodule",
+        "Update Kotlin",
+        "Update submodule",
+        "Shizuku API v13",
+        "Bump version to 12.7.2"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "Dokumenty": {
+    "name": "Dokumenty",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T10:58:09Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/Dokumenty",
+      "pushed_at": "2025-07-27T07:37:34Z",
+      "created_at": "2025-07-27T07:37:33Z",
+      "stars": 0,
+      "has_wiki": false,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "supernastroj": {
+    "name": "supernastroj",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 74,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2026-08-29T03:27:45Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/supernastroj",
+      "pushed_at": "2026-08-21T05:44:28Z",
+      "created_at": "2025-11-30T22:19:59Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": "MIT",
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Ignore local script",
+        "Add SuperNastroj_Linux.sh",
+        "Refactor SuperNastroj updater with logging and checks",
+        "Add Super Nástroj v5.0 TUI script",
+        "Add SuperNastroj automatic updater script\n\nThis script checks for the existence of the SuperNastroj directory, performs a git pull if it exists, creates a backup if it does not, and clones the repository. It also handles the transfer of old plugins and sets executable permissions for the updater and TUI scripts."
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": [
+      "PowerShell",
+      "Shell"
+    ]
+  },
+  "backups": {
+    "name": "backups",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 3115,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T10:58:09Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/backups",
+      "pushed_at": "2026-08-28T04:08:53Z",
+      "created_at": "2026-08-28T04:05:58Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": "Initial commit for backups"
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "starcore-auto-builder-v3-0-live-dashboard": {
+    "name": "starcore-auto-builder-v3-0-live-dashboard",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 48,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2026-08-29T03:27:39Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/starcore-auto-builder-v3-0-live-dashboard",
+      "pushed_at": "2026-06-28T17:09:18Z",
+      "created_at": "2026-06-28T16:07:10Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Revise README for STARCORE Auto Builder scripts\n\nUpdated README.md to provide a comprehensive overview of the STARCORE Auto Builder scripts, including their purposes, specifications, and usage instructions.",
+        "Update starcore-auto-builder-lite.sh",
+        "Revise starcore-auto-builder-final.sh to v3.2-final\n\nUpdated the starcore-auto-builder-final.sh script to version 3.2-final with enhanced functionality and preflight checks.",
+        "Add initial starcore-auto-builder-lite.sh file",
+        "Create starcore-auto-builder-final.sh"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": "Shell"
+  },
+  "ai-project-analyzer": {
+    "name": "ai-project-analyzer",
+    "dependencies": [
+      "aiofiles",
+      "aiohttp",
+      "anthropic",
+      "faiss-cpu",
+      "fastapi",
+      "google-generativeai",
+      "chromadb",
+      "langchain",
+      "llama-index",
+      "openai",
+      "psutil",
+      "python-dotenv",
+      "python-multipart",
+      "requests",
+      "sentence-transformers",
+      "streamlit",
+      "tiktoken",
+      "transformers",
+      "unstructured",
+      "uvicorn"
+    ],
+    "metadata": {
+      "topics": "",
+      "size_kb": 15,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Python",
+      "updated_at": "2026-08-29T03:27:27Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/ai-project-analyzer",
+      "pushed_at": "2026-08-23T15:52:03Z",
+      "created_at": "2025-11-10T10:04:04Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": "NOASSERTION",
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Initial commit for AI-PROJECT-ANALYZER",
+        "Update 1.0.0",
+        "Initial commit — AI Project Analyzer"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": [
+      "Python",
+      "Shell"
+    ]
+  },
+  "VS-code": {
+    "name": "VS-code",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 1,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T10:58:12Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/VS-code",
+      "pushed_at": "2025-11-20T11:45:11Z",
+      "created_at": "2025-07-27T10:20:44Z",
+      "stars": 0,
+      "has_wiki": false,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "vscode",
+        "Adds pytest configuration for testing framework\n\nConfigures the project to use pytest as the testing framework, enabling unit tests and specifying the test arguments. This change enhances testing capabilities and simplifies the testing process for developers."
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "terminal-mini-os": {
+    "name": "terminal-mini-os",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:34Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/terminal-mini-os",
+      "pushed_at": "2026-08-28T04:07:17Z",
+      "created_at": "2026-08-28T04:07:16Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "genesiscraft": {
+    "name": "genesiscraft",
+    "dependencies": [
+      "click",
+      "dash",
+      "dash-bootstrap-components",
+      "numpy",
+      "plotly",
+      "psutil",
+      "pypdf",
+      "requests"
+    ],
+    "metadata": {
+      "topics": "",
+      "size_kb": 20,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Python",
+      "updated_at": "2026-08-29T11:08:25Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/genesiscraft",
+      "pushed_at": "2026-04-18T11:16:14Z",
+      "created_at": "2026-04-18T05:39:55Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Přidána Fáze 2: deep-audit, classify, smart-analyze, health",
+        "Initial commit: GenesisCraft CLI v1.1"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 17
+    },
+    "technologies": [
+      "Python",
+      "Python (scripts)"
+    ]
+  },
+  "ripe-atlas-cousteau": {
+    "name": "ripe-atlas-cousteau",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 323,
+      "default_branch": "master",
+      "has_pages": false,
+      "description": "Python client for RIPE ATLAS API",
+      "forks": 0,
+      "language": null,
+      "updated_at": "2022-03-03T00:34:21Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/ripe-atlas-cousteau",
+      "pushed_at": "2022-02-23T15:02:56Z",
+      "created_at": "2022-05-15T22:05:14Z",
+      "stars": 0,
+      "has_wiki": false,
+      "license": "GPL-3.0",
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Update CHANGES to reflect that this isn't a real release",
+        "v1.5.0",
+        "There's no point making an AtlasLatestRequest without specifying msm_id",
+        "Re-add Python 3.6 support for now",
+        "Auth using the preferred Authorization Key schema rather than key= param"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": "Python (scripts)"
+  },
+  "vbbuildmanager": {
+    "name": "vbbuildmanager",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 328,
+      "default_branch": "master",
+      "has_pages": false,
+      "description": "A build manager for Visual Basic 6",
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:36Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/vbbuildmanager",
+      "pushed_at": "2016-10-12T01:52:13Z",
+      "created_at": "2024-03-16T12:48:49Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": "MIT",
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Adding a readme",
+        "Commit inicial, migrando para git",
+        "Initial commit"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "customubuntuserver": {
+    "name": "customubuntuserver",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:23Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/customubuntuserver",
+      "pushed_at": "2026-08-28T04:06:02Z",
+      "created_at": "2026-08-28T04:06:01Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "termux-install": {
+    "name": "termux-install",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:34Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/termux-install",
+      "pushed_at": "2026-08-28T04:07:29Z",
+      "created_at": "2026-08-28T04:07:29Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "skripty": {
+    "name": "skripty",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 8770,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2026-08-29T03:27:38Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/skripty",
+      "pushed_at": "2025-12-29T07:56:24Z",
+      "created_at": "2025-08-20T00:18:39Z",
+      "stars": 0,
+      "has_wiki": false,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Delete ubuntu_server",
+        "Add automated Ubuntu server installation script",
+        "Add files via upload",
+        "Add files via upload",
+        "Add files via upload"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": "Shell"
+  },
+  "OpenMediaVault": {
+    "name": "OpenMediaVault",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T10:58:11Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/OpenMediaVault",
+      "pushed_at": "2024-09-25T10:55:04Z",
+      "created_at": "2024-09-25T10:55:04Z",
+      "stars": 0,
+      "has_wiki": false,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "ubuntu-gameserver": {
+    "name": "ubuntu-gameserver",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 94,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2026-08-29T03:27:48Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/ubuntu-gameserver",
+      "pushed_at": "2025-12-30T17:38:50Z",
+      "created_at": "2025-12-30T17:37:50Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": "Add files via upload"
+    },
+    "security": {
+      "secrets": [
+        "gamehub-installer.sh"
+      ],
+      "todo_count": 0
+    },
+    "technologies": "Shell"
+  },
+  "backup-before-rename-20260821-090650": {
+    "name": "backup-before-rename-20260821-090650",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T10:58:08Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/backup-before-rename-20260821-090650",
+      "pushed_at": "2026-08-28T04:05:56Z",
+      "created_at": "2026-08-28T04:05:55Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "genesis-aetema": {
+    "name": "genesis-aetema",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 65,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:25Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/genesis-aetema",
+      "pushed_at": "2026-04-17T21:00:07Z",
+      "created_at": "2026-04-17T20:56:26Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": "Add files via upload"
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "wsl": {
+    "name": "wsl",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:39Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/wsl",
+      "pushed_at": "2026-08-28T04:08:05Z",
+      "created_at": "2026-08-28T04:08:04Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "winpe-recovery-dark-pro-edition": {
+    "name": "winpe-recovery-dark-pro-edition",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:38Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/winpe-recovery-dark-pro-edition",
+      "pushed_at": "2026-08-28T04:07:55Z",
+      "created_at": "2026-08-28T04:07:54Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "universal-ai-codespace": {
+    "name": "universal-ai-codespace",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 6,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2025-11-12T15:47:07Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/universal-ai-codespace",
+      "pushed_at": "2025-11-12T15:47:03Z",
+      "created_at": "2025-11-12T15:19:54Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "1",
+        "Initial commit with devcontainer setup"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "acode-dev-master": {
+    "name": "acode-dev-master",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 22,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2026-08-29T11:08:20Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/acode-dev-master",
+      "pushed_at": "2025-12-15T14:01:18Z",
+      "created_at": "2025-12-15T14:00:17Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": "Add files via upload"
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": [
+      "Python (scripts)",
+      "Shell"
+    ]
+  },
+  "octopuscli": {
+    "name": "octopuscli",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 20189,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": "Command line tool for Octopus Deploy",
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T03:27:34Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/octopuscli",
+      "pushed_at": "2026-01-21T13:42:46Z",
+      "created_at": "2022-05-16T01:20:44Z",
+      "stars": 0,
+      "has_wiki": false,
+      "license": "NOASSERTION",
+      "open_issues": 1
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 1,
+      "open_issues_count": 1,
+      "recent_commits": [
+        "Merge pull request #173 from OctopusDeploy/john/drop-5",
+        "Merge pull request #171 from OctopusDeploy/john/tls",
+        "Remove net5 targets\n\nFixes https://github.com/OctopusDeploy/OctopusCLI/issues/172",
+        "Following advice from https://docs.microsoft.com/en-us/dotnet/api/System.Net.ServicePointManager.SecurityProtocol?view=net-6.0#remarks\n\nIn summary, we let the OS mandate what TLS version is used, this given control to the system administrators.\nFixes https://github.com/OctopusDeploy/OctopusCLI/issues/170",
+        "Merge pull request #168 from OctopusDeploy/robe/warn-missing-gitref\n\nThrow if `CreateRelease` command is missing gitref"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": [
+      "PowerShell",
+      "Shell"
+    ]
+  },
+  "starcore-workspace": {
+    "name": "starcore-workspace",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 22106,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2026-08-29T03:27:40Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/starcore-workspace",
+      "pushed_at": "2026-08-28T21:09:08Z",
+      "created_at": "2026-08-28T04:25:21Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Create starcore_autofix.yml",
+        "Update starcore_validation.yml",
+        "Update starcore_validation.yml",
+        "Update starcore_validation.yml",
+        "Update starcore_v13.yml"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": "HTML"
+  },
+  "ultraos": {
+    "name": "ultraos",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:35Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/ultraos",
+      "pushed_at": "2026-08-28T04:07:38Z",
+      "created_at": "2026-08-28T04:07:37Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "projekt-genesis-2026": {
+    "name": "projekt-genesis-2026",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 204,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2026-08-29T03:27:36Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/projekt-genesis-2026",
+      "pushed_at": "2026-02-06T07:03:11Z",
+      "created_at": "2026-02-05T11:25:05Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Create genesis_final_integration.sh",
+        "Add detailed DNA registry part 2 for various roles",
+        "Rename Omni_Prompt_3.5_FINAL.txt.docx to Omni_Prompt_3.5_FINAL.txt",
+        "Rename 03_token_economy_v2.md.docx to 03_token_economy_v2.md",
+        "Rename 23_federated_orchestration.md.docx to 23_federated_orchestration.md"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": "Python (scripts)"
+  },
+  "name": {
+    "name": "name",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:26Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/name",
+      "pushed_at": "2026-08-28T04:05:39Z",
+      "created_at": "2026-08-28T04:05:38Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "containers-pokus": {
+    "name": "containers-pokus",
+    "dependencies": [
+      "@cloudflare/containers",
+      "hono",
+      "typescript",
+      "wrangler"
+    ],
+    "metadata": {
+      "topics": "",
+      "size_kb": 97,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "TypeScript",
+      "updated_at": "2026-08-29T11:08:22Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/containers-pokus",
+      "pushed_at": "2026-01-21T14:45:02Z",
+      "created_at": "2026-01-21T14:43:41Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 1
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 1,
+      "open_issues_count": 1,
+      "recent_commits": "source repo import"
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 1
+    },
+    "technologies": [
+      "Docker",
+      "Node.js",
+      "TypeScript"
+    ]
+  },
+  "starcore-vnext": {
+    "name": "starcore-vnext",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:29Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/starcore-vnext",
+      "pushed_at": "2026-08-28T04:06:43Z",
+      "created_at": "2026-08-28T04:06:42Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "rpi5-homeassistant-suite": {
+    "name": "rpi5-homeassistant-suite",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 318,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": "Complete Home Assistant suite for Raspberry Pi 5 with MHS35 display support",
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2025-11-12T16:50:53Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/rpi5-homeassistant-suite",
+      "pushed_at": "2025-11-12T16:50:48Z",
+      "created_at": "2025-11-10T17:47:24Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Update setup_master.sh",
+        "opreava docker compose",
+        "test: pridani HACS repositories do runtime config (test)",
+        "fix: oprava YAML validace v testech a validate_yaml.sh pro HA custom tagy",
+        "fix: odstraneni duplikatu a formatovacich chyb v copilot-instructions.md"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": "Shell"
+  },
+  "recalbox-diag": {
+    "name": "recalbox-diag",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 5,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-28T04:14:15Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/recalbox-diag",
+      "pushed_at": "2026-08-28T04:13:49Z",
+      "created_at": "2026-08-28T04:06:22Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Initial commit for recalbox-diag",
+        "Initial commit - automated"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "uwp": {
+    "name": "uwp",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 162,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2025-12-19T23:47:46Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/uwp",
+      "pushed_at": "2025-12-19T23:47:42Z",
+      "created_at": "2025-12-19T19:27:51Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Create docker-compose.security.yml",
+        "Create nginx.conf",
+        "Create uwp-docker.sh",
+        "Update uwp_config.json",
+        "Create healthcheck.sh"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 6
+    },
+    "technologies": [
+      "HTML",
+      "Shell"
+    ]
+  },
+  "twisteros-supermanager": {
+    "name": "twisteros-supermanager",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 1060,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2026-08-29T03:27:47Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/twisteros-supermanager",
+      "pushed_at": "2026-02-14T09:43:55Z",
+      "created_at": "2025-11-14T23:12:42Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 2
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 2,
+      "open_issues_count": 2,
+      "recent_commits": [
+        "It looks like you've provided an error message (\"Not a git repository\") instead of a git diff. A git diff shows the specific code changes (lines added, removed, or modified) between commits or your working directory.\n\nTo generate a commit message, I need the output of a command like `git diff` or `git diff --staged`.\n\n**Once you provide the diff, I can create a message for you. Here is an example of what a good commit message looks like based on your criteria:**\n\n```\nfeat: Add user authentication endpoint\n\nImplement the POST /login route to handle user authentication.\n\nThis change introduces the basic authentication flow using email and\npassword. It validates user credentials against the database and\nreturns a JSON Web Token (JWT) on success, enabling secure access\nto protected routes.",
+        "twisteros_supermanager_full_installer",
+        "instalace",
+        "RUN installer +full:install_skript",
+        "fix supermanager"
+      ]
+    },
+    "security": {
+      "secrets": [
+        "README.md"
+      ],
+      "todo_count": 0
+    },
+    "technologies": "Shell"
+  },
+  "GITHUB-AUDIT-REPORT": {
+    "name": "GITHUB-AUDIT-REPORT",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": "Kompletní diagnostická zpráva GitHubu účtu Fatalerorr69 - audit všech repozitářů, konfigurací a integrací",
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T10:58:10Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/GITHUB-AUDIT-REPORT",
+      "pushed_at": "2026-08-23T09:09:33Z",
+      "created_at": "2026-08-23T09:09:31Z",
+      "stars": 0,
+      "has_wiki": false,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": "Initial commit"
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "backup-before-autofix-20260821-185234": {
+    "name": "backup-before-autofix-20260821-185234",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 234,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T10:58:08Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/backup-before-autofix-20260821-185234",
+      "pushed_at": "2026-08-28T04:08:43Z",
+      "created_at": "2026-08-28T04:05:52Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": "Initial commit for backup_before_autofix_20260821_185234"
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "ollama": {
+    "name": "ollama",
+    "dependencies": [
+      "fastapi",
+      "chromadb",
+      "jinja2",
+      "paramiko",
+      "pydantic",
+      "python-multipart",
+      "pyyaml",
+      "requests",
+      "uvicorn"
+    ],
+    "metadata": {
+      "topics": "",
+      "size_kb": 27,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "PowerShell",
+      "updated_at": "2026-08-29T03:27:35Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/ollama",
+      "pushed_at": "2025-12-06T06:14:08Z",
+      "created_at": "2025-12-05T21:33:11Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Remove large ZIP file from repo",
+        "Initial commit",
+        "Add large file via LFS",
+        "Merge branch 'main' of https://github.com/Fatalerorr69/Ollama\nslouceni",
+        "Initial commit"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": [
+      "PowerShell",
+      "Python"
+    ]
+  },
+  "minimal-nas-web-edition": {
+    "name": "minimal-nas-web-edition",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 19,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Python",
+      "updated_at": "2026-08-29T03:27:33Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/minimal-nas-web-edition",
+      "pushed_at": "2025-12-30T02:36:24Z",
+      "created_at": "2025-12-29T20:53:03Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Update app.py",
+        "Create nas-gui.service",
+        "Create nas_install.sh",
+        "Create nas-gui.service",
+        "Create style.css"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": [
+      "Python (scripts)",
+      "Shell"
+    ]
+  },
+  "repo": {
+    "name": "repo",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:28Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/repo",
+      "pushed_at": "2026-08-28T04:05:42Z",
+      "created_at": "2026-08-28T04:05:41Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "containers-templatemhv": {
+    "name": "containers-templatemhv",
+    "dependencies": [
+      "@cloudflare/containers",
+      "hono",
+      "typescript",
+      "wrangler"
+    ],
+    "metadata": {
+      "topics": "",
+      "size_kb": 112,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "TypeScript",
+      "updated_at": "2026-08-29T11:08:23Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/containers-templatemhv",
+      "pushed_at": "2026-01-21T23:25:56Z",
+      "created_at": "2026-01-21T14:56:44Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 1
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 1,
+      "open_issues_count": 1,
+      "recent_commits": [
+        "Merge pull request #1 from Fatalerorr69/dependabot/npm_and_yarn/npm_and_yarn-eb4f97c0ca\n\nBump hono from 4.11.1 to 4.11.4 in the npm_and_yarn group across 1 directory",
+        "Bump hono in the npm_and_yarn group across 1 directory\n\nBumps the npm_and_yarn group with 1 update in the / directory: [hono](https://github.com/honojs/hono).\n\n\nUpdates `hono` from 4.11.1 to 4.11.4\n- [Release notes](https://github.com/honojs/hono/releases)\n- [Commits](https://github.com/honojs/hono/compare/v4.11.1...v4.11.4)\n\n---\nupdated-dependencies:\n- dependency-name: hono\n  dependency-version: 4.11.4\n  dependency-type: direct:production\n  dependency-group: npm_and_yarn\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>",
+        "source repo import"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 1
+    },
+    "technologies": [
+      "Docker",
+      "Node.js",
+      "TypeScript"
+    ]
+  },
+  "raspberry-pi-5-multifunk-n-syst-my-a-automatizace": {
+    "name": "raspberry-pi-5-multifunk-n-syst-my-a-automatizace",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:27Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/raspberry-pi-5-multifunk-n-syst-my-a-automatizace",
+      "pushed_at": "2026-08-28T04:06:19Z",
+      "created_at": "2026-08-28T04:06:18Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "starko-ultimate-recovery-usb": {
+    "name": "starko-ultimate-recovery-usb",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 3232,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "PowerShell",
+      "updated_at": "2026-08-29T03:27:42Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/starko-ultimate-recovery-usb",
+      "pushed_at": "2025-12-05T16:12:28Z",
+      "created_at": "2025-12-01T11:37:00Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Add STARKO Termux Full V12.3 ULTRA GUI script",
+        "Create STARKO_TERMUX_FULL_V12.3 ULTRA script\n\nThis script is an all-in-one Termux toolkit that automates the installation of dependencies, provides a module selection menu, and includes various functionalities for USB management, recovery building, Android toolkit, AI assistance, and more.",
+        "Add STARKO_TERMUX_FULL_V11 recovery toolkit script\n\nThis script sets up an all-in-one recovery toolkit for Termux on Android, including functions for logging, preparing directories, detecting USB drives, downloading Linux ISOs and forensic tools, and installing various utilities.",
+        "Initialize Starko Termux Full V7 toolkit\n\nThis script sets up the Starko Termux toolkit, installs necessary packages, and creates various utility scripts for system information, ADB tools, fastboot tools, APK management, backup/restore, disk tools, network tools, USB tools, and an AI helper. It also includes a web interface using Flask.",
+        "Fix formatting of completion message in script"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": [
+      "PowerShell",
+      "Shell"
+    ]
+  },
+  "platform": {
+    "name": "platform",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 184,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2026-02-21T15:33:58Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/platform",
+      "pushed_at": "2026-02-21T15:33:56Z",
+      "created_at": "2026-02-16T15:22:54Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Add files via upload",
+        "Create ALL-IN-ONE_AI_AUTOMATION_SUPER_PROMPT.md",
+        "Create mega_prompt_rpi5_cz.txt",
+        "Create mega_prompt_ai_architect.txt",
+        "Create super_prompt_claude.txt"
+      ]
+    },
+    "security": {
+      "secrets": [
+        "nvme-installer"
+      ],
+      "todo_count": 0
+    },
+    "technologies": "Shell"
+  },
+  "ubuntu-server1": {
+    "name": "ubuntu-server1",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 107,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2026-08-29T03:27:49Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/ubuntu-server1",
+      "pushed_at": "2026-02-16T05:15:48Z",
+      "created_at": "2025-12-29T07:57:20Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Merge pull request #1 from Fatalerorr69/codex/create-custom-os-design-and-installation-plan\n\nDocs: Add server-first mode and immediate OS installation kickoff to RPi5 SmartOS blueprint",
+        "Add server-first operating model and exact OS installation kickoff steps",
+        "Create script.js",
+        "Create style.css",
+        "Create logs.php"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": [
+      "Python (scripts)",
+      "Shell"
+    ]
+  },
+  "starcore-android": {
+    "name": "starcore-android",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 92,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "PowerShell",
+      "updated_at": "2026-08-23T15:54:20Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/starcore-android",
+      "pushed_at": "2026-08-23T15:52:51Z",
+      "created_at": "2026-08-21T03:59:58Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Initial commit for STARCORE-ANDROID",
+        "Initial commit - STARCORE-ANDROID"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "powershell": {
+    "name": "powershell",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 11,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "PowerShell",
+      "updated_at": "2026-08-29T03:27:35Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/powershell",
+      "pushed_at": "2026-08-28T04:13:41Z",
+      "created_at": "2026-08-28T04:06:15Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Initial commit for Powershell",
+        "Initial commit - automated"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": [
+      "HTML",
+      "PowerShell"
+    ]
+  },
+  "acode-dev-tools": {
+    "name": "acode-dev-tools",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 36,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2026-08-29T11:08:21Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/acode-dev-tools",
+      "pushed_at": "2025-12-16T07:52:36Z",
+      "created_at": "2025-12-16T07:32:34Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Add files via upload",
+        "Add files via upload"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 1
+    },
+    "technologies": "Shell"
+  },
+  "rpi5-github-catalog": {
+    "name": "rpi5-github-catalog",
+    "dependencies": "requests",
+    "metadata": {
+      "topics": "",
+      "size_kb": 6790,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Python",
+      "updated_at": "2026-03-01T04:30:45Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/rpi5-github-catalog",
+      "pushed_at": "2026-03-01T04:30:41Z",
+      "created_at": "2026-03-01T01:51:37Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Auto update catalog",
+        "Auto update catalog",
+        "Auto update catalog",
+        "Auto update catalog",
+        "Auto update catalog"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": [
+      "Python",
+      "Python (scripts)",
+      "Shell"
+    ]
+  },
+  "starcore-v12-ai-package": {
+    "name": "starcore-v12-ai-package",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": "STARCORE v12 - Kompletní GitHub Orchestrator • Android Termux • AI Analýza • Multi-Repo Sync",
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:28Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/starcore-v12-ai-package",
+      "pushed_at": "2026-08-22T22:19:28Z",
+      "created_at": "2026-08-22T22:19:25Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": "Initial commit"
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "android-kit-os": {
+    "name": "android-kit-os",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 1,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:21Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/android-kit-os",
+      "pushed_at": "2026-08-28T04:08:36Z",
+      "created_at": "2026-08-28T04:05:49Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Initial commit for android_kit_-os",
+        "Initial commit - automated"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": "Shell"
+  },
+  "modules": {
+    "name": "modules",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 19,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "PowerShell",
+      "updated_at": "2026-08-28T04:16:38Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/modules",
+      "pushed_at": "2026-08-28T04:13:36Z",
+      "created_at": "2026-08-28T04:06:12Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Initial commit for modules",
+        "Initial commit - automated"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": "PowerShell"
+  },
+  "starko-rpi5-ai-workspace": {
+    "name": "starko-rpi5-ai-workspace",
+    "dependencies": [
+      "    ",
+      "        ",
+      "            ",
+      "                            'name': script[:-3],  # Remove .py extension",
+      "                            'path': os.path.join(category_dir, script)",
+      "                        'name': profile,",
+      "                        'path': os.path.join(profiles_dir, profile)",
+      "                        })",
+      "                        scripts[category].append({",
+      "                    'auto_start': False,",
+      "                    'cores': psutil.cpu_count(logical=False),",
+      "                    'created_at': datetime.now().isoformat()",
+      "                    'free': round(disk.free / (1024**3), 2),",
+      "                    'free': round(memory.free / (1024**3), 2),",
+      "                    'frequency': cpu_info.get('hz_actual', 'Unknown')",
+      "                    'host': '0.0.0.0'",
+      "                    'load': gpu.load * 100,",
+      "                    'memory_free': gpu.memoryFree",
+      "                    'memory_total': gpu.memoryTotal,",
+      "                    'memory_used': gpu.memoryUsed,",
+      "                    'name': cpu_info.get('brand_raw', 'Unknown'),",
+      "                    'name': gpu.name,",
+      "                    'percent': disk.percent",
+      "                    'percent': memory.percent",
+      "                    'port': 8080,",
+      "                    'profiles': [],",
+      "                    'python_version': cpu_info.get('python_version', 'Unknown')",
+      "                    'system_info': {},",
+      "                    'system': cpu_info.get('arch', 'Unknown'),",
+      "                    'theme': 'dark',",
+      "                    'threads': psutil.cpu_count(logical=True),",
+      "                    'total': round(disk.total / (1024**3), 2),",
+      "                    'total': round(memory.total / (1024**3), 2),",
+      "                    'usage': cpu_usage,",
+      "                    'used': round(disk.used / (1024**3), 2),",
+      "                    'used': round(memory.used / (1024**3), 2),",
+      "                    })",
+      "                    if script.endswith('.py'):",
+      "                    profiles.append({",
+      "                'cpu': {",
+      "                'disk': {",
+      "                'gpu': [],",
+      "                'memory': {",
+      "                'platform': {",
+      "                }",
+      "                },",
+      "                }, f, indent=2)",
+      "                })",
+      "                for script in os.listdir(category_dir):",
+      "                gpus = GPUtil.getGPUs()",
+      "                if os.path.isdir(os.path.join(profiles_dir, profile)):",
+      "                json.dump({",
+      "                pass",
+      "                system_data['gpu'].append({",
+      "            'message': f'Profile {profile_name} started',",
+      "            'profile': profile_name",
+      "            'status': 'success',",
+      "            }",
+      "            # Add GPU info",
+      "            # CPU Info",
+      "            # Disk Info",
+      "            # GPU Info (if available)",
+      "            # Memory Info",
+      "            category_dir = f'scripts/{category}'",
+      "            cpu_info = cpuinfo.get_cpu_info()",
+      "            cpu_usage = psutil.cpu_percent(interval=1)",
+      "            disk = psutil.disk_usage('/')",
+      "            except:",
+      "            for gpu in gpus:",
+      "            for profile in os.listdir(profiles_dir):",
+      "            gpus = []",
+      "            if os.path.exists(category_dir):",
+      "            memory = psutil.virtual_memory()",
+      "            return jsonify({'error': str(e)}), 500",
+      "            return jsonify(system_data)",
+      "            scripts[category] = []",
+      "            system_data = {",
+      "            try:",
+      "            with open(config_file, 'w') as f:",
+      "            with open(db_file, 'w') as f:",
+      "        \"\"\"Get available profiles\"\"\"",
+      "        \"\"\"Get available scripts\"\"\"",
+      "        \"\"\"Get system information\"\"\"",
+      "        \"\"\"Initialize database and required files\"\"\"",
+      "        \"\"\"Start a specific profile\"\"\"",
+      "        })",
+      "        # Create basic database file",
+      "        # Create default config",
+      "        # This would contain logic to start different profiles",
+      "        config_file = os.path.join(database_dir, 'config.json')",
+      "        database_dir = 'database'",
+      "        db_file = os.path.join(database_dir, 'workspace.db')",
+      "        except Exception as e:",
+      "        for category in script_categories:",
+      "        if not os.path.exists(config_file):",
+      "        if not os.path.exists(db_file):",
+      "        if os.path.exists(profiles_dir):",
+      "        os.makedirs(database_dir, exist_ok=True)",
+      "        print(\"✅ Database initialized\")",
+      "        profiles = []",
+      "        profiles_dir = 'profiles'",
+      "        return jsonify({",
+      "        return jsonify({'status': 'healthy', 'timestamp': datetime.now().isoformat()})",
+      "        return jsonify(profiles)",
+      "        return jsonify(scripts)",
+      "        return render_template('index.html')",
+      "        script_categories = ['system', 'security', 'automation', 'development']",
+      "        scripts = {}",
+      "        try:",
+      "    @app.route('/')",
+      "    @app.route('/api/profiles')",
+      "    @app.route('/api/scripts')",
+      "    @app.route('/api/start-profile/<profile_name>')",
+      "    @app.route('/api/system-info')",
+      "    @app.route('/health')",
+      "    # Database initialization",
+      "    # Routes",
+      "    app = Flask(__name__)",
+      "    app.config['SECRET_KEY'] = 'starko-ai-workspace-secret-key'",
+      "    def get_profiles():",
+      "    def get_scripts():",
+      "    def health():",
+      "    def index():",
+      "    def init_db():",
+      "    def start_profile(profile_name):",
+      "    def system_info():",
+      "    from waitress import serve",
+      "    init_db()",
+      "    print(\"🌐 Server running on http://127.0.0.1:8080\")",
+      "    print(\"🚀 Starting Starko AI Workspace...\")",
+      "    return app, init_db",
+      "    serve(app, host='0.0.0.0', port=8080, threads=6)",
+      "app, init_db = create_app()",
+      "def create_app():",
+      "from datetime import datetime",
+      "from flask import Flask, render_template, jsonify, request",
+      "if __name__ ",
+      "import cpuinfo",
+      "import GPUtil",
+      "import json",
+      "import os",
+      "import psutil"
+    ],
+    "metadata": {
+      "topics": "",
+      "size_kb": 259,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2025-11-21T21:10:30Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/starko-rpi5-ai-workspace",
+      "pushed_at": "2026-02-28T21:12:51Z",
+      "created_at": "2025-11-21T12:57:52Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 1
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 1,
+      "open_issues_count": 1,
+      "recent_commits": [
+        "It looks like you've provided an error message (\"Not a git repository\") instead of a git diff. A git diff shows the specific code changes (lines added, removed, or modified) between commits or your working directory.\n\nTo generate a commit message, I need the output of a command like `git diff` or `git diff --staged`.\n\n**Once you provide the diff, I can create a message for you. Here is an example of what a good commit message looks like based on your criteria:**\n\n```\nfeat: Add user authentication endpoint\n\nImplement the POST /login route to handle user authentication.\n\nThis change introduces the basic authentication flow using email and\npassword. It validates user credentials against the database and\nreturns a JSON Web Token (JWT) on success, enabling secure access\nto protected routes.",
+        "feat(web): Overhaul GUI with modular backend and dynamic dashboard\n\nThis commit introduces a major refactoring of the web application to improve modularity, scalability, and user experience in preparation for version 4.0.\n\nKey changes include:\n\n- **Backend Refactor:** The monolithic `app.py` has been broken down into a modular structure using Flask Blueprints. API endpoints are now organized into the new `web_gui/routes/` directory for better maintainability.\n\n- **Dynamic Frontend:** The dashboard has been completely redesigned to be more dynamic. It now loads components as \"widgets\" and includes a new interface for managing user profiles.\n\n- **Deployment Upgrade:** The production server is switched from Waitress to Gunicorn for improved performance and robustness. New startup scripts (`start_webgui.sh`, `run.sh`, etc.) and a `wsgi.py` entry point have been added to support the new architecture. The old `start_production.py` script has been removed.",
+        "It looks like you've provided an error message, \"Not a git repository\", instead of a git diff. This error typically means you're trying to run a git command in a directory that hasn't been initialized as a git repository.\n\nTo generate a commit message, I need the actual output from a `git diff` command, which shows the changes made to the files.\n\nFor example, a diff might look like this:\n\n```diff\ndiff --git a/README.md b/README.md\nindex 1234567..abcdefg 100644\n--- a/README.md\n+++ b/README.md\n@@ -1,3 +1,4 @@\n # Project Title\n\n-This is the old description.\n+This is the new, updated description.\n+It provides more detail.\n```\n\nPlease provide the git diff, and I'll be happy to create a commit message for you.",
+        "Build: Configure Pytest for VS Code workspace\n\nUpdate the `.vscode/settings.json` file to enable and configure the Pytest test runner. This change sets the test discovery path to the `scripts` directory and disables the unittest runner to streamline the development and testing workflow directly within the editor.\n\nAdditionally, a trailing newline is added to `ai_engine/local_ai.py` for code formatting consistency.",
+        "feat: Short description\n\nMessage body\n\nMessage footer"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 4
+    },
+    "technologies": [
+      "Python",
+      "Python (scripts)",
+      "Shell"
+    ]
+  },
+  "ultra": {
+    "name": "ultra",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 211,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2025-12-20T13:31:00Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/ultra",
+      "pushed_at": "2025-12-20T13:30:57Z",
+      "created_at": "2025-12-20T01:16:36Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Create main.py",
+        "Update install_integ.sh",
+        "Create install_integ.sh",
+        "Update install.sh",
+        "Update installer.py"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": "Shell"
+  },
+  "starko-universal-pentest": {
+    "name": "starko-universal-pentest",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:31Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/starko-universal-pentest",
+      "pushed_at": "2026-08-28T04:06:49Z",
+      "created_at": "2026-08-28T04:06:48Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": null
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "Acode_Dev_Master": {
+    "name": "Acode_Dev_Master",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 142,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2025-12-15T11:02:47Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/Acode_Dev_Master",
+      "pushed_at": "2025-12-15T11:02:44Z",
+      "created_at": "2025-12-15T03:00:18Z",
+      "stars": 1,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Create ai-review.sh",
+        "Create improve.sh",
+        "Create analyze.sh",
+        "Update master_install.sh",
+        "Create plugin_manager.sh"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 32
+    },
+    "technologies": "Shell"
+  },
+  "starcore-installer": {
+    "name": "starcore-installer",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 1,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2026-08-29T03:27:41Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/starcore-installer",
+      "pushed_at": "2026-08-28T04:14:06Z",
+      "created_at": "2026-08-28T04:06:33Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": "Initial commit for starcore_installer"
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": [
+      "PowerShell",
+      "Shell"
+    ]
+  },
+  "digital-clock-timezones": {
+    "name": "digital-clock-timezones",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 0,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": "Digital Clock displaying current time in multiple timezones with web UI and API",
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-08-29T11:08:24Z",
+      "archived": true,
+      "full_name": "Fatalerorr69/digital-clock-timezones",
+      "pushed_at": "2026-08-22T22:30:29Z",
+      "created_at": "2026-08-22T22:30:28Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": "Initial commit"
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": null
+  },
+  "md-installer": {
+    "name": "md-installer",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 154,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2026-08-29T03:27:32Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/md-installer",
+      "pushed_at": "2026-08-23T15:52:26Z",
+      "created_at": "2025-12-06T17:31:18Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Initial commit for MD_installer",
+        "Auto commit: sync local changes",
+        "Create fix_structure.sh",
+        "Create fix_structure.sh",
+        "Delete version_manager/backups"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 9
+    },
+    "technologies": [
+      "PowerShell",
+      "Shell"
+    ]
+  },
+  "tsx": {
+    "name": "tsx",
+    "dependencies": [
+      "@ampproject/remapping",
+      "@types/cross-spawn",
+      "@types/node",
+      "@types/split2",
+      "append-transform",
+      "cachedir",
+      "clean-pkg-json",
+      "cleye",
+      "cross-spawn",
+      "es-module-lexer",
+      "esbuild",
+      "execa",
+      "fs-fixture",
+      "fs-require",
+      "get-node",
+      "get-tsconfig",
+      "chokidar",
+      "kolorist",
+      "lintroll",
+      "magic-string",
+      "manten",
+      "memfs",
+      "outdent",
+      "pkgroll",
+      "proxyquire",
+      "pty-spawn",
+      "strip-ansi",
+      "type-fest",
+      "type-flag",
+      "typescript"
+    ],
+    "metadata": {
+      "topics": "",
+      "size_kb": 2334,
+      "default_branch": "master",
+      "has_pages": false,
+      "description": "⚡️ TypeScript Execute | The easiest way to run TypeScript in Node.js",
+      "forks": 0,
+      "language": null,
+      "updated_at": "2026-02-28T22:05:17Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/tsx",
+      "pushed_at": "2026-02-13T18:07:16Z",
+      "created_at": "2026-02-28T22:05:17Z",
+      "stars": 0,
+      "has_wiki": false,
+      "license": "MIT",
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "test: use pty-spawn",
+        "chore: remove vercel.json after migrating to Cloudflare Pages",
+        "ci: move renovate config to .github/\n\nMoves renovate.json to .github/renovate.json for cleaner repo root.",
+        "docs: fix typos in a doc and a comment (#771)\n\n* fix a typo from `evaluatation` to `evaluation`\n* fix typos from `registeration` to `registration`",
+        "ci: lock in semantic-release v24"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": "Node.js"
+  },
+  "rpi5-starkhost": {
+    "name": "rpi5-starkhost",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 5,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2025-10-30T17:04:27Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/rpi5-starkhost",
+      "pushed_at": "2025-10-30T17:04:23Z",
+      "created_at": "2025-10-30T14:12:17Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": "První commit"
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": "Shell"
+  },
+  "rpi-nymea": {
+    "name": "rpi-nymea",
+    "dependencies": null,
+    "metadata": {
+      "topics": "",
+      "size_kb": 79,
+      "default_branch": "main",
+      "has_pages": false,
+      "description": null,
+      "forks": 0,
+      "language": "Shell",
+      "updated_at": "2026-08-29T03:27:37Z",
+      "archived": false,
+      "full_name": "Fatalerorr69/rpi-nymea",
+      "pushed_at": "2026-08-28T04:13:54Z",
+      "created_at": "2026-08-28T04:06:25Z",
+      "stars": 0,
+      "has_wiki": true,
+      "license": null,
+      "open_issues": 0
+    },
+    "last_phase": "activity",
+    "activity": {
+      "open_prs_count": 0,
+      "open_issues_count": 0,
+      "recent_commits": [
+        "Initial commit for RPI_nymea",
+        "Initial commit - automated"
+      ]
+    },
+    "security": {
+      "secrets": [],
+      "todo_count": 0
+    },
+    "technologies": "Python (scripts)"
+  }
+}

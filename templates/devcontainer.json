@@ -1,0 +1,17 @@
+{
+    "name": "Universal Workspace",
+    "image": "mcr.microsoft.com/devcontainers/universal:2",
+    "features": {
+        "ghcr.io/devcontainers/features/common-utils:1": {}
+    },
+    "postCreateCommand": "bash setup_workspace.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.powershell",
+                "ms-python.python",
+                "dbaeumer.vscode-eslint"
+            ]
+        }
+    }
+}

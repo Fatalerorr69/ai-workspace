@@ -1,0 +1,17 @@
+{
+    "timestamp": "2026-08-05T20:36:38.409193",
+    "component": "STARCORE Installer Framework Validator",
+    "version": "7.0.01",
+    "checks": [
+        {
+            "file": "runtime/platform/installer_state.json",
+            "exists": true
+        },
+        {
+            "file": "registry/modules.json",
+            "exists": true
+        }
+    ],
+    "errors": 0,
+    "status": "healthy"
+}

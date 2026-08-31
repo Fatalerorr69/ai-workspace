@@ -1,0 +1,9 @@
+{
+    "timestamp": "2026-08-05T21:25:52.386866",
+    "component": "Remote Compute Connector",
+    "nodes": [
+        "ANDROID",
+        "FATALAB"
+    ],
+    "status": "ready"
+}

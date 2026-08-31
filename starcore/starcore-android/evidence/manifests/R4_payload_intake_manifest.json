@@ -1,0 +1,17 @@
+[
+  {
+    "Artifact": "R4-01_selinux_state.txt",
+    "Status": "MISSING",
+    "SHA256": ""
+  },
+  {
+    "Artifact": "R4-02_process_provenance.txt",
+    "Status": "MISSING",
+    "SHA256": ""
+  },
+  {
+    "Artifact": "R4-03_binder_log_context.txt",
+    "Status": "MISSING",
+    "SHA256": ""
+  }
+]

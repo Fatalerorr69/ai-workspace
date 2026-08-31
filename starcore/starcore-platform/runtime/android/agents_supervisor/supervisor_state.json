@@ -1,0 +1,24 @@
+{
+    "timestamp": "2026-08-05T20:52:58.052048",
+    "component": "STARCORE Agent Supervisor",
+    "version": "6B.X.35",
+    "agents": [
+        {
+            "name": "core-agent",
+            "status": "online"
+        },
+        {
+            "name": "health-agent",
+            "status": "online"
+        },
+        {
+            "name": "scheduler-agent",
+            "status": "online"
+        },
+        {
+            "name": "ai-agent",
+            "status": "online"
+        }
+    ],
+    "status": "healthy"
+}

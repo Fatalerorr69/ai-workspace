@@ -1,0 +1,20 @@
+{
+    "component":"STARCORE Security Hardening Validator",
+    "version":"7.0.14-16",
+    "checks":[
+        {
+            "file":"runtime/backups/backup_registry.json",
+            "exists":true
+        },
+        {
+            "file":"runtime/github/repository_map.json",
+            "exists":true
+        },
+        {
+            "file":"runtime/security/file_integrity.json",
+            "exists":true
+        }
+    ],
+    "errors":0,
+    "status":"healthy"
+}

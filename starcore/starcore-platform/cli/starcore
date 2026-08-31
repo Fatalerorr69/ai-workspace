@@ -1,0 +1,4 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+python3 ~/STARCORE/core/cli/router.py "$@"
+

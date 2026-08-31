@@ -1,0 +1,11 @@
+{
+    "component":"AI Core Health Monitor",
+    "checks":[
+        "kernel",
+        "registry",
+        "runtime",
+        "context"
+    ],
+    "errors":0,
+    "status":"healthy"
+}

@@ -1,0 +1,25 @@
+{
+    "timestamp": "2026-08-05T19:29:43.640920",
+    "type": "memory_graph",
+    "nodes": [
+        "device",
+        "runtime",
+        "security",
+        "network",
+        "agent"
+    ],
+    "edges": [
+        [
+            "device",
+            "runtime"
+        ],
+        [
+            "runtime",
+            "agent"
+        ],
+        [
+            "security",
+            "device"
+        ]
+    ]
+}

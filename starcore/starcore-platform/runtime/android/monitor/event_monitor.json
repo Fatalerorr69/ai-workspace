@@ -1,0 +1,16 @@
+{
+    "timestamp": "2026-08-05T19:21:14.177540",
+    "component": "STARCORE Event Monitor",
+    "version": "6B.X.3.F",
+    "events_total": 1,
+    "last_event": {
+        "timestamp": "2026-08-05T19:16:15.987166",
+        "event": "core.start",
+        "source": "control_plane",
+        "severity": "info",
+        "payload": {
+            "version": "6B.X.3.B"
+        }
+    },
+    "status": "healthy"
+}

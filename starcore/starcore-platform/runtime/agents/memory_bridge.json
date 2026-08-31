@@ -1,0 +1,9 @@
+{
+    "component":"Agent Memory Bridge",
+    "connections":[
+        "ai_core",
+        "knowledge",
+        "rag"
+    ],
+    "status":"ready"
+}

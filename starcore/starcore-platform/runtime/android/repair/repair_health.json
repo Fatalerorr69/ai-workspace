@@ -1,0 +1,16 @@
+{
+    "timestamp": "2026-08-05T20:32:14.040473",
+    "component": "STARCORE Self Repair Health",
+    "version": "6B.X.17",
+    "checks": [
+        {
+            "file": "runtime/android/integrity/integrity_report.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/repair/repair_report.json",
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}

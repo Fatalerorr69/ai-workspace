@@ -1,0 +1,10 @@
+{
+  "firewall": true,
+  "fail2ban": true,
+  "auto_updates": true,
+  "audit": true,
+  "apparmor": true,
+  "ports_allowed": [22, 80, 443],
+  "ssh_hardening": true,
+  "log_retention_days": 30
+}

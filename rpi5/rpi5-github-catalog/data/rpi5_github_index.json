@@ -1,0 +1,884 @@
+[
+  {
+    "name": "memovai/mimiclaw",
+    "url": "https://github.com/memovai/mimiclaw",
+    "stars": 3586,
+    "lang": "C",
+    "category": "OS"
+  },
+  {
+    "name": "gokrazy/gokrazy",
+    "url": "https://github.com/gokrazy/gokrazy",
+    "stars": 3440,
+    "lang": "JavaScript",
+    "category": "Other"
+  },
+  {
+    "name": "goodtft/LCD-show",
+    "url": "https://github.com/goodtft/LCD-show",
+    "stars": 2633,
+    "lang": "C++",
+    "category": "Other"
+  },
+  {
+    "name": "ppogg/YOLOv5-Lite",
+    "url": "https://github.com/ppogg/YOLOv5-Lite",
+    "stars": 2471,
+    "lang": "C++",
+    "category": "Other"
+  },
+  {
+    "name": "FydeOS/chromium_os-raspberry_pi",
+    "url": "https://github.com/FydeOS/chromium_os-raspberry_pi",
+    "stars": 1745,
+    "lang": "Shell",
+    "category": "Other"
+  },
+  {
+    "name": "raspberrypi/rpi-eeprom",
+    "url": "https://github.com/raspberrypi/rpi-eeprom",
+    "stars": 1456,
+    "lang": "Shell",
+    "category": "Other"
+  },
+  {
+    "name": "V3lectronics/SPIRIT",
+    "url": "https://github.com/V3lectronics/SPIRIT",
+    "stars": 1097,
+    "lang": "MATLAB",
+    "category": "Other"
+  },
+  {
+    "name": "ZitaoTech/HackberryPiCM5",
+    "url": "https://github.com/ZitaoTech/HackberryPiCM5",
+    "stars": 887,
+    "lang": "HTML",
+    "category": "OS"
+  },
+  {
+    "name": "ptitSeb/gl4es",
+    "url": "https://github.com/ptitSeb/gl4es",
+    "stars": 816,
+    "lang": "C",
+    "category": "Other"
+  },
+  {
+    "name": "schlae/cm5-reveng",
+    "url": "https://github.com/schlae/cm5-reveng",
+    "stars": 793,
+    "lang": null,
+    "category": "Other"
+  },
+  {
+    "name": "ptrsr/pi-ci",
+    "url": "https://github.com/ptrsr/pi-ci",
+    "stars": 748,
+    "lang": "Python",
+    "category": "Other"
+  },
+  {
+    "name": "mendhak/waveshare-epaper-display",
+    "url": "https://github.com/mendhak/waveshare-epaper-display",
+    "stars": 526,
+    "lang": "Python",
+    "category": "Web/Dashboard"
+  },
+  {
+    "name": "ondryaso/pi-rc522",
+    "url": "https://github.com/ondryaso/pi-rc522",
+    "stars": 440,
+    "lang": "Python",
+    "category": "Other"
+  },
+  {
+    "name": "worproject/rpi5-uefi",
+    "url": "https://github.com/worproject/rpi5-uefi",
+    "stars": 440,
+    "lang": "Shell",
+    "category": "Other"
+  },
+  {
+    "name": "vanvught/rpidmx512",
+    "url": "https://github.com/vanvught/rpidmx512",
+    "stars": 436,
+    "lang": "C++",
+    "category": "Other"
+  },
+  {
+    "name": "will127534/FourThirdsEye",
+    "url": "https://github.com/will127534/FourThirdsEye",
+    "stars": 317,
+    "lang": "HTML",
+    "category": "Other"
+  },
+  {
+    "name": "ros-realtime/ros-realtime-rpi4-image",
+    "url": "https://github.com/ros-realtime/ros-realtime-rpi4-image",
+    "stars": 306,
+    "lang": "Jupyter Notebook",
+    "category": "OS"
+  },
+  {
+    "name": "TOLDOTECHNIK/buildroot-webkit",
+    "url": "https://github.com/TOLDOTECHNIK/buildroot-webkit",
+    "stars": 267,
+    "lang": "Shell",
+    "category": "AI"
+  },
+  {
+    "name": "thanhtam-h/soem-w5500-rpi",
+    "url": "https://github.com/thanhtam-h/soem-w5500-rpi",
+    "stars": 254,
+    "lang": "C",
+    "category": "Other"
+  },
+  {
+    "name": "BenRoe/rpi-magicmirror-eink",
+    "url": "https://github.com/BenRoe/rpi-magicmirror-eink",
+    "stars": 237,
+    "lang": "Python",
+    "category": "Other"
+  },
+  {
+    "name": "Robertof/nixos-docker-sd-image-builder",
+    "url": "https://github.com/Robertof/nixos-docker-sd-image-builder",
+    "stars": 227,
+    "lang": "Shell",
+    "category": "OS"
+  },
+  {
+    "name": "psema4/pine",
+    "url": "https://github.com/psema4/pine",
+    "stars": 199,
+    "lang": "JavaScript",
+    "category": "AI"
+  },
+  {
+    "name": "swkim01/waveshare-dtoverlays",
+    "url": "https://github.com/swkim01/waveshare-dtoverlays",
+    "stars": 187,
+    "lang": "Shell",
+    "category": "Other"
+  },
+  {
+    "name": "danielfreer/raspberrypi5-retropie-setup",
+    "url": "https://github.com/danielfreer/raspberrypi5-retropie-setup",
+    "stars": 183,
+    "lang": null,
+    "category": "Media/Gaming"
+  },
+  {
+    "name": "visrealm/pico-56",
+    "url": "https://github.com/visrealm/pico-56",
+    "stars": 164,
+    "lang": "C",
+    "category": "Media/Gaming"
+  },
+  {
+    "name": "lcdwiki/LCD-show-kali",
+    "url": "https://github.com/lcdwiki/LCD-show-kali",
+    "stars": 160,
+    "lang": "Shell",
+    "category": "Other"
+  },
+  {
+    "name": "DeskPi-Team/deskpi",
+    "url": "https://github.com/DeskPi-Team/deskpi",
+    "stars": 157,
+    "lang": "Shell",
+    "category": "Other"
+  },
+  {
+    "name": "wiretap-retro/Mini-Rack-1U-Pi-NAS",
+    "url": "https://github.com/wiretap-retro/Mini-Rack-1U-Pi-NAS",
+    "stars": 155,
+    "lang": null,
+    "category": "Other"
+  },
+  {
+    "name": "lukekratz/raspberry-pi-5-hailo-8-pothole-detection-system",
+    "url": "https://github.com/lukekratz/raspberry-pi-5-hailo-8-pothole-detection-system",
+    "stars": 141,
+    "lang": "Python",
+    "category": "AI"
+  },
+  {
+    "name": "raspberrypi/imx500-models",
+    "url": "https://github.com/raspberrypi/imx500-models",
+    "stars": 138,
+    "lang": "Shell",
+    "category": "AI"
+  },
+  {
+    "name": "jayofelony/pwnagotchi",
+    "url": "https://github.com/jayofelony/pwnagotchi",
+    "stars": 2540,
+    "lang": "Python",
+    "category": "Other"
+  },
+  {
+    "name": "V3lectronics/SPIRIT",
+    "url": "https://github.com/V3lectronics/SPIRIT",
+    "stars": 1097,
+    "lang": "MATLAB",
+    "category": "Other"
+  },
+  {
+    "name": "hailo-ai/hailo-rpi5-examples",
+    "url": "https://github.com/hailo-ai/hailo-rpi5-examples",
+    "stars": 888,
+    "lang": "Python",
+    "category": "AI"
+  },
+  {
+    "name": "worproject/rpi5-uefi",
+    "url": "https://github.com/worproject/rpi5-uefi",
+    "stars": 440,
+    "lang": "Shell",
+    "category": "Other"
+  },
+  {
+    "name": "moodlebox/moodlebox",
+    "url": "https://github.com/moodlebox/moodlebox",
+    "stars": 138,
+    "lang": "Jinja",
+    "category": "Other"
+  },
+  {
+    "name": "awawa-dev/HyperSPI",
+    "url": "https://github.com/awawa-dev/HyperSPI",
+    "stars": 86,
+    "lang": "C++",
+    "category": "Other"
+  },
+  {
+    "name": "Felipegalind0/RPI5.pinout",
+    "url": "https://github.com/Felipegalind0/RPI5.pinout",
+    "stars": 75,
+    "lang": null,
+    "category": "IoT/GPIO"
+  },
+  {
+    "name": "vanshksingh/Pi5Neo",
+    "url": "https://github.com/vanshksingh/Pi5Neo",
+    "stars": 46,
+    "lang": "Python",
+    "category": "IoT/GPIO"
+  },
+  {
+    "name": "JungLearnBot/RPi5_yolov8",
+    "url": "https://github.com/JungLearnBot/RPi5_yolov8",
+    "stars": 44,
+    "lang": "Python",
+    "category": "Other"
+  },
+  {
+    "name": "jfikar/RPi5-power",
+    "url": "https://github.com/jfikar/RPi5-power",
+    "stars": 40,
+    "lang": "Shell",
+    "category": "Other"
+  },
+  {
+    "name": "openFyde/overlay-rpi5-openfyde",
+    "url": "https://github.com/openFyde/overlay-rpi5-openfyde",
+    "stars": 39,
+    "lang": "Shell",
+    "category": "Other"
+  },
+  {
+    "name": "kholbrook1303/RPI5-Bookworm-ProjectM-Audio-Receiver",
+    "url": "https://github.com/kholbrook1303/RPI5-Bookworm-ProjectM-Audio-Receiver",
+    "stars": 35,
+    "lang": "Python",
+    "category": "Other"
+  },
+  {
+    "name": "will127534/RPI5-SDexpress-Hat",
+    "url": "https://github.com/will127534/RPI5-SDexpress-Hat",
+    "stars": 34,
+    "lang": "HTML",
+    "category": "Other"
+  },
+  {
+    "name": "praktronics/rpi5-rp1-spi",
+    "url": "https://github.com/praktronics/rpi5-rp1-spi",
+    "stars": 33,
+    "lang": "C",
+    "category": "Other"
+  },
+  {
+    "name": "android-rpi/device_arpi_rpi5",
+    "url": "https://github.com/android-rpi/device_arpi_rpi5",
+    "stars": 33,
+    "lang": "Makefile",
+    "category": "Other"
+  },
+  {
+    "name": "raspberry-vanilla/android_device_brcm_rpi5",
+    "url": "https://github.com/raspberry-vanilla/android_device_brcm_rpi5",
+    "stars": 30,
+    "lang": "C++",
+    "category": "Other"
+  },
+  {
+    "name": "celesrenata/nix-flakes",
+    "url": "https://github.com/celesrenata/nix-flakes",
+    "stars": 25,
+    "lang": "Nix",
+    "category": "Other"
+  },
+  {
+    "name": "FearL0rd/RPi5_hdmi_in_card",
+    "url": "https://github.com/FearL0rd/RPi5_hdmi_in_card",
+    "stars": 21,
+    "lang": "Shell",
+    "category": "Other"
+  },
+  {
+    "name": "will127534/RPI5-CFE-Hat",
+    "url": "https://github.com/will127534/RPI5-CFE-Hat",
+    "stars": 21,
+    "lang": "HTML",
+    "category": "Other"
+  },
+  {
+    "name": "cjtrowbridge/RPi5-AI",
+    "url": "https://github.com/cjtrowbridge/RPi5-AI",
+    "stars": 21,
+    "lang": "Shell",
+    "category": "AI"
+  },
+  {
+    "name": "sanjoyg/rpi_hailo8l_face_recognition",
+    "url": "https://github.com/sanjoyg/rpi_hailo8l_face_recognition",
+    "stars": 20,
+    "lang": "Shell",
+    "category": "AI"
+  },
+  {
+    "name": "nerves-project/nerves_system_rpi5",
+    "url": "https://github.com/nerves-project/nerves_system_rpi5",
+    "stars": 19,
+    "lang": "Elixir",
+    "category": "Other"
+  },
+  {
+    "name": "bmharper/hailo-rpi5-yolov8",
+    "url": "https://github.com/bmharper/hailo-rpi5-yolov8",
+    "stars": 19,
+    "lang": "C++",
+    "category": "AI"
+  },
+  {
+    "name": "KenT2/pipresents-kms",
+    "url": "https://github.com/KenT2/pipresents-kms",
+    "stars": 19,
+    "lang": "Python",
+    "category": "Other"
+  },
+  {
+    "name": "Stremio/stremio-os-rpi",
+    "url": "https://github.com/Stremio/stremio-os-rpi",
+    "stars": 18,
+    "lang": null,
+    "category": "Other"
+  },
+  {
+    "name": "shatrix/rpi5-rpios-ai-robot",
+    "url": "https://github.com/shatrix/rpi5-rpios-ai-robot",
+    "stars": 17,
+    "lang": "Python",
+    "category": "AI"
+  },
+  {
+    "name": "NikPiermafrost/rpi5-ubuntu-server-fan-script",
+    "url": "https://github.com/NikPiermafrost/rpi5-ubuntu-server-fan-script",
+    "stars": 17,
+    "lang": "Shell",
+    "category": "OS"
+  },
+  {
+    "name": "opensensor/rpi5-resources",
+    "url": "https://github.com/opensensor/rpi5-resources",
+    "stars": 16,
+    "lang": null,
+    "category": "AI"
+  },
+  {
+    "name": "xen-troops/meta-xt-prod-devel-rpi5",
+    "url": "https://github.com/xen-troops/meta-xt-prod-devel-rpi5",
+    "stars": 15,
+    "lang": "BitBake",
+    "category": "Other"
+  },
+  {
+    "name": "mozcelikors/rpi5_yocto_udemy",
+    "url": "https://github.com/mozcelikors/rpi5_yocto_udemy",
+    "stars": 15,
+    "lang": "BitBake",
+    "category": "AI"
+  },
+  {
+    "name": "ventoy/Ventoy",
+    "url": "https://github.com/ventoy/Ventoy",
+    "stars": 74747,
+    "lang": "C",
+    "category": "Other"
+  },
+  {
+    "name": "simdjson/simdjson",
+    "url": "https://github.com/simdjson/simdjson",
+    "stars": 23403,
+    "lang": "C++",
+    "category": "Other"
+  },
+  {
+    "name": "gojue/ecapture",
+    "url": "https://github.com/gojue/ecapture",
+    "stars": 15015,
+    "lang": "C",
+    "category": "OS"
+  },
+  {
+    "name": "rust-embedded/rust-raspberrypi-OS-tutorials",
+    "url": "https://github.com/rust-embedded/rust-raspberrypi-OS-tutorials",
+    "stars": 14587,
+    "lang": "Rust",
+    "category": "Other"
+  },
+  {
+    "name": "unicorn-engine/unicorn",
+    "url": "https://github.com/unicorn-engine/unicorn",
+    "stars": 8785,
+    "lang": "C",
+    "category": "OS"
+  },
+  {
+    "name": "capstone-engine/capstone",
+    "url": "https://github.com/capstone-engine/capstone",
+    "stars": 8568,
+    "lang": "C",
+    "category": "OS"
+  },
+  {
+    "name": "henrypp/simplewall",
+    "url": "https://github.com/henrypp/simplewall",
+    "stars": 8085,
+    "lang": "C",
+    "category": "Other"
+  },
+  {
+    "name": "NexaAI/nexa-sdk",
+    "url": "https://github.com/NexaAI/nexa-sdk",
+    "stars": 7743,
+    "lang": "Kotlin",
+    "category": "OS"
+  },
+  {
+    "name": "FEX-Emu/FEX",
+    "url": "https://github.com/FEX-Emu/FEX",
+    "stars": 6970,
+    "lang": "C++",
+    "category": "OS"
+  },
+  {
+    "name": "ptitSeb/box64",
+    "url": "https://github.com/ptitSeb/box64",
+    "stars": 5264,
+    "lang": "C",
+    "category": "OS"
+  },
+  {
+    "name": "armbian/build",
+    "url": "https://github.com/armbian/build",
+    "stars": 5120,
+    "lang": "Shell",
+    "category": "OS"
+  },
+  {
+    "name": "below/HelloSilicon",
+    "url": "https://github.com/below/HelloSilicon",
+    "stars": 4906,
+    "lang": "Assembly",
+    "category": "Other"
+  },
+  {
+    "name": "zufuliu/notepad4",
+    "url": "https://github.com/zufuliu/notepad4",
+    "stars": 4447,
+    "lang": "C++",
+    "category": "Other"
+  },
+  {
+    "name": "JonathanSalwan/ROPgadget",
+    "url": "https://github.com/JonathanSalwan/ROPgadget",
+    "stars": 4376,
+    "lang": "Python",
+    "category": "OS"
+  },
+  {
+    "name": "gali8/Tesseract-OCR-iOS",
+    "url": "https://github.com/gali8/Tesseract-OCR-iOS",
+    "stars": 4232,
+    "lang": "C",
+    "category": "Other"
+  },
+  {
+    "name": "timothymiller/cloudflare-ddns",
+    "url": "https://github.com/timothymiller/cloudflare-ddns",
+    "stars": 4059,
+    "lang": "Python",
+    "category": "AI"
+  },
+  {
+    "name": "alibaba/coobjc",
+    "url": "https://github.com/alibaba/coobjc",
+    "stars": 4028,
+    "lang": "Objective-C",
+    "category": "AI"
+  },
+  {
+    "name": "Joshua-Riek/ubuntu-rockchip",
+    "url": "https://github.com/Joshua-Riek/ubuntu-rockchip",
+    "stars": 3942,
+    "lang": "Shell",
+    "category": "OS"
+  },
+  {
+    "name": "ThatGuySam/doesitarm",
+    "url": "https://github.com/ThatGuySam/doesitarm",
+    "stars": 3797,
+    "lang": "JavaScript",
+    "category": "Other"
+  },
+  {
+    "name": "OpenXRay/xray-16",
+    "url": "https://github.com/OpenXRay/xray-16",
+    "stars": 3441,
+    "lang": "C++",
+    "category": "Media/Gaming"
+  },
+  {
+    "name": "gokrazy/gokrazy",
+    "url": "https://github.com/gokrazy/gokrazy",
+    "stars": 3440,
+    "lang": "JavaScript",
+    "category": "Other"
+  },
+  {
+    "name": "haiibo/OpenWrt",
+    "url": "https://github.com/haiibo/OpenWrt",
+    "stars": 3142,
+    "lang": "Shell",
+    "category": "Other"
+  },
+  {
+    "name": "pkivolowitz/asm_book",
+    "url": "https://github.com/pkivolowitz/asm_book",
+    "stars": 3117,
+    "lang": "Assembly",
+    "category": "Other"
+  },
+  {
+    "name": "simd-everywhere/simde",
+    "url": "https://github.com/simd-everywhere/simde",
+    "stars": 2967,
+    "lang": "C",
+    "category": "Other"
+  },
+  {
+    "name": "limine-bootloader/limine",
+    "url": "https://github.com/limine-bootloader/limine",
+    "stars": 2831,
+    "lang": "C",
+    "category": "Other"
+  },
+  {
+    "name": "shivammathur/homebrew-php",
+    "url": "https://github.com/shivammathur/homebrew-php",
+    "stars": 2801,
+    "lang": "Ruby",
+    "category": "Other"
+  },
+  {
+    "name": "ophub/fnnas",
+    "url": "https://github.com/ophub/fnnas",
+    "stars": 2715,
+    "lang": "Shell",
+    "category": "AI"
+  },
+  {
+    "name": "homebridge/docker-homebridge",
+    "url": "https://github.com/homebridge/docker-homebridge",
+    "stars": 2687,
+    "lang": "Shell",
+    "category": "Docker/DevOps"
+  },
+  {
+    "name": "Botspot/pi-apps",
+    "url": "https://github.com/Botspot/pi-apps",
+    "stars": 2663,
+    "lang": "Shell",
+    "category": "Other"
+  },
+  {
+    "name": "openfans-community-offical/Debian-Pi-Aarch64",
+    "url": "https://github.com/openfans-community-offical/Debian-Pi-Aarch64",
+    "stars": 2582,
+    "lang": "Shell",
+    "category": "OS"
+  },
+  {
+    "name": "bztsrc/raspi3-tutorial",
+    "url": "https://github.com/bztsrc/raspi3-tutorial",
+    "stars": 2997,
+    "lang": "C",
+    "category": "Other"
+  },
+  {
+    "name": "raspiblitz/raspiblitz",
+    "url": "https://github.com/raspiblitz/raspiblitz",
+    "stars": 2599,
+    "lang": "Python",
+    "category": "Other"
+  },
+  {
+    "name": "raspibolt/raspibolt",
+    "url": "https://github.com/raspibolt/raspibolt",
+    "stars": 1265,
+    "lang": "Markdown",
+    "category": "Other"
+  },
+  {
+    "name": "framps/raspiBackup",
+    "url": "https://github.com/framps/raspiBackup",
+    "stars": 972,
+    "lang": "Shell",
+    "category": "Other"
+  },
+  {
+    "name": "jasbur/RaspiWiFi",
+    "url": "https://github.com/jasbur/RaspiWiFi",
+    "stars": 631,
+    "lang": "Python",
+    "category": "OS"
+  },
+  {
+    "name": "nebrius/raspi-io",
+    "url": "https://github.com/nebrius/raspi-io",
+    "stars": 548,
+    "lang": "TypeScript",
+    "category": "Other"
+  },
+  {
+    "name": "TheRemote/Ubuntu-Server-raspi4-unofficial",
+    "url": "https://github.com/TheRemote/Ubuntu-Server-raspi4-unofficial",
+    "stars": 538,
+    "lang": "Shell",
+    "category": "OS"
+  },
+  {
+    "name": "ali1234/raspi-teletext",
+    "url": "https://github.com/ali1234/raspi-teletext",
+    "stars": 440,
+    "lang": "C",
+    "category": "Other"
+  },
+  {
+    "name": "segalion/raspipool",
+    "url": "https://github.com/segalion/raspipool",
+    "stars": 432,
+    "lang": "Python",
+    "category": "Other"
+  },
+  {
+    "name": "me-no-dev/RasPiArduino",
+    "url": "https://github.com/me-no-dev/RasPiArduino",
+    "stars": 354,
+    "lang": "C++",
+    "category": "Other"
+  },
+  {
+    "name": "cedricve/raspicam",
+    "url": "https://github.com/cedricve/raspicam",
+    "stars": 330,
+    "lang": "C++",
+    "category": "Other"
+  },
+  {
+    "name": "troyth/node-raspicam",
+    "url": "https://github.com/troyth/node-raspicam",
+    "stars": 325,
+    "lang": "JavaScript",
+    "category": "Other"
+  },
+  {
+    "name": "SpaceTeddy/CC1101",
+    "url": "https://github.com/SpaceTeddy/CC1101",
+    "stars": 318,
+    "lang": "C++",
+    "category": "Other"
+  },
+  {
+    "name": "jsandler18/raspi-kernel",
+    "url": "https://github.com/jsandler18/raspi-kernel",
+    "stars": 308,
+    "lang": "C",
+    "category": "Other"
+  },
+  {
+    "name": "UbiquityRobotics/raspicam_node",
+    "url": "https://github.com/UbiquityRobotics/raspicam_node",
+    "stars": 306,
+    "lang": "C++",
+    "category": "Other"
+  },
+  {
+    "name": "eidottermihi/rpicheck",
+    "url": "https://github.com/eidottermihi/rpicheck",
+    "stars": 295,
+    "lang": "Java",
+    "category": "Other"
+  },
+  {
+    "name": "raspberrypi/raspiraw",
+    "url": "https://github.com/raspberrypi/raspiraw",
+    "stars": 272,
+    "lang": "C",
+    "category": "IoT/GPIO"
+  },
+  {
+    "name": "asb/raspi-config",
+    "url": "https://github.com/asb/raspi-config",
+    "stars": 271,
+    "lang": "Shell",
+    "category": "OS"
+  },
+  {
+    "name": "rcarmo/raspi-cluster",
+    "url": "https://github.com/rcarmo/raspi-cluster",
+    "stars": 256,
+    "lang": "C",
+    "category": "Other"
+  },
+  {
+    "name": "AndrewFromMelbourne/raspidmx",
+    "url": "https://github.com/AndrewFromMelbourne/raspidmx",
+    "stars": 218,
+    "lang": "C",
+    "category": "Other"
+  },
+  {
+    "name": "Raspirus/raspirus",
+    "url": "https://github.com/Raspirus/raspirus",
+    "stars": 214,
+    "lang": "Rust",
+    "category": "Other"
+  },
+  {
+    "name": "AndrewFromMelbourne/raspi2png",
+    "url": "https://github.com/AndrewFromMelbourne/raspi2png",
+    "stars": 213,
+    "lang": "C",
+    "category": "Other"
+  },
+  {
+    "name": "exaviorn/RasPiWrite",
+    "url": "https://github.com/exaviorn/RasPiWrite",
+    "stars": 213,
+    "lang": "Python",
+    "category": "OS"
+  },
+  {
+    "name": "nebrius/raspi",
+    "url": "https://github.com/nebrius/raspi",
+    "stars": 207,
+    "lang": "TypeScript",
+    "category": "Other"
+  },
+  {
+    "name": "steve71/RasPiBrew",
+    "url": "https://github.com/steve71/RasPiBrew",
+    "stars": 192,
+    "lang": "Python",
+    "category": "Other"
+  },
+  {
+    "name": "raspberry-pi-camera/raspindi",
+    "url": "https://github.com/raspberry-pi-camera/raspindi",
+    "stars": 191,
+    "lang": "C",
+    "category": "Other"
+  },
+  {
+    "name": "garthvh/ansible-raspi-playbooks",
+    "url": "https://github.com/garthvh/ansible-raspi-playbooks",
+    "stars": 186,
+    "lang": "Shell",
+    "category": "Other"
+  },
+  {
+    "name": "Pro/raspi-toolchain",
+    "url": "https://github.com/Pro/raspi-toolchain",
+    "stars": 180,
+    "lang": "CMake",
+    "category": "AI"
+  },
+  {
+    "name": "RaspbianFrance/raspisms",
+    "url": "https://github.com/RaspbianFrance/raspisms",
+    "stars": 173,
+    "lang": "PHP",
+    "category": "Other"
+  },
+  {
+    "name": "ma6174/speak_raspi_ip",
+    "url": "https://github.com/ma6174/speak_raspi_ip",
+    "stars": 164,
+    "lang": "Python",
+    "category": "Other"
+  },
+  {
+    "name": "qnx/bsp_raspberrypi-bcm2712-rpi5",
+    "url": "https://github.com/qnx/bsp_raspberrypi-bcm2712-rpi5",
+    "stars": 7,
+    "lang": "C",
+    "category": "Other"
+  },
+  {
+    "name": "wrig0421/rpi5_bcm2712",
+    "url": "https://github.com/wrig0421/rpi5_bcm2712",
+    "stars": 0,
+    "lang": null,
+    "category": "Other"
+  },
+  {
+    "name": "msh8k/rpi4-bootloader",
+    "url": "https://github.com/msh8k/rpi4-bootloader",
+    "stars": 0,
+    "lang": "C",
+    "category": "Other"
+  },
+  {
+    "name": "Rowingporte/rpi5-pigpio",
+    "url": "https://github.com/Rowingporte/rpi5-pigpio",
+    "stars": 0,
+    "lang": null,
+    "category": "IoT/GPIO"
+  },
+  {
+    "name": "kiripaul/OpenWRT_for_RaspberryPi5",
+    "url": "https://github.com/kiripaul/OpenWRT_for_RaspberryPi5",
+    "stars": 0,
+    "lang": "Standard ML",
+    "category": "Other"
+  },
+  {
+    "name": "tyui541006/RPi5-2712ZPKFSB00D0T-UEFI",
+    "url": "https://github.com/tyui541006/RPi5-2712ZPKFSB00D0T-UEFI",
+    "stars": 0,
+    "lang": "C",
+    "category": "Other"
+  }
+]

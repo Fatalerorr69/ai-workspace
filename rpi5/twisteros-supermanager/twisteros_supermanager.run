@@ -1,0 +1,53 @@
+#!/bin/bash
+# =============================================
+# TwisterOS SuperManager Complete .run Installer with Modules 1-13
+# =============================================
+
+INSTALLER_NAME="twisteros_supermanager.run"
+ARCHIVE_NAME="twisteros_supermanager_payload.tar.gz"
+TARGET_DIR="/opt/twisteros_supermanager"
+
+info(){ echo "[INFO] $*"; }
+err(){ echo "[ERR] $*"; }
+
+# 1) Vytvoření payload tarballu se všemi skripty a moduly
+info "Vytvářím tarball se všemi moduly 1-13..."
+tar czf "$ARCHIVE_NAME" .
+
+# 2) Vytvoření self-extracting .run souboru
+info "Vytvářím self-extracting .run instalátor: $INSTALLER_NAME"
+cat > "$INSTALLER_NAME" <<'EOF'
+#!/bin/bash
+TARGET_DIR="/opt/twisteros_supermanager"
+mkdir -p "$TARGET_DIR"
+echo "Instalace TwisterOS SuperManager do $TARGET_DIR"
+ARCHIVE_LINE=$(grep -n '^__ARCHIVE_BELOW__$' "$0" | cut -d: -f1)
+tail -n +$((ARCHIVE_LINE+1)) "$0" | tar xz -C "$TARGET_DIR"
+cd "$TARGET_DIR"
+chmod +x *.sh
+
+# Spuštění všech modulů 1-13
+info "Spouštím všechny moduly 1–13 TwisterOS SuperManager..."
+./install_retroarch_manager.sh      # Modul 1: RetroArch & Emulator Manager
+./install_docker_services.sh        # Modul 2: Docker Services & SuperWebUI
+./install_nodered_flow.sh           # Modul 3: Node-RED Flow + API
+./twisteros_nas_mount.sh            # Modul 4: Auto NAS Mount
+./twisteros_emulator_scan.sh        # Modul 5: Auto-detekce emulátorů
+./twisteros_hw_fix.sh                # Modul 6: HW Detection & Driver Fixes
+./twisteros_auto_update.sh           # Modul 7: Auto-update
+./twisteros_icon_gen.sh              # Modul 8: Auto generátor ikon
+./install_ai_booster.sh              # Modul 9: AI Integration Booster
+./install_bios_manager.sh            # Modul 10: Advanced BIOS Manager
+./install_waydroid_auto.sh           # Modul 11: Waydroid Auto-Installer
+./install_vnc_stack.sh               # Modul 12: VNC + noVNC Server
+./install_web_dashboard2.sh          # Modul 13: Full Web Dashboard 2.0
+
+info "Všechny moduly 1–13 byly spuštěny."
+exit 0
+__ARCHIVE_BELOW__
+EOF
+
+cat "$ARCHIVE_NAME" >> "$INSTALLER_NAME"
+chmod +x "$INSTALLER_NAME"
+
+info "Hotovo. Self-extracting instalátor s moduly 1-13 připraven: $INSTALLER_NAME"

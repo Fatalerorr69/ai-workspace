@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+node_modules/
+*.db
+*.log
+.venv/
+venv/
+*.tar.gz
+*.zip
+.DS_Store
+Thumbs.db
+.github/workflows/security.yml.backup
+codeql_alerts.csv

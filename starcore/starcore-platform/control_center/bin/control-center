@@ -1,0 +1,90 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+
+BASE="$HOME/STARCORE/control_center"
+
+
+case "$1" in
+
+
+system)
+
+bash "$BASE/modules/system.sh"
+;;
+
+
+storage)
+
+bash "$BASE/modules/storage.sh"
+;;
+
+
+runtime)
+
+bash "$BASE/modules/runtime.sh"
+;;
+
+
+network)
+
+bash "$BASE/modules/network.sh"
+;;
+
+
+git)
+
+bash "$BASE/modules/git.sh"
+;;
+
+
+security)
+
+bash "$BASE/modules/security.sh"
+;;
+
+
+health)
+
+echo "===== CONTROL CENTER HEALTH ====="
+
+for m in "$BASE"/modules/*.sh
+do
+ echo "[OK] $(basename $m)"
+done
+
+;;
+
+
+all)
+
+for m in "$BASE"/modules/*.sh
+do
+echo
+bash "$m"
+done
+
+;;
+
+
+*)
+
+echo "
+STARCORE CONTROL CENTER
+
+Usage:
+
+control-center system
+control-center storage
+control-center runtime
+control-center network
+control-center git
+control-center security
+control-center health
+control-center all
+
+"
+
+;;
+
+esac
+

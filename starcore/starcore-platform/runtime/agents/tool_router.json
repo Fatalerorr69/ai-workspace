@@ -1,0 +1,10 @@
+{
+    "component":"Tool Router",
+    "tools":[
+        "python",
+        "termux",
+        "git",
+        "api"
+    ],
+    "status":"ready"
+}

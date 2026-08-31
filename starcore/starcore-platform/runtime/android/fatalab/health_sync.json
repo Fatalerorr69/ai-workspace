@@ -1,0 +1,11 @@
+{
+    "timestamp": "2026-08-05T20:56:24.011091",
+    "component": "STARCORE Health Sync",
+    "version": "6B.Y.3",
+    "sync": {
+        "android": "healthy",
+        "fatalab": "waiting"
+    },
+    "errors": 0,
+    "status": "ready"
+}

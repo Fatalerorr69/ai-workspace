@@ -1,0 +1,40 @@
+{
+    "timestamp": "2026-08-05T21:22:35.662687",
+    "component": "STARCORE Memory Fabric Validator",
+    "version": "6B.Y.70",
+    "checks": [
+        {
+            "file": "short_term/short_memory.json",
+            "exists": true
+        },
+        {
+            "file": "long_term/long_memory.json",
+            "exists": true
+        },
+        {
+            "file": "vector/vector_registry.json",
+            "exists": true
+        },
+        {
+            "file": "knowledge/knowledge_graph.json",
+            "exists": true
+        },
+        {
+            "file": "embedding/embedding_state.json",
+            "exists": true
+        },
+        {
+            "file": "sync/memory_sync.json",
+            "exists": true
+        },
+        {
+            "file": "optimizer/optimization_report.json",
+            "exists": true
+        },
+        {
+            "file": "backup/backup_state.json",
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}

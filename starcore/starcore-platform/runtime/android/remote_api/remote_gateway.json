@@ -1,0 +1,13 @@
+{
+    "timestamp": "2026-08-05T21:05:43.250529",
+    "component": "STARCORE Remote API Gateway",
+    "version": "6B.Y.24",
+    "authentication": "enabled",
+    "endpoints": [
+        "health",
+        "status",
+        "command",
+        "agents"
+    ],
+    "status": "secure"
+}

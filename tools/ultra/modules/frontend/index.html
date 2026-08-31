@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>ULTRA Dashboard</title></head>
+<body>
+<h1>ULTRA OS Dashboard</h1>
+<pre id="out"></pre>
+<script>
+fetch('/api/system').then(r=>r.json()).then(d=>{
+document.getElementById('out').innerText = JSON.stringify(d,null,2);
+});
+</script>
+</body>
+</html>

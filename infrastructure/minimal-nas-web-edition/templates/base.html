@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NAS Control</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div id="sidebar">
+  <a href="/">Dashboard</a>
+  <a href="/storage">Storage</a>
+  <a href="/shares">Shares</a>
+  <a href="/snapshots">Snapshots</a>
+  <a href="/users">Users</a>
+  <a href="/services">Services</a>
+</div>
+
+<div id="content">
+  {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

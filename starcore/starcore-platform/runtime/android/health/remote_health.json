@@ -1,0 +1,20 @@
+{
+    "timestamp": "2026-08-05T20:28:25.538494",
+    "component": "STARCORE Remote Health",
+    "version": "6B.X.14",
+    "checks": [
+        {
+            "file": "runtime/android/access/ssh_status.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/remote/tailscale_status.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/remote/remote_profile.json",
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}

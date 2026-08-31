@@ -1,0 +1,29 @@
+{
+ "component":"STARCORE Termux Deep Audit",
+ "timestamp":"2026-08-05T22:07:18Z",
+ "device":{
+    "model":"SM-A536B",
+    "android":"15"
+ },
+ "resources":{
+    "ram":"Mem:           5.3Gi       2.9Gi       1.1Gi        26Mi       1.3Gi       2.1Gi",
+    "storage":"/dev/block/dm-46 106G  65G   40G  62% /storage/emulated/0/Android/obb"
+ },
+ "runtime":{
+    "python":"Python 3.14.6",
+    "node":"v26.4.0",
+    "npm":"11.19.0",
+    "claude":"Error: claude native binary not installed.
+
+Either postinstall did not run (--ignore-scripts, some pnpm configs)
+or the platform-native optional dependency was not downloaded
+(--omit=optional).
+
+Run the postinstall manually (adjust path for local vs global install):
+  node node_modules/@anthropic-ai/claude-code/install.cjs
+
+Or reinstall without --ignore-scripts / --omit=optional.
+missing"
+ },
+ "status":"AUDITED"
+}

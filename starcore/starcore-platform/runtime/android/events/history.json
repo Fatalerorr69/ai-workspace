@@ -1,0 +1,11 @@
+[
+    {
+        "timestamp": "2026-08-05T19:16:15.987166",
+        "event": "core.start",
+        "source": "control_plane",
+        "severity": "info",
+        "payload": {
+            "version": "6B.X.3.B"
+        }
+    }
+]

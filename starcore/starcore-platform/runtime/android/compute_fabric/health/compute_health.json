@@ -1,0 +1,41 @@
+{
+    "timestamp": "2026-08-05T21:25:52.646829",
+    "component": "Compute Fabric Validator",
+    "version": "6B.Y.90",
+    "checks": [
+        {
+            "file": "resources/resource_state.json",
+            "exists": true
+        },
+        {
+            "file": "cpu/cpu_metrics.json",
+            "exists": true
+        },
+        {
+            "file": "memory/memory_metrics.json",
+            "exists": true
+        },
+        {
+            "file": "gpu/gpu_bridge.json",
+            "exists": true
+        },
+        {
+            "file": "scheduler/workload_queue.json",
+            "exists": true
+        },
+        {
+            "file": "containers/docker_bridge.json",
+            "exists": true
+        },
+        {
+            "file": "remote/compute_nodes.json",
+            "exists": true
+        },
+        {
+            "file": "performance/performance_report.json",
+            "exists": true
+        }
+    ],
+    "errors": 0,
+    "status": "healthy"
+}

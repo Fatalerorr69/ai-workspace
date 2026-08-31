@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Minimal NAS</title>
+<style>
+body { font-family: sans-serif; background:#111; color:#0f0; }
+.card { border:1px solid #0f0; padding:10px; margin:10px; }
+</style>
+</head>
+<body>
+
+<h1>Minimal Enterprise NAS</h1>
+
+<div class="card">
+<b>Host:</b> {{ data.hostname }}<br>
+<b>Uptime:</b> {{ data.uptime }}
+</div>
+
+<div class="card">
+<b>CPU:</b> {{ data.cpu }} %<br>
+<b>RAM:</b> {{ data.memory }} %
+</div>
+
+<div class="card">
+<pre>{{ data.disk }}</pre>
+</div>
+
+<div class="card">
+<pre>{{ data.datasets }}</pre>
+</div>
+
+<div class="card">
+<b>Samba:</b> {{ data.services.samba }}<br>
+<b>NFS:</b> {{ data.services.nfs }}<br>
+<b>iSCSI:</b> {{ data.services.iscsi }}
+</div>
+
+</body>
+</html>

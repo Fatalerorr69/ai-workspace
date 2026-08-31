@@ -1,0 +1,12 @@
+{
+    "timestamp": "2026-08-05T19:21:27.115856",
+    "component": "STARCORE Snapshot Manager",
+    "version": "6B.X.3.G",
+    "files": [
+        "/data/data/com.termux/files/home/STARCORE/runtime/android/state",
+        "/data/data/com.termux/files/home/STARCORE/runtime/android/health",
+        "/data/data/com.termux/files/home/STARCORE/runtime/android/events",
+        "/data/data/com.termux/files/home/STARCORE/runtime/android/controller",
+        "/data/data/com.termux/files/home/STARCORE/runtime/android/recovery"
+    ]
+}

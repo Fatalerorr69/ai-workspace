@@ -1,0 +1,27 @@
+#!/bin/bash
+
+deploy_proxy_manager() {
+    info "Nasazování Nginx Proxy Manager přes Docker..."
+    
+    mkdir -p "$INSTALL_DIR/proxy-manager"
+    cat > "$INSTALL_DIR/proxy-manager/docker-compose.yml" <<EOF
+version: '3.8'
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+EOF
+
+    cd "$INSTALL_DIR/proxy-manager"
+    docker compose up -d >/dev/null
+    
+    info "NPM nasazen. Přístup: http://$(hostname -I | awk '{print $1}'):81"
+    info "Default login: admin@example.com / changeme"
+}

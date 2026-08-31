@@ -1,0 +1,10 @@
+{
+"component":"STARCORE Agent Fabric",
+"agents":[
+"repository_agent",
+"security_agent",
+"proxmox_agent",
+"ai_agent"
+],
+"status":"READY"
+}

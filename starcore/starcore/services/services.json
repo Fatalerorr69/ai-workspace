@@ -1,0 +1,18 @@
+{
+  "test": {
+    "command": "/data/data/com.termux/files/usr/bin/python /data/data/com.termux/files/home/STARCORE/core/cli/commands/test_service.py",
+    "description": "Testovac\u00ed slu\u017eba",
+    "auto_restart": true,
+    "pid": null,
+    "status": "stopped",
+    "started_at": 1783045073.9584975
+  },
+  "dashboard": {
+    "command": "/data/data/com.termux/files/usr/bin/python /data/data/com.termux/files/home/STARCORE/dashboard/main.py",
+    "description": "STARCORE Web Dashboard (FastAPI)",
+    "auto_restart": true,
+    "pid": null,
+    "status": "stopped",
+    "started_at": 1783047922.4805248
+  }
+}

@@ -1,0 +1,16 @@
+{
+ "component":"STARCORE Remote AI Control Plane",
+ "version":"1.0",
+ "layers":[
+ "SSH",
+ "Claude Router",
+ "AI Runtime",
+ "Proxmox Connector"
+ ],
+ "targets":[
+ "Windows",
+ "FataLab-Core",
+ "Proxmox"
+ ],
+ "status":"READY"
+}

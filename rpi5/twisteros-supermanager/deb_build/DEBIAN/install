@@ -1,0 +1,4 @@
+api/*        /opt/twisteros_supermanager/api/
+scripts/*    /opt/twisteros_supermanager/scripts/
+dashboard/*  /opt/twisteros_supermanager/dashboard/
+debian/supermanager.service  /etc/systemd/system/

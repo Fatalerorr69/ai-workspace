@@ -1,0 +1,41 @@
+{
+    "timestamp": "2026-08-05T00:00:00Z",
+    "component": "STARCORE Marketplace + Observability",
+    "version": "7.8.04",
+    "status": "PRODUCTION",
+    "checks": [
+        {
+            "file": "runtime/marketplace/index.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/marketplace/installer_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/marketplace/validator_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/marketplace/marketplace_health.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/observability/metrics.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/observability/logs.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/observability/traces.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/observability/observability_health.json",
+            "exists": true
+        }
+    ],
+    "errors": 0
+}

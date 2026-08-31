@@ -1,0 +1,106 @@
+import typer
+from rich.console import Console
+from .commands import version, info, doctor, verify
+from core.services.commands import start, stop, status, logs, restart
+from core.hive.commands import start as hive_start, stop as hive_stop, status as hive_status, schedule, agent_add, agent_list
+from ai.commands import start as ai_start, stop as ai_stop, status as ai_status, config as ai_config, query as ai_query, test as ai_test, local_setup
+
+app = typer.Typer(help="STARCORE Mobile Core CLI")
+console = Console()
+
+# Core commands
+app.command()(version.version)
+app.command()(info.info)
+app.command()(doctor.doctor)
+app.command()(verify.verify)
+
+# Service commands
+app.command(name="start")(start)
+app.command(name="stop")(stop)
+app.command(name="status")(status)
+app.command(name="logs")(logs)
+app.command(name="restart")(restart)
+
+# HIVE commands
+app.command(name="hive-start")(hive_start)
+app.command(name="hive-stop")(hive_stop)
+app.command(name="hive-status")(hive_status)
+app.command(name="hive-schedule")(schedule)
+app.command(name="hive-agent-add")(agent_add)
+app.command(name="hive-agent-list")(agent_list)
+
+# AI commands
+app.command(name="ai-start")(ai_start)
+app.command(name="ai-stop")(ai_stop)
+app.command(name="ai-status")(ai_status)
+app.command(name="ai-config")(ai_config)
+app.command(name="ai-query")(ai_query)
+app.command(name="ai-test")(ai_test)
+app.command(name="ai-local-setup")(local_setup)
+
+if __name__ == "__main__":
+    app()
+from core.check.commands import check
+app.command(name="check")(check)
+# Rozšíření
+try:
+    from extensions.vision import recognize_text
+    app.command(name="vision")(recognize_text)
+except:
+    pass
+try:
+    from extensions.network import speedtest, ping
+    app.command(name="speedtest")(speedtest)
+    app.command(name="ping")(ping)
+except:
+    pass
+try:
+    from extensions.sync import sync
+    app.command(name="sync")(sync)
+except:
+    pass
+try:
+    from extensions.backup import backup
+    app.command(name="backup")(backup)
+except:
+    pass
+
+# ====== ROZŠÍŘENÍ ======
+
+# Vision
+try:
+    from extensions.vision import vision_ocr
+    app.command(name="vision-ocr")(vision_ocr)
+except ImportError:
+    pass
+
+# Network
+try:
+    from extensions.network import ping, speedtest
+    app.command(name="ping")(ping)
+    app.command(name="speedtest")(speedtest)
+except ImportError:
+    pass
+
+# Sync
+try:
+    from extensions.sync import sync
+    app.command(name="sync")(sync)
+except ImportError:
+    pass
+
+# Backup
+try:
+    from extensions.backup import backup
+    app.command(name="backup")(backup)
+except ImportError:
+    pass
+
+# ====== SSH ROZŠÍŘENÍ ======
+try:
+    from extensions.ssh import add, list_connections, connect
+    app.command(name="ssh-add")(add)
+    app.command(name="ssh-list")(list_connections)
+    app.command(name="ssh-connect")(connect)
+except ImportError:
+    pass

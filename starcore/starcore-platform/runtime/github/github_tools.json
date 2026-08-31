@@ -1,0 +1,10 @@
+{
+    "component":"GitHub Tools Registry",
+    "version":"7.0.06",
+    "tools":[
+        "repository_scanner",
+        "metadata_reader",
+        "dependency_analyzer"
+    ],
+    "status":"ready"
+}

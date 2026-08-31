@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ULTRA Installer</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<h1>ULTRA v18 Web Installer</h1>
+<div id="modules">
+    {% for m in modules %}
+    <div class="module" id="{{m}}">
+        <span class="name">{{m}}</span>
+        <span class="status">{{status[m]}}</span>
+        <button onclick="installModule('{{m}}')">Install</button>
+    </div>
+    {% endfor %}
+</div>
+<h2>Logs</h2>
+<pre id="log"></pre>
+
+<script>
+function installModule(module) {
+    fetch('/install/' + module, {method:'POST'});
+}
+setInterval(()=>{
+    fetch('/logs').then(r=>r.json()).then(data=>{
+        document.getElementById('log').innerText = data.join('\n');
+        {% for m in modules %}
+        fetch('/install/{{m}}').then(r=>r.json()).then(d=>{
+            document.getElementById('{{m}}').querySelector('.status').innerText = d.status || 'pending';
+        })
+        {% endfor %}
+    });
+}, 1000);
+</script>
+</body>
+</html>

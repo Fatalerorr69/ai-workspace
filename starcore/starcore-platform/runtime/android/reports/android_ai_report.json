@@ -1,0 +1,16 @@
+{
+    "timestamp": "2026-08-05T18:48:55.542615",
+    "health_score": 85,
+    "issues": [
+        "SELinux not enforcing"
+    ],
+    "recommendations": [
+        "Enable regular STARCORE snapshots"
+    ],
+    "device": {
+        "model": "SM-A536B",
+        "android": "15",
+        "kernel": "5.10.223-android12-9-31153516-abA536BXXSHFYH1",
+        "arch": "aarch64"
+    }
+}

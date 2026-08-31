@@ -1,0 +1,25 @@
+{
+    "timestamp":"2026-08-05T20:44:57Z",
+    "component":"STARCORE Autonomous Intelligence Platform",
+    "version":"7.0.10",
+    "checks":[
+        {
+            "file":"runtime/ai/model_registry.json",
+            "exists":true
+        },
+        {
+            "file":"runtime/ai/agent_registry.json",
+            "exists":true
+        },
+        {
+            "file":"runtime/missions/mission_registry.json",
+            "exists":true
+        },
+        {
+            "file":"runtime/studio/dashboard_state.json",
+            "exists":true
+        }
+    ],
+    "errors":0,
+    "status":"PRODUCTION"
+}

@@ -1,0 +1,26 @@
+{
+    "timestamp": "2026-08-05T20:29:43.402190",
+    "component": "STARCORE Agent Heartbeat",
+    "agents": [
+        {
+            "agent": "core-agent",
+            "heartbeat": "2026-08-05T20:29:43.401806",
+            "status": "alive"
+        },
+        {
+            "agent": "health-agent",
+            "heartbeat": "2026-08-05T20:29:43.401831",
+            "status": "alive"
+        },
+        {
+            "agent": "scheduler-agent",
+            "heartbeat": "2026-08-05T20:29:43.401836",
+            "status": "alive"
+        },
+        {
+            "agent": "ai-agent",
+            "heartbeat": "2026-08-05T20:29:43.401839",
+            "status": "alive"
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+ "component":"STARCORE Agent Task Router",
+ "version":"6B.Y.50",
+ "routes":[
+  {
+   "task":"health",
+   "agent":"health-agent"
+  },
+  {
+   "task":"schedule",
+   "agent":"scheduler-agent"
+  },
+  {
+   "task":"decision",
+   "agent":"ai-agent"
+  },
+  {
+   "task":"memory",
+   "agent":"memory-agent"
+  }
+ ],
+ "status":"ready"
+}

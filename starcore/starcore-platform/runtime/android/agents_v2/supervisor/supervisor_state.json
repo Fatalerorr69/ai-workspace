@@ -1,0 +1,8 @@
+{
+ "component":"STARCORE Agent Supervisor",
+ "version":"6B.Y.50",
+ "monitoring":true,
+ "restart_policy":"enabled",
+ "agents_checked":6,
+ "status":"healthy"
+}

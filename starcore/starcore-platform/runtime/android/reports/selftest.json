@@ -1,0 +1,24 @@
+{
+    "timestamp": "2026-08-05T19:41:54.548705",
+    "component": "STARCORE Self Test",
+    "version": "6B.X.10",
+    "checks": [
+        {
+            "path": "runtime/android/system/manifest.json",
+            "exists": true
+        },
+        {
+            "path": "runtime/android/installer/installer_report.json",
+            "exists": true
+        },
+        {
+            "path": "runtime/android/health",
+            "exists": true
+        },
+        {
+            "path": "runtime/android/reports",
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}

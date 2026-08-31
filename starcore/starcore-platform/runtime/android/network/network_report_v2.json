@@ -1,0 +1,13 @@
+{
+    "timestamp": "2026-08-05T19:01:45.340104",
+    "network": {
+        "interfaces": "unavailable",
+        "routes": "unavailable",
+        "dns": "[persist.device_config.aconfig_flags.connectivity.data_stall_consecutive_dns_timeout_threshold]: [5]\n[persist.device_config.aconfig_flags.connectivity.ipclient_accept_ipv6_link_local_dns_version]: [0]\n[persist.device_config.aconfig_flags.netd_native.dns_event_subsample_map]: [default:6 0:400 2:110 4:110 7:110]\n[ril.bip_dns_in_progress]: [1,1]",
+        "connections": "unavailable",
+        "wifi": "unavailable"
+    },
+    "environment": {
+        "termux_api": true
+    }
+}

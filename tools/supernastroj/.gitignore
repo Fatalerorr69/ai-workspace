@@ -1,0 +1,37 @@
+# Logs
+SuperNastroj_Logs/
+*.log
+
+# Backups
+SuperNastroj_Backups/
+*.bak
+*.backup
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# ISO files (large)
+SuperNastroj_ISOs/*.iso
+
+# OS specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor specific
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Config (user-specific)
+config_local.ini
+.env
+
+# Build artifacts
+dist/
+build/
+SuperNastroj_Linux.sh

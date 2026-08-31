@@ -1,0 +1,24 @@
+{
+    "component": "STARCORE Distributed AI Validator",
+    "version": "6B.Y.10",
+    "checks": [
+        {
+            "file": "runtime/android/fatalab/tailscale_connector.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/distributed/node_registry.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/ai_bridge/bridge_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/command_center/command_center.json",
+            "exists": true
+        }
+    ],
+    "errors": 0,
+    "status": "healthy"
+}

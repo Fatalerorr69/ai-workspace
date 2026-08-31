@@ -1,0 +1,26 @@
+{
+    "groups": {
+        "group:admins": ["fatalerorr69@gmail.com"],
+        "group:devices": ["tag:owned"]
+    },
+    "tagOwners": {
+        "tag:owned": ["autogroup:admin"],
+        "tag:github-actions": ["autogroup:admin"],
+    },
+    "acls": [
+        // Povolit všechna zařízení ve tailnetu
+        {
+            "action": "accept",
+            "src": ["*"],
+            "dst": ["*:*"],
+        },
+    ],
+    "ssh": [
+        {
+            "action": "accept",
+            "src": ["autogroup:members"],
+            "dst": ["tag:owned"],
+            "users": ["autogroup:nonroot", "root"],
+        },
+    ],
+}

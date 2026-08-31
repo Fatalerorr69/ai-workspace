@@ -1,0 +1,28 @@
+{
+    "timestamp": "2026-08-05T20:30:55.267712",
+    "component": "STARCORE AI Memory Health",
+    "version": "6B.X.16",
+    "checks": [
+        {
+            "file": "runtime/android/context/context.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/memory/memory_registry.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/knowledge/knowledge_graph.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/vector/vector_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/memory/memory_bridge.json",
+            "exists": true
+        }
+    ],
+    "status": "healthy"
+}

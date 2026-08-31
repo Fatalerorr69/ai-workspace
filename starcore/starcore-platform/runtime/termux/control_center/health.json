@@ -1,0 +1,13 @@
+{
+"component":"STARCORE Termux Control Center",
+"timestamp":"2026-08-05T22:11:52Z",
+"runtime":{
+"python":"Python 3.14.6",
+"node":"v26.4.0",
+"npm":"11.19.0"
+},
+"git":"?? install_TERMUX_CONTROL_CENTER_v1.sh
+?? runtime/termux/control_center/
+?? tools/",
+"status":"ONLINE"
+}

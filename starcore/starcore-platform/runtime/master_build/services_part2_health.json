@@ -1,0 +1,20 @@
+{
+    "component":"STARCORE Services Foundation",
+    "version":"7.0.05-07",
+    "checks":[
+        {
+            "file":"runtime/api/api_gateway.json",
+            "exists":true
+        },
+        {
+            "file":"runtime/github/github_registry.json",
+            "exists":true
+        },
+        {
+            "file":"runtime/knowledge/knowledge_state.json",
+            "exists":true
+        }
+    ],
+    "errors":0,
+    "status":"healthy"
+}

@@ -1,0 +1,19 @@
+{
+  "plugins": [
+    {
+      "id": "android-extra",
+      "name": "Android Advanced Tools",
+      "repo": "https://github.com/user/android-ultra-plugin",
+      "tags": ["android", "adb", "reverse"],
+      "ai_score": 0
+    },
+    {
+      "id": "pentest-pro",
+      "name": "Pentest Pro Pack",
+      "repo": "https://github.com/user/pentest-ultra-plugin",
+      "tags": ["security", "kali"],
+      "heavy": true,
+      "ai_score": 0
+    }
+  ]
+}

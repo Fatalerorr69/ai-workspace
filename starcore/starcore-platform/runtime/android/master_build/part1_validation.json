@@ -1,0 +1,24 @@
+{
+    "timestamp": "2026-08-05T20:51:51.993188",
+    "component": "STARCORE 6B.X.31-34 Validator",
+    "checks": [
+        {
+            "file": "runtime/android/unified/installer_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/state_db/system_state.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/event_bus/event_bus.json",
+            "exists": true
+        },
+        {
+            "file": "runtime/android/job_queue/job_queue.json",
+            "exists": true
+        }
+    ],
+    "errors": 0,
+    "status": "healthy"
+}

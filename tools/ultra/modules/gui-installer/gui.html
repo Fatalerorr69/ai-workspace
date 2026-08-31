@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ULTRA Installer</title>
+  <style>
+    body { font-family: sans-serif; background:#0e0e11; color:#eee; }
+    button { padding:10px; margin:5px; }
+    .box { background:#1a1a22; padding:20px; border-radius:8px; }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <h2>ULTRA v16 – Instalační průvodce</h2>
+
+  <label>Profil:</label>
+  <select id="profile">
+    <option value="core">Core</option>
+    <option value="full">Full</option>
+    <option value="pentest">Pentest</option>
+  </select>
+
+  <button onclick="analyze()">Analyzovat systém</button>
+  <pre id="out"></pre>
+
+  <button onclick="install()">Spustit instalaci</button>
+</div>
+
+<script>
+function analyze(){
+  document.getElementById('out').innerText =
+    "AI doporučení:\n- system\n- ai\n- web";
+}
+
+function install(){
+  alert("Instalace spuštěna (napojení na backend)");
+}
+</script>
+
+</body>
+</html>

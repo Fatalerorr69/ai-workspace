@@ -1,0 +1,11 @@
+{
+    "timestamp": "2026-08-05T20:56:23.775547",
+    "component": "STARCORE FataLab Connector",
+    "version": "6B.Y.1",
+    "target": {
+        "name": "FataLab AI Core",
+        "transport": "tailscale+ssh",
+        "status": "configured"
+    },
+    "status": "ready"
+}

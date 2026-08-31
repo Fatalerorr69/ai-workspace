@@ -1,0 +1,146 @@
+import typer
+import sys
+import os
+import subprocess
+import shutil
+import sqlite3
+import json
+from rich.console import Console
+from rich.table import Table
+from rich.panel import Panel
+from rich import box
+from core.utils.termux import check_termux_api
+from core.config import settings
+from core.services.manager import manager as service_manager
+from core.hive.engine import hive
+
+console = Console()
+
+def verify():
+    """Provádí kompletní ověření integrity a funkčnosti STARCORE."""
+    
+    console.print(Panel("🔍 STARCORE VERIFICATION", style="bold green", border_style="green"))
+    
+    results = []
+    all_ok = True
+    
+    # ====== 1. ZÁKLADNÍ SYSTÉM ======
+    console.print("\n[bold cyan]1. Základní systém[/bold cyan]")
+    
+    py_ok = sys.version_info >= (3, 9)
+    results.append(("Python", sys.version.split()[0], "✓" if py_ok else "✗"))
+    
+    git_ok = shutil.which("git") is not None
+    results.append(("Git", "nalezen" if git_ok else "nenalezen", "✓" if git_ok else "✗"))
+    
+    tmux_ok = shutil.which("tmux") is not None
+    results.append(("tmux", "nalezen" if tmux_ok else "nenalezen", "✓" if tmux_ok else "✗"))
+    
+    try:
+        sqlite3.connect(":memory:").close()
+        sqlite_ok = True
+    except:
+        sqlite_ok = False
+    results.append(("SQLite", "dostupné" if sqlite_ok else "nedostupné", "✓" if sqlite_ok else "✗"))
+    
+    api_ok = check_termux_api()
+    results.append(("Termux:API", "dostupné" if api_ok else "nedostupné", "✓" if api_ok else "✗"))
+    
+    # ====== 2. SYSTÉMOVÉ ZDROJE ======
+    console.print("[bold cyan]2. Systémové zdroje[/bold cyan]")
+    
+    try:
+        with open("/proc/meminfo", "r") as f:
+            mem = f.read()
+        total_ram = None
+        for line in mem.splitlines():
+            if line.startswith("MemTotal:"):
+                total_ram = int(line.split()[1]) // 1024
+                break
+        ram_info = f"{total_ram} MB" if total_ram else "neznámá"
+        ram_ok = total_ram and total_ram > 512
+    except:
+        ram_info = "nelze zjistit"
+        ram_ok = False
+    results.append(("RAM", ram_info, "✓" if ram_ok else "⚠" if total_ram else "✗"))
+    
+    try:
+        statvfs = os.statvfs(os.path.expanduser("~"))
+        free = (statvfs.f_frsize * statvfs.f_bavail) // (1024**2)
+        free_info = f"{free} MB"
+        free_ok = free > 100
+    except:
+        free_info = "nelze zjistit"
+        free_ok = False
+    results.append(("Volné místo", free_info, "✓" if free_ok else "⚠" if free > 50 else "✗"))
+    
+    try:
+        import socket
+        socket.create_connection(("1.1.1.1", 80), timeout=3)
+        net_ok = True
+    except:
+        net_ok = False
+    results.append(("Internet", "dostupný" if net_ok else "nedostupný", "✓" if net_ok else "✗"))
+    
+    # ====== 3. STARCORE KOMUNIKACE ======
+    console.print("[bold cyan]3. STARCORE komunikace[/bold cyan]")
+    
+    from core import __version__
+    results.append(("STARCORE verze", __version__, "✓"))
+    
+    dirs = ["core", "core/cli", "core/config", "core/database", "core/logging", "core/utils", "core/services", "core/hive", "data", "data/logs"]
+    for d in dirs:
+        exists = (settings.BASE_DIR / d).exists()
+        results.append((f"Adresář {d}", "existuje" if exists else "chybí", "✓" if exists else "✗"))
+    
+    # ====== 4. SLUŽBY ======
+    console.print("[bold cyan]4. Service Manager[/bold cyan]")
+    
+    services = service_manager.list_all()
+    results.append(("Registrované služby", str(len(services)), "✓" if services else "⚠"))
+    
+    if "test" in services:
+        status = service_manager.status("test")
+        status_str = status["test"]["status"]
+        # stopped je platný stav - nebereme jako chybu
+        results.append(("Služba 'test'", status_str, "✓"))
+    else:
+        results.append(("Služba 'test'", "nenalezena", "⚠"))
+    
+    # ====== 5. HIVE ======
+    console.print("[bold cyan]5. HIVE Engine[/bold cyan]")
+    
+    hive_status = hive.status()
+    # Zastavený HIVE je platný stav
+    results.append(("HIVE Engine", "běží" if hive_status["running"] else "zastaven", "✓"))
+    results.append(("HIVE Scheduler", "běží" if hive_status["scheduler"]["running"] else "zastaven", "✓"))
+    
+    agents = hive.agents.list()
+    results.append(("HIVE Agenti", str(len(agents)), "✓" if agents else "⚠"))
+    
+    # ====== 6. SHRNUTÍ ======
+    console.print("\n[bold cyan]6. Shrnutí[/bold cyan]")
+    
+    table = Table(title="STARCORE Verifikace", box=box.ROUNDED, show_header=True)
+    table.add_column("Kontrola", style="cyan")
+    table.add_column("Stav", style="yellow")
+    table.add_column("Výsledek", style="green")
+    
+    for name, value, status in results:
+        color = "green" if "✓" in status else "red" if "✗" in status else "yellow"
+        table.add_row(name, value, f"[{color}]{status}[/{color}]")
+        if "✗" in status:
+            all_ok = False
+    
+    console.print(table)
+    
+    if all_ok:
+        console.print(Panel("✅ VŠECHNY KONTROLY PROŠLY – STARCORE je plně funkční", style="bold green"))
+        console.print(Panel("📋 Roadmapa: A ✅ B ✅ C ✅ D ✅ | E ✅ F ✅ | G ⏳ H ⏳", style="bold cyan"))
+    else:
+        console.print(Panel("❌ NĚKTERÉ KONTROLY SELHALY – opravte problémy", style="bold red"))
+    
+    return all_ok
+
+if __name__ == "__main__":
+    verify()

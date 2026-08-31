@@ -1,0 +1,36 @@
+optimization:
+
+  enabled: true
+
+  modules:
+
+    storage:
+      enabled: true
+
+    cache:
+      enabled: true
+
+    packages:
+      enabled: true
+
+    runtime:
+      enabled: true
+
+
+performance:
+
+  analyze_cpu: true
+  analyze_memory: true
+  analyze_storage: true
+
+
+cleanup:
+
+  safe_mode: true
+  remove_temp: false
+
+
+ai:
+
+  generate_recommendations: true
+

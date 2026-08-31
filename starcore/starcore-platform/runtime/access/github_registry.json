@@ -1,0 +1,12 @@
+{
+ "component":"STARCORE GitHub Connector",
+ "repository":"Fatalerorr69/starcore-platform",
+ "branch":"main",
+ "operations":[
+  "clone",
+  "pull",
+  "commit",
+  "push"
+ ],
+ "status":"READY"
+}

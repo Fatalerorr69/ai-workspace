@@ -1,0 +1,8 @@
+{
+    "id": "iot",
+    "name": "IoT a Raspberry Pi",
+    "description": "Profil IoT a Raspberry Pi",
+    "version": "1.0.0",
+    "created": "2025-11-21T16:20:33+01:00",
+    "compatibility": ["linux", "windows", "macos"]
+}

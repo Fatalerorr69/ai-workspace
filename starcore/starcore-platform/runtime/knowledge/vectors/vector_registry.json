@@ -1,0 +1,6 @@
+{
+ "component":"Vector Memory Layer",
+ "engine":"qdrant",
+ "vectors":0,
+ "status":"ready"
+}

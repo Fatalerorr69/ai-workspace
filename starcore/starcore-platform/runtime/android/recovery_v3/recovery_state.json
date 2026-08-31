@@ -1,0 +1,11 @@
+{
+    "timestamp": "2026-08-05T21:05:43.921107",
+    "component": "STARCORE Recovery V3",
+    "version": "6B.Y.29",
+    "features": [
+        "rollback",
+        "restore",
+        "reconnect"
+    ],
+    "status": "healthy"
+}

@@ -1,0 +1,34 @@
+{
+  "plugin_conky.sh": {
+    "autostart": true,
+    "config_file": "~/.config/conky/conky.conf"
+  },
+  "plugin_dashboard.sh": {
+    "port": 8080,
+    "autostart": true,
+    "refresh_interval": 3
+  },
+  "plugin_home_assistant.sh": {
+    "ha_dir": "~/homeassistant",
+    "node_red_dir": "~/smart-hub",
+    "autostart": true
+  },
+  "plugin_retro_games.sh": {
+    "rom_dir": "~/Games/ROMs",
+    "bios_dir": "~/Games/BIOS",
+    "auto_scan": true
+  },
+  "plugin_network_check.sh": {
+    "ping_target": "8.8.8.8",
+    "interval": 300
+  },
+  "plugin_fsck_module.sh": {
+    "auto_run": false
+  },
+  "plugin_mbr_gpt_module.sh": {
+    "auto_run": false
+  },
+  "plugin_fix_scripts.sh": {
+    "auto_run": true
+  }
+}
