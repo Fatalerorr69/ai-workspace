@@ -1,17 +1,17 @@
 name: "CodeQL"
 
-on:
+on:`n  workflow_dispatch:
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '0 6 * * 1'
+    - cron:`n  workflow_dispatch: '0 6 * * 1'
 
 jobs:
   analyze:
     name: Analyze (${{ matrix.language }})
-    runs-on: ubuntu-latest
+    runs-on:`n  workflow_dispatch: ubuntu-latest
     permissions:
       actions: read
       contents: read
