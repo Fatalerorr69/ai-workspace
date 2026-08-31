@@ -29,12 +29,13 @@ const DASH_DATA = path.join(__dirname, 'data');
 const PLUGIN_DIR = path.join(ROOT, 'plugins');
 const LOG_FILE = path.join(ROOT, 'logs', 'plugin.log');
 const STATUS_FILE = path.join(__dirname, 'data', 'plugin_status.json');
+const PUBLIC_DIR = path.join(__dirname, 'public');
 
 app.use(express.json());
 app.use(limiter);
 app.use(express.urlencoded({ extended: true }));
 app.use(limiter);
-app.use(express.static(__dirname));
+app.use(express.static(PUBLIC_DIR));
 app.use(limiter); // servíruje index.html, style.css, ai.js ...
 
 // ---------- helpery ----------
