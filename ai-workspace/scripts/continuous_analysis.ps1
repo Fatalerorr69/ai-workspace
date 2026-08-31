@@ -270,7 +270,7 @@ while ((Get-Date) -lt $endTime) {
             LastPhase   = $r.last_phase
         }
     }
-    $csvRows | Export-Csv -Path $csvFile -NoTypeInformation -Force
+    $csvRows | Export-Csv -Append -Path $csvFile -NoTypeInformation -Force
 
     $md = "# Kontinuální analýza – stav po $cycle cyklech`n`n"
     $md += "Čas: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')`n`n"
