@@ -5,20 +5,15 @@ const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100, message: 'Příl
 // Umístění: ~/twisteros_supermanager/twister-dashboard/app.js
 
 const express = require('express');
-const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100, message: 'Příliš mnoho požadavků, zkuste to později.' });
 
 const fs = require('fs');
-const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100, message: 'Příliš mnoho požadavků, zkuste to později.' });
 
 const path = require('path');
-const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100, message: 'Příliš mnoho požadavků, zkuste to později.' });
 
 const multer = require('multer');
-const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100, message: 'Příliš mnoho požadavků, zkuste to později.' });
 
 const { exec, spawn } = require('child_process');
 const fetch = require('node-fetch');
-const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100, message: 'Příliš mnoho požadavků, zkuste to později.' });
 
 
 const app = express();
